@@ -19,6 +19,10 @@ import org.openmrs.ProgramWorkflowState;
 
 public final class EhrReportConstants {
 	
+	public enum OccurenceStates {
+		NEW, REVISIT
+	}
+	
 	public static List<Integer> getProgramWorkflowStateIds(Program program) {
     List<Integer> defaultStateIds = new ArrayList<>();
     for (ProgramWorkflowState p : program.getAllWorkflows().iterator().next().getStates()) {

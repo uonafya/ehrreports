@@ -16,6 +16,7 @@
 /home/codehub/workspace/integrated_EHR/ehrreports/api/src/main/java/org/openmrs/module/ehrreports/reporting/library/cohorts/Moh705CohortQueries.java
 /home/codehub/workspace/integrated_EHR/ehrreports/api/src/main/java/org/openmrs/module/ehrreports/reporting/library/cohorts/GenericCohortQueries.java
 /home/codehub/workspace/integrated_EHR/ehrreports/api/src/main/java/org/openmrs/module/ehrreports/reporting/library/dimensions/CommonAgeDimensionCohort.java
+/home/codehub/workspace/integrated_EHR/ehrreports/api/src/main/java/org/openmrs/module/ehrreports/reporting/calculation/EhrCalculationService.java
 /home/codehub/workspace/integrated_EHR/ehrreports/api/src/main/java/org/openmrs/module/ehrreports/reporting/library/dimensions/EhrCommonDimension.java
 /home/codehub/workspace/integrated_EHR/ehrreports/api/src/main/java/org/openmrs/module/ehrreports/reporting/cohort/evaluator/CalculationCohortDefinitionEvaluator.java
 /home/codehub/workspace/integrated_EHR/ehrreports/api/src/main/java/org/openmrs/module/ehrreports/reporting/library/dimensions/AgeDimensionCohortInterface.java
@@ -35,6 +36,7 @@
 /home/codehub/workspace/integrated_EHR/ehrreports/api/src/main/java/org/openmrs/module/ehrreports/reporting/library/indicators/BaseIndicators.java
 /home/codehub/workspace/integrated_EHR/ehrreports/api/src/main/java/org/openmrs/module/ehrreports/reporting/library/queries/moh717/Moh717Queries.java
 /home/codehub/workspace/integrated_EHR/ehrreports/api/src/main/java/org/openmrs/module/ehrreports/reporting/EhrReportInitializer.java
+/home/codehub/workspace/integrated_EHR/ehrreports/api/src/main/java/org/openmrs/module/ehrreports/reporting/calculation/PatientOccurenceCalculation.java
 /home/codehub/workspace/integrated_EHR/ehrreports/api/src/main/java/org/openmrs/module/ehrreports/reporting/library/cohorts/Moh717CohortQueries.java
 /home/codehub/workspace/integrated_EHR/ehrreports/api/src/main/java/org/openmrs/module/ehrreports/metadata/HivMetadata.java
 /home/codehub/workspace/integrated_EHR/ehrreports/api/src/main/java/org/openmrs/module/ehrreports/reporting/utils/EhrReportConstants.java

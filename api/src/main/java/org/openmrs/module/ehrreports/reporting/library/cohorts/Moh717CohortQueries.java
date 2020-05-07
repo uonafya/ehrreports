@@ -11,7 +11,11 @@
  */
 package org.openmrs.module.ehrreports.reporting.library.cohorts;
 
+import org.openmrs.api.context.Context;
+import org.openmrs.module.ehrreports.reporting.calculation.PatientOccurenceCalculation;
+import org.openmrs.module.ehrreports.reporting.cohort.definition.CalculationCohortDefinition;
 import org.openmrs.module.ehrreports.reporting.library.queries.moh717.Moh717Queries;
+import org.openmrs.module.ehrreports.reporting.utils.EhrReportConstants;
 import org.openmrs.module.reporting.cohort.definition.CohortDefinition;
 import org.openmrs.module.reporting.cohort.definition.SqlCohortDefinition;
 import org.openmrs.module.reporting.evaluation.parameter.Parameter;
@@ -29,6 +33,14 @@ public class Moh717CohortQueries {
 		cd.addParameter(new Parameter("startDate", "StartDate", Date.class));
 		cd.addParameter(new Parameter("endDate", "End Date", Date.class));
 		cd.setQuery(Moh717Queries.getOutPatientClinicPatients(5, 6));
+		return cd;
+	}
+	
+	public CohortDefinition getPatientStates(EhrReportConstants.OccurenceStates state) {
+		CalculationCohortDefinition cd = new CalculationCohortDefinition("On ART for at least 3 months", Context
+		        .getRegisteredComponents(PatientOccurenceCalculation.class).get(0));
+		cd.addParameter(new Parameter("onOrBefore", "End Date", Date.class));
+		cd.addCalculationParameter("state", state);
 		return cd;
 	}
 }
