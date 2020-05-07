@@ -46,7 +46,6 @@ public abstract class BaseDataSet {
 		List<Parameter> parameters = new ArrayList<Parameter>();
 		parameters.add(ReportingConstants.START_DATE_PARAMETER);
 		parameters.add(ReportingConstants.END_DATE_PARAMETER);
-		parameters.add(ReportingConstants.LOCATION_PARAMETER);
 		return parameters;
 	}
 	

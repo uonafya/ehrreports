@@ -29,7 +29,6 @@ public abstract class BaseIndicators {
 		i.setCohortDefinition(cohort);
 		i.addParameter(new Parameter("startDate", "Start date", Date.class));
 		i.addParameter(new Parameter("endDate", "End date", Date.class));
-		i.addParameter(new Parameter("location", "Facility", Location.class));
 		return i;
 	}
 }

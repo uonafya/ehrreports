@@ -45,6 +45,7 @@ public class SetupMoh717Report extends EhrDataExportManager {
 		
 		rd.setUuid(getUuid());
 		rd.setName(getName());
+		rd.setParameters(moh717Dataset.getParameters());
 		rd.setDescription(getDescription());
 		// tie the dataset here, you can add more than one data set definition
 		rd.addDataSetDefinition("MOH717", Mapped.mapStraightThrough(moh717Dataset.constructMoh717Dataset()));

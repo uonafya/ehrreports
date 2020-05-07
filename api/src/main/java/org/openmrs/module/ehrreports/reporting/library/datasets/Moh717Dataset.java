@@ -11,14 +11,19 @@
  */
 package org.openmrs.module.ehrreports.reporting.library.datasets;
 
+import org.openmrs.module.ehrreports.reporting.library.cohorts.Moh717CohortQueries;
 import org.openmrs.module.ehrreports.reporting.library.dimensions.AgeDimensionCohortInterface;
 import org.openmrs.module.ehrreports.reporting.library.dimensions.EhrCommonDimension;
+import org.openmrs.module.ehrreports.reporting.library.indicators.EhrGeneralIndicator;
 import org.openmrs.module.ehrreports.reporting.utils.EhrReportUtils;
 import org.openmrs.module.reporting.dataset.definition.CohortIndicatorDataSetDefinition;
 import org.openmrs.module.reporting.dataset.definition.DataSetDefinition;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
+
+import java.util.Arrays;
+import java.util.List;
 
 @Component
 public class Moh717Dataset extends BaseDataSet {
@@ -27,18 +32,46 @@ public class Moh717Dataset extends BaseDataSet {
 	private EhrCommonDimension ehrCommonDimension;
 	
 	@Autowired
+	private EhrGeneralIndicator ehrGeneralIndicator;
+	
+	@Autowired
+	private Moh717CohortQueries moh717CohortQueries;
+	
+	@Autowired
 	@Qualifier("commonAgeDimensionCohort")
 	private AgeDimensionCohortInterface ageDimensionCohort;
 	
 	public DataSetDefinition constructMoh717Dataset() {
 		
 		CohortIndicatorDataSetDefinition dsd = new CohortIndicatorDataSetDefinition();
+		String mappings = "startDate=${startDate},endDate=${endDate}";
 		dsd.setName("MOH 717 Data Set");
 		dsd.addParameters(getParameters());
 		// Tie dimensions to this data definition
 		dsd.addDimension("gender", EhrReportUtils.map(ehrCommonDimension.gender(), ""));
 		dsd.addDimension("age", EhrReportUtils.map(ehrCommonDimension.age(ageDimensionCohort), "effectiveDate=${endDate}"));
 		// add your dataset here, construct it here
+		addRow(
+		    dsd,
+		    "A",
+		    "OUTPATIENT SERVICES",
+		    EhrReportUtils.map(
+		        ehrGeneralIndicator.getIndicator("OUTPATIENT SERVICES",
+		            EhrReportUtils.map(moh717CohortQueries.getOutPatients(), mappings)), mappings),
+		    getAdultChildrenColumns());
 		return dsd;
+	}
+	
+	private List<ColumnParameters> getAdultChildrenColumns() {
+		// Male
+		ColumnParameters over5YearsMale = new ColumnParameters("over5YM", "Over 5 Years Male", "gender=M|age=>5", "01");
+		ColumnParameters under5YearsMale = new ColumnParameters("under5YM", "Under 5 Years Male", "gender=M|age=<5", "02");
+		ColumnParameters totalMale = new ColumnParameters("totalM", "Total Male", "gender=M", "03");
+		//Female
+		ColumnParameters over5YearsFemale = new ColumnParameters("over5YF", "Over 5 Years Female", "gender=F|age=>5", "04");
+		ColumnParameters under5YearsFemale = new ColumnParameters("under5YF", "Under 5 Years Female", "gender=F|age=<5",
+		        "05");
+		ColumnParameters totalFemale = new ColumnParameters("totalF", "Total Female", "gender=F", "06");
+		return Arrays.asList(over5YearsMale, under5YearsMale, totalMale, over5YearsFemale, under5YearsFemale, totalFemale);
 	}
 }
