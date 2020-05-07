@@ -1,0 +1,56 @@
+package org.openmrs.module.ehrreports.reporting.cohort.evaluator;
+
+import static org.openmrs.module.ehrreports.reporting.utils.EhrReportUtils.formatDate;
+
+import java.util.Date;
+import java.util.List;
+import org.openmrs.ProgramWorkflowState;
+import org.openmrs.annotation.Handler;
+import org.openmrs.module.ehrreports.reporting.cohort.definition.CustomConfigurationsDataDefinition;
+import org.openmrs.module.ehrreports.reporting.utils.EhrReportUtils;
+import org.openmrs.module.reporting.dataset.DataSet;
+import org.openmrs.module.reporting.dataset.DataSetColumn;
+import org.openmrs.module.reporting.dataset.DataSetRow;
+import org.openmrs.module.reporting.dataset.SimpleDataSet;
+import org.openmrs.module.reporting.dataset.definition.DataSetDefinition;
+import org.openmrs.module.reporting.dataset.definition.evaluator.DataSetEvaluator;
+import org.openmrs.module.reporting.evaluation.EvaluationContext;
+import org.openmrs.module.reporting.evaluation.EvaluationException;
+
+@Handler(supports = CustomConfigurationsDataDefinition.class)
+public class CustomConfigurationsDataEvaluator implements DataSetEvaluator {
+	
+	@Override
+	public DataSet evaluate(DataSetDefinition dataSetDefinition, EvaluationContext context) throws EvaluationException {
+		
+		CustomConfigurationsDataDefinition dsd = (CustomConfigurationsDataDefinition) dataSetDefinition;
+		
+		SimpleDataSet dataSet = new SimpleDataSet(dataSetDefinition, context);
+		
+		DataSetRow row = new DataSetRow();
+		row.addColumnValue(new DataSetColumn("report_time", "Report time", String.class),
+		    EhrReportUtils.formatDateWithTime(new Date()));
+		row.addColumnValue(new DataSetColumn("states", "States", String.class), getWorkflowStates(context));
+		row.addColumnValue(new DataSetColumn("period", "Period", String.class), getReportingPeriodRange(context));
+		dataSet.addRow(row);
+		return dataSet;
+	}
+	
+	private String getWorkflowStates(EvaluationContext context) {
+		List<ProgramWorkflowState> workflowStateList = (List<ProgramWorkflowState>) context.getParameterValue("state");
+		StringBuilder statesAsString = new StringBuilder();
+		String value = "";
+		for (ProgramWorkflowState workflowState : workflowStateList) {
+			value = workflowState.getConcept().getDisplayString();
+			statesAsString = statesAsString.length() > 0 ? statesAsString.append(",").append(value) : statesAsString
+			        .append(value);
+		}
+		return statesAsString.toString();
+	}
+	
+	private String getReportingPeriodRange(EvaluationContext context) {
+		Date startDate = (Date) context.getParameterValue("startDate");
+		Date endDate = (Date) context.getParameterValue("endDate");
+		return formatDate(startDate) + " to " + formatDate(endDate);
+	}
+}

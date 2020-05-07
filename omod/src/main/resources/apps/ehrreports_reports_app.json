@@ -1,0 +1,65 @@
+[
+  {
+    "id": "ehr.reports",
+    "description": "Homepage showing a list of different kinds of reports",
+    "order": 10,
+    "requiredPrivilege": "App: ehrreports.reports",
+    "extensionPoints": [
+      {
+        "id": "org.openmrs.module.ehrreports.reports.overview",
+        "description": "Links to available Facility level Reports",
+        "supportedExtensionTypes": [ "link" ]
+      },
+      {
+        "id": "org.openmrs.module.ehrreports.reports.monthly",
+        "description": "Links to available Monthly Reports",
+        "supportedExtensionTypes": [ "link" ]
+      },
+      {
+        "id": "org.openmrs.module.ehrreports.reports.registers",
+        "description": "Links to available Registers",
+        "supportedExtensionTypes": [ "link" ]
+      },
+      {
+        "id": "org.openmrs.module.ehrreports.reports.quarterly",
+        "description": "Links to available Quarterly Reports",
+        "supportedExtensionTypes": [ "link" ]
+      },
+      {
+        "id": "org.openmrs.module.ehrreports.integrationdataexports",
+        "description": "Data Exports for Integrations",
+        "supportedExtensionTypes": [ "link" ]
+      }
+    ],
+    "extensions": [
+      {
+        "id": "ehrreports.homepageLink",
+        "extensionPointId": "org.openmrs.referenceapplication.homepageLink",
+        "type": "link",
+        "label": "Other Reports",
+        "url": "ehrreports/reports.page",
+        "icon": "icon-book",
+        "order": 110,
+        "requiredPrivilege": ""
+      },
+      {
+        "id": "MOH 705",
+        "extensionPointId": "org.openmrs.module.ehrreports.reports.monthly",
+        "type": "link",
+        "label": "MOH 705",
+        "url": "reportingui/runReport.page?reportDefinition=8e6c82d4-8f73-11ea-b22a-df41ade62345",
+        "order": 5,
+        "requiredPrivilege": ""
+      },
+      {
+        "id": "MOH 717",
+        "extensionPointId": "org.openmrs.module.ehrreports.reports.monthly",
+        "type": "link",
+        "label": "MOH 717",
+        "url": "reportingui/runReport.page?reportDefinition=9ce0f968-8f72-11ea-a3fc-077b8af7e776",
+        "order": 10,
+        "requiredPrivilege": ""
+      }
+    ]
+  }
+]
