@@ -11,7 +11,24 @@
  */
 package org.openmrs.module.ehrreports.reporting.library.cohorts;
 
+import org.openmrs.module.ehrreports.reporting.library.queries.moh717.Moh717Queries;
+import org.openmrs.module.reporting.cohort.definition.CohortDefinition;
+import org.openmrs.module.reporting.cohort.definition.SqlCohortDefinition;
+import org.openmrs.module.reporting.evaluation.parameter.Parameter;
 import org.springframework.stereotype.Component;
 
+import java.util.Date;
+
 @Component
-public class Moh717CohortQueries {}
+public class Moh717CohortQueries {
+	
+	public CohortDefinition getOutPatients() {
+		
+		SqlCohortDefinition cd = new SqlCohortDefinition();
+		cd.setName("Outpatient");
+		cd.addParameter(new Parameter("startDate", "StartDate", Date.class));
+		cd.addParameter(new Parameter("endDate", "End Date", Date.class));
+		cd.setQuery(Moh717Queries.getOutPatientClinicPatients(5, 6));
+		return cd;
+	}
+}

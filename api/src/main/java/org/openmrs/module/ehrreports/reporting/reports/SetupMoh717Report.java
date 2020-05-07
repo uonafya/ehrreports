@@ -36,7 +36,7 @@ public class SetupMoh717Report extends EhrDataExportManager {
 	
 	@Override
 	public String getDescription() {
-		return "MOH 717 work load Indicators";
+		return "MOH 717 MONTHLY WORKLOAD REPORT FOR HOSPITALS - MOH 717";
 	}
 	
 	@Override

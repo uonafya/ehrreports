@@ -20,9 +20,10 @@ public class Moh717Queries {
 	 * 
 	 * @return String
 	 */
-	public static String nameOfWhatIsBeingReturned() {
-		String sql = "";
+	public static String getOutPatientClinicPatients(int encounter1, int encounter2) {
+		String sql = " SELECT p.patient_id FROM patient p INNER JOIN encounter e ON p.patient_id=e.patient_id "
+		        + " WHERE e.encounter_type in(%d, %d) AND e.encounter_datetime BETWEEN :startDate AND :endDate ";
 		
-		return sql;
+		return String.format(sql, encounter1, encounter2);
 	}
 }
