@@ -50,7 +50,7 @@ public class Moh717Dataset extends BaseDataSet {
 		// Tie dimensions to this data definition
 		dsd.addDimension("gender", EhrReportUtils.map(ehrCommonDimension.gender(), ""));
 		dsd.addDimension("age", EhrReportUtils.map(ehrCommonDimension.age(ageDimensionCohort), "effectiveDate=${endDate}"));
-		dsd.addDimension("state", EhrReportUtils.map(ehrCommonDimension.state(), ""));
+		dsd.addDimension("state", EhrReportUtils.map(ehrCommonDimension.state(), "endDate=${endDate}"));
 		// add your dataset here, construct it here
 		addRow(
 		    dsd,
@@ -66,23 +66,23 @@ public class Moh717Dataset extends BaseDataSet {
 	private List<ColumnParameters> getAdultChildrenColumns() {
 		// Male
 		ColumnParameters over5YearsMaleN = new ColumnParameters("over5YMN", "Over 5 Years Male - NEW",
-		        "gender=M|age=>5|state=NEW", "01");
+		        "gender=M|age=5+|state=NEW", "01");
 		ColumnParameters over5YearsMaleR = new ColumnParameters("over5YMR", "Over 5 Years Male - REVISIT",
-		        "gender=M|age=>5|state=RVT", "02");
+		        "gender=M|age=5+|state=RVT", "02");
 		ColumnParameters under5YearsMaleN = new ColumnParameters("under5YMN", "Under 5 Years Male - NEW",
-		        "gender=M|age=5+|state=NEW", "03");
+		        "gender=M|age=<5|state=NEW", "03");
 		ColumnParameters under5YearsMaleR = new ColumnParameters("under5YMR", "Under 5 Years Male - REVISIT",
-		        "gender=M|age=5+|state=RVT", "04");
+		        "gender=M|age=<5|state=RVT", "04");
 		ColumnParameters totalMale = new ColumnParameters("totalM", "Total Male", "gender=M", "05");
 		//Female
 		ColumnParameters over5YearsFemaleN = new ColumnParameters("over5YFN", "Over 5 Years Female - NEW",
-		        "gender=F|age=>5|state=NEW", "06");
+		        "gender=F|age=5+|state=NEW", "06");
 		ColumnParameters over5YearsFemaleR = new ColumnParameters("over5YFR", "Over 5 Years Female - REVISIT",
-		        "gender=F|age=>5|state=RVT", "07");
+		        "gender=F|age=5+|state=RVT", "07");
 		ColumnParameters under5YearsFemaleN = new ColumnParameters("under5YFN", "Under 5 Years Female - NEW",
-		        "gender=F|age=5+|state=NEW", "08");
+		        "gender=F|age=<5|state=NEW", "08");
 		ColumnParameters under5YearsFemaleR = new ColumnParameters("under5YFR", "Under 5 Years Female - REVISIT",
-		        "gender=F|age=5+|state=RVT", "09");
+		        "gender=F|age=<5|state=RVT", "09");
 		ColumnParameters totalFemale = new ColumnParameters("totalF", "Total Female", "gender=F", "10");
 		return Arrays.asList(over5YearsMaleN, over5YearsMaleR, under5YearsMaleN, under5YearsMaleR, totalMale,
 		    over5YearsFemaleN, over5YearsFemaleR, under5YearsFemaleN, under5YearsFemaleR, totalFemale);

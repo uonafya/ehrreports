@@ -15,9 +15,12 @@ import org.openmrs.module.ehrreports.reporting.library.cohorts.GenderCohortQueri
 import org.openmrs.module.ehrreports.reporting.library.cohorts.Moh717CohortQueries;
 import org.openmrs.module.ehrreports.reporting.utils.EhrReportConstants;
 import org.openmrs.module.ehrreports.reporting.utils.EhrReportUtils;
+import org.openmrs.module.reporting.evaluation.parameter.Parameter;
 import org.openmrs.module.reporting.indicator.dimension.CohortDefinitionDimension;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
+import java.util.Date;
 
 @Component
 public class EhrCommonDimension {
@@ -51,8 +54,8 @@ public class EhrCommonDimension {
 		dim.setParameters(ageDimensionCohort.getParameters());
 		dim.setName("age dimension");
 		
-		dim.addCohortDefinition("<5", ageDimensionCohort.createXtoYAgeCohort("Children under 5 years", null, 4));
-		dim.addCohortDefinition("5+", ageDimensionCohort.createXtoYAgeCohort("Over 5 years", 5, null));
+		dim.addCohortDefinition("<5", ageDimensionCohort.createXtoYAgeCohort("Children under 5 years", 0, 4));
+		dim.addCohortDefinition("5+", ageDimensionCohort.createXtoYAgeCohort("Over 5 years", 5, 200));
 		return dim;
 	}
 	
@@ -64,10 +67,11 @@ public class EhrCommonDimension {
 	public CohortDefinitionDimension state() {
 		CohortDefinitionDimension dim = new CohortDefinitionDimension();
 		dim.setName("Patient State");
-		dim.addCohortDefinition("NEW",
-		    EhrReportUtils.map(moh717CohortQueries.getPatientStates(EhrReportConstants.OccurenceStates.NEW), ""));
-		dim.addCohortDefinition("RVT",
-		    EhrReportUtils.map(moh717CohortQueries.getPatientStates(EhrReportConstants.OccurenceStates.REVISIT), ""));
+		dim.addParameter(new Parameter("endDate", "End Date", Date.class));
+		dim.addCohortDefinition("NEW", EhrReportUtils.map(
+		    moh717CohortQueries.getPatientStates(EhrReportConstants.OccurenceStates.NEW), "onOrBefore=${endDate}"));
+		dim.addCohortDefinition("RVT", EhrReportUtils.map(
+		    moh717CohortQueries.getPatientStates(EhrReportConstants.OccurenceStates.REVISIT), "onOrBefore=${endDate}"));
 		return dim;
 	}
 }
