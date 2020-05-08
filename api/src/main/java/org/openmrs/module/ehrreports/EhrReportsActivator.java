@@ -26,59 +26,57 @@ import org.openmrs.module.ehrreports.reporting.EhrReportInitializer;
  * This class contains the logic that is run every time this module is either started or shutdown
  */
 public class EhrReportsActivator extends BaseModuleActivator {
-	
-	private Log log = LogFactory.getLog(this.getClass());
-	
-	private EhrReportInitializer reportsInitializer = new EhrReportInitializer();
-	
-	@Override
-	public void contextRefreshed() {
-		log.debug("EHR Reports Module refreshed");
-	}
-	
-	@Override
-	public void willRefreshContext() {
-		log.debug("Refreshing EHR Reports Module");
-	}
-	
-	@Override
-	public void willStart() {
-		log.debug("Starting EHR Reports Module");
-	}
-	
-	@Override
-	public void willStop() {
-		log.debug("Stopping EHR Reports Module");
-		try {
-			reportsInitializer.purgeReports();
-			log.debug("EHR Reports purged");
-		}
-		catch (Exception e) {
-			log.error("An error occured trying to purge EHR reports", e);
-		}
-	}
-	
-	/** @see #started() */
-	public void started() {
-		AppFrameworkService appFrameworkService = Context.getService(AppFrameworkService.class);
-		// disabling the reporting UI app to provide our own custom ones
-		appFrameworkService.disableApp("reportingui.reports");
-		try {
-			reportsInitializer.initializeReports();
-			log.info("Started EHR Reports Module");
-		}
-		catch (ConfigurableMetadataLookupException e) {
-			Context.getAlertService().notifySuperUsers("ehrreports.startuperror.globalproperties", null, e.getMessage());
-			throw e;
-		}
-		catch (Exception e) {
-			Context.getAlertService().notifySuperUsers("ehrreports.startuperror.general", null);
-			throw e;
-		}
-	}
-	
-	/** @see #stopped() */
-	public void stopped() {
-		log.info("Stopped EHR Reports Module");
-	}
+
+  private Log log = LogFactory.getLog(this.getClass());
+
+  private EhrReportInitializer reportsInitializer = new EhrReportInitializer();
+
+  @Override
+  public void contextRefreshed() {
+    log.debug("EHR Reports Module refreshed");
+  }
+
+  @Override
+  public void willRefreshContext() {
+    log.debug("Refreshing EHR Reports Module");
+  }
+
+  @Override
+  public void willStart() {
+    log.debug("Starting EHR Reports Module");
+  }
+
+  @Override
+  public void willStop() {
+    log.debug("Stopping EHR Reports Module");
+    try {
+      reportsInitializer.purgeReports();
+      log.debug("EHR Reports purged");
+    } catch (Exception e) {
+      log.error("An error occured trying to purge EHR reports", e);
+    }
+  }
+
+  /** @see #started() */
+  public void started() {
+    AppFrameworkService appFrameworkService = Context.getService(AppFrameworkService.class);
+    // disabling the reporting UI app to provide our own custom ones
+    appFrameworkService.disableApp("reportingui.reports");
+    try {
+      reportsInitializer.initializeReports();
+      log.info("Started EHR Reports Module");
+    } catch (ConfigurableMetadataLookupException e) {
+      Context.getAlertService()
+          .notifySuperUsers("ehrreports.startuperror.globalproperties", null, e.getMessage());
+      throw e;
+    } catch (Exception e) {
+      Context.getAlertService().notifySuperUsers("ehrreports.startuperror.general", null);
+      throw e;
+    }
+  }
+
+  /** @see #stopped() */
+  public void stopped() {
+    log.info("Stopped EHR Reports Module");
+  }
 }

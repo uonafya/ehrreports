@@ -19,6 +19,6 @@ import org.springframework.stereotype.Component;
 /** Contains module's config. */
 @Component("ehrreports.EhrReportsConfig")
 public class EhrReportsConfig {
-	
-	public static final String MODULE_PRIVILEGE = "EHR Reports Privilege";
+
+  public static final String MODULE_PRIVILEGE = "EHR Reports Privilege";
 }

@@ -26,47 +26,53 @@ import org.openmrs.calculation.result.CalculationResultMap;
 import org.openmrs.calculation.result.ResultUtil;
 
 /** Abstract base class for patient calculations */
-public abstract class AbstractPatientCalculation extends BaseCalculation implements PatientCalculation {
-	
-	/**
-	 * Filters a calculation result map to reduce results to booleans
-	 * 
-	 * @param results the result map
-	 * @return the reduced result map
-	 */
-	protected static CalculationResultMap passing(CalculationResultMap results) {
-		CalculationResultMap ret = new CalculationResultMap();
-		for (Map.Entry<Integer, CalculationResult> e : results.entrySet()) {
-			ret.put(e.getKey(), new BooleanResult(ResultUtil.isTrue(e.getValue()), null));
-		}
-		return ret;
-	}
-	
-	/**
-	 * Evaluates a given calculation on each patient
-	 * 
-	 * @param calculation the calculation
-	 * @param cohort the patient ids
-	 * @param calculationContext the calculation context
-	 * @param parameterValues the parameter values
-	 * @return the calculation result map
-	 */
-	protected static CalculationResultMap calculate(PatientCalculation calculation, Collection<Integer> cohort,
-	        Map<String, Object> parameterValues, PatientCalculationContext calculationContext) {
-		return Context.getService(PatientCalculationService.class).evaluate(cohort, calculation, parameterValues,
-		    calculationContext);
-	}
-	
-	/**
-	 * Evaluates a given calculation on each patient
-	 * 
-	 * @param calculation the calculation
-	 * @param cohort the patient ids
-	 * @param calculationContext the calculation context
-	 * @return the calculation result map
-	 */
-	protected static CalculationResultMap calculate(PatientCalculation calculation, Collection<Integer> cohort,
-	        PatientCalculationContext calculationContext) {
-		return calculate(calculation, cohort, new HashMap<String, Object>(), calculationContext);
-	}
+public abstract class AbstractPatientCalculation extends BaseCalculation
+    implements PatientCalculation {
+
+  /**
+   * Filters a calculation result map to reduce results to booleans
+   *
+   * @param results the result map
+   * @return the reduced result map
+   */
+  protected static CalculationResultMap passing(CalculationResultMap results) {
+    CalculationResultMap ret = new CalculationResultMap();
+    for (Map.Entry<Integer, CalculationResult> e : results.entrySet()) {
+      ret.put(e.getKey(), new BooleanResult(ResultUtil.isTrue(e.getValue()), null));
+    }
+    return ret;
+  }
+
+  /**
+   * Evaluates a given calculation on each patient
+   *
+   * @param calculation the calculation
+   * @param cohort the patient ids
+   * @param calculationContext the calculation context
+   * @param parameterValues the parameter values
+   * @return the calculation result map
+   */
+  protected static CalculationResultMap calculate(
+      PatientCalculation calculation,
+      Collection<Integer> cohort,
+      Map<String, Object> parameterValues,
+      PatientCalculationContext calculationContext) {
+    return Context.getService(PatientCalculationService.class)
+        .evaluate(cohort, calculation, parameterValues, calculationContext);
+  }
+
+  /**
+   * Evaluates a given calculation on each patient
+   *
+   * @param calculation the calculation
+   * @param cohort the patient ids
+   * @param calculationContext the calculation context
+   * @return the calculation result map
+   */
+  protected static CalculationResultMap calculate(
+      PatientCalculation calculation,
+      Collection<Integer> cohort,
+      PatientCalculationContext calculationContext) {
+    return calculate(calculation, cohort, new HashMap<String, Object>(), calculationContext);
+  }
 }

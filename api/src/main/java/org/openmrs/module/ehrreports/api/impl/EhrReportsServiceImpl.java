@@ -19,17 +19,17 @@ import org.openmrs.module.ehrreports.api.EhrReportsService;
 import org.openmrs.module.ehrreports.api.dao.EhrReportsDao;
 
 public class EhrReportsServiceImpl extends BaseOpenmrsService implements EhrReportsService {
-	
-	private EhrReportsDao dao;
-	
-	/** Injected in moduleApplicationContext.xml */
-	public void setDao(EhrReportsDao dao) {
-		this.dao = dao;
-	}
-	
-	@Override
-	public void purgeReportDesignIfExists(String uuid) {
-		String serializedObjectUuid = dao.getSerializedObjectByReportDesignUUID(uuid);
-		dao.purgeReportDesign(uuid, serializedObjectUuid);
-	}
+
+  private EhrReportsDao dao;
+
+  /** Injected in moduleApplicationContext.xml */
+  public void setDao(EhrReportsDao dao) {
+    this.dao = dao;
+  }
+
+  @Override
+  public void purgeReportDesignIfExists(String uuid) {
+    String serializedObjectUuid = dao.getSerializedObjectByReportDesignUUID(uuid);
+    dao.purgeReportDesign(uuid, serializedObjectUuid);
+  }
 }

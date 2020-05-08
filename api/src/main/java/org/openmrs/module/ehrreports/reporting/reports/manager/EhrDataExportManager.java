@@ -31,53 +31,58 @@ import org.openmrs.util.OpenmrsClassLoader;
 
 /** Excel Data Export Manager for EPTS reports */
 public abstract class EhrDataExportManager extends EhrReportManager {
-	
-	/** @return the uuid for the report design for exporting to Excel */
-	public abstract String getExcelDesignUuid();
-	
-	@Override
-	public List<ReportDesign> constructReportDesigns(ReportDefinition reportDefinition) {
-		List<ReportDesign> l = new ArrayList<ReportDesign>();
-		ReportDesign excelDesign = ReportManagerUtil.createExcelDesign(getExcelDesignUuid(), reportDefinition);
-		l.add(excelDesign);
-		return l;
-	}
-	
-	/**
-	 * Auto generated method comment
-	 * 
-	 * @param reportDefinition the reportDesign to set
-	 * @param resourceName
-	 * @param reportDesignName
-	 * @param properties
-	 * @return
-	 * @throws IOException
-	 */
-	public ReportDesign createXlsReportDesign(ReportDefinition reportDefinition, String resourceName,
-	        String reportDesignName, String excelDesignUuid, Map<? extends Object, ? extends Object> properties)
-	        throws IOException {
-		
-		EhrReportsService eptsReportsService = Context.getService(EhrReportsService.class);
-		eptsReportsService.purgeReportDesignIfExists(excelDesignUuid);
-		
-		ReportDesignResource resource = new ReportDesignResource();
-		resource.setName(resourceName);
-		resource.setExtension("xls");
-		InputStream is = OpenmrsClassLoader.getInstance().getResourceAsStream(resourceName);
-		resource.setContents(IOUtils.toByteArray(is));
-		final ReportDesign design = new ReportDesign();
-		design.setName(reportDesignName);
-		design.setReportDefinition(reportDefinition);
-		design.setRendererType(ExcelTemplateRenderer.class);
-		design.addResource(resource);
-		if (properties != null) {
-			design.getProperties().putAll(properties);
-		}
-		if (excelDesignUuid != null && excelDesignUuid.length() > 1) {
-			design.setUuid(excelDesignUuid);
-		}
-		resource.setReportDesign(design);
-		
-		return design;
-	}
+
+  /** @return the uuid for the report design for exporting to Excel */
+  public abstract String getExcelDesignUuid();
+
+  @Override
+  public List<ReportDesign> constructReportDesigns(ReportDefinition reportDefinition) {
+    List<ReportDesign> l = new ArrayList<ReportDesign>();
+    ReportDesign excelDesign =
+        ReportManagerUtil.createExcelDesign(getExcelDesignUuid(), reportDefinition);
+    l.add(excelDesign);
+    return l;
+  }
+
+  /**
+   * Auto generated method comment
+   *
+   * @param reportDefinition the reportDesign to set
+   * @param resourceName
+   * @param reportDesignName
+   * @param properties
+   * @return
+   * @throws IOException
+   */
+  public ReportDesign createXlsReportDesign(
+      ReportDefinition reportDefinition,
+      String resourceName,
+      String reportDesignName,
+      String excelDesignUuid,
+      Map<? extends Object, ? extends Object> properties)
+      throws IOException {
+
+    EhrReportsService eptsReportsService = Context.getService(EhrReportsService.class);
+    eptsReportsService.purgeReportDesignIfExists(excelDesignUuid);
+
+    ReportDesignResource resource = new ReportDesignResource();
+    resource.setName(resourceName);
+    resource.setExtension("xls");
+    InputStream is = OpenmrsClassLoader.getInstance().getResourceAsStream(resourceName);
+    resource.setContents(IOUtils.toByteArray(is));
+    final ReportDesign design = new ReportDesign();
+    design.setName(reportDesignName);
+    design.setReportDefinition(reportDefinition);
+    design.setRendererType(ExcelTemplateRenderer.class);
+    design.addResource(resource);
+    if (properties != null) {
+      design.getProperties().putAll(properties);
+    }
+    if (excelDesignUuid != null && excelDesignUuid.length() > 1) {
+      design.setUuid(excelDesignUuid);
+    }
+    resource.setReportDesign(design);
+
+    return design;
+  }
 }

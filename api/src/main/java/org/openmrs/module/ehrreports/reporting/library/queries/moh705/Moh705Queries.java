@@ -14,15 +14,15 @@
 package org.openmrs.module.ehrreports.reporting.library.queries.moh705;
 
 public class Moh705Queries {
-	
-	/**
-	 * put you first indicator query here
-	 * 
-	 * @return String
-	 */
-	public static String nameOfWhatIsBeingReturned() {
-		String sql = "";
-		
-		return sql;
-	}
+
+  /**
+   * put you first indicator query here
+   *
+   * @return String
+   */
+  public static String nameOfWhatIsBeingReturned() {
+    String sql = "";
+
+    return sql;
+  }
 }

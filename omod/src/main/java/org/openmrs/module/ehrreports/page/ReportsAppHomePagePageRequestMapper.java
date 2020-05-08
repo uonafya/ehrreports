@@ -25,28 +25,27 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class ReportsAppHomePagePageRequestMapper implements PageRequestMapper {
-	
-	protected final Log log = LogFactory.getLog(getClass());
-	
-	/**
-	 * Implementations should call {@link PageRequest#setProviderNameOverride(String)} and
-	 * {@link PageRequest#setPageNameOverride(String)}, and return true if they want to remap a
-	 * request, or return false if they didn't remap it.
-	 * 
-	 * @param request may have its providerNameOverride and pageNameOverride set
-	 * @return true if this page was mapped (by overriding the provider and/or page), false
-	 *         otherwise
-	 */
-	public boolean mapRequest(PageRequest request) {
-		if (request.getProviderName().equals("reportingui")) {
-			if (request.getPageName().equals("reportsapp/home")) {
-				// change to the custom reports page
-				request.setProviderNameOverride("ehrreports");
-				request.setPageNameOverride("reports");
-				log.info(request.toString());
-				return true;
-			}
-		}
-		return false;
-	}
+
+  protected final Log log = LogFactory.getLog(getClass());
+
+  /**
+   * Implementations should call {@link PageRequest#setProviderNameOverride(String)} and {@link
+   * PageRequest#setPageNameOverride(String)}, and return true if they want to remap a request, or
+   * return false if they didn't remap it.
+   *
+   * @param request may have its providerNameOverride and pageNameOverride set
+   * @return true if this page was mapped (by overriding the provider and/or page), false otherwise
+   */
+  public boolean mapRequest(PageRequest request) {
+    if (request.getProviderName().equals("reportingui")) {
+      if (request.getPageName().equals("reportsapp/home")) {
+        // change to the custom reports page
+        request.setProviderNameOverride("ehrreports");
+        request.setPageNameOverride("reports");
+        log.info(request.toString());
+        return true;
+      }
+    }
+    return false;
+  }
 }

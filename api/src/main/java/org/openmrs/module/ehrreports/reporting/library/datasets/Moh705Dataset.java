@@ -22,23 +22,24 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Moh705Dataset extends BaseDataSet {
-	
-	@Autowired
-	private EhrCommonDimension ehrCommonDimension;
-	
-	@Autowired
-	@Qualifier("commonAgeDimensionCohort")
-	private AgeDimensionCohortInterface ageDimensionCohort;
-	
-	public DataSetDefinition constructMoh705Dataset() {
-		
-		CohortIndicatorDataSetDefinition dsd = new CohortIndicatorDataSetDefinition();
-		dsd.setName("MOH 705 Data Set");
-		dsd.addParameters(getParameters());
-		// Tie dimensions to this data definition
-		dsd.addDimension("gender", EhrReportUtils.map(ehrCommonDimension.gender(), ""));
-		dsd.addDimension("age", EhrReportUtils.map(ehrCommonDimension.age(ageDimensionCohort), "effectiveDate=${endDate}"));
-		// add your dataset here, construct it here
-		return dsd;
-	}
+
+  @Autowired private EhrCommonDimension ehrCommonDimension;
+
+  @Autowired
+  @Qualifier("commonAgeDimensionCohort")
+  private AgeDimensionCohortInterface ageDimensionCohort;
+
+  public DataSetDefinition constructMoh705Dataset() {
+
+    CohortIndicatorDataSetDefinition dsd = new CohortIndicatorDataSetDefinition();
+    dsd.setName("MOH 705 Data Set");
+    dsd.addParameters(getParameters());
+    // Tie dimensions to this data definition
+    dsd.addDimension("gender", EhrReportUtils.map(ehrCommonDimension.gender(), ""));
+    dsd.addDimension(
+        "age",
+        EhrReportUtils.map(ehrCommonDimension.age(ageDimensionCohort), "effectiveDate=${endDate}"));
+    // add your dataset here, construct it here
+    return dsd;
+  }
 }

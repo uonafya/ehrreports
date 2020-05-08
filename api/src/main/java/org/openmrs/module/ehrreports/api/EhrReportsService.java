@@ -21,6 +21,6 @@ import org.openmrs.api.OpenmrsService;
  * moduleApplicationContext.xml on how it is wired up.
  */
 public interface EhrReportsService extends OpenmrsService {
-	
-	void purgeReportDesignIfExists(String uuid);
+
+  void purgeReportDesignIfExists(String uuid);
 }

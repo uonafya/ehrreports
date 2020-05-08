@@ -14,16 +14,32 @@
 package org.openmrs.module.ehrreports.reporting.library.queries.moh717;
 
 public class Moh717Queries {
-	
-	/**
-	 * put you first indicator query here
-	 * 
-	 * @return String
-	 */
-	public static String getOutPatientClinicPatients(int encounter1, int encounter2) {
-		String sql = " SELECT p.patient_id FROM patient p INNER JOIN encounter e ON p.patient_id=e.patient_id "
-		        + " WHERE e.encounter_type in(%d, %d) AND e.encounter_datetime BETWEEN :startDate AND :endDate ";
-		
-		return String.format(sql, encounter1, encounter2);
-	}
+
+  /**
+   * put you first indicator query here
+   *
+   * @return String
+   */
+  public static String getOutPatientClinicPatients(
+      int ADULTINITIAL_OUTPATIENT,
+      int ADULTRETURN_OUTPATIENT,
+      int PEDSINITIAL_OUTPATIENT,
+      int PEDSRETURN_OUTPATIENT,
+      int REGINITIAL_OUTPATIENT,
+      int REGREVISIT_OUTPATIENT,
+      int OPDENCOUNTER_OUTPATIENT) {
+    String sql =
+        " SELECT p.patient_id FROM patient p INNER JOIN encounter e ON p.patient_id=e.patient_id "
+            + " WHERE e.encounter_type in(%d, %d, %d, %d, %d, %d, %d) AND e.encounter_datetime BETWEEN :startDate AND :endDate AND p.voided=0 AND e.voided=0";
+
+    return String.format(
+        sql,
+        ADULTINITIAL_OUTPATIENT,
+        ADULTRETURN_OUTPATIENT,
+        PEDSINITIAL_OUTPATIENT,
+        PEDSRETURN_OUTPATIENT,
+        REGINITIAL_OUTPATIENT,
+        REGREVISIT_OUTPATIENT,
+        OPDENCOUNTER_OUTPATIENT);
+  }
 }

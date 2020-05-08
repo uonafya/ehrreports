@@ -34,7 +34,7 @@ org/openmrs/module/ehrreports/reporting/library/cohorts/GenericCohortQueries.cla
 org/openmrs/module/ehrreports/reporting/library/datasets/BaseDataSet.class
 org/openmrs/module/ehrreports/reporting/calculation/EhrCalculationService.class
 org/openmrs/module/ehrreports/reporting/cohort/definition/CalculationCohortDefinition.class
-org/openmrs/module/ehrreports/metadata/HivMetadata.class
+org/openmrs/module/ehrreports/metadata/OutpatientMetadata.class
 org/openmrs/module/ehrreports/api/EhrReportsService.class
 org/openmrs/module/ehrreports/reporting/EhrReportInitializer.class
 org/openmrs/module/ehrreports/reporting/reports/manager/EhrReportManager.class

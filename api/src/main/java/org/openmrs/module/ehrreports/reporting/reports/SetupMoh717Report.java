@@ -15,62 +15,61 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class SetupMoh717Report extends EhrDataExportManager {
-	
-	@Autowired
-	private Moh717Dataset moh717Dataset;
-	
-	@Override
-	public String getExcelDesignUuid() {
-		return "8e26e9aa-8f72-11ea-8404-0be251dd2c08";
-	}
-	
-	@Override
-	public String getUuid() {
-		return "9ce0f968-8f72-11ea-a3fc-077b8af7e776";
-	}
-	
-	@Override
-	public String getName() {
-		return "MOH 717 Report";
-	}
-	
-	@Override
-	public String getDescription() {
-		return "MOH 717 MONTHLY WORKLOAD REPORT FOR HOSPITALS - MOH 717";
-	}
-	
-	@Override
-	public ReportDefinition constructReportDefinition() {
-		ReportDefinition rd = new ReportDefinition();
-		
-		rd.setUuid(getUuid());
-		rd.setName(getName());
-		rd.setParameters(moh717Dataset.getParameters());
-		rd.setDescription(getDescription());
-		// tie the dataset here, you can add more than one data set definition
-		rd.addDataSetDefinition("A", Mapped.mapStraightThrough(moh717Dataset.constructMoh717Dataset()));
-		return rd;
-	}
-	
-	@Override
-	public String getVersion() {
-		return "1.0-SNAPSHOT";
-	}
-	
-	@Override
-	public List<ReportDesign> constructReportDesigns(ReportDefinition reportDefinition) {
-		ReportDesign reportDesign = null;
-		try {
-			reportDesign = createXlsReportDesign(reportDefinition, "MOH_717.xls", "MOH717-Report", getExcelDesignUuid(),
-			    null);
-			Properties props = new Properties();
-			props.put("sortWeight", "5000");
-			reportDesign.setProperties(props);
-		}
-		catch (IOException e) {
-			throw new ReportingException(e.toString());
-		}
-		
-		return Arrays.asList(reportDesign);
-	}
+
+  @Autowired private Moh717Dataset moh717Dataset;
+
+  @Override
+  public String getExcelDesignUuid() {
+    return "8e26e9aa-8f72-11ea-8404-0be251dd2c08";
+  }
+
+  @Override
+  public String getUuid() {
+    return "9ce0f968-8f72-11ea-a3fc-077b8af7e776";
+  }
+
+  @Override
+  public String getName() {
+    return "MOH 717 Report";
+  }
+
+  @Override
+  public String getDescription() {
+    return "MOH 717 MONTHLY WORKLOAD REPORT FOR HOSPITALS - MOH 717";
+  }
+
+  @Override
+  public ReportDefinition constructReportDefinition() {
+    ReportDefinition rd = new ReportDefinition();
+
+    rd.setUuid(getUuid());
+    rd.setName(getName());
+    rd.setParameters(moh717Dataset.getParameters());
+    rd.setDescription(getDescription());
+    // tie the dataset here, you can add more than one data set definition
+    rd.addDataSetDefinition("A", Mapped.mapStraightThrough(moh717Dataset.constructMoh717Dataset()));
+    return rd;
+  }
+
+  @Override
+  public String getVersion() {
+    return "1.0-SNAPSHOT";
+  }
+
+  @Override
+  public List<ReportDesign> constructReportDesigns(ReportDefinition reportDefinition) {
+    ReportDesign reportDesign = null;
+    try {
+      reportDesign =
+          createXlsReportDesign(
+              reportDefinition, "MOH_717.xls", "MOH717-Report", getExcelDesignUuid(), null);
+      Properties props = new Properties();
+      props.put("sortWeight", "5000");
+      reportDesign.setProperties(props);
+    } catch (IOException e) {
+      throw new ReportingException(e.toString());
+    }
+
+    return Arrays.asList(reportDesign);
+  }
 }

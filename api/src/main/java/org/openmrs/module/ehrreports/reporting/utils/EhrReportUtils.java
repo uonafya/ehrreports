@@ -41,63 +41,65 @@ import org.openmrs.module.reporting.report.manager.ReportManagerUtil;
 
 /** Epts Reports module utilities */
 public class EhrReportUtils {
-	
-	/**
-	 * Purges a Report Definition from the database
-	 * 
-	 * @param reportManager the Report Definition
-	 */
-	public static void purgeReportDefinition(ReportManager reportManager) {
-		ReportDefinition findDefinition = findReportDefinition(reportManager.getUuid());
-		ReportDefinitionService reportService = (ReportDefinitionService) Context.getService(ReportDefinitionService.class);
-		if (findDefinition != null) {
-			reportService.purgeDefinition(findDefinition);
-			
-			// Purge Global property used to track version of report definition
-			String gpName = "reporting.reportManager." + reportManager.getUuid() + ".version";
-			GlobalProperty gp = Context.getAdministrationService().getGlobalPropertyObject(gpName);
-			if (gp != null) {
-				Context.getAdministrationService().purgeGlobalProperty(gp);
-			}
-		}
-	}
-	
-	/**
-	 * Returns the Report Definition matching the provided uuid.
-	 * 
-	 * @param uuid Report Uuid
-	 * @throws RuntimeException a RuntimeException if the Report Definition can't be found
-	 * @return Report Definition object
-	 */
-	public static ReportDefinition findReportDefinition(String uuid) {
-		ReportDefinitionService reportService = (ReportDefinitionService) Context.getService(ReportDefinitionService.class);
-		return reportService.getDefinitionByUuid(uuid);
-	}
-	
-	/**
-	 * Setup a Report Definition in a database
-	 * 
-	 * @param reportManager the Report Definition
-	 */
-	public static void setupReportDefinition(ReportManager reportManager) {
-		ReportManagerUtil.setupReport(reportManager);
-	}
-	
-	/**
-	 * @param parameterizable
-	 * @param mappings
-	 * @param <T>
-	 * @return
-	 */
-	public static <T extends Parameterizable> Mapped<T> map(T parameterizable, String mappings) {
-		if (parameterizable == null) {
-			throw new IllegalArgumentException("Parameterizable cannot be null");
-		}
-		String m = mappings != null ? mappings : ""; // probably not necessary, just to be safe
-		return new Mapped<T>(parameterizable, ParameterizableUtil.createParameterMappings(m));
-	}
-	
-	public static String mergeParameterMappings(String... parameters) {
+
+  /**
+   * Purges a Report Definition from the database
+   *
+   * @param reportManager the Report Definition
+   */
+  public static void purgeReportDefinition(ReportManager reportManager) {
+    ReportDefinition findDefinition = findReportDefinition(reportManager.getUuid());
+    ReportDefinitionService reportService =
+        (ReportDefinitionService) Context.getService(ReportDefinitionService.class);
+    if (findDefinition != null) {
+      reportService.purgeDefinition(findDefinition);
+
+      // Purge Global property used to track version of report definition
+      String gpName = "reporting.reportManager." + reportManager.getUuid() + ".version";
+      GlobalProperty gp = Context.getAdministrationService().getGlobalPropertyObject(gpName);
+      if (gp != null) {
+        Context.getAdministrationService().purgeGlobalProperty(gp);
+      }
+    }
+  }
+
+  /**
+   * Returns the Report Definition matching the provided uuid.
+   *
+   * @param uuid Report Uuid
+   * @throws RuntimeException a RuntimeException if the Report Definition can't be found
+   * @return Report Definition object
+   */
+  public static ReportDefinition findReportDefinition(String uuid) {
+    ReportDefinitionService reportService =
+        (ReportDefinitionService) Context.getService(ReportDefinitionService.class);
+    return reportService.getDefinitionByUuid(uuid);
+  }
+
+  /**
+   * Setup a Report Definition in a database
+   *
+   * @param reportManager the Report Definition
+   */
+  public static void setupReportDefinition(ReportManager reportManager) {
+    ReportManagerUtil.setupReport(reportManager);
+  }
+
+  /**
+   * @param parameterizable
+   * @param mappings
+   * @param <T>
+   * @return
+   */
+  public static <T extends Parameterizable> Mapped<T> map(T parameterizable, String mappings) {
+    if (parameterizable == null) {
+      throw new IllegalArgumentException("Parameterizable cannot be null");
+    }
+    String m = mappings != null ? mappings : ""; // probably not necessary, just to be safe
+    return new Mapped<T>(parameterizable, ParameterizableUtil.createParameterMappings(m));
+  }
+
+  public static String mergeParameterMappings(String... parameters) {
     if (parameters == null || parameters.length == 0) {
       throw new ReportingException("parameters are required");
     }
@@ -107,32 +109,34 @@ public class EhrReportUtils {
     }
     return StringUtils.join(params, ",");
   }
-	
-	public static String removeMissingParameterMappingsFromCohortDefintion(CohortDefinition definition, String mappings) {
-		if (definition == null || StringUtils.isEmpty(mappings)) {
-			return mappings;
-		}
-		Iterator<String> mappingsIterator = new LinkedHashSet<String>(Arrays.asList(mappings.split(","))).iterator();
-		LinkedHashSet<String> existingMappingsSet = new LinkedHashSet<String>();
-		while (mappingsIterator.hasNext()) {
-			String mapping = mappingsIterator.next();
-			for (Parameter p : definition.getParameters()) {
-				String paramMap = "${" + p.getName() + "}";
-				if (mapping.trim().endsWith(paramMap)) {
-					existingMappingsSet.add(mapping);
-				}
-			}
-		}
-		return StringUtils.join(existingMappingsSet, ",");
-	}
-	
-	/**
-	 * Get the configurable widget parameter to be passed on the reporting UI TODO: redesign this to
-	 * be more configurable
-	 * 
-	 * @return
-	 */
-	public static Parameter getProgramConfigurableParameter(Program program) {
+
+  public static String removeMissingParameterMappingsFromCohortDefintion(
+      CohortDefinition definition, String mappings) {
+    if (definition == null || StringUtils.isEmpty(mappings)) {
+      return mappings;
+    }
+    Iterator<String> mappingsIterator =
+        new LinkedHashSet<String>(Arrays.asList(mappings.split(","))).iterator();
+    LinkedHashSet<String> existingMappingsSet = new LinkedHashSet<String>();
+    while (mappingsIterator.hasNext()) {
+      String mapping = mappingsIterator.next();
+      for (Parameter p : definition.getParameters()) {
+        String paramMap = "${" + p.getName() + "}";
+        if (mapping.trim().endsWith(paramMap)) {
+          existingMappingsSet.add(mapping);
+        }
+      }
+    }
+    return StringUtils.join(existingMappingsSet, ",");
+  }
+
+  /**
+   * Get the configurable widget parameter to be passed on the reporting UI TODO: redesign this to
+   * be more configurable
+   *
+   * @return
+   */
+  public static Parameter getProgramConfigurableParameter(Program program) {
     List<ProgramWorkflowState> defaultStates = new ArrayList<>();
     for (ProgramWorkflowState p : program.getAllWorkflows().iterator().next().getStates()) {
       defaultStates.add(p);
@@ -147,24 +151,24 @@ public class EhrReportUtils {
     parameter.setDefaultValue(defaultStates);
     return parameter;
   }
-	
-	private static Properties getProgramProperties(Program program) {
-		Properties properties = new Properties();
-		properties.put("Program", program.getName());
-		return properties;
-	}
-	
-	public static String formatDateWithTime(Date date) {
-		
-		Format formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
-		
-		return formatter.format(date);
-	}
-	
-	public static String formatDate(Date date) {
-		
-		Format formatter = new SimpleDateFormat("dd-MM-yyyy");
-		
-		return formatter.format(date);
-	}
+
+  private static Properties getProgramProperties(Program program) {
+    Properties properties = new Properties();
+    properties.put("Program", program.getName());
+    return properties;
+  }
+
+  public static String formatDateWithTime(Date date) {
+
+    Format formatter = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
+
+    return formatter.format(date);
+  }
+
+  public static String formatDate(Date date) {
+
+    Format formatter = new SimpleDateFormat("dd-MM-yyyy");
+
+    return formatter.format(date);
+  }
 }

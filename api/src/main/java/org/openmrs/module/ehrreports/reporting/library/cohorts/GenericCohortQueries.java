@@ -27,39 +27,39 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class GenericCohortQueries {
-	
-	/**
-	 * Generic SQL cohort
-	 * 
-	 * @return CohortDefinition
-	 */
-	@DocumentedDefinition(value = "generalSql")
-	public CohortDefinition generalSql(String name, String query) {
-		SqlCohortDefinition sql = new SqlCohortDefinition();
-		sql.setName(name);
-		sql.addParameter(new Parameter("startDate", "Start Date", Date.class));
-		sql.addParameter(new Parameter("endDate", "End Date", Date.class));
-		sql.addParameter(new Parameter("location", "Facility", Location.class));
-		sql.setQuery(query);
-		return sql;
-	}
-	
-	/**
-	 * Generic InProgram Cohort
-	 * 
-	 * @param program the programs
-	 * @return the cohort definition
-	 */
-	public CohortDefinition createInProgram(String name, Program program) {
-		InProgramCohortDefinition inProgram = new InProgramCohortDefinition();
-		inProgram.setName(name);
-		
-		List<Program> programs = new ArrayList<Program>();
-		programs.add(program);
-		
-		inProgram.setPrograms(programs);
-		inProgram.addParameter(new Parameter("onOrBefore", "Before Date", Date.class));
-		inProgram.addParameter(new Parameter("locations", "Location", Location.class));
-		return inProgram;
-	}
+
+  /**
+   * Generic SQL cohort
+   *
+   * @return CohortDefinition
+   */
+  @DocumentedDefinition(value = "generalSql")
+  public CohortDefinition generalSql(String name, String query) {
+    SqlCohortDefinition sql = new SqlCohortDefinition();
+    sql.setName(name);
+    sql.addParameter(new Parameter("startDate", "Start Date", Date.class));
+    sql.addParameter(new Parameter("endDate", "End Date", Date.class));
+    sql.addParameter(new Parameter("location", "Facility", Location.class));
+    sql.setQuery(query);
+    return sql;
+  }
+
+  /**
+   * Generic InProgram Cohort
+   *
+   * @param program the programs
+   * @return the cohort definition
+   */
+  public CohortDefinition createInProgram(String name, Program program) {
+    InProgramCohortDefinition inProgram = new InProgramCohortDefinition();
+    inProgram.setName(name);
+
+    List<Program> programs = new ArrayList<Program>();
+    programs.add(program);
+
+    inProgram.setPrograms(programs);
+    inProgram.addParameter(new Parameter("onOrBefore", "Before Date", Date.class));
+    inProgram.addParameter(new Parameter("locations", "Location", Location.class));
+    return inProgram;
+  }
 }

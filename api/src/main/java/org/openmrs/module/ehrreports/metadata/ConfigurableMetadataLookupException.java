@@ -5,8 +5,8 @@ package org.openmrs.module.ehrreports.metadata;
  * global properties.
  */
 public class ConfigurableMetadataLookupException extends MetadataLookupException {
-	
-	public ConfigurableMetadataLookupException(String message) {
-		super(message);
-	}
+
+  public ConfigurableMetadataLookupException(String message) {
+    super(message);
+  }
 }

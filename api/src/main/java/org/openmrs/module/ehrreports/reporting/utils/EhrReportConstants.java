@@ -18,12 +18,27 @@ import org.openmrs.Program;
 import org.openmrs.ProgramWorkflowState;
 
 public final class EhrReportConstants {
-	
-	public enum OccurenceStates {
-		NEW, REVISIT
-	}
-	
-	public static List<Integer> getProgramWorkflowStateIds(Program program) {
+
+  public static final String ADULTINITIAL_OUTPATIENT = "8d5b27bc-c2cc-11de-8d13-0010c6dffd0f"; // 1
+
+  public static final String ADULTRETURN_OUTPATIENT = "8d5b2be0-c2cc-11de-8d13-0010c6dffd0f"; // 2
+
+  public static final String PEDSINITIAL_OUTPATIENT = "8d5b2dde-c2cc-11de-8d13-0010c6dffd0f"; // 3
+
+  public static final String PEDSRETURN_OUTPATIENT = "8d5b3108-c2cc-11de-8d13-0010c6dffd0f"; // 4
+
+  public static final String REGINITIAL_OUTPATIENT = "e9ab67ae-9210-4147-96ae-fb61f4d917ff"; // 5
+
+  public static final String REGREVISIT_OUTPATIENT = "5f5f2540-2de0-478d-abf6-842281aae102"; // 6
+
+  public static final String OPDENCOUNTER_OUTPATIENT = "0498d578-d228-4864-9178-14f367f42160"; // 9
+
+  public enum OccurenceStates {
+    NEW,
+    REVISIT
+  }
+
+  public static List<Integer> getProgramWorkflowStateIds(Program program) {
     List<Integer> defaultStateIds = new ArrayList<>();
     for (ProgramWorkflowState p : program.getAllWorkflows().iterator().next().getStates()) {
       defaultStateIds.add(p.getProgramWorkflowStateId());

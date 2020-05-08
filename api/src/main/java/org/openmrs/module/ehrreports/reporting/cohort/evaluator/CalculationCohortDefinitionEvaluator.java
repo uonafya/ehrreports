@@ -31,43 +31,48 @@ import org.openmrs.module.reporting.evaluation.EvaluationException;
 /** Evaluator for calculation based cohorts */
 @Handler(supports = CalculationCohortDefinition.class)
 public class CalculationCohortDefinitionEvaluator implements CohortDefinitionEvaluator {
-	
-	/**
-	 * @see org.openmrs.module.reporting.cohort.definition.evaluator.CohortDefinitionEvaluator#evaluate(org.openmrs.module.reporting.cohort.definition.CohortDefinition,
-	 *      org.openmrs.module.reporting.evaluation.EvaluationContext)
-	 */
-	@Override
-	public EvaluatedCohort evaluate(CohortDefinition cohortDefinition, EvaluationContext context) throws EvaluationException {
-		CalculationResultMap map = doCalculation(cohortDefinition, context);
-		
-		CalculationCohortDefinition cd = (CalculationCohortDefinition) cohortDefinition;
-		Set<Integer> passing = EhrCalculationUtils.patientsThatPass(map, cd.getWithResult(), cd.getWithResultFinder(),
-		    context);
-		
-		return new EvaluatedCohort(new Cohort(passing), cohortDefinition, context);
-	}
-	
-	/**
-	 * Performs the calculation
-	 * 
-	 * @param cohortDefinition the cohort definition
-	 * @param context the evaluation context
-	 * @return the calculation results
-	 */
-	protected CalculationResultMap doCalculation(CohortDefinition cohortDefinition, EvaluationContext context) {
-		CalculationCohortDefinition cd = (CalculationCohortDefinition) cohortDefinition;
-		
-		PatientCalculationService pcs = Context.getService(PatientCalculationService.class);
-		PatientCalculationContext calcContext = pcs.createCalculationContext();
-		calcContext.addToCache("location", cd.getLocation());
-		calcContext.addToCache("onOrAfter", cd.getOnOrAfter());
-		calcContext.addToCache("onOrBefore", cd.getOnOrBefore());
-		
-		Cohort cohort = context.getBaseCohort();
-		if (cohort == null) {
-			cohort = Context.getPatientSetService().getAllPatients();
-		}
-		
-		return pcs.evaluate(cohort.getMemberIds(), cd.getCalculation(), cd.getCalculationParameters(), calcContext);
-	}
+
+  /**
+   * @see
+   *     org.openmrs.module.reporting.cohort.definition.evaluator.CohortDefinitionEvaluator#evaluate(org.openmrs.module.reporting.cohort.definition.CohortDefinition,
+   *     org.openmrs.module.reporting.evaluation.EvaluationContext)
+   */
+  @Override
+  public EvaluatedCohort evaluate(CohortDefinition cohortDefinition, EvaluationContext context)
+      throws EvaluationException {
+    CalculationResultMap map = doCalculation(cohortDefinition, context);
+
+    CalculationCohortDefinition cd = (CalculationCohortDefinition) cohortDefinition;
+    Set<Integer> passing =
+        EhrCalculationUtils.patientsThatPass(
+            map, cd.getWithResult(), cd.getWithResultFinder(), context);
+
+    return new EvaluatedCohort(new Cohort(passing), cohortDefinition, context);
+  }
+
+  /**
+   * Performs the calculation
+   *
+   * @param cohortDefinition the cohort definition
+   * @param context the evaluation context
+   * @return the calculation results
+   */
+  protected CalculationResultMap doCalculation(
+      CohortDefinition cohortDefinition, EvaluationContext context) {
+    CalculationCohortDefinition cd = (CalculationCohortDefinition) cohortDefinition;
+
+    PatientCalculationService pcs = Context.getService(PatientCalculationService.class);
+    PatientCalculationContext calcContext = pcs.createCalculationContext();
+    calcContext.addToCache("location", cd.getLocation());
+    calcContext.addToCache("onOrAfter", cd.getOnOrAfter());
+    calcContext.addToCache("onOrBefore", cd.getOnOrBefore());
+
+    Cohort cohort = context.getBaseCohort();
+    if (cohort == null) {
+      cohort = Context.getPatientSetService().getAllPatients();
+    }
+
+    return pcs.evaluate(
+        cohort.getMemberIds(), cd.getCalculation(), cd.getCalculationParameters(), calcContext);
+  }
 }
