@@ -29,26 +29,28 @@ public class PatientOccurenceCalculation extends AbstractPatientCalculation {
     OutpatientMetadata outpatientMetadata =
         Context.getRegisteredComponents(OutpatientMetadata.class).get(0);
     EncounterType regReturn = outpatientMetadata.getRegReturnEncounterType();
+    EncounterType adultReturn = outpatientMetadata.getAdultReturnEncounterType();
+    EncounterType pedReturn = outpatientMetadata.getPedsReturnEncounterType();
     CalculationResultMap resultMap = new CalculationResultMap();
     EhrReportConstants.OccurenceStates state =
         (EhrReportConstants.OccurenceStates) parameterValues.get("state");
 
     CalculationResultMap allEncounters =
         ePTSCalculationService.allEncounters(
-            Arrays.asList(regReturn), cohort, null, context.getNow(), context);
+            Arrays.asList(regReturn, adultReturn, pedReturn),
+            cohort,
+            null,
+            context.getNow(),
+            context);
     for (Integer pId : cohort) {
       boolean isCandidate = false;
       ListResult pregnantResult = (ListResult) allEncounters.get(pId);
       List<Encounter> encounterList = EhrCalculationUtils.extractResultValues(pregnantResult);
-      for (Encounter e : encounterList) {
-        if (state.equals(EhrReportConstants.OccurenceStates.REVISIT)
-            && e.getEncounterType().equals(regReturn)) {
-          isCandidate = true;
-        }
-        if (state.equals(EhrReportConstants.OccurenceStates.NEW)
-            && !(e.getEncounterType().equals(regReturn))) {
-          isCandidate = true;
-        }
+      if (encounterList.size() > 0 && (state.equals(EhrReportConstants.OccurenceStates.REVISIT))) {
+        isCandidate = true;
+      }
+      if (encounterList.size() == 0 && (state.equals(EhrReportConstants.OccurenceStates.NEW))) {
+        isCandidate = true;
       }
       resultMap.put(pId, new BooleanResult(isCandidate, this));
     }
