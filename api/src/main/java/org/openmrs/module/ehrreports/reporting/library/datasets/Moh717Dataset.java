@@ -47,6 +47,7 @@ public class Moh717Dataset extends BaseDataSet {
 
     CohortIndicatorDataSetDefinition dsd = new CohortIndicatorDataSetDefinition();
     String mappings = "startDate=${startDate},endDate=${endDate}";
+    String obsMappings = "onOrAfter=${startDate},onOrBefore=${endDate}";
     dsd.setName("MOH 717 Data Set");
     dsd.addParameters(getParameters());
     // Tie dimensions to this data definition
@@ -174,7 +175,7 @@ public class Moh717Dataset extends BaseDataSet {
                         outpatientMetadata.getChestAndSkinClinicConcept(),
                         outpatientMetadata.getDentalClinicConcept(),
                         outpatientMetadata.getFamilyPlanningClinicConcept()),
-                    mappings)),
+                    obsMappings)),
             mappings),
         getSpecialClinicsCategories());
     return dsd;
