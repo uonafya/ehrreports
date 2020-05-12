@@ -14,6 +14,7 @@ package org.openmrs.module.ehrreports.reporting.library.datasets;
 import java.util.Arrays;
 import java.util.List;
 import org.openmrs.module.ehrreports.metadata.OutpatientMetadata;
+import org.openmrs.module.ehrreports.reporting.library.cohorts.CommonLibrary;
 import org.openmrs.module.ehrreports.reporting.library.cohorts.Moh717CohortQueries;
 import org.openmrs.module.ehrreports.reporting.library.dimensions.AgeDimensionCohortInterface;
 import org.openmrs.module.ehrreports.reporting.library.dimensions.EhrCommonDimension;
@@ -35,6 +36,8 @@ public class Moh717Dataset extends BaseDataSet {
   @Autowired private Moh717CohortQueries moh717CohortQueries;
 
   @Autowired private OutpatientMetadata outpatientMetadata;
+
+  @Autowired private CommonLibrary commonLibrary;
 
   @Autowired
   @Qualifier("commonAgeDimensionCohort")
@@ -88,6 +91,89 @@ public class Moh717Dataset extends BaseDataSet {
                 EhrReportUtils.map(
                     moh717CohortQueries.getSpecialClinicPatients(
                         outpatientMetadata.getEYEClinicConcept().getConceptId()),
+                    mappings)),
+            mappings),
+        getSpecialClinicsCategories());
+    // TB and  Leprosy Clinic
+    addRow(
+        dsd,
+        "TBLP",
+        "TB and Leprosy CLINIC",
+        EhrReportUtils.map(
+            ehrGeneralIndicator.getIndicator(
+                "TB and Leprosy CLINIC",
+                EhrReportUtils.map(
+                    moh717CohortQueries.getSpecialClinicPatients(
+                        outpatientMetadata.getTbLeprosyClinicConcept().getConceptId()),
+                    mappings)),
+            mappings),
+        getSpecialClinicsCategories());
+    // STI
+    addRow(
+        dsd,
+        "STI",
+        "STI CLINIC",
+        EhrReportUtils.map(
+            ehrGeneralIndicator.getIndicator(
+                "STI CLINIC",
+                EhrReportUtils.map(
+                    moh717CohortQueries.getSpecialClinicPatients(
+                        outpatientMetadata.getSTIClinicConcept().getConceptId()),
+                    mappings)),
+            mappings),
+        getSpecialClinicsCategories());
+    // STI
+    addRow(
+        dsd,
+        "Psy",
+        "Psychiatry CLINIC",
+        EhrReportUtils.map(
+            ehrGeneralIndicator.getIndicator(
+                "Psychiatry CLINIC",
+                EhrReportUtils.map(
+                    moh717CohortQueries.getSpecialClinicPatients(
+                        outpatientMetadata.getPsycthricClinicConcept().getConceptId()),
+                    mappings)),
+            mappings),
+        getSpecialClinicsCategories());
+    // Orthopedic clinic
+    addRow(
+        dsd,
+        "Ort",
+        "Orthopedic CLINIC",
+        EhrReportUtils.map(
+            ehrGeneralIndicator.getIndicator(
+                "Orthopedic CLINIC",
+                EhrReportUtils.map(
+                    moh717CohortQueries.getSpecialClinicPatients(
+                        outpatientMetadata.getOrthopedicClinicConcept().getConceptId()),
+                    mappings)),
+            mappings),
+        getSpecialClinicsCategories());
+    // other special clinics
+    addRow(
+        dsd,
+        "Oher",
+        "Other CLINIC",
+        EhrReportUtils.map(
+            ehrGeneralIndicator.getIndicator(
+                "Other CLINIC",
+                EhrReportUtils.map(
+                    commonLibrary.hasObs(
+                        outpatientMetadata.getSpecialClinicConcept(),
+                        outpatientMetadata.getMopcMedicalClinicConcept(),
+                        outpatientMetadata.getPopsPediatricClinicConcept(),
+                        outpatientMetadata.getCccClinicConcept(),
+                        outpatientMetadata.getMopsDmDiabeticClinicConcept(),
+                        outpatientMetadata.getFnaClinicConcept(),
+                        outpatientMetadata.getGpcClinicConcept(),
+                        outpatientMetadata.getMchClinicConcept(),
+                        outpatientMetadata.getMopsClinicConcept(),
+                        outpatientMetadata.getPallativeClinicConcept(),
+                        outpatientMetadata.getSurgicalClinicConcept(),
+                        outpatientMetadata.getChestAndSkinClinicConcept(),
+                        outpatientMetadata.getDentalClinicConcept(),
+                        outpatientMetadata.getFamilyPlanningClinicConcept()),
                     mappings)),
             mappings),
         getSpecialClinicsCategories());

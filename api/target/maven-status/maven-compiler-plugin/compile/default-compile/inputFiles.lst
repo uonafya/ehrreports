@@ -28,6 +28,7 @@
 /home/codehub/workspace/integrated_EHR/ehrreports/api/src/main/java/org/openmrs/module/ehrreports/reporting/cohort/definition/CustomConfigurationsDataDefinition.java
 /home/codehub/workspace/integrated_EHR/ehrreports/api/src/main/java/org/openmrs/module/ehrreports/reporting/reports/manager/EhrReportManager.java
 /home/codehub/workspace/integrated_EHR/ehrreports/api/src/main/java/org/openmrs/module/ehrreports/reporting/reports/SetupMoh717Report.java
+/home/codehub/workspace/integrated_EHR/ehrreports/api/src/main/java/org/openmrs/module/ehrreports/reporting/library/cohorts/CommonLibrary.java
 /home/codehub/workspace/integrated_EHR/ehrreports/api/src/main/java/org/openmrs/module/ehrreports/EhrReportsConfig.java
 /home/codehub/workspace/integrated_EHR/ehrreports/api/src/main/java/org/openmrs/module/ehrreports/reporting/utils/EhrCalculationUtils.java
 /home/codehub/workspace/integrated_EHR/ehrreports/api/src/main/java/org/openmrs/module/ehrreports/reporting/reports/manager/EhrDataExportManager.java

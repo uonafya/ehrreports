@@ -78,4 +78,83 @@ public class OutpatientMetadata extends ProgramsMetadata {
   public Concept getEYEClinicConcept() {
     return getConcept(EhrReportConstants.EYE_CLINIC);
   }
+
+  // Concepts 5698
+  public Concept getTbLeprosyClinicConcept() {
+    return getConcept(EhrReportConstants.TB_LEPROSY_CLINIC);
+  }
+
+  // Concepts 1073
+  public Concept getSTIClinicConcept() {
+    return getConcept(EhrReportConstants.STI_CLINIC);
+  }
+
+  // Concepts 5700
+  public Concept getPsycthricClinicConcept() {
+    return getConcept(EhrReportConstants.PSYCHIATRIC_CLINIC);
+  }
+
+  // Concepts 5121
+  public Concept getOrthopedicClinicConcept() {
+    return getConcept(EhrReportConstants.ORTHOPAEDIC_CLINIC);
+  }
+
+  // Concepts 5120
+  public Concept getMopcMedicalClinicConcept() {
+    return getConcept(EhrReportConstants.MOPC_MEDICAL_CLINIC);
+  }
+
+  // Concepts 5122
+  public Concept getPopsPediatricClinicConcept() {
+    return getConcept(EhrReportConstants.POPC_PAEDIATRICS_CLINIC);
+  }
+
+  // Concepts 5699
+  public Concept getCccClinicConcept() {
+    return getConcept(EhrReportConstants.CCC_CLINIC);
+  }
+
+  // Concepts 5701
+  public Concept getMopsDmDiabeticClinicConcept() {
+    return getConcept(EhrReportConstants.MOPC_DM_DIABETIC_CLINIC);
+  }
+  // Concepts 5702
+  public Concept getFnaClinicConcept() {
+    return getConcept(EhrReportConstants.FNA_CLINIC);
+  }
+
+  // Concepts 5703
+  public Concept getGpcClinicConcept() {
+    return getConcept(EhrReportConstants.GOPC_CLINIC);
+  }
+  // Concepts 5704
+  public Concept getMchClinicConcept() {
+    return getConcept(EhrReportConstants.MCH_CLINIC);
+  }
+  // Concepts 5705
+  public Concept getMopsClinicConcept() {
+    return getConcept(EhrReportConstants.MOPC_MEDICAL_CLINIC_2);
+  }
+
+  // Concepts 5706
+  public Concept getPallativeClinicConcept() {
+    return getConcept(EhrReportConstants.PALLIATIVE_CARE_CLINIC);
+  }
+
+  // Concepts 5707
+  public Concept getSurgicalClinicConcept() {
+    return getConcept(EhrReportConstants.SURGICAL_CLINIC);
+  }
+  // Concepts 5708
+  public Concept getChestAndSkinClinicConcept() {
+    return getConcept(EhrReportConstants.CHEST_AND_SKIN_CLINIC);
+  }
+  // Concepts 5696
+  public Concept getDentalClinicConcept() {
+    return getConcept(EhrReportConstants.DENTAL_CLINIC);
+  }
+  // Concepts 100126248
+  public Concept getFamilyPlanningClinicConcept() {
+    return getConcept(EhrReportConstants.FAMILY_PLANNING_CLINIC);
+  }
 }

@@ -22,6 +22,7 @@ org/openmrs/module/ehrreports/metadata/ProgramsMetadata.class
 org/openmrs/module/ehrreports/reporting/library/datasets/Moh705Dataset.class
 org/openmrs/module/ehrreports/reporting/calculation/AbstractPatientCalculation.class
 org/openmrs/module/ehrreports/EhrReportsConfig.class
+org/openmrs/module/ehrreports/reporting/library/cohorts/CommonLibrary.class
 org/openmrs/module/ehrreports/reporting/library/cohorts/AgeCohortQueries.class
 org/openmrs/module/ehrreports/metadata/Metadata.class
 org/openmrs/module/ehrreports/reporting/library/queries/moh717/Moh717Queries.class

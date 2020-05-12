@@ -44,6 +44,44 @@ public final class EhrReportConstants {
 
   public static final String EYE_CLINIC = "dcd6db77-47a3-4b45-aa5e-fdb169055feb"; // 5118
 
+  public static final String TB_LEPROSY_CLINIC = "d3c75c8d-f57c-48d1-974c-a9eb5961d553"; // 5698
+
+  public static final String STI_CLINIC = "4c9b4d7d-7cb0-4d49-a833-2a13490b4632"; // 1073
+
+  public static final String PSYCHIATRIC_CLINIC = "f3c0474d-1308-4160-a862-94939a97330e"; // 5700
+
+  public static final String ORTHOPAEDIC_CLINIC = "89282a1f-fc28-4adc-80dd-0e64d947ec55"; // 5121
+
+  public static final String MOPC_MEDICAL_CLINIC = "f857450b-133d-4d6b-bf09-e9297ccd1848"; // 5120
+
+  public static final String POPC_PAEDIATRICS_CLINIC =
+      "da4903d2-7ae3-4c52-929a-ae7273b9e68e"; // 5122
+
+  public static final String CCC_CLINIC = "e0620e9e-be40-43b1-b18d-b4ed2498b13c"; // 5699
+
+  public static final String MOPC_DM_DIABETIC_CLINIC =
+      "b1801fa9-7a27-450f-ae06-04333287ffb1"; // 5701
+
+  public static final String FNA_CLINIC = "f3fa2644-76f0-4bd5-b2d6-ec84bd396562"; // 5702
+
+  public static final String GOPC_CLINIC = "b758a5ec-e601-4f12-996f-314153c74ab9"; // 5703
+
+  public static final String MCH_CLINIC = "11303942-75cd-442a-aead-ae1d2ea9b3eb"; // 5704
+
+  public static final String MOPC_MEDICAL_CLINIC_2 = "75e2f59c-b7fa-4778-964a-4f7f541e864d"; // 5705
+
+  public static final String PALLIATIVE_CARE_CLINIC =
+      "8c4f488d-0d85-4782-b82c-59f454299f01"; // 5706
+
+  public static final String SURGICAL_CLINIC = "0aa9c676-f10d-4c22-b113-100acfbd165f"; // 5707
+
+  public static final String CHEST_AND_SKIN_CLINIC = "9b235c9c-d098-4e9c-9e9a-a49a2916c0b5"; // 5708
+
+  public static final String DENTAL_CLINIC = "0b58e72e-c34d-437d-9563-939a066efe58"; // 5696
+
+  public static final String FAMILY_PLANNING_CLINIC =
+      "68f095fb-1701-42b1-bd30-46d5f0473ae6"; // 100126248
+
   public enum OccurenceStates {
     NEW,
     REVISIT
