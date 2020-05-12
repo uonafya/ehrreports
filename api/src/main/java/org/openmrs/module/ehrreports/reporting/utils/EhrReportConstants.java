@@ -40,6 +40,10 @@ public final class EhrReportConstants {
   // Concepts
   public static final String SPECIAL_CLINIC = "8548ca32-ac74-4aa8-b97b-138bd745df0a"; // 5082
 
+  public static final String ENT_CLINIC = "47f855a5-0957-4cbc-8098-b577021150f8"; // 5119
+
+  public static final String EYE_CLINIC = "dcd6db77-47a3-4b45-aa5e-fdb169055feb"; // 5118
+
   public enum OccurenceStates {
     NEW,
     REVISIT

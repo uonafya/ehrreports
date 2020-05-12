@@ -13,6 +13,7 @@ package org.openmrs.module.ehrreports.reporting.library.datasets;
 
 import java.util.Arrays;
 import java.util.List;
+import org.openmrs.module.ehrreports.metadata.OutpatientMetadata;
 import org.openmrs.module.ehrreports.reporting.library.cohorts.Moh717CohortQueries;
 import org.openmrs.module.ehrreports.reporting.library.dimensions.AgeDimensionCohortInterface;
 import org.openmrs.module.ehrreports.reporting.library.dimensions.EhrCommonDimension;
@@ -32,6 +33,8 @@ public class Moh717Dataset extends BaseDataSet {
   @Autowired private EhrGeneralIndicator ehrGeneralIndicator;
 
   @Autowired private Moh717CohortQueries moh717CohortQueries;
+
+  @Autowired private OutpatientMetadata outpatientMetadata;
 
   @Autowired
   @Qualifier("commonAgeDimensionCohort")
@@ -60,6 +63,34 @@ public class Moh717Dataset extends BaseDataSet {
                 EhrReportUtils.map(moh717CohortQueries.getOutPatients(), mappings)),
             mappings),
         getAdultChildrenColumns());
+    // ENT Clinic - Concept_id 5119
+    addRow(
+        dsd,
+        "ENT",
+        "ENT CLINIC",
+        EhrReportUtils.map(
+            ehrGeneralIndicator.getIndicator(
+                "ENT CLINIC",
+                EhrReportUtils.map(
+                    moh717CohortQueries.getSpecialClinicPatients(
+                        outpatientMetadata.getENTClinicConcept().getConceptId()),
+                    mappings)),
+            mappings),
+        getSpecialClinicsCategories());
+    // EYE Clinic - Concept_id 5118
+    addRow(
+        dsd,
+        "EYE",
+        "EYE CLINIC",
+        EhrReportUtils.map(
+            ehrGeneralIndicator.getIndicator(
+                "EYE CLINIC",
+                EhrReportUtils.map(
+                    moh717CohortQueries.getSpecialClinicPatients(
+                        outpatientMetadata.getEYEClinicConcept().getConceptId()),
+                    mappings)),
+            mappings),
+        getSpecialClinicsCategories());
     return dsd;
   }
 
@@ -103,5 +134,13 @@ public class Moh717Dataset extends BaseDataSet {
         under5YearsFemaleN,
         under5YearsFemaleR,
         totalFemale);
+  }
+
+  private List<ColumnParameters> getSpecialClinicsCategories() {
+    ColumnParameters NEW_CASES = new ColumnParameters("new_cases", "NEW", "state=NEW", "01");
+    ColumnParameters REVISIT_CASES =
+        new ColumnParameters("revisit_cases", "REVISIT", "state=RVT", "02");
+    ColumnParameters TOTAL_CASES = new ColumnParameters("total_cases", "Total", "", "03");
+    return Arrays.asList(NEW_CASES, REVISIT_CASES, TOTAL_CASES);
   }
 }

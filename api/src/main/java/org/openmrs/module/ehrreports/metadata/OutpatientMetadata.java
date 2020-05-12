@@ -64,8 +64,18 @@ public class OutpatientMetadata extends ProgramsMetadata {
     return getEncounterType(EhrReportConstants.ANC_ENCOUNTER);
   }
 
-  // Concepts
+  // Concepts 5082
   public Concept getSpecialClinicConcept() {
     return getConcept(EhrReportConstants.SPECIAL_CLINIC);
+  }
+
+  // Concepts 5119
+  public Concept getENTClinicConcept() {
+    return getConcept(EhrReportConstants.ENT_CLINIC);
+  }
+
+  // Concepts 5118
+  public Concept getEYEClinicConcept() {
+    return getConcept(EhrReportConstants.EYE_CLINIC);
   }
 }
