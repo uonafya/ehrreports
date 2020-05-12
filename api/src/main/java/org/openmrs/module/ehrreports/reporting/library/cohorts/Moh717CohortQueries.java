@@ -47,6 +47,30 @@ public class Moh717CohortQueries {
     return cd;
   }
 
+  /**
+   * Get special clinic patients
+   *
+   * @param
+   * @return
+   */
+  public CohortDefinition getSpecialClinicPatients(int answer) {
+    SqlCohortDefinition cd = new SqlCohortDefinition();
+    cd.setName("Special Clinic Patients");
+    cd.addParameter(new Parameter("startDate", "StartDate", Date.class));
+    cd.addParameter(new Parameter("endDate", "End Date", Date.class));
+    cd.setQuery(
+        Moh717Queries.getSpecialClinicPatients(
+            outpatientMetadata.getAdultsInitialEncounterType().getEncounterTypeId(),
+            outpatientMetadata.getAdultReturnEncounterType().getEncounterTypeId(),
+            outpatientMetadata.getPedsInitialEncounterType().getEncounterTypeId(),
+            outpatientMetadata.getPedsReturnEncounterType().getEncounterTypeId(),
+            outpatientMetadata.getCheckInEncounterType().getEncounterTypeId(),
+            outpatientMetadata.getAncEncounterType().getEncounterTypeId(),
+            outpatientMetadata.getSpecialClinicConcept().getConceptId(),
+            answer));
+    return cd;
+  }
+
   public CohortDefinition getPatientStates(EhrReportConstants.OccurenceStates state) {
     CalculationCohortDefinition cd =
         new CalculationCohortDefinition(

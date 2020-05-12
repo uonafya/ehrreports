@@ -11,6 +11,7 @@
  */
 package org.openmrs.module.ehrreports.metadata;
 
+import org.openmrs.Concept;
 import org.openmrs.EncounterType;
 import org.openmrs.module.ehrreports.reporting.utils.EhrReportConstants;
 import org.springframework.stereotype.Component;
@@ -52,5 +53,19 @@ public class OutpatientMetadata extends ProgramsMetadata {
   // encounter type 9
   public EncounterType getOpdEncounterType() {
     return getEncounterType(EhrReportConstants.OPDENCOUNTER_OUTPATIENT);
+  }
+
+  // encounter type 12
+  public EncounterType getCheckInEncounterType() {
+    return getEncounterType(EhrReportConstants.CHECKIN_ENCOUNTER);
+  }
+  // encounter type 19
+  public EncounterType getAncEncounterType() {
+    return getEncounterType(EhrReportConstants.ANC_ENCOUNTER);
+  }
+
+  // Concepts
+  public Concept getSpecialClinicConcept() {
+    return getConcept(EhrReportConstants.SPECIAL_CLINIC);
   }
 }
