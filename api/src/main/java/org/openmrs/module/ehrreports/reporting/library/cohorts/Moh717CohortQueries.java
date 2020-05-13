@@ -71,6 +71,25 @@ public class Moh717CohortQueries {
     return cd;
   }
 
+  /**
+   * Get patients who are queued as casuality during facility visit
+   *
+   * @return
+   */
+  public CohortDefinition getPatientsQueuedAsCasuality() {
+    SqlCohortDefinition cd = new SqlCohortDefinition();
+    cd.setName("Casuality Patients");
+    cd.addParameter(new Parameter("startDate", "StartDate", Date.class));
+    cd.addParameter(new Parameter("endDate", "End Date", Date.class));
+    cd.setQuery(
+        Moh717Queries.getPatientsInCasuality(
+            outpatientMetadata.getTriageConcept().getConceptId(),
+            outpatientMetadata.getOpdWardConcept().getConceptId(),
+            outpatientMetadata.getCasualityOpdConcept().getConceptId(),
+            outpatientMetadata.getCasualityTriageConcept().getConceptId()));
+    return cd;
+  }
+
   public CohortDefinition getPatientStates(EhrReportConstants.OccurenceStates state) {
     CalculationCohortDefinition cd =
         new CalculationCohortDefinition(

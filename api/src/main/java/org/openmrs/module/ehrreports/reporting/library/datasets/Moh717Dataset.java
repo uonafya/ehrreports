@@ -67,6 +67,18 @@ public class Moh717Dataset extends BaseDataSet {
                 EhrReportUtils.map(moh717CohortQueries.getOutPatients(), mappings)),
             mappings),
         getAdultChildrenColumns());
+    // Casuality
+    addRow(
+        dsd,
+        "CA",
+        "Casuality CLINIC",
+        EhrReportUtils.map(
+            ehrGeneralIndicator.getIndicator(
+                "Casuality CLINIC",
+                EhrReportUtils.map(moh717CohortQueries.getPatientsQueuedAsCasuality(), mappings)),
+            mappings),
+        getSpecialClinicsCategories());
+    // Special clinic
     // ENT Clinic - Concept_id 5119
     addRow(
         dsd,

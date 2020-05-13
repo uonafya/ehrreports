@@ -157,4 +157,20 @@ public class OutpatientMetadata extends ProgramsMetadata {
   public Concept getFamilyPlanningClinicConcept() {
     return getConcept(EhrReportConstants.FAMILY_PLANNING_CLINIC);
   }
+  // 3999
+  public Concept getTriageConcept() {
+    return getConcept(EhrReportConstants.TRIAGE);
+  }
+  // 003
+  public Concept getOpdWardConcept() {
+    return getConcept(EhrReportConstants.OPD_WARD);
+  }
+  // 5114
+  public Concept getCasualityOpdConcept() {
+    return getConcept(EhrReportConstants.CASUALTY_OPD);
+  }
+  // 4000
+  public Concept getCasualityTriageConcept() {
+    return getConcept(EhrReportConstants.CASUALTY_TRIAGE);
+  }
 }
