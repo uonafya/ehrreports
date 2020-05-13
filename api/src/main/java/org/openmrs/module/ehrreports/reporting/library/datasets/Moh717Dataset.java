@@ -20,6 +20,7 @@ import org.openmrs.module.ehrreports.reporting.library.dimensions.AgeDimensionCo
 import org.openmrs.module.ehrreports.reporting.library.dimensions.EhrCommonDimension;
 import org.openmrs.module.ehrreports.reporting.library.indicators.EhrGeneralIndicator;
 import org.openmrs.module.ehrreports.reporting.utils.EhrReportUtils;
+import org.openmrs.module.reporting.data.converter.ObsValueTextAsCodedConverter;
 import org.openmrs.module.reporting.dataset.definition.CohortIndicatorDataSetDefinition;
 import org.openmrs.module.reporting.dataset.definition.DataSetDefinition;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,15 +30,20 @@ import org.springframework.stereotype.Component;
 @Component
 public class Moh717Dataset extends BaseDataSet {
 
-  @Autowired private EhrCommonDimension ehrCommonDimension;
+  @Autowired
+  private EhrCommonDimension ehrCommonDimension;
 
-  @Autowired private EhrGeneralIndicator ehrGeneralIndicator;
+  @Autowired
+  private EhrGeneralIndicator ehrGeneralIndicator;
 
-  @Autowired private Moh717CohortQueries moh717CohortQueries;
+  @Autowired
+  private Moh717CohortQueries moh717CohortQueries;
 
-  @Autowired private OutpatientMetadata outpatientMetadata;
+  @Autowired
+  private OutpatientMetadata outpatientMetadata;
 
-  @Autowired private CommonLibrary commonLibrary;
+  @Autowired
+  private CommonLibrary commonLibrary;
 
   @Autowired
   @Qualifier("commonAgeDimensionCohort")
@@ -53,180 +59,204 @@ public class Moh717Dataset extends BaseDataSet {
     // Tie dimensions to this data definition
     dsd.addDimension("gender", EhrReportUtils.map(ehrCommonDimension.gender(), ""));
     dsd.addDimension(
-        "age",
-        EhrReportUtils.map(ehrCommonDimension.age(ageDimensionCohort), "effectiveDate=${endDate}"));
+            "age",
+            EhrReportUtils.map(ehrCommonDimension.age(ageDimensionCohort), "effectiveDate=${endDate}"));
     dsd.addDimension("state", EhrReportUtils.map(ehrCommonDimension.state(), "endDate=${endDate}"));
     // add your dataset here, construct it here
     addRow(
-        dsd,
-        "A",
-        "OUTPATIENT SERVICES",
-        EhrReportUtils.map(
-            ehrGeneralIndicator.getIndicator(
-                "OUTPATIENT SERVICES",
-                EhrReportUtils.map(moh717CohortQueries.getOutPatients(), mappings)),
-            mappings),
-        getAdultChildrenColumns());
+            dsd,
+            "A",
+            "OUTPATIENT SERVICES",
+            EhrReportUtils.map(
+                    ehrGeneralIndicator.getIndicator(
+                            "OUTPATIENT SERVICES",
+                            EhrReportUtils.map(moh717CohortQueries.getOutPatients(), mappings)),
+                    mappings),
+            getAdultChildrenColumns());
     // ENT Clinic - Concept_id 5119
     addRow(
-        dsd,
-        "ENT",
-        "ENT CLINIC",
-        EhrReportUtils.map(
-            ehrGeneralIndicator.getIndicator(
-                "ENT CLINIC",
-                EhrReportUtils.map(
-                    moh717CohortQueries.getSpecialClinicPatients(
-                        outpatientMetadata.getENTClinicConcept().getConceptId()),
-                    mappings)),
-            mappings),
-        getSpecialClinicsCategories());
+            dsd,
+            "ENT",
+            "ENT CLINIC",
+            EhrReportUtils.map(
+                    ehrGeneralIndicator.getIndicator(
+                            "ENT CLINIC",
+                            EhrReportUtils.map(
+                                    moh717CohortQueries.getSpecialClinicPatients(
+                                            outpatientMetadata.getENTClinicConcept().getConceptId()),
+                                    mappings)),
+                    mappings),
+            getSpecialClinicsCategories());
     // EYE Clinic - Concept_id 5118
     addRow(
-        dsd,
-        "EYE",
-        "EYE CLINIC",
-        EhrReportUtils.map(
-            ehrGeneralIndicator.getIndicator(
-                "EYE CLINIC",
-                EhrReportUtils.map(
-                    moh717CohortQueries.getSpecialClinicPatients(
-                        outpatientMetadata.getEYEClinicConcept().getConceptId()),
-                    mappings)),
-            mappings),
-        getSpecialClinicsCategories());
+            dsd,
+            "EYE",
+            "EYE CLINIC",
+            EhrReportUtils.map(
+                    ehrGeneralIndicator.getIndicator(
+                            "EYE CLINIC",
+                            EhrReportUtils.map(
+                                    moh717CohortQueries.getSpecialClinicPatients(
+                                            outpatientMetadata.getEYEClinicConcept().getConceptId()),
+                                    mappings)),
+                    mappings),
+            getSpecialClinicsCategories());
     // TB and  Leprosy Clinic
     addRow(
-        dsd,
-        "TBLP",
-        "TB and Leprosy CLINIC",
-        EhrReportUtils.map(
-            ehrGeneralIndicator.getIndicator(
-                "TB and Leprosy CLINIC",
-                EhrReportUtils.map(
-                    moh717CohortQueries.getSpecialClinicPatients(
-                        outpatientMetadata.getTbLeprosyClinicConcept().getConceptId()),
-                    mappings)),
-            mappings),
-        getSpecialClinicsCategories());
+            dsd,
+            "TBLP",
+            "TB and Leprosy CLINIC",
+            EhrReportUtils.map(
+                    ehrGeneralIndicator.getIndicator(
+                            "TB and Leprosy CLINIC",
+                            EhrReportUtils.map(
+                                    moh717CohortQueries.getSpecialClinicPatients(
+                                            outpatientMetadata.getTbLeprosyClinicConcept().getConceptId()),
+                                    mappings)),
+                    mappings),
+            getSpecialClinicsCategories());
     // STI
     addRow(
-        dsd,
-        "STI",
-        "STI CLINIC",
-        EhrReportUtils.map(
-            ehrGeneralIndicator.getIndicator(
-                "STI CLINIC",
-                EhrReportUtils.map(
-                    moh717CohortQueries.getSpecialClinicPatients(
-                        outpatientMetadata.getSTIClinicConcept().getConceptId()),
-                    mappings)),
-            mappings),
-        getSpecialClinicsCategories());
+            dsd,
+            "STI",
+            "STI CLINIC",
+            EhrReportUtils.map(
+                    ehrGeneralIndicator.getIndicator(
+                            "STI CLINIC",
+                            EhrReportUtils.map(
+                                    moh717CohortQueries.getSpecialClinicPatients(
+                                            outpatientMetadata.getSTIClinicConcept().getConceptId()),
+                                    mappings)),
+                    mappings),
+            getSpecialClinicsCategories());
     // STI
     addRow(
-        dsd,
-        "Psy",
-        "Psychiatry CLINIC",
-        EhrReportUtils.map(
-            ehrGeneralIndicator.getIndicator(
-                "Psychiatry CLINIC",
-                EhrReportUtils.map(
-                    moh717CohortQueries.getSpecialClinicPatients(
-                        outpatientMetadata.getPsycthricClinicConcept().getConceptId()),
-                    mappings)),
-            mappings),
-        getSpecialClinicsCategories());
+            dsd,
+            "Psy",
+            "Psychiatry CLINIC",
+            EhrReportUtils.map(
+                    ehrGeneralIndicator.getIndicator(
+                            "Psychiatry CLINIC",
+                            EhrReportUtils.map(
+                                    moh717CohortQueries.getSpecialClinicPatients(
+                                            outpatientMetadata.getPsycthricClinicConcept().getConceptId()),
+                                    mappings)),
+                    mappings),
+            getSpecialClinicsCategories());
     // Orthopedic clinic
     addRow(
-        dsd,
-        "Ort",
-        "Orthopedic CLINIC",
-        EhrReportUtils.map(
-            ehrGeneralIndicator.getIndicator(
-                "Orthopedic CLINIC",
-                EhrReportUtils.map(
-                    moh717CohortQueries.getSpecialClinicPatients(
-                        outpatientMetadata.getOrthopedicClinicConcept().getConceptId()),
-                    mappings)),
-            mappings),
-        getSpecialClinicsCategories());
+            dsd,
+            "Ort",
+            "Orthopedic CLINIC",
+            EhrReportUtils.map(
+                    ehrGeneralIndicator.getIndicator(
+                            "Orthopedic CLINIC",
+                            EhrReportUtils.map(
+                                    moh717CohortQueries.getSpecialClinicPatients(
+                                            outpatientMetadata.getOrthopedicClinicConcept().getConceptId()),
+                                    mappings)),
+                    mappings),
+            getSpecialClinicsCategories());
     // other special clinics
     addRow(
-        dsd,
-        "Oher",
-        "Other CLINIC",
-        EhrReportUtils.map(
-            ehrGeneralIndicator.getIndicator(
-                "Other CLINIC",
-                EhrReportUtils.map(
-                    commonLibrary.hasObs(
-                        outpatientMetadata.getSpecialClinicConcept(),
-                        outpatientMetadata.getMopcMedicalClinicConcept(),
-                        outpatientMetadata.getPopsPediatricClinicConcept(),
-                        outpatientMetadata.getCccClinicConcept(),
-                        outpatientMetadata.getMopsDmDiabeticClinicConcept(),
-                        outpatientMetadata.getFnaClinicConcept(),
-                        outpatientMetadata.getGpcClinicConcept(),
-                        outpatientMetadata.getMchClinicConcept(),
-                        outpatientMetadata.getMopsClinicConcept(),
-                        outpatientMetadata.getPallativeClinicConcept(),
-                        outpatientMetadata.getSurgicalClinicConcept(),
-                        outpatientMetadata.getChestAndSkinClinicConcept(),
-                        outpatientMetadata.getDentalClinicConcept(),
-                        outpatientMetadata.getFamilyPlanningClinicConcept()),
-                    obsMappings)),
-            mappings),
-        getSpecialClinicsCategories());
+            dsd,
+            "Other",
+            "Other CLINIC",
+            EhrReportUtils.map(
+                    ehrGeneralIndicator.getIndicator(
+                            "Other CLINIC",
+                            EhrReportUtils.map(
+                                    commonLibrary.hasObs(
+                                            outpatientMetadata.getSpecialClinicConcept(),
+                                            outpatientMetadata.getMopcMedicalClinicConcept(),
+                                            outpatientMetadata.getPopsPediatricClinicConcept(),
+                                            outpatientMetadata.getCccClinicConcept(),
+                                            outpatientMetadata.getMopsDmDiabeticClinicConcept(),
+                                            outpatientMetadata.getFnaClinicConcept(),
+                                            outpatientMetadata.getGpcClinicConcept(),
+                                            outpatientMetadata.getMchClinicConcept(),
+                                            outpatientMetadata.getMopsClinicConcept(),
+                                            outpatientMetadata.getPallativeClinicConcept(),
+                                            outpatientMetadata.getSurgicalClinicConcept(),
+                                            outpatientMetadata.getChestAndSkinClinicConcept(),
+                                            outpatientMetadata.getDentalClinicConcept(),
+                                            outpatientMetadata.getFamilyPlanningClinicConcept()),
+                                    obsMappings)),
+                    mappings),
+            getSpecialClinicsCategories());
+    // MCH/FP clients George Bush to be reviewed by Nicholas
+    addRow(
+            dsd,
+            "Cwc",
+            "CWC ATTENDANCES",
+            EhrReportUtils.map(
+                    ehrGeneralIndicator.getIndicator(
+                            "CWC ATTENDANCES",
+                            EhrReportUtils.map(
+                                    moh717CohortQueries.getMchClients(
+                                            outpatientMetadata.getMchClinicConcept().getConceptId()),
+                                    mappings)),
+                    mappings),
+            getMchClientsCategories());
+
     return dsd;
+
   }
 
   private List<ColumnParameters> getAdultChildrenColumns() {
     // Male
     ColumnParameters over5YearsMaleN =
-        new ColumnParameters(
-            "over5YMN", "Over 5 Years Male - NEW", "gender=M|age=5+|state=NEW", "01");
+            new ColumnParameters(
+                    "over5YMN", "Over 5 Years Male - NEW", "gender=M|age=5+|state=NEW", "01");
     ColumnParameters over5YearsMaleR =
-        new ColumnParameters(
-            "over5YMR", "Over 5 Years Male - REVISIT", "gender=M|age=5+|state=RVT", "02");
+            new ColumnParameters(
+                    "over5YMR", "Over 5 Years Male - REVISIT", "gender=M|age=5+|state=RVT", "02");
     ColumnParameters under5YearsMaleN =
-        new ColumnParameters(
-            "under5YMN", "Under 5 Years Male - NEW", "gender=M|age=<5|state=NEW", "03");
+            new ColumnParameters(
+                    "under5YMN", "Under 5 Years Male - NEW", "gender=M|age=<5|state=NEW", "03");
     ColumnParameters under5YearsMaleR =
-        new ColumnParameters(
-            "under5YMR", "Under 5 Years Male - REVISIT", "gender=M|age=<5|state=RVT", "04");
+            new ColumnParameters(
+                    "under5YMR", "Under 5 Years Male - REVISIT", "gender=M|age=<5|state=RVT", "04");
     ColumnParameters totalMale = new ColumnParameters("totalM", "Total Male", "gender=M", "05");
     // Female
     ColumnParameters over5YearsFemaleN =
-        new ColumnParameters(
-            "over5YFN", "Over 5 Years Female - NEW", "gender=F|age=5+|state=NEW", "06");
+            new ColumnParameters(
+                    "over5YFN", "Over 5 Years Female - NEW", "gender=F|age=5+|state=NEW", "06");
     ColumnParameters over5YearsFemaleR =
-        new ColumnParameters(
-            "over5YFR", "Over 5 Years Female - REVISIT", "gender=F|age=5+|state=RVT", "07");
+            new ColumnParameters(
+                    "over5YFR", "Over 5 Years Female - REVISIT", "gender=F|age=5+|state=RVT", "07");
     ColumnParameters under5YearsFemaleN =
-        new ColumnParameters(
-            "under5YFN", "Under 5 Years Female - NEW", "gender=F|age=<5|state=NEW", "08");
+            new ColumnParameters(
+                    "under5YFN", "Under 5 Years Female - NEW", "gender=F|age=<5|state=NEW", "08");
     ColumnParameters under5YearsFemaleR =
-        new ColumnParameters(
-            "under5YFR", "Under 5 Years Female - REVISIT", "gender=F|age=<5|state=RVT", "09");
+            new ColumnParameters(
+                    "under5YFR", "Under 5 Years Female - REVISIT", "gender=F|age=<5|state=RVT", "09");
     ColumnParameters totalFemale = new ColumnParameters("totalF", "Total Female", "gender=F", "10");
     return Arrays.asList(
-        over5YearsMaleN,
-        over5YearsMaleR,
-        under5YearsMaleN,
-        under5YearsMaleR,
-        totalMale,
-        over5YearsFemaleN,
-        over5YearsFemaleR,
-        under5YearsFemaleN,
-        under5YearsFemaleR,
-        totalFemale);
+            over5YearsMaleN,
+            over5YearsMaleR,
+            under5YearsMaleN,
+            under5YearsMaleR,
+            totalMale,
+            over5YearsFemaleN,
+            over5YearsFemaleR,
+            under5YearsFemaleN,
+            under5YearsFemaleR,
+            totalFemale);
   }
 
   private List<ColumnParameters> getSpecialClinicsCategories() {
     ColumnParameters NEW_CASES = new ColumnParameters("new_cases", "NEW", "state=NEW", "01");
     ColumnParameters REVISIT_CASES =
-        new ColumnParameters("revisit_cases", "REVISIT", "state=RVT", "02");
+            new ColumnParameters("revisit_cases", "REVISIT", "state=RVT", "02");
+    ColumnParameters TOTAL_CASES = new ColumnParameters("total_cases", "Total", "", "03");
+    return Arrays.asList(NEW_CASES, REVISIT_CASES, TOTAL_CASES);
+  }
+
+  private List<ColumnParameters> getMchClientsCategories() {
+    ColumnParameters NEW_CASES = new ColumnParameters("new_cases", "NEW", "state=NEW", "01");
+    ColumnParameters REVISIT_CASES =
+            new ColumnParameters("revisit_cases", "REVISIT", "state=RVT", "02");
     ColumnParameters TOTAL_CASES = new ColumnParameters("total_cases", "Total", "", "03");
     return Arrays.asList(NEW_CASES, REVISIT_CASES, TOTAL_CASES);
   }

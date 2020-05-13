@@ -80,4 +80,22 @@ public class Moh717CohortQueries {
     cd.addCalculationParameter("state", state);
     return cd;
   }
+ public CohortDefinition getMchClients(int answer) {
+    SqlCohortDefinition cd = new SqlCohortDefinition();
+    cd.setName("Mch Clients");
+    cd.addParameter(new Parameter("startDate", "StartDate", Date.class));
+    cd.addParameter(new Parameter("endDate", "End Date", Date.class));
+    cd.setQuery(
+            Moh717Queries.getMchClients(
+                    outpatientMetadata.getAdultsInitialEncounterType().getEncounterTypeId(),
+                    outpatientMetadata.getAdultReturnEncounterType().getEncounterTypeId(),
+                    outpatientMetadata.getPedsInitialEncounterType().getEncounterTypeId(),
+                    outpatientMetadata.getPedsReturnEncounterType().getEncounterTypeId(),
+                    outpatientMetadata.getCheckInEncounterType().getEncounterTypeId(),
+                    outpatientMetadata.getAncEncounterType().getEncounterTypeId(),
+                    outpatientMetadata.getSpecialClinicConcept().getConceptId(),
+                    answer));
+    return cd;
+  }
+
 }
