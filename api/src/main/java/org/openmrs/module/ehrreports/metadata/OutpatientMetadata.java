@@ -13,6 +13,7 @@ package org.openmrs.module.ehrreports.metadata;
 
 import org.openmrs.Concept;
 import org.openmrs.EncounterType;
+import org.openmrs.Program;
 import org.openmrs.module.ehrreports.reporting.utils.EhrReportConstants;
 import org.springframework.stereotype.Component;
 
@@ -172,5 +173,32 @@ public class OutpatientMetadata extends ProgramsMetadata {
   // 4000
   public Concept getCasualityTriageConcept() {
     return getConcept(EhrReportConstants.CASUALTY_TRIAGE);
+  }
+
+  /**
+   * programs ANC program
+   *
+   * @return Program
+   */
+  public Program getAncProgram() {
+    return getProgram(EhrReportConstants.ANC_Program);
+  }
+
+  /**
+   * programs PNC program
+   *
+   * @return Program
+   */
+  public Program getPncProgram() {
+    return getProgram(EhrReportConstants.PNC_Program);
+  }
+
+  /**
+   * programs CWC program
+   *
+   * @return Program
+   */
+  public Program getCwcProgram() {
+    return getProgram(EhrReportConstants.CWC_Program);
   }
 }

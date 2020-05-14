@@ -82,12 +82,15 @@ public class Moh717Queries {
    *
    * @return String
    */
-  public static String getMchBaseQueries(int conceptQn1, int conceptQn2, int valueCoded) {
+  public static String getMchBaseQueries(
+      int conceptQn1, int conceptQn2, int valueCoded, int program) {
     String sql =
         " SELECT p.patient_id FROM patient p INNER JOIN encounter e ON p.patient_id=e.patient_id INNER JOIN obs o "
-            + " ON e.encounter_id=o.encounter_id WHERE  o.concept_id IN(%d, %d) AND o.value_coded IN(%d) AND e.encounter_datetime BETWEEN :startDate AND :endDate ";
+            + " INNER JOIN patient_program pp ON pp.patient_id=p.patient_id INNER JOIN program pg ON pg.program_id=pp.program_id "
+            + " ON e.encounter_id=o.encounter_id WHERE  o.concept_id IN(%d, %d) AND o.value_coded IN(%d) AND e.encounter_datetime BETWEEN :startDate AND :endDate "
+            + " AND pp.voided=0 AND p.voided=0 AND o.voided=0 AND pg.voided= 0 AND pg.program_id IN(%d)";
 
-    return String.format(sql, conceptQn1, conceptQn2, valueCoded);
+    return String.format(sql, conceptQn1, conceptQn2, valueCoded, program);
   }
 
   /**

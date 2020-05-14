@@ -105,7 +105,7 @@ public class Moh717CohortQueries {
    *
    * @return CohortDefinition
    */
-  public CohortDefinition getMchBaseCohortPatients() {
+  public CohortDefinition getMchBaseCohortPatients(int program) {
     SqlCohortDefinition cd = new SqlCohortDefinition();
     cd.setName("MCH Patients");
     cd.addParameter(new Parameter("startDate", "StartDate", Date.class));
@@ -114,7 +114,8 @@ public class Moh717CohortQueries {
         Moh717Queries.getMchBaseQueries(
             outpatientMetadata.getTriageConcept().getConceptId(),
             outpatientMetadata.getSpecialClinicConcept().getConceptId(),
-            outpatientMetadata.getMchClinicConcept().getConceptId()));
+            outpatientMetadata.getMchClinicConcept().getConceptId(),
+            program));
     return cd;
   }
 

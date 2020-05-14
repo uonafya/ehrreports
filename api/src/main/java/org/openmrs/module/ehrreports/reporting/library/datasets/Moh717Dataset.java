@@ -191,7 +191,6 @@ public class Moh717Dataset extends BaseDataSet {
             mappings),
         getSpecialClinicsCategories());
     // Family planning methods
-    // Orthopedic clinic
     addRow(
         dsd,
         "FP",
@@ -200,6 +199,49 @@ public class Moh717Dataset extends BaseDataSet {
             ehrGeneralIndicator.getIndicator(
                 "Family Planning Services",
                 EhrReportUtils.map(moh717CohortQueries.getFpBaseCohortPatients(), mappings)),
+            mappings),
+        getSpecialClinicsCategories());
+
+    // MCH
+    addRow(
+        dsd,
+        "ANC",
+        "ANC Program",
+        EhrReportUtils.map(
+            ehrGeneralIndicator.getIndicator(
+                "ANC Program",
+                EhrReportUtils.map(
+                    moh717CohortQueries.getMchBaseCohortPatients(
+                        outpatientMetadata.getAncProgram().getProgramId()),
+                    mappings)),
+            mappings),
+        getSpecialClinicsCategories());
+
+    addRow(
+        dsd,
+        "PNC",
+        "PNC Program",
+        EhrReportUtils.map(
+            ehrGeneralIndicator.getIndicator(
+                "PNC Program",
+                EhrReportUtils.map(
+                    moh717CohortQueries.getMchBaseCohortPatients(
+                        outpatientMetadata.getPncProgram().getProgramId()),
+                    mappings)),
+            mappings),
+        getSpecialClinicsCategories());
+
+    addRow(
+        dsd,
+        "CWC",
+        "CWC Program",
+        EhrReportUtils.map(
+            ehrGeneralIndicator.getIndicator(
+                "CWC Program",
+                EhrReportUtils.map(
+                    moh717CohortQueries.getMchBaseCohortPatients(
+                        outpatientMetadata.getCwcProgram().getProgramId()),
+                    mappings)),
             mappings),
         getSpecialClinicsCategories());
     return dsd;
