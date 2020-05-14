@@ -5,7 +5,7 @@
 .settings
 .project
 .classpath
-target
+target/*
 *.iml
 .idea
 .DS_Store
@@ -37,5 +37,7 @@ api/.scalastyle
 api/src/test/java/org/openmrs/module/eptsreports/LiveTests.java
 omod/maven-eclipse.xml
 omod/.externalToolBuilders/Maven_Ant_Builder.launch
-api/target/*
+api/target/**
 omod/target/*
+*/target/*
+*/target/**

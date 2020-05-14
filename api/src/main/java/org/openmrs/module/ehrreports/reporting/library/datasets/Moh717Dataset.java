@@ -64,15 +64,28 @@ public class Moh717Dataset extends BaseDataSet {
     dsd.addDimension("state", EhrReportUtils.map(ehrCommonDimension.state(), "endDate=${endDate}"));
     // add your dataset here, construct it here
     addRow(
-            dsd,
-            "A",
-            "OUTPATIENT SERVICES",
-            EhrReportUtils.map(
-                    ehrGeneralIndicator.getIndicator(
-                            "OUTPATIENT SERVICES",
-                            EhrReportUtils.map(moh717CohortQueries.getOutPatients(), mappings)),
-                    mappings),
-            getAdultChildrenColumns());
+
+        dsd,
+        "A",
+        "OUTPATIENT SERVICES",
+        EhrReportUtils.map(
+            ehrGeneralIndicator.getIndicator(
+                "OUTPATIENT SERVICES",
+                EhrReportUtils.map(moh717CohortQueries.getOutPatients(), mappings)),
+            mappings),
+        getAdultChildrenColumns());
+    // Casuality
+    addRow(
+        dsd,
+        "CA",
+        "Casuality CLINIC",
+        EhrReportUtils.map(
+            ehrGeneralIndicator.getIndicator(
+                "Casuality CLINIC",
+                EhrReportUtils.map(moh717CohortQueries.getPatientsQueuedAsCasuality(), mappings)),
+            mappings),
+        getSpecialClinicsCategories());
+    // Special clinic
     // ENT Clinic - Concept_id 5119
     addRow(
             dsd,
@@ -159,46 +172,43 @@ public class Moh717Dataset extends BaseDataSet {
             getSpecialClinicsCategories());
     // other special clinics
     addRow(
-            dsd,
-            "Other",
-            "Other CLINIC",
-            EhrReportUtils.map(
-                    ehrGeneralIndicator.getIndicator(
-                            "Other CLINIC",
-                            EhrReportUtils.map(
-                                    commonLibrary.hasObs(
-                                            outpatientMetadata.getSpecialClinicConcept(),
-                                            outpatientMetadata.getMopcMedicalClinicConcept(),
-                                            outpatientMetadata.getPopsPediatricClinicConcept(),
-                                            outpatientMetadata.getCccClinicConcept(),
-                                            outpatientMetadata.getMopsDmDiabeticClinicConcept(),
-                                            outpatientMetadata.getFnaClinicConcept(),
-                                            outpatientMetadata.getGpcClinicConcept(),
-                                            outpatientMetadata.getMchClinicConcept(),
-                                            outpatientMetadata.getMopsClinicConcept(),
-                                            outpatientMetadata.getPallativeClinicConcept(),
-                                            outpatientMetadata.getSurgicalClinicConcept(),
-                                            outpatientMetadata.getChestAndSkinClinicConcept(),
-                                            outpatientMetadata.getDentalClinicConcept(),
-                                            outpatientMetadata.getFamilyPlanningClinicConcept()),
-                                    obsMappings)),
-                    mappings),
-            getSpecialClinicsCategories());
-    // MCH/FP clients George Bush to be reviewed by Nicholas
+        dsd,
+        "Oher",
+        "Other CLINIC",
+        EhrReportUtils.map(
+            ehrGeneralIndicator.getIndicator(
+                "Other CLINIC",
+                EhrReportUtils.map(
+                    commonLibrary.hasObs(
+                        outpatientMetadata.getSpecialClinicConcept(),
+                        outpatientMetadata.getMopcMedicalClinicConcept(),
+                        outpatientMetadata.getPopsPediatricClinicConcept(),
+                        outpatientMetadata.getCccClinicConcept(),
+                        outpatientMetadata.getMopsDmDiabeticClinicConcept(),
+                        outpatientMetadata.getFnaClinicConcept(),
+                        outpatientMetadata.getGpcClinicConcept(),
+                        outpatientMetadata.getMchClinicConcept(),
+                        outpatientMetadata.getMopsClinicConcept(),
+                        outpatientMetadata.getPallativeClinicConcept(),
+                        outpatientMetadata.getSurgicalClinicConcept(),
+                        outpatientMetadata.getChestAndSkinClinicConcept(),
+                        outpatientMetadata.getDentalClinicConcept(),
+                        outpatientMetadata.getFamilyPlanningClinicConcept()),
+                    obsMappings)),
+            mappings),
+        getSpecialClinicsCategories());
+    // Family planning methods
+    // Orthopedic clinic
     addRow(
-            dsd,
-            "Cwc",
-            "CWC ATTENDANCES",
-            EhrReportUtils.map(
-                    ehrGeneralIndicator.getIndicator(
-                            "CWC ATTENDANCES",
-                            EhrReportUtils.map(
-                                    moh717CohortQueries.getMchClients(
-                                            outpatientMetadata.getMchClinicConcept().getConceptId()),
-                                    mappings)),
-                    mappings),
-            getMchClientsCategories());
-
+        dsd,
+        "FP",
+        "Family Planning Services",
+        EhrReportUtils.map(
+            ehrGeneralIndicator.getIndicator(
+                "Family Planning Services",
+                EhrReportUtils.map(moh717CohortQueries.getFpBaseCohortPatients(), mappings)),
+            mappings),
+        getSpecialClinicsCategories());
     return dsd;
 
   }

@@ -71,6 +71,25 @@ public class Moh717CohortQueries {
     return cd;
   }
 
+  /**
+   * Get patients who are queued as casuality during facility visit
+   *
+   * @return
+   */
+  public CohortDefinition getPatientsQueuedAsCasuality() {
+    SqlCohortDefinition cd = new SqlCohortDefinition();
+    cd.setName("Casuality Patients");
+    cd.addParameter(new Parameter("startDate", "StartDate", Date.class));
+    cd.addParameter(new Parameter("endDate", "End Date", Date.class));
+    cd.setQuery(
+        Moh717Queries.getPatientsInCasuality(
+            outpatientMetadata.getTriageConcept().getConceptId(),
+            outpatientMetadata.getOpdWardConcept().getConceptId(),
+            outpatientMetadata.getCasualityOpdConcept().getConceptId(),
+            outpatientMetadata.getCasualityTriageConcept().getConceptId()));
+    return cd;
+  }
+
   public CohortDefinition getPatientStates(EhrReportConstants.OccurenceStates state) {
     CalculationCohortDefinition cd =
         new CalculationCohortDefinition(
@@ -80,22 +99,39 @@ public class Moh717CohortQueries {
     cd.addCalculationParameter("state", state);
     return cd;
   }
- public CohortDefinition getMchClients(int answer) {
+
+  /**
+   * Get base query for the female patients in MCH
+   *
+   * @return CohortDefinition
+   */
+  public CohortDefinition getMchBaseCohortPatients() {
     SqlCohortDefinition cd = new SqlCohortDefinition();
-    cd.setName("Mch Clients");
+    cd.setName("MCH Patients");
     cd.addParameter(new Parameter("startDate", "StartDate", Date.class));
     cd.addParameter(new Parameter("endDate", "End Date", Date.class));
     cd.setQuery(
-            Moh717Queries.getMchClients(
-                    outpatientMetadata.getAdultsInitialEncounterType().getEncounterTypeId(),
-                    outpatientMetadata.getAdultReturnEncounterType().getEncounterTypeId(),
-                    outpatientMetadata.getPedsInitialEncounterType().getEncounterTypeId(),
-                    outpatientMetadata.getPedsReturnEncounterType().getEncounterTypeId(),
-                    outpatientMetadata.getCheckInEncounterType().getEncounterTypeId(),
-                    outpatientMetadata.getAncEncounterType().getEncounterTypeId(),
-                    outpatientMetadata.getSpecialClinicConcept().getConceptId(),
-                    answer));
+        Moh717Queries.getMchBaseQueries(
+            outpatientMetadata.getTriageConcept().getConceptId(),
+            outpatientMetadata.getSpecialClinicConcept().getConceptId(),
+            outpatientMetadata.getMchClinicConcept().getConceptId()));
     return cd;
   }
 
+  /**
+   * Get base query for the female patients in FP
+   *
+   * @return CohortDefinition
+   */
+  public CohortDefinition getFpBaseCohortPatients() {
+    SqlCohortDefinition cd = new SqlCohortDefinition();
+    cd.setName("FP Patients");
+    cd.addParameter(new Parameter("startDate", "StartDate", Date.class));
+    cd.addParameter(new Parameter("endDate", "End Date", Date.class));
+    cd.setQuery(
+        Moh717Queries.getFpBaseQueries(
+            outpatientMetadata.getSpecialClinicConcept().getConceptId(),
+            outpatientMetadata.getMchClinicConcept().getConceptId()));
+    return cd;
+  }
 }

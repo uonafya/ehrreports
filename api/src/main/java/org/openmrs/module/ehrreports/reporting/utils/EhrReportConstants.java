@@ -82,6 +82,14 @@ public final class EhrReportConstants {
   public static final String FAMILY_PLANNING_CLINIC =
       "68f095fb-1701-42b1-bd30-46d5f0473ae6"; // 100126248
 
+  public static final String TRIAGE = "af17c916-449e-4721-a555-81d8032c8f41"; // 3999
+
+  public static final String OPD_WARD = "482f0492-aeef-404e-a820-c34cf61db616"; // 3
+
+  public static final String CASUALTY_OPD = "ec1aae69-52e8-49db-87f2-ec71d98ee601"; // 5114
+
+  public static final String CASUALTY_TRIAGE = "68ff7941-a57c-42f5-aa56-75913ce8b34d"; // 4000
+
   public enum OccurenceStates {
     NEW,
     REVISIT
