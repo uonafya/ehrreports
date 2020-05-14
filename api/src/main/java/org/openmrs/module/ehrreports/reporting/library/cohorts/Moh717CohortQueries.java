@@ -99,4 +99,39 @@ public class Moh717CohortQueries {
     cd.addCalculationParameter("state", state);
     return cd;
   }
+
+  /**
+   * Get base query for the female patients in MCH
+   *
+   * @return CohortDefinition
+   */
+  public CohortDefinition getMchBaseCohortPatients() {
+    SqlCohortDefinition cd = new SqlCohortDefinition();
+    cd.setName("MCH Patients");
+    cd.addParameter(new Parameter("startDate", "StartDate", Date.class));
+    cd.addParameter(new Parameter("endDate", "End Date", Date.class));
+    cd.setQuery(
+        Moh717Queries.getMchBaseQueries(
+            outpatientMetadata.getTriageConcept().getConceptId(),
+            outpatientMetadata.getSpecialClinicConcept().getConceptId(),
+            outpatientMetadata.getMchClinicConcept().getConceptId()));
+    return cd;
+  }
+
+  /**
+   * Get base query for the female patients in FP
+   *
+   * @return CohortDefinition
+   */
+  public CohortDefinition getFpBaseCohortPatients() {
+    SqlCohortDefinition cd = new SqlCohortDefinition();
+    cd.setName("FP Patients");
+    cd.addParameter(new Parameter("startDate", "StartDate", Date.class));
+    cd.addParameter(new Parameter("endDate", "End Date", Date.class));
+    cd.setQuery(
+        Moh717Queries.getFpBaseQueries(
+            outpatientMetadata.getSpecialClinicConcept().getConceptId(),
+            outpatientMetadata.getMchClinicConcept().getConceptId()));
+    return cd;
+  }
 }

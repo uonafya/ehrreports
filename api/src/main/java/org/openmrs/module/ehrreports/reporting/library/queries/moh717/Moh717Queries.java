@@ -76,4 +76,30 @@ public class Moh717Queries {
             + " ON e.encounter_id=o.encounter_id WHERE  o.concept_id IN(%d, %d) AND o.value_coded IN(%d, %d) AND e.encounter_datetime BETWEEN :startDate AND :endDate ";
     return String.format(sql, conceptQn1, conceptQn2, conceptAns1, conceptAns2);
   }
+
+  /**
+   * Get MCH base query
+   *
+   * @return String
+   */
+  public static String getMchBaseQueries(int conceptQn1, int conceptQn2, int valueCoded) {
+    String sql =
+        " SELECT p.patient_id FROM patient p INNER JOIN encounter e ON p.patient_id=e.patient_id INNER JOIN obs o "
+            + " ON e.encounter_id=o.encounter_id WHERE  o.concept_id IN(%d, %d) AND o.value_coded IN(%d) AND e.encounter_datetime BETWEEN :startDate AND :endDate ";
+
+    return String.format(sql, conceptQn1, conceptQn2, valueCoded);
+  }
+
+  /**
+   * Get MCH/FP base query
+   *
+   * @return String
+   */
+  public static String getFpBaseQueries(int conceptQn1, int valueCoded) {
+    String sql =
+        " SELECT p.patient_id FROM patient p INNER JOIN encounter e ON p.patient_id=e.patient_id INNER JOIN obs o "
+            + " ON e.encounter_id=o.encounter_id WHERE  o.concept_id IN(%d) AND o.value_coded IN(%d) AND e.encounter_datetime BETWEEN :startDate AND :endDate ";
+
+    return String.format(sql, conceptQn1, valueCoded);
+  }
 }
