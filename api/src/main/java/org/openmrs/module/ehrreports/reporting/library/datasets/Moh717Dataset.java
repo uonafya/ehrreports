@@ -190,6 +190,18 @@ public class Moh717Dataset extends BaseDataSet {
                     obsMappings)),
             mappings),
         getSpecialClinicsCategories());
+    // Family planning methods
+    // Orthopedic clinic
+    addRow(
+        dsd,
+        "FP",
+        "Family Planning Services",
+        EhrReportUtils.map(
+            ehrGeneralIndicator.getIndicator(
+                "Family Planning Services",
+                EhrReportUtils.map(moh717CohortQueries.getFpBaseCohortPatients(), mappings)),
+            mappings),
+        getSpecialClinicsCategories());
     return dsd;
   }
 
