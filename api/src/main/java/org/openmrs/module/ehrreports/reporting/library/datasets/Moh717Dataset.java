@@ -14,6 +14,7 @@ package org.openmrs.module.ehrreports.reporting.library.datasets;
 import java.util.Arrays;
 import java.util.List;
 import org.openmrs.module.ehrreports.metadata.OutpatientMetadata;
+import org.openmrs.module.ehrreports.reporting.cohort.definition.CustomConfigurationsDataDefinition;
 import org.openmrs.module.ehrreports.reporting.library.cohorts.CommonLibrary;
 import org.openmrs.module.ehrreports.reporting.library.cohorts.Moh717CohortQueries;
 import org.openmrs.module.ehrreports.reporting.library.dimensions.AgeDimensionCohortInterface;
@@ -42,6 +43,12 @@ public class Moh717Dataset extends BaseDataSet {
   @Autowired
   @Qualifier("commonAgeDimensionCohort")
   private AgeDimensionCohortInterface ageDimensionCohort;
+
+  public DataSetDefinition constructCustomDataset() {
+    CustomConfigurationsDataDefinition df = new CustomConfigurationsDataDefinition();
+    df.setName("Custom fields ");
+    return df;
+  }
 
   public DataSetDefinition constructMoh717Dataset() {
 
