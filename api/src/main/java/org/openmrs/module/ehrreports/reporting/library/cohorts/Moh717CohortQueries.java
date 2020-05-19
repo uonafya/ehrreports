@@ -82,7 +82,7 @@ public class Moh717CohortQueries {
     cd.addParameter(new Parameter("startDate", "StartDate", Date.class));
     cd.addParameter(new Parameter("endDate", "End Date", Date.class));
     cd.setQuery(
-        Moh717Queries.getPatientsInCasuality(
+        Moh717Queries.getPatientsGeneralQuery(
             outpatientMetadata.getTriageConcept().getConceptId(),
             outpatientMetadata.getOpdWardConcept().getConceptId(),
             outpatientMetadata.getCasualityOpdConcept().getConceptId(),
@@ -133,6 +133,25 @@ public class Moh717CohortQueries {
         Moh717Queries.getFpBaseQueries(
             outpatientMetadata.getSpecialClinicConcept().getConceptId(),
             outpatientMetadata.getMchClinicConcept().getConceptId()));
+    return cd;
+  }
+
+  /**
+   * Get all patients who attended dental clinic Both from OPD to special clinic
+   *
+   * @return CohortDefinition
+   */
+  public CohortDefinition getTotalDentalVisits() {
+    SqlCohortDefinition cd = new SqlCohortDefinition();
+    cd.setName("Dental clinic Patients");
+    cd.addParameter(new Parameter("startDate", "StartDate", Date.class));
+    cd.addParameter(new Parameter("endDate", "End Date", Date.class));
+    cd.setQuery(
+        Moh717Queries.getPatientsGeneralQuery(
+            outpatientMetadata.getOpdWardConcept().getConceptId(),
+            outpatientMetadata.getSpecialClinicConcept().getConceptId(),
+            outpatientMetadata.getDentalClinicConcept().getConceptId(),
+            outpatientMetadata.getDentalOpdConcept().getConceptId()));
     return cd;
   }
 }

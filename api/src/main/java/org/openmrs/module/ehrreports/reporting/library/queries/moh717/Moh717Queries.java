@@ -69,7 +69,7 @@ public class Moh717Queries {
    *
    * @return String
    */
-  public static String getPatientsInCasuality(
+  public static String getPatientsGeneralQuery(
       int conceptQn1, int conceptQn2, int conceptAns1, int conceptAns2) {
     String sql =
         " SELECT p.patient_id FROM patient p INNER JOIN encounter e ON p.patient_id=e.patient_id INNER JOIN obs o "

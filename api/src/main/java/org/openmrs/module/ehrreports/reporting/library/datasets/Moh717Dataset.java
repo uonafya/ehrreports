@@ -251,6 +251,17 @@ public class Moh717Dataset extends BaseDataSet {
                     mappings)),
             mappings),
         getSpecialClinicsCategories());
+    // Dental clinic
+    addRow(
+        dsd,
+        "DT",
+        "Dental Clinic",
+        EhrReportUtils.map(
+            ehrGeneralIndicator.getIndicator(
+                "Dental Clinic",
+                EhrReportUtils.map(moh717CohortQueries.getTotalDentalVisits(), mappings)),
+            mappings),
+        getSpecialClinicsCategories());
     return dsd;
   }
 

@@ -174,6 +174,10 @@ public class OutpatientMetadata extends ProgramsMetadata {
   public Concept getCasualityTriageConcept() {
     return getConcept(EhrReportConstants.CASUALTY_TRIAGE);
   }
+  // 5709
+  public Concept getDentalOpdConcept() {
+    return getConcept(EhrReportConstants.DENTAL_OPD);
+  }
 
   /**
    * programs ANC program
