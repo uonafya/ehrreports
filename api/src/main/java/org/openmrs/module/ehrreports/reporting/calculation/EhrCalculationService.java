@@ -14,12 +14,14 @@ package org.openmrs.module.ehrreports.reporting.calculation;
 import java.util.Collection;
 import java.util.Date;
 import java.util.List;
+import org.openmrs.Concept;
 import org.openmrs.EncounterType;
 import org.openmrs.calculation.patient.PatientCalculationContext;
 import org.openmrs.calculation.result.CalculationResultMap;
 import org.openmrs.module.ehrreports.reporting.utils.EhrCalculationUtils;
 import org.openmrs.module.reporting.common.TimeQualifier;
 import org.openmrs.module.reporting.data.patient.definition.EncountersForPatientDataDefinition;
+import org.openmrs.module.reporting.data.person.definition.ObsForPersonDataDefinition;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -52,6 +54,22 @@ public class EhrCalculationService {
     } else {
       def.setName("all encounters of any type");
     }
+    return EhrCalculationUtils.evaluateWithReporting(def, cohort, null, null, context);
+  }
+
+  /**
+   * Evaluates the last obs of a given type of each patient
+   *
+   * @param concept the obs' concept
+   * @param cohort the patient ids
+   * @param context the calculation context
+   * @return the obss in a calculation result map
+   */
+  public CalculationResultMap lastObs(
+      Concept concept, Collection<Integer> cohort, PatientCalculationContext context) {
+    ObsForPersonDataDefinition def =
+        new ObsForPersonDataDefinition(
+            "last obs", TimeQualifier.LAST, concept, context.getNow(), null);
     return EhrCalculationUtils.evaluateWithReporting(def, cohort, null, null, context);
   }
 }

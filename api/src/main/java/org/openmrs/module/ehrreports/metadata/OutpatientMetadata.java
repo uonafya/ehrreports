@@ -188,7 +188,18 @@ public class OutpatientMetadata extends ProgramsMetadata {
   public Concept getFinalDiagnosis() {
     return getConcept(EhrReportConstants.FINAL_DIAGNOSIS);
   }
-
+  // 3950
+  public Concept getRegistrationFeeConcept() {
+    return getConcept(EhrReportConstants.REGISTRATION_FEE);
+  }
+  // 009
+  public Concept getNewPatientConcept() {
+    return getConcept(EhrReportConstants.NEW_PATIENT);
+  }
+  // 945
+  public Concept getRevisitConcept() {
+    return getConcept(EhrReportConstants.REVISIT);
+  }
   /**
    * programs ANC program
    *
