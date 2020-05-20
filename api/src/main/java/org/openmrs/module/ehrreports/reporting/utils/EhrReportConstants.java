@@ -97,6 +97,12 @@ public final class EhrReportConstants {
   public static final String PNC_Program = "a15f2617-9f5d-4022-8de3-181b2e286a28";
   public static final String CWC_Program = "34680469-1b6b-4ca3-b3f7-347463013dbd";
 
+  // classes
+  public static final String DIAGNOSIS_CLASS = "8d4918b0-c2cc-11de-8d13-0010c6dffd0f"; // 4
+  public static final String FINDING_CLASS = "8d491a9a-c2cc-11de-8d13-0010c6dffd0f"; // 5
+  public static final String SYMPTOMS_CLASS = "8d492954-c2cc-11de-8d13-0010c6dffd0f"; // 12
+  public static final String SYMPTOMS_FINDING_CLASS = "8d492b2a-c2cc-11de-8d13-0010c6dffd0f"; // 13
+
   public enum OccurenceStates {
     NEW,
     REVISIT
