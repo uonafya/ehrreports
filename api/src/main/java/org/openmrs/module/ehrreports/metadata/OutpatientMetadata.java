@@ -12,8 +12,10 @@
 package org.openmrs.module.ehrreports.metadata;
 
 import org.openmrs.Concept;
+import org.openmrs.ConceptClass;
 import org.openmrs.EncounterType;
 import org.openmrs.Program;
+import org.openmrs.api.context.Context;
 import org.openmrs.module.ehrreports.reporting.utils.EhrReportConstants;
 import org.springframework.stereotype.Component;
 
@@ -178,6 +180,14 @@ public class OutpatientMetadata extends ProgramsMetadata {
   public Concept getDentalOpdConcept() {
     return getConcept(EhrReportConstants.DENTAL_OPD);
   }
+  // 2304
+  public Concept getProvisionalDiagnosis() {
+    return getConcept(EhrReportConstants.PROVISIONAL_DIAGNOSIS);
+  }
+  // 5109
+  public Concept getFinalDiagnosis() {
+    return getConcept(EhrReportConstants.FINAL_DIAGNOSIS);
+  }
 
   /**
    * programs ANC program
@@ -204,5 +214,42 @@ public class OutpatientMetadata extends ProgramsMetadata {
    */
   public Program getCwcProgram() {
     return getProgram(EhrReportConstants.CWC_Program);
+  }
+
+  /**
+   * Diagnosis class ID 4
+   *
+   * @return ConceptClass
+   */
+  public ConceptClass getDiagnosisConceptClass() {
+    return Context.getConceptService().getConceptClassByUuid(EhrReportConstants.DIAGNOSIS_CLASS);
+  }
+
+  /**
+   * Finding class ID 5
+   *
+   * @return ConceptClass
+   */
+  public ConceptClass getFindingConceptClass() {
+    return Context.getConceptService().getConceptClassByUuid(EhrReportConstants.FINDING_CLASS);
+  }
+
+  /**
+   * Finding class ID 12
+   *
+   * @return ConceptClass
+   */
+  public ConceptClass getSymptomsConceptClass() {
+    return Context.getConceptService().getConceptClassByUuid(EhrReportConstants.SYMPTOMS_CLASS);
+  }
+
+  /**
+   * Finding/Symptoms class ID 13
+   *
+   * @return ConceptClass
+   */
+  public ConceptClass getSymptomsFindingsConceptClass() {
+    return Context.getConceptService()
+        .getConceptClassByUuid(EhrReportConstants.SYMPTOMS_FINDING_CLASS);
   }
 }

@@ -92,6 +92,9 @@ public final class EhrReportConstants {
 
   public static final String DENTAL_OPD = "18bfc9f3-22ba-4673-907c-9651895465e3"; // 5709
 
+  public static final String PROVISIONAL_DIAGNOSIS = "b8bc4c9f-7ccb-4435-bc4e-646d4cf83f0a"; // 2304
+  public static final String FINAL_DIAGNOSIS = "7033ef37-461c-4953-a757-34722b6d9e38"; // 5109
+
   // program
   public static final String ANC_Program = "d83b74b7-f5ea-46fc-acc5-71e892ee1e68";
   public static final String PNC_Program = "a15f2617-9f5d-4022-8de3-181b2e286a28";
