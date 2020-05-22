@@ -51,7 +51,7 @@ public class SetupMOH705Report extends EhrDataExportManager {
     reportDefinition.setParameters(getParameters());
     // tie the dataset here, you can add more than one data set definition
     reportDefinition.addDataSetDefinition(
-        "MOH717", Mapped.mapStraightThrough(moh705Dataset.constructMoh705Dataset()));
+        "MOH705", Mapped.mapStraightThrough(moh705Dataset.constructMoh705Dataset()));
     return reportDefinition;
   }
 

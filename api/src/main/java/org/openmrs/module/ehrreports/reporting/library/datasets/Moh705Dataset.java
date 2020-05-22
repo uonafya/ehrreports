@@ -11,35 +11,25 @@
  */
 package org.openmrs.module.ehrreports.reporting.library.datasets;
 
-import org.openmrs.module.ehrreports.reporting.library.dimensions.AgeDimensionCohortInterface;
-import org.openmrs.module.ehrreports.reporting.library.dimensions.EhrCommonDimension;
-import org.openmrs.module.ehrreports.reporting.utils.EhrReportUtils;
-import org.openmrs.module.reporting.dataset.definition.CohortIndicatorDataSetDefinition;
+import org.openmrs.module.ehrreports.metadata.OutpatientMetadata;
+import org.openmrs.module.ehrreports.reporting.library.queries.moh705.Moh705Queries;
 import org.openmrs.module.reporting.dataset.definition.DataSetDefinition;
+import org.openmrs.module.reporting.dataset.definition.SqlDataSetDefinition;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
 public class Moh705Dataset extends BaseDataSet {
-
-  @Autowired private EhrCommonDimension ehrCommonDimension;
-
-  @Autowired
-  @Qualifier("commonAgeDimensionCohort")
-  private AgeDimensionCohortInterface ageDimensionCohort;
+  @Autowired private OutpatientMetadata outpatientMetadata;
 
   public DataSetDefinition constructMoh705Dataset() {
 
-    CohortIndicatorDataSetDefinition dsd = new CohortIndicatorDataSetDefinition();
+    SqlDataSetDefinition dsd = new SqlDataSetDefinition();
     dsd.setName("MOH 705 Data Set");
     dsd.addParameters(getParameters());
-    // Tie dimensions to this data definition
-    dsd.addDimension("gender", EhrReportUtils.map(ehrCommonDimension.gender(), ""));
-    dsd.addDimension(
-        "age",
-        EhrReportUtils.map(ehrCommonDimension.age(ageDimensionCohort), "effectiveDate=${endDate}"));
-    // add your dataset here, construct it here
+    dsd.setSqlQuery(
+        Moh705Queries.getMoh705Query(
+            outpatientMetadata.getDiagnosisConceptClass().getConceptClassId()));
     return dsd;
   }
 }
