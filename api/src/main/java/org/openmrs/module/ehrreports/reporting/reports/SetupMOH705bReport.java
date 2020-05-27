@@ -42,6 +42,7 @@ public class SetupMOH705bReport extends EhrDataExportManager {
     reportDefinition.setUuid(getUuid());
     reportDefinition.setName(getName());
     reportDefinition.setDescription(getDescription());
+    reportDefinition.setParameters(moh705bDataset.getParameters());
     reportDefinition.addDataSetDefinition(
         "MOH705B", Mapped.mapStraightThrough(moh705bDataset.constructMoh705bDataset()));
     reportDefinition.addDataSetDefinition(
