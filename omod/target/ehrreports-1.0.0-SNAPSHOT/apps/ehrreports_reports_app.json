@@ -52,6 +52,15 @@
         "requiredPrivilege": ""
       },
       {
+        "id": "MOH 705 B",
+        "extensionPointId": "org.openmrs.module.ehrreports.reports.monthly",
+        "type": "link",
+        "label": "MOH 705 B",
+        "url": "reportingui/runReport.page?reportDefinition=8a73dfa2-9ff8-11ea-9961-7f64bbc506a9",
+        "order": 6,
+        "requiredPrivilege": ""
+      },
+      {
         "id": "MOH 717",
         "extensionPointId": "org.openmrs.module.ehrreports.reports.monthly",
         "type": "link",

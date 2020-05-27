@@ -1,6 +1,5 @@
 org/openmrs/module/ehrreports/reporting/cohort/evaluator/CalculationCohortDefinitionEvaluator.class
 org/openmrs/module/ehrreports/metadata/TbMetadata.class
-org/openmrs/module/ehrreports/reporting/reports/SetupMOH705Report.class
 org/openmrs/module/ehrreports/reporting/utils/EhrReportConstants.class
 org/openmrs/module/ehrreports/reporting/library/dimensions/AgeDimensionCohortInterface.class
 org/openmrs/module/ehrreports/reporting/library/cohorts/Moh705CohortQueries.class
@@ -31,10 +30,12 @@ org/openmrs/module/ehrreports/reporting/utils/EhrReportUtils.class
 org/openmrs/module/ehrreports/reporting/utils/EhrReportConstants$OccurenceStates.class
 org/openmrs/module/ehrreports/reporting/utils/EhrCalculationUtils.class
 org/openmrs/module/ehrreports/reporting/reports/SetupMoh717Report.class
+org/openmrs/module/ehrreports/reporting/reports/SetupMOH705AReport.class
 org/openmrs/module/ehrreports/reporting/library/cohorts/GenericCohortQueries.class
 org/openmrs/module/ehrreports/reporting/library/datasets/BaseDataSet.class
 org/openmrs/module/ehrreports/reporting/calculation/EhrCalculationService.class
 org/openmrs/module/ehrreports/reporting/cohort/definition/CalculationCohortDefinition.class
+org/openmrs/module/ehrreports/reporting/reports/SetupMOH705BReport.class
 org/openmrs/module/ehrreports/metadata/OutpatientMetadata.class
 org/openmrs/module/ehrreports/api/EhrReportsService.class
 org/openmrs/module/ehrreports/reporting/EhrReportInitializer.class

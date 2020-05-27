@@ -13,7 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-public class SetupMOH705Report extends EhrDataExportManager {
+public class SetupMOH705AReport extends EhrDataExportManager {
 
   @Autowired private Moh705Dataset moh705Dataset;
 

@@ -17,6 +17,7 @@
 /home/codehub/workspace/integrated_EHR/ehrreports/api/src/main/java/org/openmrs/module/ehrreports/reporting/library/cohorts/GenericCohortQueries.java
 /home/codehub/workspace/integrated_EHR/ehrreports/api/src/main/java/org/openmrs/module/ehrreports/reporting/library/dimensions/CommonAgeDimensionCohort.java
 /home/codehub/workspace/integrated_EHR/ehrreports/api/src/main/java/org/openmrs/module/ehrreports/reporting/calculation/EhrCalculationService.java
+/home/codehub/workspace/integrated_EHR/ehrreports/api/src/main/java/org/openmrs/module/ehrreports/reporting/reports/SetupMOH705BReport.java
 /home/codehub/workspace/integrated_EHR/ehrreports/api/src/main/java/org/openmrs/module/ehrreports/reporting/library/dimensions/EhrCommonDimension.java
 /home/codehub/workspace/integrated_EHR/ehrreports/api/src/main/java/org/openmrs/module/ehrreports/reporting/cohort/evaluator/CalculationCohortDefinitionEvaluator.java
 /home/codehub/workspace/integrated_EHR/ehrreports/api/src/main/java/org/openmrs/module/ehrreports/reporting/library/dimensions/AgeDimensionCohortInterface.java
@@ -29,10 +30,10 @@
 /home/codehub/workspace/integrated_EHR/ehrreports/api/src/main/java/org/openmrs/module/ehrreports/reporting/reports/manager/EhrReportManager.java
 /home/codehub/workspace/integrated_EHR/ehrreports/api/src/main/java/org/openmrs/module/ehrreports/reporting/reports/SetupMoh717Report.java
 /home/codehub/workspace/integrated_EHR/ehrreports/api/src/main/java/org/openmrs/module/ehrreports/reporting/library/cohorts/CommonLibrary.java
+/home/codehub/workspace/integrated_EHR/ehrreports/api/src/main/java/org/openmrs/module/ehrreports/reporting/reports/SetupMOH705AReport.java
 /home/codehub/workspace/integrated_EHR/ehrreports/api/src/main/java/org/openmrs/module/ehrreports/EhrReportsConfig.java
 /home/codehub/workspace/integrated_EHR/ehrreports/api/src/main/java/org/openmrs/module/ehrreports/reporting/utils/EhrCalculationUtils.java
 /home/codehub/workspace/integrated_EHR/ehrreports/api/src/main/java/org/openmrs/module/ehrreports/reporting/reports/manager/EhrDataExportManager.java
-/home/codehub/workspace/integrated_EHR/ehrreports/api/src/main/java/org/openmrs/module/ehrreports/reporting/reports/SetupMOH705Report.java
 /home/codehub/workspace/integrated_EHR/ehrreports/api/src/main/java/org/openmrs/module/ehrreports/metadata/OutpatientMetadata.java
 /home/codehub/workspace/integrated_EHR/ehrreports/api/src/main/java/org/openmrs/module/ehrreports/metadata/MetadataLookupException.java
 /home/codehub/workspace/integrated_EHR/ehrreports/api/src/main/java/org/openmrs/module/ehrreports/reporting/library/indicators/BaseIndicators.java
