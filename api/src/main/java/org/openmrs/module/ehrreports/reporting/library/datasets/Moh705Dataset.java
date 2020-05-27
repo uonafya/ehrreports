@@ -12,6 +12,7 @@
 package org.openmrs.module.ehrreports.reporting.library.datasets;
 
 import org.openmrs.module.ehrreports.metadata.OutpatientMetadata;
+import org.openmrs.module.ehrreports.reporting.cohort.definition.CustomConfigurationsDataDefinition;
 import org.openmrs.module.ehrreports.reporting.library.queries.moh705.Moh705Queries;
 import org.openmrs.module.reporting.dataset.definition.DataSetDefinition;
 import org.openmrs.module.reporting.dataset.definition.SqlDataSetDefinition;
@@ -31,5 +32,11 @@ public class Moh705Dataset extends BaseDataSet {
         Moh705Queries.getMoh705Query(
             outpatientMetadata.getDiagnosisConceptClass().getConceptClassId()));
     return dsd;
+  }
+
+  public DataSetDefinition constructCustomDataset() {
+    CustomConfigurationsDataDefinition df = new CustomConfigurationsDataDefinition();
+    df.setName("Custom fields ");
+    return df;
   }
 }

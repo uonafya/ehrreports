@@ -24,12 +24,12 @@ public class SetupMOH705Report extends EhrDataExportManager {
 
   @Override
   public String getName() {
-    return "MOH 705 Report";
+    return "MOH 705 A Report";
   }
 
   @Override
   public String getDescription() {
-    return "MOH 705 workload Report";
+    return "MOH 705 A  Workload Report";
   }
 
   @Override
@@ -52,6 +52,8 @@ public class SetupMOH705Report extends EhrDataExportManager {
     // tie the dataset here, you can add more than one data set definition
     reportDefinition.addDataSetDefinition(
         "MOH705", Mapped.mapStraightThrough(moh705Dataset.constructMoh705Dataset()));
+    reportDefinition.addDataSetDefinition(
+        "C", Mapped.mapStraightThrough(moh705Dataset.constructCustomDataset()));
     return reportDefinition;
   }
 
@@ -63,6 +65,7 @@ public class SetupMOH705Report extends EhrDataExportManager {
           createXlsReportDesign(
               reportDefinition, "MOH_705.xls", "MOH 705 REPORT", getExcelDesignUuid(), null);
       Properties props = new Properties();
+      props.put("repeatingSections", "sheet:1,row:5,dataset:MOH705");
       props.put("sortWeight", "5000");
       reportDesign.setProperties(props);
     } catch (IOException e) {

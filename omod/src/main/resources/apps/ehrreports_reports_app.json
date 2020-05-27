@@ -43,10 +43,10 @@
         "requiredPrivilege": ""
       },
       {
-        "id": "MOH 705",
+        "id": "MOH 705 A",
         "extensionPointId": "org.openmrs.module.ehrreports.reports.monthly",
         "type": "link",
-        "label": "MOH 705",
+        "label": "MOH 705 A",
         "url": "reportingui/runReport.page?reportDefinition=8e6c82d4-8f73-11ea-b22a-df41ade62345",
         "order": 5,
         "requiredPrivilege": ""
