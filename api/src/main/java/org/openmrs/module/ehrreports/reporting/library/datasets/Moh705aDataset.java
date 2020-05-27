@@ -13,23 +13,23 @@ package org.openmrs.module.ehrreports.reporting.library.datasets;
 
 import org.openmrs.module.ehrreports.metadata.OutpatientMetadata;
 import org.openmrs.module.ehrreports.reporting.cohort.definition.CustomConfigurationsDataDefinition;
-import org.openmrs.module.ehrreports.reporting.library.queries.moh705.Moh705Queries;
+import org.openmrs.module.ehrreports.reporting.library.queries.moh705.Moh705aQueries;
 import org.openmrs.module.reporting.dataset.definition.DataSetDefinition;
 import org.openmrs.module.reporting.dataset.definition.SqlDataSetDefinition;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-public class Moh705Dataset extends BaseDataSet {
+public class Moh705aDataset extends BaseDataSet {
   @Autowired private OutpatientMetadata outpatientMetadata;
 
-  public DataSetDefinition constructMoh705Dataset() {
+  public DataSetDefinition constructMoh705aDataset() {
 
     SqlDataSetDefinition dsd = new SqlDataSetDefinition();
-    dsd.setName("MOH 705 Data Set");
+    dsd.setName("MOH 705 A Data Set");
     dsd.addParameters(getParameters());
     dsd.setSqlQuery(
-        Moh705Queries.getMoh705Query(
+        Moh705aQueries.getMoh705aQuery(
             outpatientMetadata.getDiagnosisConceptClass().getConceptClassId()));
     return dsd;
   }

@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Properties;
-import org.openmrs.module.ehrreports.reporting.library.datasets.Moh705aDataset;
+import org.openmrs.module.ehrreports.reporting.library.datasets.Moh705bDataset;
 import org.openmrs.module.ehrreports.reporting.reports.manager.EhrDataExportManager;
 import org.openmrs.module.reporting.evaluation.parameter.Mapped;
 import org.openmrs.module.reporting.report.ReportDesign;
@@ -13,33 +13,27 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-public class SetupMOH705AReport extends EhrDataExportManager {
+public class SetupMOH705bReport extends EhrDataExportManager {
+  @Autowired private Moh705bDataset moh705bDataset;
 
-  @Autowired private Moh705aDataset moh705Dataset;
+  @Override
+  public String getExcelDesignUuid() {
+    return "051e0f0c-9ff9-11ea-9d2a-87b34f3ac3dc";
+  }
 
   @Override
   public String getUuid() {
-    return "8e6c82d4-8f73-11ea-b22a-df41ade62345";
+    return "8a73dfa2-9ff8-11ea-9961-7f64bbc506a9";
   }
 
   @Override
   public String getName() {
-    return "MOH 705 A Report";
+    return "MOH 705 B Report";
   }
 
   @Override
   public String getDescription() {
-    return "MOH 705 A  Workload Report";
-  }
-
-  @Override
-  public String getVersion() {
-    return "1.0-SNAPSHOT";
-  }
-
-  @Override
-  public String getExcelDesignUuid() {
-    return "a09387b4-8f73-11ea-8aa4-570ef4b78b59";
+    return "MOH 705 B  Workload Report";
   }
 
   @Override
@@ -48,13 +42,16 @@ public class SetupMOH705AReport extends EhrDataExportManager {
     reportDefinition.setUuid(getUuid());
     reportDefinition.setName(getName());
     reportDefinition.setDescription(getDescription());
-    reportDefinition.setParameters(moh705Dataset.getParameters());
-    // tie the dataset here, you can add more than one data set definition
     reportDefinition.addDataSetDefinition(
-        "MOH705", Mapped.mapStraightThrough(moh705Dataset.constructMoh705aDataset()));
+        "MOH705B", Mapped.mapStraightThrough(moh705bDataset.constructMoh705bDataset()));
     reportDefinition.addDataSetDefinition(
-        "C", Mapped.mapStraightThrough(moh705Dataset.constructCustomDataset()));
+        "B", Mapped.mapStraightThrough(moh705bDataset.constructCustomDataset()));
     return reportDefinition;
+  }
+
+  @Override
+  public String getVersion() {
+    return "1.0-SNAPSHOT";
   }
 
   @Override
@@ -63,9 +60,9 @@ public class SetupMOH705AReport extends EhrDataExportManager {
     try {
       reportDesign =
           createXlsReportDesign(
-              reportDefinition, "MOH_705a.xls", "MOH 705 A REPORT", getExcelDesignUuid(), null);
+              reportDefinition, "MOH_705b.xls", "MOH 705 B REPORT", getExcelDesignUuid(), null);
       Properties props = new Properties();
-      props.put("repeatingSections", "sheet:1,row:5,dataset:MOH705");
+      props.put("repeatingSections", "sheet:1,row:5,dataset:MOH705B");
       props.put("sortWeight", "5000");
       reportDesign.setProperties(props);
     } catch (IOException e) {
