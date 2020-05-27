@@ -2,7 +2,9 @@ package org.openmrs.module.ehrreports.reporting.reports;
 
 import org.openmrs.module.ehrreports.reporting.reports.manager.EhrDataExportManager;
 import org.openmrs.module.reporting.report.definition.ReportDefinition;
+import org.springframework.stereotype.Component;
 
+@Component
 public class SetupMOH705BReport extends EhrDataExportManager {
   @Override
   public String getExcelDesignUuid() {
