@@ -43,10 +43,15 @@ simply restart OpenMRS/tomcat and the module will be loaded and started.
 ## MOH 717 and MOH 705
 
 
-## Report Indicators
+## Report Indicators Requirements
+- OpenMRS Version 1.9.9
+- App Framework Module	2.4
+- Reporting REST	1.5
+- App UI Module	1.12.0
+- Core Apps Module	1.2.1
+- Reporting UI Module	1.7.0
 
-| Indicators   | Description                                                                                                                                                                                                   |
-| ------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |                                                                                                    |
+| Indicators ---------------------------------------------------------------------------------------------------------------------------------------------- |                                                                                                    |
 
 ## How to perform a release
 
