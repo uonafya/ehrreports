@@ -36,7 +36,7 @@
         "id": "ehrreports.homepageLink",
         "extensionPointId": "org.openmrs.referenceapplication.homepageLink",
         "type": "link",
-        "label": "Other Reports",
+        "label": "MOH Reports",
         "url": "ehrreports/reports.page",
         "icon": "icon-book",
         "order": 110,
