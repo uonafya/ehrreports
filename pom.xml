@@ -18,7 +18,7 @@
 		<openmrsPlatformVersion>1.9.9</openmrsPlatformVersion>
 		<appframeworkVersion>2.4</appframeworkVersion>
 		<appuiVersion>1.4</appuiVersion>
-		<uiframeworkModuleVersion>3.8</uiframeworkModuleVersion>
+		<uiframeworkModuleVersion>3.2</uiframeworkModuleVersion>
 		<reportingVersion>0.9.8.1</reportingVersion>
 		<serializationVersion>0.2.7</serializationVersion>
 		<calculationVersion>1.1</calculationVersion>
