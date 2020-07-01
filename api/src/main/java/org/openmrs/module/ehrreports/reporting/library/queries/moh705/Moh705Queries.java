@@ -13,7 +13,7 @@
  */
 package org.openmrs.module.ehrreports.reporting.library.queries.moh705;
 
-public class Moh705aQueries {
+public class Moh705Queries {
 
   /**
    * put you first indicator query here MOH 705a
@@ -64,7 +64,7 @@ public class Moh705aQueries {
             + " e.encounter_datetime BETWEEN :startDate AND :endDate "
             + " AND o.value_coded IS NOT NULL "
             + " AND c.class_id IN(%d) "
-            + " AND TIMESTAMPDIFF(YEAR, pe.birthdate, :endDate) <= 5 "
+            + " AND TIMESTAMPDIFF(YEAR, pe.birthdate, :endDate) < 5 "
             + "GROUP BY cn.name";
 
     return String.format(sql, classId);
@@ -119,7 +119,7 @@ public class Moh705aQueries {
             + " e.encounter_datetime BETWEEN :startDate AND :endDate "
             + " AND o.value_coded IS NOT NULL "
             + " AND c.class_id IN(%d) "
-            + " AND TIMESTAMPDIFF(YEAR, pe.birthdate, :endDate) > 5 "
+            + " AND TIMESTAMPDIFF(YEAR, pe.birthdate, :endDate) >= 5 "
             + "GROUP BY cn.name";
 
     return String.format(sql, classId);
