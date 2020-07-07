@@ -18,11 +18,14 @@ import java.text.Format;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Properties;
+import java.util.TimeZone;
+
 import org.apache.commons.lang.StringUtils;
 import org.openmrs.GlobalProperty;
 import org.openmrs.Program;
@@ -170,5 +173,16 @@ public class EhrReportUtils {
     Format formatter = new SimpleDateFormat("dd-MM-yyyy");
 
     return formatter.format(date);
+  }
+
+  public static Date getTheDateBasedOnIntegerSupplied(String date, int day) {
+    Date newDate = null;
+
+    Calendar cal = Calendar.getInstance(TimeZone.getDefault());
+    cal.setTime(date);
+    int month = cal.get(Calendar.MONTH);
+
+    return cal.getTime();
+
   }
 }
