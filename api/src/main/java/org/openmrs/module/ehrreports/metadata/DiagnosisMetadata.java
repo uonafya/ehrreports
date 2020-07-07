@@ -3,7 +3,9 @@ package org.openmrs.module.ehrreports.metadata;
 import java.util.Arrays;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class DiagnosisMetadata extends Metadata {
   @Autowired private OutpatientMetadata outpatientMetadata;
   /**
