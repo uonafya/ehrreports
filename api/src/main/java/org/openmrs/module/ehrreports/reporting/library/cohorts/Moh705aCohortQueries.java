@@ -86,10 +86,10 @@ public class Moh705aCohortQueries {
             getAdultsPatientsWithAllDiagnosisRecorded(),
             "startDate=${startDate},endDate=${endDate}"));
     cd.addSearch(
-        "01",
+        "1",
         EhrReportUtils.map(
             getPatientsHavingDiarrhoea(), "startDate=${startDate},endDate=${endDate}"));
-    cd.setCompositionString("ALL AND NOT (01)");
+    cd.setCompositionString("ALL AND NOT (1)");
     return cd;
   }
 }
