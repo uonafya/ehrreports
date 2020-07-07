@@ -200,6 +200,15 @@ public class OutpatientMetadata extends ProgramsMetadata {
   public Concept getRevisitConcept() {
     return getConcept(EhrReportConstants.REVISIT);
   }
+  // Get all diarrhoea concepts
+  //
+  public Concept getAcuteDiarrhoea() {
+    return getConcept(EhrReportConstants.ACUTE_DIARRHEA);
+  }
+  // 4029
+  public Concept getDiarrheaUnspecified() {
+    return getConcept(EhrReportConstants.DIARRHEA_UNSPECIFIED);
+  }
   /**
    * programs ANC program
    *

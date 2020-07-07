@@ -14,7 +14,7 @@
 package org.openmrs.module.ehrreports.reporting.library.indicators;
 
 import java.util.List;
-import org.openmrs.module.ehrreports.reporting.library.cohorts.Moh705CohortQueries;
+import org.openmrs.module.ehrreports.reporting.library.cohorts.Moh705aCohortQueries;
 import org.openmrs.module.ehrreports.reporting.utils.EhrReportUtils;
 import org.openmrs.module.reporting.indicator.CohortIndicator;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,7 +22,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Moh705aIndicators {
-  @Autowired private Moh705CohortQueries moh705CohortQueries;
+  @Autowired private Moh705aCohortQueries moh705aCohortQueries;
 
   @Autowired private EhrGeneralIndicator ehrGeneralIndicator;
 
@@ -35,7 +35,7 @@ public class Moh705aIndicators {
     return ehrGeneralIndicator.getIndicator(
         "MOH705A",
         EhrReportUtils.map(
-            moh705CohortQueries.getAdultPatientsWhoHaveDiagnosis(list),
+            moh705aCohortQueries.getAdultPatientsWhoHaveDiagnosis(list),
             "startDate=${startDate},endDate=${endDate}"));
   }
 }

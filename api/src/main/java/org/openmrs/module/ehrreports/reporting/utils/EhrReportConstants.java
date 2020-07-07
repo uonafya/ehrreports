@@ -98,6 +98,12 @@ public final class EhrReportConstants {
   public static final String NEW_PATIENT = "1ecd0a60-498c-41b1-a836-6e154322be5a"; // 009
   public static final String REVISIT = "51d88fa3-b475-4713-8db8-58b63b0f3739"; // 945
 
+  // Diarrhoea
+  public static final String ACUTE_DIARRHEA = "48ec899e-8f8f-4816-8d76-b98026b7d04f";
+  public static final String DIARRHEA_UNSPECIFIED = "91e4a7f4-f3d1-455e-991e-eb64a4df415b";
+
+  // tuberulosis
+
   // program
   public static final String ANC_Program = "d83b74b7-f5ea-46fc-acc5-71e892ee1e68";
   public static final String PNC_Program = "a15f2617-9f5d-4022-8de3-181b2e286a28";
