@@ -11,26 +11,38 @@
  */
 package org.openmrs.module.ehrreports.reporting.library.datasets;
 
-import org.openmrs.module.ehrreports.metadata.OutpatientMetadata;
 import org.openmrs.module.ehrreports.reporting.cohort.definition.CustomConfigurationsDataDefinition;
-import org.openmrs.module.ehrreports.reporting.library.queries.moh705.Moh705Queries;
+import org.openmrs.module.ehrreports.reporting.library.indicators.Moh705aIndicators;
+import org.openmrs.module.ehrreports.reporting.utils.EhrReportUtils;
+import org.openmrs.module.reporting.dataset.definition.CohortIndicatorDataSetDefinition;
 import org.openmrs.module.reporting.dataset.definition.DataSetDefinition;
-import org.openmrs.module.reporting.dataset.definition.SqlDataSetDefinition;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
 public class Moh705aDataset extends BaseDataSet {
-  @Autowired private OutpatientMetadata outpatientMetadata;
+
+  @Autowired private Moh705aIndicators moh705aIndicators;
 
   public DataSetDefinition constructMoh705aDataset() {
 
-    SqlDataSetDefinition dsd = new SqlDataSetDefinition();
-    dsd.setName("MOH 705 A Data Set");
+    CohortIndicatorDataSetDefinition dsd = new CohortIndicatorDataSetDefinition();
+    String mappings = "startDate=${startDate},endDate=${endDate}";
+    dsd.setName("MOH705A");
     dsd.addParameters(getParameters());
-    dsd.setSqlQuery(
-        Moh705Queries.getMoh705aQuery(
-            outpatientMetadata.getDiagnosisConceptClass().getConceptClassId()));
+
+    dsd.addColumn(
+        "1",
+        "Diarrhoea",
+        EhrReportUtils.map(moh705aIndicators.getPatientsHavingDiarrhoea(), mappings),
+        "");
+    dsd.addColumn(
+        "OTHERS",
+        "All other diseases",
+        EhrReportUtils.map(
+            moh705aIndicators.getMoh705aPatientsHavingDiagnosisOtherThanTheOnesListed(), mappings),
+        "");
+
     return dsd;
   }
 

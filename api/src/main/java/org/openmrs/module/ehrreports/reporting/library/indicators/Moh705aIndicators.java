@@ -13,7 +13,6 @@
  */
 package org.openmrs.module.ehrreports.reporting.library.indicators;
 
-import java.util.List;
 import org.openmrs.module.ehrreports.reporting.library.cohorts.Moh705aCohortQueries;
 import org.openmrs.module.ehrreports.reporting.utils.EhrReportUtils;
 import org.openmrs.module.reporting.indicator.CohortIndicator;
@@ -27,15 +26,28 @@ public class Moh705aIndicators {
   @Autowired private EhrGeneralIndicator ehrGeneralIndicator;
 
   /**
-   * Get patients who are adults and have diagnosis based on the concepts supplied
+   * Get patients who are adults and have diagnosis other than the ones listed and classified
    *
    * @return CohortIndicator
    */
-  public CohortIndicator getMoh705aPatients(List<Integer> list) {
+  public CohortIndicator getMoh705aPatientsHavingDiagnosisOtherThanTheOnesListed() {
     return ehrGeneralIndicator.getIndicator(
-        "MOH705A",
+        "MOH705A - OTHER",
         EhrReportUtils.map(
-            moh705aCohortQueries.getAdultPatientsWhoHaveDiagnosis(list),
+            moh705aCohortQueries.getAllDiseasesExceptThoseClassifiedMoh705A(),
+            "startDate=${startDate},endDate=${endDate}"));
+  }
+
+  /**
+   * Get patients who have diarrhoea during the month
+   *
+   * @return @CohortIndicator
+   */
+  public CohortIndicator getPatientsHavingDiarrhoea() {
+    return ehrGeneralIndicator.getIndicator(
+        "Diarrhoea",
+        EhrReportUtils.map(
+            moh705aCohortQueries.getPatientsHavingDiarrhoea(),
             "startDate=${startDate},endDate=${endDate}"));
   }
 }

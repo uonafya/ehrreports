@@ -13,7 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-public class SetupMOH705AReport extends EhrDataExportManager {
+public class SetupMOH705aReport extends EhrDataExportManager {
 
   @Autowired private Moh705aDataset moh705Dataset;
 
@@ -51,7 +51,7 @@ public class SetupMOH705AReport extends EhrDataExportManager {
     reportDefinition.setParameters(moh705Dataset.getParameters());
     // tie the dataset here, you can add more than one data set definition
     reportDefinition.addDataSetDefinition(
-        "MOH705", Mapped.mapStraightThrough(moh705Dataset.constructMoh705aDataset()));
+        "MOH705A", Mapped.mapStraightThrough(moh705Dataset.constructMoh705aDataset()));
     reportDefinition.addDataSetDefinition(
         "C", Mapped.mapStraightThrough(moh705Dataset.constructCustomDataset()));
     return reportDefinition;
@@ -65,7 +65,6 @@ public class SetupMOH705AReport extends EhrDataExportManager {
           createXlsReportDesign(
               reportDefinition, "MOH_705a.xls", "MOH 705 A REPORT", getExcelDesignUuid(), null);
       Properties props = new Properties();
-      props.put("repeatingSections", "sheet:1,row:5,dataset:MOH705");
       props.put("sortWeight", "5000");
       reportDesign.setProperties(props);
     } catch (IOException e) {

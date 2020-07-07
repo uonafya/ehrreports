@@ -13,9 +13,12 @@ package org.openmrs.module.ehrreports.reporting.library.cohorts;
 
 import java.util.Date;
 import java.util.List;
+import org.openmrs.module.ehrreports.metadata.DiagnosisMetadata;
 import org.openmrs.module.ehrreports.metadata.OutpatientMetadata;
 import org.openmrs.module.ehrreports.reporting.library.queries.moh705.Moh705Queries;
+import org.openmrs.module.ehrreports.reporting.utils.EhrReportUtils;
 import org.openmrs.module.reporting.cohort.definition.CohortDefinition;
+import org.openmrs.module.reporting.cohort.definition.CompositionCohortDefinition;
 import org.openmrs.module.reporting.cohort.definition.SqlCohortDefinition;
 import org.openmrs.module.reporting.evaluation.parameter.Parameter;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +27,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class Moh705aCohortQueries {
   @Autowired private OutpatientMetadata outpatientMetadata;
+  @Autowired private DiagnosisMetadata diagnosisMetadata;
 
   /**
    * Get adult patients who have given diagnosis - MOH705A
@@ -54,6 +58,38 @@ public class Moh705aCohortQueries {
     cd.setQuery(
         Moh705Queries.getAdultsPatientsWhoMatchDiagnosisAll(
             outpatientMetadata.getDiagnosisConceptClass().getConceptClassId()));
+    return cd;
+  }
+
+  /**
+   * Get patients who have diahorea during period of the month
+   *
+   * @return @{@link CohortDefinition}
+   */
+  public CohortDefinition getPatientsHavingDiarrhoea() {
+    return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getDiarrhoeaConceptList());
+  }
+
+  /**
+   * All other diseases that are taken in the facility over a period of time
+   *
+   * @return @{@link CohortDefinition}
+   */
+  public CohortDefinition getAllDiseasesExceptThoseClassifiedMoh705A() {
+    CompositionCohortDefinition cd = new CompositionCohortDefinition();
+    cd.setName("Get other adults diagnosis other than the ones classified");
+    cd.addParameter(new Parameter("startDate", "Start Date", Date.class));
+    cd.addParameter(new Parameter("endDate", "End Date", Date.class));
+    cd.addSearch(
+        "ALL",
+        EhrReportUtils.map(
+            getAdultsPatientsWithAllDiagnosisRecorded(),
+            "startDate=${startDate},endDate=${endDate}"));
+    cd.addSearch(
+        "01",
+        EhrReportUtils.map(
+            getPatientsHavingDiarrhoea(), "startDate=${startDate},endDate=${endDate}"));
+    cd.setCompositionString("ALL AND NOT (01)");
     return cd;
   }
 }
