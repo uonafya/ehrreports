@@ -46,4 +46,3 @@ public class DiagnosisMetadata extends Metadata {
         outpatientMetadata.getEncounterForScreeningForRespiratoryTB().getConceptId());
   }
 }
-
