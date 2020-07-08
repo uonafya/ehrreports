@@ -143,6 +143,24 @@ public final class EhrReportConstants {
   public static final String ENCOUNTER_FOR_SCREENING_FOR_RESPIRATORY_TUBERCULOSIS =
       "645188a4-4348-406f-a91d-f90e723359fb"; // 4366
 
+  //Dysentery (Blood Bloody diarrhoea)
+  public static final String DYSENTERY = "9004c4f1-687e-4ec9-8eaf-9bd8192d3427";//2450
+  public static final String AMOEBIC_DYSENTERY = "435c8290-ad16-47c6-b282-0c3d9d1e6cd1";//1003
+  public static final String SHIGELLA_DYSENTERY= "91934386-461e-4a0d-856a-ac86543b2894";//1668
+  public static final String BACILLARY_DYSENTERY= "b9c47e34-7014-4e6e-b113-383b115d9ef6";//3667
+
+  //Meningococcal
+  public static final String MENINGOCOCCAL_MENINGITIS = "ade7a86f-9520-40e7-b89c-1179bca59784";//100001518
+  public static final String MENINGOCOCCAL_INFECTIONS = "ddd803b4-b581-4642-9eaa-053b3a40bb53";//1714
+
+  //Tetanus
+  public static final String TETANUS = "8e87b1e0-3d56-4135-be89-6ef6f8e9f368";//1521
+  public static final String TETANUS_NEONATORUM = "5e87fc96-95e2-48c7-bdff-7d9202715f1d";//1519
+  public static final String OBSTETRICAL_TETANUS= "ea889e1d-ba0a-473f-90cc-bf6eae356638";//1712
+
+
+
+
   // program
   public static final String ANC_Program = "d83b74b7-f5ea-46fc-acc5-71e892ee1e68";
   public static final String PNC_Program = "a15f2617-9f5d-4022-8de3-181b2e286a28";
