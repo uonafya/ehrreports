@@ -16,9 +16,11 @@ import java.util.Date;
 import org.openmrs.Concept;
 import org.openmrs.EncounterType;
 import org.openmrs.api.PatientSetService;
+import org.openmrs.module.ehrreports.reporting.library.queries.CommonQueries;
 import org.openmrs.module.reporting.cohort.definition.CodedObsCohortDefinition;
 import org.openmrs.module.reporting.cohort.definition.CohortDefinition;
 import org.openmrs.module.reporting.cohort.definition.EncounterCohortDefinition;
+import org.openmrs.module.reporting.cohort.definition.SqlCohortDefinition;
 import org.openmrs.module.reporting.common.SetComparator;
 import org.openmrs.module.reporting.common.TimeQualifier;
 import org.openmrs.module.reporting.evaluation.parameter.Parameter;
@@ -64,5 +66,18 @@ public class CommonLibrary {
       cd.setValueList(Arrays.asList(answers));
     }
     return cd;
+  }
+
+  /**
+   * Patients who have encounters on date
+   *
+   * @return @{@link CohortDefinition}
+   */
+  public CohortDefinition getPatientsHavingEncountersOnDate(int day) {
+    SqlCohortDefinition sql = new SqlCohortDefinition();
+    sql.setName("Patients having encounters on given date");
+    sql.addParameter(new Parameter("endDate", "End Date", Date.class));
+    sql.setQuery(CommonQueries.patientsHavingEncountersOnDate(day));
+    return sql;
   }
 }

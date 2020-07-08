@@ -11,7 +11,10 @@
  */
 package org.openmrs.module.ehrreports.reporting.library.datasets;
 
+import static org.openmrs.module.ehrreports.reporting.utils.EhrReportUtils.getAdultChildrenColumns;
+
 import org.openmrs.module.ehrreports.reporting.cohort.definition.CustomConfigurationsDataDefinition;
+import org.openmrs.module.ehrreports.reporting.library.dimensions.EhrCommonDimension;
 import org.openmrs.module.ehrreports.reporting.library.indicators.Moh705aIndicators;
 import org.openmrs.module.ehrreports.reporting.utils.EhrReportUtils;
 import org.openmrs.module.reporting.dataset.definition.CohortIndicatorDataSetDefinition;
@@ -24,24 +27,31 @@ public class Moh705aDataset extends BaseDataSet {
 
   @Autowired private Moh705aIndicators moh705aIndicators;
 
+  @Autowired private EhrCommonDimension ehrCommonDimension;
+
   public DataSetDefinition constructMoh705aDataset() {
 
     CohortIndicatorDataSetDefinition dsd = new CohortIndicatorDataSetDefinition();
+    dsd.addDimension(
+        "day",
+        EhrReportUtils.map(ehrCommonDimension.encountersOfMonthPerDay(), "endDate=${endDate+1d}"));
     String mappings = "startDate=${startDate},endDate=${endDate}";
     dsd.setName("MOH705A");
     dsd.addParameters(getParameters());
 
-    dsd.addColumn(
+    addRow(
+        dsd,
         "1",
         "Diarrhoea",
         EhrReportUtils.map(moh705aIndicators.getPatientsHavingDiarrhoea(), mappings),
-        "");
-    dsd.addColumn(
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
         "OTHERS",
         "All other diseases",
         EhrReportUtils.map(
             moh705aIndicators.getMoh705aPatientsHavingDiagnosisOtherThanTheOnesListed(), mappings),
-        "");
+        getAdultChildrenColumns());
 
     return dsd;
   }
