@@ -35,7 +35,7 @@ public class Moh705aIndicators {
         "MOH705A - OTHER",
         EhrReportUtils.map(
             moh705aCohortQueries.getAllDiseasesExceptThoseClassifiedMoh705A(),
-            "startDate=${startDate},endDate=${endDate+1d}"));
+            "startDate=${startDate},endDate=${endDate}"));
   }
 
   /**
@@ -48,6 +48,6 @@ public class Moh705aIndicators {
         "Diarrhoea",
         EhrReportUtils.map(
             moh705aCohortQueries.getPatientsHavingDiarrhoea(),
-            "startDate=${startDate},endDate=${endDate+1d}"));
+            "startDate=${startDate},endDate=${endDate}"));
   }
 }
