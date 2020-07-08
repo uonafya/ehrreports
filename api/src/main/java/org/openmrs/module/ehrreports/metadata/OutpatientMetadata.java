@@ -246,6 +246,8 @@ public class OutpatientMetadata extends ProgramsMetadata {
   //1519
   public Concept getTetanusNeonatorum() { return getConcept(EhrReportConstants.TETANUS_NEONATORUM); }
   //1712
+  public Concept getObstericalTetanus() { return getConcept(EhrReportConstants.OBSTETRICAL_TETANUS); }
+
 
 
 
