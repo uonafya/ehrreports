@@ -103,6 +103,45 @@ public final class EhrReportConstants {
   public static final String DIARRHEA_UNSPECIFIED = "91e4a7f4-f3d1-455e-991e-eb64a4df415b";
 
   // tuberulosis
+  public static final String TUBERCULOSIS = "51ac5587-6f78-4246-8329-fbc47a86fbda"; //
+  public static final String TUBERCULOSIS_OF_OTHER_ORGANS =
+      "d7224d92-0127-4d3c-a12b-93109a25ceaf"; //	1752
+  public static final String TUBERCULOSIS_IN_PREGNANCY =
+      "75278919-cd62-49d1-bb76-48243d206eb3"; // 4592
+  public static final String TUBERCULOSIS_AFFECTING_CENTRAL_NERVOUS_SYSTEM =
+      "6033961c-e8a2-4311-a89e-7b69b8a87a63"; // 1707
+  public static final String TUBERCULOSIS_OF_THE_GENITOURINARY_SYSTEM =
+      "bfcc9a7d-e8ff-48a1-8426-e3a216bfc7f8"; // 3860
+  public static final String MILIARY_TUBERCULOSIS = "7e0ec01c-57b5-45da-bd69-29a206b1f5f4"; // 1708
+  public static final String PULMONARY_TUBERCULOSIS =
+      "9ef76020-1a6e-4cfe-9f62-677ad7fac39a"; // 1010
+  public static final String SEQUELAE_OF_TUBERCULOSIS =
+      "e933d281-3c45-46b9-8578-7cee326f37cc"; // 4542
+  public static final String RESPIRATORY_TUBERCULOSIS =
+      "c2e4d884-479c-47dd-9c4e-4bd19f9d3710"; // 4298
+  public static final String RESPIRATORY_TUBERCULOSIS_UNSPECIFIED =
+      "d21e4073-6108-466d-b8b4-c7d1159cfdd5"; // 4061
+  public static final String TUBERCULOSIS_HISTOLOGICALLY_CONFIRMED =
+      "90436397-d5cf-436a-88f7-d085f345a932"; // 4059
+  public static final String
+      RESPIRATORY_TUBERCULOSIS_NOT_CONFIRMED_BACTERIOLOGICALLY_AND_HISTOLOGICALLY =
+          "8bc742a3-79c6-45ba-b08f-63e5bb3435a6"; // 4060
+  public static final String EXTRAPULMONARY_TUBERCULOSIS =
+      "d4abcfe0-220b-4705-919e-e56da47ed457"; // 1470
+  public static final String ACUTE_MILIARY_TUBERCULOSIS_UNSPECIFIED =
+      "11357e6d-b1e0-4baf-a3f3-9d834e898e13"; // 4148
+  public static final String OTHER_RESPIRATORY_TUBERCULOSIS =
+      "790d94a5-125a-4876-8982-12d38745bfb6"; // 4316
+  public static final String MULTI_DRUG_RESISTANT_TUBERCULOSIS =
+      "790d94a5-125a-4876-8982-12d38745bfb6"; // 1213
+  public static final String SPUTUM_POSITIVE_PULMONARY_TUBERCULOSIS =
+      "c2f51eb4-620e-467b-b320-869a03c480b1"; // 1527
+  public static final String SPUTUM_NEGATIVE_PULMONARY_TUBERCULOSIS =
+      "ee870d08-9086-4f22-93a7-bfcf61dc3f36"; // 1525
+  public static final String CONTACT_WITH_AND_SUSPECTED_EXPOSURE_TO_TUBERCULOSIS =
+      "ab9510a4-ec6e-412f-b541-3b86e07ea7d8"; // 4047
+  public static final String ENCOUNTER_FOR_SCREENING_FOR_RESPIRATORY_TUBERCULOSIS =
+      "645188a4-4348-406f-a91d-f90e723359fb"; // 4366
 
   // program
   public static final String ANC_Program = "d83b74b7-f5ea-46fc-acc5-71e892ee1e68";

@@ -62,6 +62,7 @@ public class OutpatientMetadata extends ProgramsMetadata {
   public EncounterType getCheckInEncounterType() {
     return getEncounterType(EhrReportConstants.CHECKIN_ENCOUNTER);
   }
+
   // encounter type 19
   public EncounterType getAncEncounterType() {
     return getEncounterType(EhrReportConstants.ANC_ENCOUNTER);
@@ -121,6 +122,7 @@ public class OutpatientMetadata extends ProgramsMetadata {
   public Concept getMopsDmDiabeticClinicConcept() {
     return getConcept(EhrReportConstants.MOPC_DM_DIABETIC_CLINIC);
   }
+
   // Concepts 5702
   public Concept getFnaClinicConcept() {
     return getConcept(EhrReportConstants.FNA_CLINIC);
@@ -130,10 +132,12 @@ public class OutpatientMetadata extends ProgramsMetadata {
   public Concept getGpcClinicConcept() {
     return getConcept(EhrReportConstants.GOPC_CLINIC);
   }
+
   // Concepts 5704
   public Concept getMchClinicConcept() {
     return getConcept(EhrReportConstants.MCH_CLINIC);
   }
+
   // Concepts 5705
   public Concept getMopsClinicConcept() {
     return getConcept(EhrReportConstants.MOPC_MEDICAL_CLINIC_2);
@@ -148,67 +152,184 @@ public class OutpatientMetadata extends ProgramsMetadata {
   public Concept getSurgicalClinicConcept() {
     return getConcept(EhrReportConstants.SURGICAL_CLINIC);
   }
+
   // Concepts 5708
   public Concept getChestAndSkinClinicConcept() {
     return getConcept(EhrReportConstants.CHEST_AND_SKIN_CLINIC);
   }
+
   // Concepts 5696
   public Concept getDentalClinicConcept() {
     return getConcept(EhrReportConstants.DENTAL_CLINIC);
   }
+
   // Concepts 100126248
   public Concept getFamilyPlanningClinicConcept() {
     return getConcept(EhrReportConstants.FAMILY_PLANNING_CLINIC);
   }
+
   // 3999
   public Concept getTriageConcept() {
     return getConcept(EhrReportConstants.TRIAGE);
   }
+
   // 003
   public Concept getOpdWardConcept() {
     return getConcept(EhrReportConstants.OPD_WARD);
   }
+
   // 5114
   public Concept getCasualityOpdConcept() {
     return getConcept(EhrReportConstants.CASUALTY_OPD);
   }
+
   // 4000
   public Concept getCasualityTriageConcept() {
     return getConcept(EhrReportConstants.CASUALTY_TRIAGE);
   }
+
   // 5709
   public Concept getDentalOpdConcept() {
     return getConcept(EhrReportConstants.DENTAL_OPD);
   }
+
   // 2304
   public Concept getProvisionalDiagnosis() {
     return getConcept(EhrReportConstants.PROVISIONAL_DIAGNOSIS);
   }
+
   // 5109
   public Concept getFinalDiagnosis() {
     return getConcept(EhrReportConstants.FINAL_DIAGNOSIS);
   }
+
   // 3950
   public Concept getRegistrationFeeConcept() {
     return getConcept(EhrReportConstants.REGISTRATION_FEE);
   }
+
   // 009
   public Concept getNewPatientConcept() {
     return getConcept(EhrReportConstants.NEW_PATIENT);
   }
+
   // 945
   public Concept getRevisitConcept() {
     return getConcept(EhrReportConstants.REVISIT);
   }
+
   // Get all diarrhoea concepts
   //
   public Concept getAcuteDiarrhoea() {
     return getConcept(EhrReportConstants.ACUTE_DIARRHEA);
   }
+
   // 4029
   public Concept getDiarrheaUnspecified() {
     return getConcept(EhrReportConstants.DIARRHEA_UNSPECIFIED);
   }
+
+  public Concept getTuberculosisConcept() {
+    return getConcept(EhrReportConstants.TUBERCULOSIS);
+  }
+
+  // TUBERCULOSIS_OF_OTHER_ORGANS
+  public Concept getTBOtherOrgansConcept() {
+    return getConcept(EhrReportConstants.TUBERCULOSIS_OF_OTHER_ORGANS);
+  }
+
+  // TUBERCULOSIS_IN_PREGNANCY
+  public Concept getTBInPregnancyConcept() {
+    return getConcept(EhrReportConstants.TUBERCULOSIS_IN_PREGNANCY);
+  }
+
+  // TUBERCULOSIS_AFFECTING_CENTRAL_NERVOUS_SYSTEM
+  public Concept getTBAffectingCentralNervousSystemConcept() {
+    return getConcept(EhrReportConstants.TUBERCULOSIS_AFFECTING_CENTRAL_NERVOUS_SYSTEM);
+  }
+
+  // TUBERCULOSIS_OF_THE_GENITOURINARY_SYSTEM
+  public Concept getTBOfTheGenitourinarySystemConcept() {
+    return getConcept(EhrReportConstants.TUBERCULOSIS_OF_THE_GENITOURINARY_SYSTEM);
+  }
+
+  // MILIARY_TUBERCULOSIS
+  public Concept getMiliaryTBConcept() {
+    return getConcept(EhrReportConstants.MILIARY_TUBERCULOSIS);
+  }
+
+  // PULMONARY_TUBERCULOSIS
+  public Concept getPulmonaryTBConcept() {
+    return getConcept(EhrReportConstants.PULMONARY_TUBERCULOSIS);
+  }
+
+  // SEQUELAE_OF_TUBERCULOSIS
+  public Concept getSequelaeOfTBConcept() {
+    return getConcept(EhrReportConstants.SEQUELAE_OF_TUBERCULOSIS);
+  }
+
+  // RESPIRATORY_TUBERCULOSIS
+  public Concept getRespiratoryTBConcept() {
+    return getConcept(EhrReportConstants.RESPIRATORY_TUBERCULOSIS);
+  }
+
+  // RESPIRATORY_TUBERCULOSIS_UNSPECIFIED
+  public Concept getRespiratoryTBUnsuspectedConcept() {
+    return getConcept(EhrReportConstants.RESPIRATORY_TUBERCULOSIS_UNSPECIFIED);
+  }
+
+  // TUBERCULOSIS_HISTOLOGICALLY_CONFIRMED
+  public Concept getTBHistologicallyConfirmedConcept() {
+    return getConcept(EhrReportConstants.TUBERCULOSIS_HISTOLOGICALLY_CONFIRMED);
+  }
+
+  // RESPIRATORY_TUBERCULOSIS_NOT_CONFIRMED_BACTERIOLOGICALLY_AND_HISTOLOGICALLY
+  public Concept getRespiratoryTBNotConfirmedBacteriologicallyAndHistologicallyConcept() {
+    return getConcept(
+        EhrReportConstants
+            .RESPIRATORY_TUBERCULOSIS_NOT_CONFIRMED_BACTERIOLOGICALLY_AND_HISTOLOGICALLY);
+  }
+
+  // EXTRAPULMONARY_TUBERCULOSIS
+  public Concept getExtrapulmonaryTBConcept() {
+    return getConcept(EhrReportConstants.EXTRAPULMONARY_TUBERCULOSIS);
+  }
+
+  // ACUTE_MILIARY_TUBERCULOSIS_UNSPECIFIED
+  public Concept getAcuteMiliaryTBUspecifiedConcept() {
+    return getConcept(EhrReportConstants.ACUTE_MILIARY_TUBERCULOSIS_UNSPECIFIED);
+  }
+
+  // OTHER_RESPIRATORY_TUBERCULOSIS
+  public Concept getOtherRespiratoryTBConcept() {
+    return getConcept(EhrReportConstants.OTHER_RESPIRATORY_TUBERCULOSIS);
+  }
+
+  // MULTI_DRUG_RESISTANT_TUBERCULOSIS
+  public Concept getMultiDrugResistantTBConcept() {
+    return getConcept(EhrReportConstants.MULTI_DRUG_RESISTANT_TUBERCULOSIS);
+  }
+
+  // SPUTUM_POSITIVE_PULMONARY_TUBERCULOSIS
+  public Concept getSputumPositivePulmonaryTB() {
+    return getConcept(EhrReportConstants.SPUTUM_POSITIVE_PULMONARY_TUBERCULOSIS);
+  }
+
+  // SPUTUM_NEGATIVE_PULMONARY_TUBERCULOSIS
+  public Concept getSputumNegativeTBConcept() {
+    return getConcept(EhrReportConstants.SPUTUM_NEGATIVE_PULMONARY_TUBERCULOSIS);
+  }
+
+  // CONTACT_WITH_AND_SUSPECTED_EXPOSURE_TO_TUBERCULOSIS
+  public Concept getContactWithAndExposureToTB() {
+    return getConcept(EhrReportConstants.CONTACT_WITH_AND_SUSPECTED_EXPOSURE_TO_TUBERCULOSIS);
+  }
+
+  // ENCOUNTER_FOR_SCREENING_FOR_RESPIRATORY_TUBERCULOSIS
+  public Concept getEncounterForScreeningForRespiratoryTB() {
+    return getConcept(EhrReportConstants.ENCOUNTER_FOR_SCREENING_FOR_RESPIRATORY_TUBERCULOSIS);
+  }
+
   /**
    * programs ANC program
    *
