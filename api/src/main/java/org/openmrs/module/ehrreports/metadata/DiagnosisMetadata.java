@@ -45,4 +45,8 @@ public class DiagnosisMetadata extends Metadata {
         outpatientMetadata.getContactWithAndExposureToTB().getConceptId(),
         outpatientMetadata.getEncounterForScreeningForRespiratoryTB().getConceptId());
   }
+
+  public List<Integer> getCholeraList() {
+    return Arrays.asList(outpatientMetadata.getCholeraConcept().getConceptId());
+  }
 }

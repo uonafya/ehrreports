@@ -79,6 +79,15 @@ public class Moh705aCohortQueries {
   }
 
   /**
+   * Get patients who have Cholera during period of the month
+   *
+   * @return @{@link CohortDefinition}
+   */
+  public CohortDefinition getPatientsHavingCholera() {
+    return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getCholeraList());
+  }
+
+  /**
    * All other diseases that are taken in the facility over a period of time
    *
    * @return @{@link CohortDefinition}
