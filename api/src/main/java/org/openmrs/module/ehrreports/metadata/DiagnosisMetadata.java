@@ -20,7 +20,7 @@ public class DiagnosisMetadata extends Metadata {
         outpatientMetadata.getDiarrheaUnspecified().getConceptId());
   }
 
-  public List<Integer> getTBConceptList() {
+  public List<Integer> getTuberculosisConceptList() {
     return Arrays.asList(
         outpatientMetadata.getTuberculosisConcept().getConceptId(),
         outpatientMetadata.getTBOtherOrgansConcept().getConceptId(),

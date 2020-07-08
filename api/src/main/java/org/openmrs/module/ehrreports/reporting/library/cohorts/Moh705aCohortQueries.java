@@ -69,6 +69,14 @@ public class Moh705aCohortQueries {
   public CohortDefinition getPatientsHavingDiarrhoea() {
     return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getDiarrhoeaConceptList());
   }
+  /**
+   * Get patients who have Tuberculosis during period of the month
+   *
+   * @return @{@link CohortDefinition}
+   */
+  public CohortDefinition getPatientsHavingTuberculosis() {
+    return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getTuberculosisConceptList());
+  }
 
   /**
    * All other diseases that are taken in the facility over a period of time

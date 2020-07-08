@@ -50,4 +50,17 @@ public class Moh705aIndicators {
             moh705aCohortQueries.getPatientsHavingDiarrhoea(),
             "startDate=${startDate},endDate=${endDate}"));
   }
+
+  /**
+   * Get patients who have Tuberculosis during the month
+   *
+   * @return @CohortIndicator
+   */
+  public CohortIndicator getPatientsHavingTuberculosis() {
+    return ehrGeneralIndicator.getIndicator(
+        "Tuberculosis",
+        EhrReportUtils.map(
+            moh705aCohortQueries.getPatientsHavingTuberculosis(),
+            "startDate=${startDate},endDate=${endDate}"));
+  }
 }
