@@ -11,6 +11,8 @@
  */
 package org.openmrs.module.ehrreports.reporting.library.datasets;
 
+import static org.openmrs.module.ehrreports.reporting.utils.EhrReportUtils.getAdultChildrenColumns;
+
 import org.openmrs.module.ehrreports.reporting.cohort.definition.CustomConfigurationsDataDefinition;
 import org.openmrs.module.ehrreports.reporting.library.dimensions.EhrCommonDimension;
 import org.openmrs.module.ehrreports.reporting.library.indicators.Moh705aIndicators;
@@ -20,26 +22,36 @@ import org.openmrs.module.reporting.dataset.definition.DataSetDefinition;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-import java.util.Arrays;
-import java.util.List;
-
 @Component
 public class Moh705aDataset extends BaseDataSet {
 
   @Autowired private Moh705aIndicators moh705aIndicators;
 
-  @Autowired private EhrCommonDimension  ehrCommonDimension;
+  @Autowired private EhrCommonDimension ehrCommonDimension;
 
   public DataSetDefinition constructMoh705aDataset() {
 
     CohortIndicatorDataSetDefinition dsd = new CohortIndicatorDataSetDefinition();
-    dsd.addDimension("day", EhrReportUtils.map(ehrCommonDimension.encountersOfMonthPerDay(), "endDate=${endDate}"));
+    dsd.addDimension(
+        "day",
+        EhrReportUtils.map(ehrCommonDimension.encountersOfMonthPerDay(), "endDate=${endDate+1d}"));
     String mappings = "startDate=${startDate},endDate=${endDate}";
     dsd.setName("MOH705A");
     dsd.addParameters(getParameters());
 
-    addRow(dsd, "1", "Diarrhoea",  EhrReportUtils.map(moh705aIndicators.getPatientsHavingDiarrhoea(), mappings), getAdultChildrenColumns());
-    addRow(dsd, "OTHERS", "All other diseases",  EhrReportUtils.map(moh705aIndicators.getMoh705aPatientsHavingDiagnosisOtherThanTheOnesListed(), mappings), getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "1",
+        "Diarrhoea",
+        EhrReportUtils.map(moh705aIndicators.getPatientsHavingDiarrhoea(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "OTHERS",
+        "All other diseases",
+        EhrReportUtils.map(
+            moh705aIndicators.getMoh705aPatientsHavingDiagnosisOtherThanTheOnesListed(), mappings),
+        getAdultChildrenColumns());
 
     return dsd;
   }
@@ -49,6 +61,4 @@ public class Moh705aDataset extends BaseDataSet {
     df.setName("Custom fields ");
     return df;
   }
-
-
 }

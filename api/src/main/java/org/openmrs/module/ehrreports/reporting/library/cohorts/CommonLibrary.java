@@ -70,6 +70,7 @@ public class CommonLibrary {
 
   /**
    * Patients who have encounters on date
+   *
    * @return @{@link CohortDefinition}
    */
   public CohortDefinition getPatientsHavingEncountersOnDate(int day) {
