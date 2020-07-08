@@ -19,3 +19,4 @@ public class DiagnosisMetadata extends Metadata {
         outpatientMetadata.getDiarrheaUnspecified().getConceptId());
   }
 }
+

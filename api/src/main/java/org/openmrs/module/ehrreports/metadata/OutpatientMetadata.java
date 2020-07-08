@@ -62,6 +62,7 @@ public class OutpatientMetadata extends ProgramsMetadata {
   public EncounterType getCheckInEncounterType() {
     return getEncounterType(EhrReportConstants.CHECKIN_ENCOUNTER);
   }
+
   // encounter type 19
   public EncounterType getAncEncounterType() {
     return getEncounterType(EhrReportConstants.ANC_ENCOUNTER);
@@ -121,6 +122,7 @@ public class OutpatientMetadata extends ProgramsMetadata {
   public Concept getMopsDmDiabeticClinicConcept() {
     return getConcept(EhrReportConstants.MOPC_DM_DIABETIC_CLINIC);
   }
+
   // Concepts 5702
   public Concept getFnaClinicConcept() {
     return getConcept(EhrReportConstants.FNA_CLINIC);
@@ -130,10 +132,12 @@ public class OutpatientMetadata extends ProgramsMetadata {
   public Concept getGpcClinicConcept() {
     return getConcept(EhrReportConstants.GOPC_CLINIC);
   }
+
   // Concepts 5704
   public Concept getMchClinicConcept() {
     return getConcept(EhrReportConstants.MCH_CLINIC);
   }
+
   // Concepts 5705
   public Concept getMopsClinicConcept() {
     return getConcept(EhrReportConstants.MOPC_MEDICAL_CLINIC_2);
@@ -148,67 +152,123 @@ public class OutpatientMetadata extends ProgramsMetadata {
   public Concept getSurgicalClinicConcept() {
     return getConcept(EhrReportConstants.SURGICAL_CLINIC);
   }
+
   // Concepts 5708
   public Concept getChestAndSkinClinicConcept() {
     return getConcept(EhrReportConstants.CHEST_AND_SKIN_CLINIC);
   }
+
   // Concepts 5696
   public Concept getDentalClinicConcept() {
     return getConcept(EhrReportConstants.DENTAL_CLINIC);
   }
+
   // Concepts 100126248
   public Concept getFamilyPlanningClinicConcept() {
     return getConcept(EhrReportConstants.FAMILY_PLANNING_CLINIC);
   }
+
   // 3999
   public Concept getTriageConcept() {
     return getConcept(EhrReportConstants.TRIAGE);
   }
+
   // 003
   public Concept getOpdWardConcept() {
     return getConcept(EhrReportConstants.OPD_WARD);
   }
+
   // 5114
   public Concept getCasualityOpdConcept() {
     return getConcept(EhrReportConstants.CASUALTY_OPD);
   }
+
   // 4000
   public Concept getCasualityTriageConcept() {
     return getConcept(EhrReportConstants.CASUALTY_TRIAGE);
   }
+
   // 5709
   public Concept getDentalOpdConcept() {
     return getConcept(EhrReportConstants.DENTAL_OPD);
   }
+
   // 2304
   public Concept getProvisionalDiagnosis() {
     return getConcept(EhrReportConstants.PROVISIONAL_DIAGNOSIS);
   }
+
   // 5109
   public Concept getFinalDiagnosis() {
     return getConcept(EhrReportConstants.FINAL_DIAGNOSIS);
   }
+
   // 3950
   public Concept getRegistrationFeeConcept() {
     return getConcept(EhrReportConstants.REGISTRATION_FEE);
   }
+
   // 009
   public Concept getNewPatientConcept() {
     return getConcept(EhrReportConstants.NEW_PATIENT);
   }
+
   // 945
   public Concept getRevisitConcept() {
     return getConcept(EhrReportConstants.REVISIT);
   }
+
   // Get all diarrhoea concepts
-  //
-  public Concept getAcuteDiarrhoea() {
-    return getConcept(EhrReportConstants.ACUTE_DIARRHEA);
-  }
+  public Concept getAcuteDiarrhoea() { return getConcept(EhrReportConstants.ACUTE_DIARRHEA); }
+
   // 4029
-  public Concept getDiarrheaUnspecified() {
-    return getConcept(EhrReportConstants.DIARRHEA_UNSPECIFIED);
-  }
+  public Concept getDiarrheaUnspecified() { return getConcept(EhrReportConstants.DIARRHEA_UNSPECIFIED); }
+
+  //Get Dysentery Concepts
+  // 2450
+  public Concept getDysentery() { return getConcept(EhrReportConstants.DYSENTERY); }
+  // 1003
+  public Concept getAmoebicDysentery() { return getConcept(EhrReportConstants.AMOEBIC_DYSENTERY); }
+  // 1668
+  public Concept getShigellaDysentery() { return getConcept(EhrReportConstants.SHIGELLA_DYSENTERY); }
+  // 3667
+  public Concept getBacillaryDysentery() { return getConcept(EhrReportConstants.BACILLARY_DYSENTERY); }
+
+  //Meningococal concepts
+  //100001518
+  public Concept getMeningococcalMenengaitis() { return getConcept(EhrReportConstants.MENINGOCOCCAL_MENINGITIS); }
+  //1714
+  public Concept getMeningococcalInfections() { return getConcept(EhrReportConstants.MENINGOCOCCAL_INFECTIONS); }
+
+  //Tetanus concepts
+  //1521
+  public Concept getTetanus() { return getConcept(EhrReportConstants.TETANUS); }
+  //1519
+  public Concept getTetanusNeonatorum() { return getConcept(EhrReportConstants.TETANUS_NEONATORUM); }
+  //1712
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   /**
    * programs ANC program
    *
@@ -270,6 +330,6 @@ public class OutpatientMetadata extends ProgramsMetadata {
    */
   public ConceptClass getSymptomsFindingsConceptClass() {
     return Context.getConceptService()
-        .getConceptClassByUuid(EhrReportConstants.SYMPTOMS_FINDING_CLASS);
+            .getConceptClassByUuid(EhrReportConstants.SYMPTOMS_FINDING_CLASS);
   }
 }
