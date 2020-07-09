@@ -34,6 +34,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="ehrreport-api" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.openmrs.module:uiframework-api:3.2" level="project" />
+    <orderEntry type="library" scope="PROVIDED" name="Maven: org.openmrs.module:uiframework-api:3.2" level="project" />
     <orderEntry type="module" module-name="ehrreports-api" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: org.openmrs.web:openmrs-web:1.9.9" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Maven: javax.servlet:servlet-api:2.5" level="project" />
