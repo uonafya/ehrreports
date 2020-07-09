@@ -11,7 +11,6 @@
  */
 package org.openmrs.module.ehrreports.reporting.library.datasets;
 
-import org.openmrs.module.ehrreports.reporting.library.cohorts.Moh705CohortQueries;
 import org.openmrs.module.ehrreports.reporting.library.dimensions.AgeDimensionCohortInterface;
 import org.openmrs.module.ehrreports.reporting.library.dimensions.EhrCommonDimension;
 import org.openmrs.module.ehrreports.reporting.utils.EhrReportUtils;

@@ -371,11 +371,9 @@ public class OutpatientMetadata extends ProgramsMetadata {
     return getConcept(EhrReportConstants.ENCOUNTER_FOR_SCREENING_FOR_RESPIRATORY_TUBERCULOSIS);
   }
 
-
   public Concept getCholeraConcept() {
     return getConcept(EhrReportConstants.CHOLERA);
   }
-
 
   /**
    * programs ANC program

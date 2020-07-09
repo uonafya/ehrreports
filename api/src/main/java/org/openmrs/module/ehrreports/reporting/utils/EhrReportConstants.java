@@ -163,6 +163,7 @@ public final class EhrReportConstants {
   // Cholera
   public static final String CHOLERA = "f3c41b86-b280-41af-aeaf-80a0fd6033b3";
 
+  //Tonsillities
 
   // program
   public static final String ANC_Program = "d83b74b7-f5ea-46fc-acc5-71e892ee1e68";

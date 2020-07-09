@@ -24,11 +24,13 @@ org/openmrs/module/ehrreports/metadata/MetadataLookupException.class
 org/openmrs/module/ehrreports/reporting/calculation/BooleanResult.class
 org/openmrs/module/ehrreports/reporting/library/cohorts/GenderCohortQueries.class
 org/openmrs/module/ehrreports/metadata/ProgramsMetadata.class
+org/openmrs/module/ehrreports/reporting/library/datasets/Moh705Dataset.class
 org/openmrs/module/ehrreports/reporting/calculation/AbstractPatientCalculation.class
 org/openmrs/module/ehrreports/EhrReportsConfig.class
 org/openmrs/module/ehrreports/reporting/library/cohorts/CommonLibrary.class
 org/openmrs/module/ehrreports/reporting/library/cohorts/AgeCohortQueries.class
 org/openmrs/module/ehrreports/metadata/Metadata.class
+org/openmrs/module/ehrreports/reporting/calculation/EncountersBasedOnDaySuppliedCalculation.class
 org/openmrs/module/ehrreports/reporting/library/queries/moh717/Moh717Queries.class
 org/openmrs/module/ehrreports/api/dao/EhrReportsDao.class
 org/openmrs/module/ehrreports/reporting/library/cohorts/Moh705bCohortQueries.class
