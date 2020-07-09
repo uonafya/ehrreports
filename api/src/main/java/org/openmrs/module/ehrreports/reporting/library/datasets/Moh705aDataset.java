@@ -34,7 +34,7 @@ public class Moh705aDataset extends BaseDataSet {
     CohortIndicatorDataSetDefinition dsd = new CohortIndicatorDataSetDefinition();
     dsd.addDimension(
         "day",
-        EhrReportUtils.map(ehrCommonDimension.encountersOfMonthPerDay(), "endDate=${endDate+1d}"));
+        EhrReportUtils.map(ehrCommonDimension.encountersOfMonthPerDay(), "endDate=${endDate}"));
     String mappings = "startDate=${startDate},endDate=${endDate}";
     dsd.setName("MOH705A");
     dsd.addParameters(getParameters());
