@@ -71,6 +71,24 @@ public class Moh705aCohortQueries {
   }
 
   /**
+   * Get patients who have MenongococcalInfectionsList during period of the month
+   *
+   * @return @{@link CohortDefinition}
+   */
+  public CohortDefinition getPatientsHavingMeningococcalInfections() {
+    return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getMenongococcalInfectionsList());
+  }
+
+  /**
+   * Get patients who have MenongococcalInfectionsList during period of the month
+   *
+   * @return @{@link CohortDefinition}
+   */
+  public CohortDefinition getPatientsHavingDysentery() {
+    return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getDysenteryList());
+  }
+
+  /**
    * All other diseases that are taken in the facility over a period of time
    *
    * @return @{@link CohortDefinition}

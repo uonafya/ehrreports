@@ -45,18 +45,18 @@ public class DiagnosisMetadata extends Metadata {
         outpatientMetadata.getContactWithAndExposureToTB().getConceptId(),
         outpatientMetadata.getEncounterForScreeningForRespiratoryTB().getConceptId());
   }
-  public List<Integer> getTBDysenteryList() {
+
+  public List<Integer> getDysenteryList() {
     return Arrays.asList(
-            outpatientMetadata.getDysentery().getConceptId(),
-            outpatientMetadata.getAmoebicDysentery().getConceptId(),
-            outpatientMetadata.getBacillaryDysentery().getConceptId(),
-            outpatientMetadata.getShigellaDysentery().getConceptId());
+        outpatientMetadata.getDysentery().getConceptId(),
+        outpatientMetadata.getAmoebicDysentery().getConceptId(),
+        outpatientMetadata.getBacillaryDysentery().getConceptId(),
+        outpatientMetadata.getShigellaDysentery().getConceptId());
   }
 
   public List<Integer> getMenongococcalInfectionsList() {
     return Arrays.asList(
-            outpatientMetadata.getMeningococcalInfections().getConceptId(),
-            outpatientMetadata.getMeningococcalMenengaitis().getConceptId());
+        outpatientMetadata.getMeningococcalInfections().getConceptId(),
+        outpatientMetadata.getMeningococcalMenengaitis().getConceptId());
   }
 }
-

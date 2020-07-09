@@ -219,35 +219,56 @@ public class OutpatientMetadata extends ProgramsMetadata {
   }
 
   // Get all diarrhoea concepts
-  public Concept getAcuteDiarrhoea() { return getConcept(EhrReportConstants.ACUTE_DIARRHEA); }
+  public Concept getAcuteDiarrhoea() {
+    return getConcept(EhrReportConstants.ACUTE_DIARRHEA);
+  }
 
   // 4029
-  public Concept getDiarrheaUnspecified() { return getConcept(EhrReportConstants.DIARRHEA_UNSPECIFIED); }
+  public Concept getDiarrheaUnspecified() {
+    return getConcept(EhrReportConstants.DIARRHEA_UNSPECIFIED);
+  }
 
-  //Get Dysentery Concepts
+  // Get Dysentery Concepts
   // 2450
-  public Concept getDysentery() { return getConcept(EhrReportConstants.DYSENTERY); }
+  public Concept getDysentery() {
+    return getConcept(EhrReportConstants.DYSENTERY);
+  }
   // 1003
-  public Concept getAmoebicDysentery() { return getConcept(EhrReportConstants.AMOEBIC_DYSENTERY); }
+  public Concept getAmoebicDysentery() {
+    return getConcept(EhrReportConstants.AMOEBIC_DYSENTERY);
+  }
   // 1668
-  public Concept getShigellaDysentery() { return getConcept(EhrReportConstants.SHIGELLA_DYSENTERY); }
+  public Concept getShigellaDysentery() {
+    return getConcept(EhrReportConstants.SHIGELLA_DYSENTERY);
+  }
   // 3667
-  public Concept getBacillaryDysentery() { return getConcept(EhrReportConstants.BACILLARY_DYSENTERY); }
+  public Concept getBacillaryDysentery() {
+    return getConcept(EhrReportConstants.BACILLARY_DYSENTERY);
+  }
 
-  //Meningococal concepts
-  //100001518
-  public Concept getMeningococcalMenengaitis() { return getConcept(EhrReportConstants.MENINGOCOCCAL_MENINGITIS); }
-  //1714
-  public Concept getMeningococcalInfections() { return getConcept(EhrReportConstants.MENINGOCOCCAL_INFECTIONS); }
+  // Meningococal concepts
+  // 100001518
+  public Concept getMeningococcalMenengaitis() {
+    return getConcept(EhrReportConstants.MENINGOCOCCAL_MENINGITIS);
+  }
+  // 1714
+  public Concept getMeningococcalInfections() {
+    return getConcept(EhrReportConstants.MENINGOCOCCAL_INFECTIONS);
+  }
 
-  //Tetanus concepts
-  //1521
-  public Concept getTetanus() { return getConcept(EhrReportConstants.TETANUS); }
-  //1519
-  public Concept getTetanusNeonatorum() { return getConcept(EhrReportConstants.TETANUS_NEONATORUM); }
-  //1712
-  public Concept getObstericalTetanus() { return getConcept(EhrReportConstants.OBSTETRICAL_TETANUS); }
-
+  // Tetanus concepts
+  // 1521
+  public Concept getTetanus() {
+    return getConcept(EhrReportConstants.TETANUS);
+  }
+  // 1519
+  public Concept getTetanusNeonatorum() {
+    return getConcept(EhrReportConstants.TETANUS_NEONATORUM);
+  }
+  // 1712
+  public Concept getObstericalTetanus() {
+    return getConcept(EhrReportConstants.OBSTETRICAL_TETANUS);
+  }
 
   public Concept getTuberculosisConcept() {
     return getConcept(EhrReportConstants.TUBERCULOSIS);
@@ -411,6 +432,6 @@ public class OutpatientMetadata extends ProgramsMetadata {
    */
   public ConceptClass getSymptomsFindingsConceptClass() {
     return Context.getConceptService()
-            .getConceptClassByUuid(EhrReportConstants.SYMPTOMS_FINDING_CLASS);
+        .getConceptClassByUuid(EhrReportConstants.SYMPTOMS_FINDING_CLASS);
   }
 }
