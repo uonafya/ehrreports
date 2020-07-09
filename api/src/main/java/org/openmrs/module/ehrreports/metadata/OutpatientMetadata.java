@@ -219,7 +219,6 @@ public class OutpatientMetadata extends ProgramsMetadata {
   }
 
   // Get all diarrhoea concepts
-<<<<<<< HEAD
   public Concept getAcuteDiarrhoea() { return getConcept(EhrReportConstants.ACUTE_DIARRHEA); }
 
   // 4029
@@ -249,38 +248,6 @@ public class OutpatientMetadata extends ProgramsMetadata {
   //1712
   public Concept getObstericalTetanus() { return getConcept(EhrReportConstants.OBSTETRICAL_TETANUS); }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-=======
-  //
-  public Concept getAcuteDiarrhoea() {
-    return getConcept(EhrReportConstants.ACUTE_DIARRHEA);
-  }
-
-  // 4029
-  public Concept getDiarrheaUnspecified() {
-    return getConcept(EhrReportConstants.DIARRHEA_UNSPECIFIED);
-  }
 
   public Concept getTuberculosisConcept() {
     return getConcept(EhrReportConstants.TUBERCULOSIS);
@@ -382,7 +349,6 @@ public class OutpatientMetadata extends ProgramsMetadata {
   public Concept getEncounterForScreeningForRespiratoryTB() {
     return getConcept(EhrReportConstants.ENCOUNTER_FOR_SCREENING_FOR_RESPIRATORY_TUBERCULOSIS);
   }
->>>>>>> 4fafc54c0f07656534a5c3fae8e750ea2f40f461
 
   /**
    * programs ANC program
