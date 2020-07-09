@@ -160,6 +160,10 @@ public final class EhrReportConstants {
   public static final String TETANUS_NEONATORUM = "5e87fc96-95e2-48c7-bdff-7d9202715f1d"; // 1519
   public static final String OBSTETRICAL_TETANUS = "ea889e1d-ba0a-473f-90cc-bf6eae356638"; // 1712
 
+  // Cholera
+  public static final String CHOLERA = "f3c41b86-b280-41af-aeaf-80a0fd6033b3";
+
+
   // program
   public static final String ANC_Program = "d83b74b7-f5ea-46fc-acc5-71e892ee1e68";
   public static final String PNC_Program = "a15f2617-9f5d-4022-8de3-181b2e286a28";

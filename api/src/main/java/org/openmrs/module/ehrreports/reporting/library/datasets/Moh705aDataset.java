@@ -47,6 +47,19 @@ public class Moh705aDataset extends BaseDataSet {
         getAdultChildrenColumns());
     addRow(
         dsd,
+        "2",
+        "Tuberculosis",
+        EhrReportUtils.map(moh705aIndicators.getPatientsHavingTuberculosis(), mappings),
+        getAdultChildrenColumns());
+
+    addRow(
+        dsd,
+        "4",
+        "Cholera",
+        EhrReportUtils.map(moh705aIndicators.getPatientsHavingCholera(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
         "OTHERS",
         "All other diseases",
         EhrReportUtils.map(

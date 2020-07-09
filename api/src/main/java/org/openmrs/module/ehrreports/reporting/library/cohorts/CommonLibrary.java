@@ -16,11 +16,12 @@ import java.util.Date;
 import org.openmrs.Concept;
 import org.openmrs.EncounterType;
 import org.openmrs.api.PatientSetService;
-import org.openmrs.module.ehrreports.reporting.library.queries.CommonQueries;
+import org.openmrs.api.context.Context;
+import org.openmrs.module.ehrreports.reporting.calculation.EncountersBasedOnDaySuppliedCalculation;
+import org.openmrs.module.ehrreports.reporting.cohort.definition.CalculationCohortDefinition;
 import org.openmrs.module.reporting.cohort.definition.CodedObsCohortDefinition;
 import org.openmrs.module.reporting.cohort.definition.CohortDefinition;
 import org.openmrs.module.reporting.cohort.definition.EncounterCohortDefinition;
-import org.openmrs.module.reporting.cohort.definition.SqlCohortDefinition;
 import org.openmrs.module.reporting.common.SetComparator;
 import org.openmrs.module.reporting.common.TimeQualifier;
 import org.openmrs.module.reporting.evaluation.parameter.Parameter;
@@ -74,10 +75,13 @@ public class CommonLibrary {
    * @return @{@link CohortDefinition}
    */
   public CohortDefinition getPatientsHavingEncountersOnDate(int day) {
-    SqlCohortDefinition sql = new SqlCohortDefinition();
-    sql.setName("Patients having encounters on given date");
-    sql.addParameter(new Parameter("endDate", "End Date", Date.class));
-    sql.setQuery(CommonQueries.patientsHavingEncountersOnDate(day));
-    return sql;
+    CalculationCohortDefinition cd =
+        new CalculationCohortDefinition(
+            "Encounters per day",
+            Context.getRegisteredComponents(EncountersBasedOnDaySuppliedCalculation.class).get(0));
+    cd.addParameter(new Parameter("onOrBefore", "On or before Date", Date.class));
+    cd.addParameter(new Parameter("onOrAfter", "On or After Date", Date.class));
+    cd.addCalculationParameter("day", day);
+    return cd;
   }
 }

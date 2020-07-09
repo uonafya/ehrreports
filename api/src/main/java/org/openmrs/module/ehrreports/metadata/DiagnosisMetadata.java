@@ -20,7 +20,7 @@ public class DiagnosisMetadata extends Metadata {
         outpatientMetadata.getDiarrheaUnspecified().getConceptId());
   }
 
-  public List<Integer> getTBConceptList() {
+  public List<Integer> getTuberculosisConceptList() {
     return Arrays.asList(
         outpatientMetadata.getTuberculosisConcept().getConceptId(),
         outpatientMetadata.getTBOtherOrgansConcept().getConceptId(),
@@ -46,6 +46,7 @@ public class DiagnosisMetadata extends Metadata {
         outpatientMetadata.getEncounterForScreeningForRespiratoryTB().getConceptId());
   }
 
+
   public List<Integer> getDysenteryList() {
     return Arrays.asList(
         outpatientMetadata.getDysentery().getConceptId(),
@@ -58,5 +59,9 @@ public class DiagnosisMetadata extends Metadata {
     return Arrays.asList(
         outpatientMetadata.getMeningococcalInfections().getConceptId(),
         outpatientMetadata.getMeningococcalMenengaitis().getConceptId());
+
+  public List<Integer> getCholeraList() {
+    return Arrays.asList(outpatientMetadata.getCholeraConcept().getConceptId());
+
   }
 }

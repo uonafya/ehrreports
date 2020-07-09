@@ -69,6 +69,23 @@ public class Moh705aCohortQueries {
   public CohortDefinition getPatientsHavingDiarrhoea() {
     return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getDiarrhoeaConceptList());
   }
+  /**
+   * Get patients who have Tuberculosis during period of the month
+   *
+   * @return @{@link CohortDefinition}
+   */
+  public CohortDefinition getPatientsHavingTuberculosis() {
+    return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getTuberculosisConceptList());
+  }
+
+  /**
+   * Get patients who have Cholera during period of the month
+   *
+   * @return @{@link CohortDefinition}
+   */
+  public CohortDefinition getPatientsHavingCholera() {
+    return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getCholeraList());
+  }
 
   /**
    * Get patients who have MenongococcalInfectionsList during period of the month
@@ -107,7 +124,15 @@ public class Moh705aCohortQueries {
         "1",
         EhrReportUtils.map(
             getPatientsHavingDiarrhoea(), "startDate=${startDate},endDate=${endDate}"));
-    cd.setCompositionString("ALL AND NOT (1)");
+    cd.addSearch(
+        "2",
+        EhrReportUtils.map(
+            getPatientsHavingTuberculosis(), "startDate=${startDate},endDate=${endDate}"));
+    cd.addSearch(
+        "4",
+        EhrReportUtils.map(
+            getPatientsHavingCholera(), "startDate=${startDate},endDate=${endDate}"));
+    cd.setCompositionString("ALL AND NOT (1 OR 2 OR 4)");
     return cd;
   }
 }
