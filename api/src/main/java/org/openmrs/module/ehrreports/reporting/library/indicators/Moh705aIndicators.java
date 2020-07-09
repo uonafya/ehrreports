@@ -76,4 +76,30 @@ public class Moh705aIndicators {
             moh705aCohortQueries.getPatientsHavingCholera(),
             "startDate=${startDate},endDate=${endDate}"));
   }
+
+  /**
+   * Get patients who have Dyscentery during the month
+   *
+   * @return @CohortIndicator
+   */
+  public CohortIndicator getPatientsHavingDycentery() {
+    return ehrGeneralIndicator.getIndicator(
+        "Cholera",
+        EhrReportUtils.map(
+            moh705aCohortQueries.getPatientsHavingDysentery(),
+            "startDate=${startDate},endDate=${endDate}"));
+  }
+
+  /**
+   * Get patients who have Meningococcal Infections during the month
+   *
+   * @return @CohortIndicator
+   */
+  public CohortIndicator getPatientsMeningococcalMeningitis() {
+    return ehrGeneralIndicator.getIndicator(
+        "Cholera",
+        EhrReportUtils.map(
+            moh705aCohortQueries.getPatientsHavingMeningococcalInfections(),
+            "startDate=${startDate},endDate=${endDate}"));
+  }
 }
