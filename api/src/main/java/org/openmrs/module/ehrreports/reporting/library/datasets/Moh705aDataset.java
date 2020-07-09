@@ -55,7 +55,7 @@ public class Moh705aDataset extends BaseDataSet {
         dsd,
         "3",
         "Dyscentery bloody diarrhoea",
-        EhrReportUtils.map(moh705aIndicators.getPatientsHavingDycentery(), mappings),
+        EhrReportUtils.map(moh705aIndicators.getPatientsHavingDysentery(), mappings),
         getAdultChildrenColumns());
 
     addRow(
@@ -68,7 +68,71 @@ public class Moh705aDataset extends BaseDataSet {
         dsd,
         "5",
         "Meningococcal Meningitis",
-        EhrReportUtils.map(moh705aIndicators.getPatientsMeningococcalMeningitis(), mappings),
+        EhrReportUtils.map(moh705aIndicators.getPatientsHavingMeningococcalInfctions(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "27",
+        "Tonsillitis",
+        EhrReportUtils.map(moh705aIndicators.getPatientsHavingTonsillitis(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "28",
+        "Pneumonia",
+        EhrReportUtils.map(moh705aIndicators.getPatientsHavingPneumonia(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "29",
+        "Other Dis. Of Respiratory System",
+        EhrReportUtils.map(moh705aIndicators.getPatientsHavingOtherDiseaseOfRespiratorySystem(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "30",
+        "Mental Disorders",
+        EhrReportUtils.map(moh705aIndicators.getPatientsHavingMentalDisorders(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "31",
+        "Dental Disorders",
+        EhrReportUtils.map(moh705aIndicators.getPatientsHavingDentalDisorders(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "32",
+        "Jiggers Infestation",
+        EhrReportUtils.map(moh705aIndicators.getPatientsHavingJiggersInfestation(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "33",
+        "Disease Of The Skin",
+        EhrReportUtils.map(
+            moh705aIndicators.getPatientsHavingDiseaseOfTheSkin(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "34",
+        "Chromosomal Abnomalities",
+        EhrReportUtils.map(
+            moh705aIndicators.getPatientsHavingChromosomalAbnomalities(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "35",
+        "Congenital Anomalies",
+        EhrReportUtils.map(
+            moh705aIndicators.getPatientsHavingCongenitalAnomalies(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "36",
+        "Poisoning",
+        EhrReportUtils.map(
+            moh705aIndicators.getPatientsHavingPoisoning(), mappings),
         getAdultChildrenColumns());
     addRow(
         dsd,
