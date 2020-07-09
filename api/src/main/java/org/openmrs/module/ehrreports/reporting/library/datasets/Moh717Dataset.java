@@ -314,4 +314,12 @@ public class Moh717Dataset extends BaseDataSet {
     ColumnParameters TOTAL_CASES = new ColumnParameters("total_cases", "Total", "", "03");
     return Arrays.asList(NEW_CASES, REVISIT_CASES, TOTAL_CASES);
   }
+
+  private List<ColumnParameters> getMchClientsCategories() {
+    ColumnParameters NEW_CASES = new ColumnParameters("new_cases", "NEW", "state=NEW", "01");
+    ColumnParameters REVISIT_CASES =
+        new ColumnParameters("revisit_cases", "REVISIT", "state=RVT", "02");
+    ColumnParameters TOTAL_CASES = new ColumnParameters("total_cases", "Total", "", "03");
+    return Arrays.asList(NEW_CASES, REVISIT_CASES, TOTAL_CASES);
+  }
 }
