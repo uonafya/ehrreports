@@ -170,7 +170,7 @@ public class EhrReportUtils {
 
   public static String formatDate(Date date) {
 
-    Format formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+    Format formatter = new SimpleDateFormat("yyyy-MM-dd");
 
     return formatter.format(date);
   }
