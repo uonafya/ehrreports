@@ -90,131 +90,163 @@ public class EhrCommonDimension {
   public CohortDefinitionDimension encountersOfMonthPerDay() {
     CohortDefinitionDimension dim = new CohortDefinitionDimension();
     dim.setName("Patient with encounters on date of day");
+    dim.addParameter(new Parameter("startDate", "Start Date", Date.class));
     dim.addParameter(new Parameter("endDate", "End Date", Date.class));
     dim.addCohortDefinition(
         "1",
         EhrReportUtils.map(
-            commonLibrary.getPatientsHavingEncountersOnDate(1), "endDate=${endDate}"));
+            commonLibrary.getPatientsHavingEncountersOnDate(1),
+            "onOrAfter=${startDate},onOrBefore=${endDate}"));
     dim.addCohortDefinition(
         "2",
         EhrReportUtils.map(
-            commonLibrary.getPatientsHavingEncountersOnDate(2), "endDate=${endDate}"));
+            commonLibrary.getPatientsHavingEncountersOnDate(2),
+            "onOrAfter=${startDate},onOrBefore=${endDate}"));
     dim.addCohortDefinition(
         "3",
         EhrReportUtils.map(
-            commonLibrary.getPatientsHavingEncountersOnDate(3), "endDate=${endDate}"));
+            commonLibrary.getPatientsHavingEncountersOnDate(3),
+            "onOrAfter=${startDate},onOrBefore=${endDate}"));
     dim.addCohortDefinition(
         "4",
         EhrReportUtils.map(
-            commonLibrary.getPatientsHavingEncountersOnDate(4), "endDate=${endDate}"));
+            commonLibrary.getPatientsHavingEncountersOnDate(4),
+            "onOrAfter=${startDate},onOrBefore=${endDate}"));
     dim.addCohortDefinition(
         "5",
         EhrReportUtils.map(
-            commonLibrary.getPatientsHavingEncountersOnDate(5), "endDate=${endDate}"));
+            commonLibrary.getPatientsHavingEncountersOnDate(5),
+            "onOrAfter=${startDate},onOrBefore=${endDate}"));
     dim.addCohortDefinition(
         "6",
         EhrReportUtils.map(
-            commonLibrary.getPatientsHavingEncountersOnDate(6), "endDate=${endDate}"));
+            commonLibrary.getPatientsHavingEncountersOnDate(6),
+            "onOrAfter=${startDate},onOrBefore=${endDate}"));
     dim.addCohortDefinition(
         "7",
         EhrReportUtils.map(
-            commonLibrary.getPatientsHavingEncountersOnDate(7), "endDate=${endDate}"));
+            commonLibrary.getPatientsHavingEncountersOnDate(7),
+            "onOrAfter=${startDate},onOrBefore=${endDate}"));
     dim.addCohortDefinition(
         "8",
         EhrReportUtils.map(
-            commonLibrary.getPatientsHavingEncountersOnDate(8), "endDate=${endDate}"));
+            commonLibrary.getPatientsHavingEncountersOnDate(8),
+            "onOrAfter=${startDate},onOrBefore=${endDate}"));
     dim.addCohortDefinition(
         "9",
         EhrReportUtils.map(
-            commonLibrary.getPatientsHavingEncountersOnDate(9), "endDate=${endDate}"));
+            commonLibrary.getPatientsHavingEncountersOnDate(9),
+            "onOrAfter=${startDate},onOrBefore=${endDate}"));
     dim.addCohortDefinition(
         "10",
         EhrReportUtils.map(
-            commonLibrary.getPatientsHavingEncountersOnDate(10), "endDate=${endDate}"));
+            commonLibrary.getPatientsHavingEncountersOnDate(10),
+            "onOrAfter=${startDate},onOrBefore=${endDate}"));
     dim.addCohortDefinition(
         "11",
         EhrReportUtils.map(
-            commonLibrary.getPatientsHavingEncountersOnDate(11), "endDate=${endDate}"));
+            commonLibrary.getPatientsHavingEncountersOnDate(11),
+            "onOrAfter=${startDate},onOrBefore=${endDate}"));
     dim.addCohortDefinition(
         "12",
         EhrReportUtils.map(
-            commonLibrary.getPatientsHavingEncountersOnDate(12), "endDate=${endDate}"));
+            commonLibrary.getPatientsHavingEncountersOnDate(12),
+            "onOrAfter=${startDate},onOrBefore=${endDate}"));
     dim.addCohortDefinition(
         "13",
         EhrReportUtils.map(
-            commonLibrary.getPatientsHavingEncountersOnDate(13), "endDate=${endDate}"));
+            commonLibrary.getPatientsHavingEncountersOnDate(13),
+            "onOrAfter=${startDate},onOrBefore=${endDate}"));
     dim.addCohortDefinition(
         "14",
         EhrReportUtils.map(
-            commonLibrary.getPatientsHavingEncountersOnDate(14), "endDate=${endDate}"));
+            commonLibrary.getPatientsHavingEncountersOnDate(14),
+            "onOrAfter=${startDate},onOrBefore=${endDate}"));
     dim.addCohortDefinition(
         "15",
         EhrReportUtils.map(
-            commonLibrary.getPatientsHavingEncountersOnDate(15), "endDate=${endDate}"));
+            commonLibrary.getPatientsHavingEncountersOnDate(15),
+            "onOrAfter=${startDate},onOrBefore=${endDate}"));
     dim.addCohortDefinition(
         "16",
         EhrReportUtils.map(
-            commonLibrary.getPatientsHavingEncountersOnDate(16), "endDate=${endDate}"));
+            commonLibrary.getPatientsHavingEncountersOnDate(16),
+            "onOrAfter=${startDate},onOrBefore=${endDate}"));
     dim.addCohortDefinition(
         "17",
         EhrReportUtils.map(
-            commonLibrary.getPatientsHavingEncountersOnDate(17), "endDate=${endDate}"));
+            commonLibrary.getPatientsHavingEncountersOnDate(17),
+            "onOrAfter=${startDate},onOrBefore=${endDate}"));
     dim.addCohortDefinition(
         "18",
         EhrReportUtils.map(
-            commonLibrary.getPatientsHavingEncountersOnDate(18), "endDate=${endDate}"));
+            commonLibrary.getPatientsHavingEncountersOnDate(18),
+            "onOrAfter=${startDate},onOrBefore=${endDate}"));
     dim.addCohortDefinition(
         "19",
         EhrReportUtils.map(
-            commonLibrary.getPatientsHavingEncountersOnDate(19), "endDate=${endDate}"));
+            commonLibrary.getPatientsHavingEncountersOnDate(19),
+            "onOrAfter=${startDate},onOrBefore=${endDate}"));
     dim.addCohortDefinition(
         "20",
         EhrReportUtils.map(
-            commonLibrary.getPatientsHavingEncountersOnDate(20), "endDate=${endDate}"));
+            commonLibrary.getPatientsHavingEncountersOnDate(20),
+            "onOrAfter=${startDate},onOrBefore=${endDate}"));
     dim.addCohortDefinition(
         "21",
         EhrReportUtils.map(
-            commonLibrary.getPatientsHavingEncountersOnDate(21), "endDate=${endDate}"));
+            commonLibrary.getPatientsHavingEncountersOnDate(21),
+            "onOrAfter=${startDate},onOrBefore=${endDate}"));
     dim.addCohortDefinition(
         "22",
         EhrReportUtils.map(
-            commonLibrary.getPatientsHavingEncountersOnDate(22), "endDate=${endDate}"));
+            commonLibrary.getPatientsHavingEncountersOnDate(22),
+            "onOrAfter=${startDate},onOrBefore=${endDate}"));
     dim.addCohortDefinition(
         "23",
         EhrReportUtils.map(
-            commonLibrary.getPatientsHavingEncountersOnDate(23), "endDate=${endDate}"));
+            commonLibrary.getPatientsHavingEncountersOnDate(23),
+            "onOrAfter=${startDate},onOrBefore=${endDate}"));
     dim.addCohortDefinition(
         "24",
         EhrReportUtils.map(
-            commonLibrary.getPatientsHavingEncountersOnDate(24), "endDate=${endDate}"));
+            commonLibrary.getPatientsHavingEncountersOnDate(24),
+            "onOrAfter=${startDate},onOrBefore=${endDate}"));
     dim.addCohortDefinition(
         "25",
         EhrReportUtils.map(
-            commonLibrary.getPatientsHavingEncountersOnDate(25), "endDate=${endDate}"));
+            commonLibrary.getPatientsHavingEncountersOnDate(25),
+            "onOrAfter=${startDate},onOrBefore=${endDate}"));
     dim.addCohortDefinition(
         "26",
         EhrReportUtils.map(
-            commonLibrary.getPatientsHavingEncountersOnDate(26), "endDate=${endDate}"));
+            commonLibrary.getPatientsHavingEncountersOnDate(26),
+            "onOrAfter=${startDate},onOrBefore=${endDate}"));
     dim.addCohortDefinition(
         "27",
         EhrReportUtils.map(
-            commonLibrary.getPatientsHavingEncountersOnDate(27), "endDate=${endDate}"));
+            commonLibrary.getPatientsHavingEncountersOnDate(27),
+            "onOrAfter=${startDate},onOrBefore=${endDate}"));
     dim.addCohortDefinition(
         "28",
         EhrReportUtils.map(
-            commonLibrary.getPatientsHavingEncountersOnDate(28), "endDate=${endDate}"));
+            commonLibrary.getPatientsHavingEncountersOnDate(28),
+            "onOrAfter=${startDate},onOrBefore=${endDate}"));
     dim.addCohortDefinition(
         "29",
         EhrReportUtils.map(
-            commonLibrary.getPatientsHavingEncountersOnDate(29), "endDate=${endDate}"));
+            commonLibrary.getPatientsHavingEncountersOnDate(29),
+            "onOrAfter=${startDate},onOrBefore=${endDate}"));
     dim.addCohortDefinition(
         "30",
         EhrReportUtils.map(
-            commonLibrary.getPatientsHavingEncountersOnDate(30), "endDate=${endDate}"));
+            commonLibrary.getPatientsHavingEncountersOnDate(30),
+            "onOrAfter=${startDate},onOrBefore=${endDate}"));
     dim.addCohortDefinition(
         "31",
         EhrReportUtils.map(
-            commonLibrary.getPatientsHavingEncountersOnDate(31), "endDate=${endDate}"));
+            commonLibrary.getPatientsHavingEncountersOnDate(31),
+            "onOrAfter=${startDate},onOrBefore=${endDate}"));
 
     return dim;
   }

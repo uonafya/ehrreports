@@ -10,7 +10,8 @@ public class CommonQueries {
    */
   public static String patientsHavingEncountersOnDate(int day) {
     return "SELECT p.patient_id FROM patient p INNER JOIN encounter e ON p.patient_id=e.patient_id "
-        + " WHERE p.voided= 0 AND e.voided=0 AND e.encounter_datetime="
-        + EhrReportUtils.getTheDateBasedOnIntegerSupplied(":endDate", day);
+        + " WHERE p.voided= 0 AND e.voided=0 AND1 e.encounter_datetime="
+        + EhrReportUtils.getTheDateBasedOnIntegerSupplied(":endDate", day)
+        + " AND ";
   }
 }

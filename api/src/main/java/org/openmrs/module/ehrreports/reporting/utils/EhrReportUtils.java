@@ -181,12 +181,13 @@ public class EhrReportUtils {
   }
 
   public static String getTheDateBasedOnIntegerSupplied(String date, int day) {
+    String subStr = date.substring(5);
     // Date input = getDateFromString(date);
     // Calendar calendar = Calendar.getInstance();
     // calendar.setTime(input);
     // calendar.add(Calendar.DATE, day);
 
-    return date;
+    return subStr;
   }
 
   public static List<BaseDataSet.ColumnParameters> getAdultChildrenColumns() {
