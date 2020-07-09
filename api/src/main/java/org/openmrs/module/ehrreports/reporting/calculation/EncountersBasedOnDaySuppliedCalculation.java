@@ -11,6 +11,7 @@ import org.openmrs.calculation.patient.PatientCalculationContext;
 import org.openmrs.calculation.result.CalculationResultMap;
 import org.openmrs.calculation.result.ListResult;
 import org.openmrs.module.ehrreports.reporting.utils.EhrCalculationUtils;
+import org.openmrs.module.ehrreports.reporting.utils.EhrReportUtils;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -25,9 +26,11 @@ public class EncountersBasedOnDaySuppliedCalculation extends AbstractPatientCalc
     EhrCalculationService ehrCalculationService =
         Context.getRegisteredComponents(EhrCalculationService.class).get(0);
     Integer day = (Integer) parameterValues.get("day");
-    Date startDate = (Date) context.getFromCache("onOrAfter");
+    Date startDate = null;
     Date endDate = (Date) context.getFromCache("onOrBefore");
-    System.out.println("Start Date is >>." + startDate + " and end date is >>" + endDate);
+    if (endDate != null) {
+      startDate = getDateBasedOnValue(endDate, 1);
+    }
     CalculationResultMap allEncounters =
         ehrCalculationService.allEncounters(null, cohort, startDate, endDate, context);
     for (Integer pId : cohort) {
@@ -37,7 +40,15 @@ public class EncountersBasedOnDaySuppliedCalculation extends AbstractPatientCalc
       for (Encounter encounter : encounterList) {
         if (day != null
             && endDate != null
-            && encounter.getEncounterDatetime().equals(getDateBasedOnValue(endDate, day))) {
+            && EhrReportUtils.formatDate(encounter.getEncounterDatetime())
+                .equals(EhrReportUtils.formatDate(getDateBasedOnValue(endDate, day)))) {
+          System.out.println(
+              "The dates to be used for processing for encounter>>"
+                  + EhrReportUtils.formatDate(encounter.getEncounterDatetime())
+                  + " and date passed is >>"
+                  + EhrReportUtils.formatDate(getDateBasedOnValue(endDate, day))
+                  + " for patient>>"
+                  + pId);
           found = true;
         }
       }
@@ -49,8 +60,12 @@ public class EncountersBasedOnDaySuppliedCalculation extends AbstractPatientCalc
   private Date getDateBasedOnValue(Date date, int day) {
     Calendar calendar = Calendar.getInstance();
     calendar.setTime(date);
-    calendar.add(Calendar.DATE, day);
+    int year = calendar.get(Calendar.YEAR);
+    int month = calendar.get(Calendar.MONTH);
 
-    return calendar.getTime();
+    Calendar calendar1 = Calendar.getInstance();
+    calendar1.set(year, month, day);
+
+    return calendar1.getTime();
   }
 }
