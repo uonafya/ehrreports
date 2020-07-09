@@ -129,10 +129,20 @@ public class Moh705aCohortQueries {
         EhrReportUtils.map(
             getPatientsHavingTuberculosis(), "startDate=${startDate},endDate=${endDate}"));
     cd.addSearch(
+        "3",
+        EhrReportUtils.map(
+            getPatientsHavingDysentery(), "startDate=${startDate},endDate=${endDate}"));
+
+    cd.addSearch(
         "4",
         EhrReportUtils.map(
             getPatientsHavingCholera(), "startDate=${startDate},endDate=${endDate}"));
-    cd.setCompositionString("ALL AND NOT (1 OR 2 OR 4)");
+    cd.addSearch(
+        "5",
+        EhrReportUtils.map(
+            getPatientsHavingMeningococcalInfections(),
+            "startDate=${startDate},endDate=${endDate}"));
+    cd.setCompositionString("ALL AND NOT (1 OR 2 OR 3 OR 4 OR 5)");
     return cd;
   }
 }
