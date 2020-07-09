@@ -29,6 +29,7 @@
 /home/bu5h15ky/_git/ehrreports/api/src/main/java/org/openmrs/module/ehrreports/reporting/library/dimensions/AgeDimensionCohortInterface.java
 /home/bu5h15ky/_git/ehrreports/api/src/main/java/org/openmrs/module/ehrreports/reporting/cohort/definition/CustomConfigurationsDataDefinition.java
 /home/bu5h15ky/_git/ehrreports/api/src/main/java/org/openmrs/module/ehrreports/reporting/EhrReportInitializer.java
+/home/bu5h15ky/_git/ehrreports/api/src/main/java/org/openmrs/module/ehrreports/reporting/calculation/EncountersBasedOnDaySuppliedCalculation.java
 /home/bu5h15ky/_git/ehrreports/api/src/main/java/org/openmrs/module/ehrreports/reporting/reports/manager/EhrReportManager.java
 /home/bu5h15ky/_git/ehrreports/api/src/main/java/org/openmrs/module/ehrreports/metadata/CommonMetadata.java
 /home/bu5h15ky/_git/ehrreports/api/src/main/java/org/openmrs/module/ehrreports/api/EhrReportsService.java
@@ -45,6 +46,7 @@
 /home/bu5h15ky/_git/ehrreports/api/src/main/java/org/openmrs/module/ehrreports/metadata/TbMetadata.java
 /home/bu5h15ky/_git/ehrreports/api/src/main/java/org/openmrs/module/ehrreports/reporting/reports/SetupMOH705aReport.java
 /home/bu5h15ky/_git/ehrreports/api/src/main/java/org/openmrs/module/ehrreports/reporting/library/dimensions/EhrCommonDimension.java
+/home/bu5h15ky/_git/ehrreports/api/src/main/java/org/openmrs/module/ehrreports/reporting/library/datasets/Moh705Dataset.java
 /home/bu5h15ky/_git/ehrreports/api/src/main/java/org/openmrs/module/ehrreports/reporting/library/indicators/BaseIndicators.java
 /home/bu5h15ky/_git/ehrreports/api/src/main/java/org/openmrs/module/ehrreports/metadata/MetadataLookupException.java
 /home/bu5h15ky/_git/ehrreports/api/src/main/java/org/openmrs/module/ehrreports/reporting/calculation/AbstractPatientCalculation.java
