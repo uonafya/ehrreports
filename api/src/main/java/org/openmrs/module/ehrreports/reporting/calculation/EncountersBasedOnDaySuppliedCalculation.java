@@ -29,7 +29,7 @@ public class EncountersBasedOnDaySuppliedCalculation extends AbstractPatientCalc
     Date startDate = null;
     Date endDate = (Date) context.getFromCache("onOrBefore");
     if (endDate != null) {
-      startDate = getDateBasedOnValue(endDate, 1);
+      startDate = getDateAdayEarlier(getDateBasedOnValue(endDate, 1), -1);
     }
     CalculationResultMap allEncounters =
         ehrCalculationService.allEncounters(null, cohort, startDate, endDate, context);
@@ -42,14 +42,8 @@ public class EncountersBasedOnDaySuppliedCalculation extends AbstractPatientCalc
             && endDate != null
             && EhrReportUtils.formatDate(encounter.getEncounterDatetime())
                 .equals(EhrReportUtils.formatDate(getDateBasedOnValue(endDate, day)))) {
-          System.out.println(
-              "The dates to be used for processing for encounter>>"
-                  + EhrReportUtils.formatDate(encounter.getEncounterDatetime())
-                  + " and date passed is >>"
-                  + EhrReportUtils.formatDate(getDateBasedOnValue(endDate, day))
-                  + " for patient>>"
-                  + pId);
           found = true;
+          break;
         }
       }
       resultMap.put(pId, new BooleanResult(found, this));
@@ -67,5 +61,12 @@ public class EncountersBasedOnDaySuppliedCalculation extends AbstractPatientCalc
     calendar1.set(year, month, day);
 
     return calendar1.getTime();
+  }
+
+  private Date getDateAdayEarlier(Date date, int days) {
+    Calendar calendar = Calendar.getInstance();
+    calendar.setTime(date);
+    calendar.add(Calendar.DATE, days);
+    return calendar.getTime();
   }
 }
