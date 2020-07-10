@@ -141,11 +141,4 @@ public class DiagnosisMetadata extends Metadata {
     return Arrays.asList(outpatientMetadata.getOtherDiabetesConcept().getConceptId());
   }
 
-  public List<Integer> getPatientReferredFromList() {
-    return Arrays.asList(outpatientMetadata.getPatientReferredFrom().getConceptId());
-  }
-
-  public List<Integer> getPatientReferredExternallyList() {
-    return Arrays.asList(outpatientMetadata.getPatientReferredExternally().getConceptId());
-  }
 }
