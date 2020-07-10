@@ -194,6 +194,10 @@ public final class EhrReportConstants {
   // POISONING
   public static final String POISONING = "5530d558-5dec-47c3-97b0-02c34205924c"; // 1026
 
+  // Patient referred from
+  public static final String PATIENT_REFERRED_FROM = "939e7bcc-a038-4776-8445-7ff080a813e6"; // 005
+  public static final String EXTERNAL_REFERRAL = "18b2b617-1631-457f-a36b-e593d948707f"; // 3004
+
   // program
   public static final String ANC_Program = "d83b74b7-f5ea-46fc-acc5-71e892ee1e68";
   public static final String PNC_Program = "a15f2617-9f5d-4022-8de3-181b2e286a28";

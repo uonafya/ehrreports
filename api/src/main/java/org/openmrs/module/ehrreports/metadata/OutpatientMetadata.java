@@ -416,6 +416,24 @@ public class OutpatientMetadata extends ProgramsMetadata {
   }
 
   /**
+   * Get patient referred from concept
+   *
+   * @return Concept
+   */
+  public Concept getPatientReferredFrom() {
+    return getConcept(EhrReportConstants.PATIENT_REFERRED_FROM);
+  }
+
+  /**
+   * Get patient referred externally concept
+   *
+   * @return Concept
+   */
+  public Concept getPatientReferredExternally() {
+    return getConcept(EhrReportConstants.EXTERNAL_REFERRAL);
+  }
+
+  /**
    * programs ANC program
    *
    * @return Program
