@@ -16,6 +16,7 @@ import static org.openmrs.module.ehrreports.reporting.utils.EhrReportUtils.getAd
 import org.openmrs.module.ehrreports.reporting.cohort.definition.CustomConfigurationsDataDefinition;
 import org.openmrs.module.ehrreports.reporting.library.dimensions.EhrCommonDimension;
 import org.openmrs.module.ehrreports.reporting.library.indicators.Moh705aIndicators;
+import org.openmrs.module.ehrreports.reporting.utils.EhrReportConstants;
 import org.openmrs.module.ehrreports.reporting.utils.EhrReportUtils;
 import org.openmrs.module.reporting.dataset.definition.CohortIndicatorDataSetDefinition;
 import org.openmrs.module.reporting.dataset.definition.DataSetDefinition;
@@ -137,6 +138,22 @@ public class Moh705aDataset extends BaseDataSet {
         "All other diseases",
         EhrReportUtils.map(
             moh705aIndicators.getMoh705aPatientsHavingDiagnosisOtherThanTheOnesListed(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "64",
+        "Number of first attendances",
+        EhrReportUtils.map(
+            moh705aIndicators.getNewAndRevisitPatients(EhrReportConstants.OccurenceStates.NEW),
+            "endDate=${endDate}"),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "65",
+        "Number of re attendances",
+        EhrReportUtils.map(
+            moh705aIndicators.getNewAndRevisitPatients(EhrReportConstants.OccurenceStates.REVISIT),
+            "endDate=${endDate}"),
         getAdultChildrenColumns());
 
     return dsd;

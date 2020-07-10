@@ -16,6 +16,7 @@ import java.util.List;
 import org.openmrs.module.ehrreports.metadata.DiagnosisMetadata;
 import org.openmrs.module.ehrreports.metadata.OutpatientMetadata;
 import org.openmrs.module.ehrreports.reporting.library.queries.moh705.Moh705Queries;
+import org.openmrs.module.ehrreports.reporting.utils.EhrReportConstants;
 import org.openmrs.module.ehrreports.reporting.utils.EhrReportUtils;
 import org.openmrs.module.reporting.cohort.definition.CohortDefinition;
 import org.openmrs.module.reporting.cohort.definition.CompositionCohortDefinition;
@@ -28,6 +29,7 @@ import org.springframework.stereotype.Component;
 public class Moh705aCohortQueries {
   @Autowired private OutpatientMetadata outpatientMetadata;
   @Autowired private DiagnosisMetadata diagnosisMetadata;
+  @Autowired private Moh717CohortQueries moh717CohortQueries;
 
   /**
    * Get adult patients who have given diagnosis - MOH705A
@@ -270,5 +272,13 @@ public class Moh705aCohortQueries {
     cd.setCompositionString(
         "ALL AND NOT (1 OR 2 OR 3 OR 4 OR 5 OR 27 OR 28 OR 29 OR 30 OR 31 OR 32 OR 33 OR 34 OR 35 OR 36)");
     return cd;
+  }
+  /**
+   * Get number of first/revisit attendancies column 64
+   *
+   * @return @CohortDefinition
+   */
+  public CohortDefinition getNewAndRevisitPatients(EhrReportConstants.OccurenceStates state) {
+    return moh717CohortQueries.getPatientStates(state);
   }
 }
