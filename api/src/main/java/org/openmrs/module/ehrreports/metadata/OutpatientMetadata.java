@@ -450,10 +450,10 @@ public class OutpatientMetadata extends ProgramsMetadata {
   public Concept getEpilepsyConcept() {
     return getConcept(EhrReportConstants.EPILEPSY);
   }
+
   public Concept getOtherConvulsiveDisordersConcept() {
     return getConcept(EhrReportConstants.OTHER_CONVULSIVE_DISORDERS);
   }
-
 
   /**
    * Get patient referred from concept
