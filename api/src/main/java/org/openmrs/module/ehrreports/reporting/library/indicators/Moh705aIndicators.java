@@ -256,6 +256,13 @@ public class Moh705aIndicators {
             moh705aCohortQueries.getPatientsHavingOtherBites(),
             "startDate=${startDate},endDate=${endDate}"));
   }
+ public CohortIndicator getPatientsHavingEpilepsy() {
+    return ehrGeneralIndicator.getIndicator(
+        "Other Epilepsy",
+        EhrReportUtils.map(
+            moh705aCohortQueries.getPatientsHavingEpilepsy(),
+            "startDate=${startDate},endDate=${endDate}"));
+  }
 
   public CohortIndicator getPatientsHavingDiabetes() {
     return ehrGeneralIndicator.getIndicator(
@@ -264,6 +271,14 @@ public class Moh705aIndicators {
             moh705aCohortQueries.getPatientsHavingDiabetes(),
             "startDate=${startDate},endDate=${endDate}"));
   }
+
+  public CohortIndicator getPatientsHavingOtherConvulsiveDisorders() {
+    return ehrGeneralIndicator.getIndicator(
+        "Other Bites",
+        EhrReportUtils.map(
+            moh705aCohortQueries.getPatientsHavingOtherConvulsiveDisorders(),
+            "startDate=${startDate},endDate=${endDate}"));
+
 
   public CohortIndicator getPatientsReferredToFacility() {
     return ehrGeneralIndicator.getIndicator(
@@ -279,5 +294,6 @@ public class Moh705aIndicators {
         EhrReportUtils.map(
             commonLibrary.hasObs(outpatientMetadata.getPatientReferredExternally()),
             "onOrAfter=${startDate},onOrBefore=${endDate}"));
+
   }
 }

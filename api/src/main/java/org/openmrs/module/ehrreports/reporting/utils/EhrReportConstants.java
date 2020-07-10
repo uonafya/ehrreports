@@ -180,13 +180,13 @@ public final class EhrReportConstants {
   public static final String DENTAL_DISORDERS = "1e886bed-ff5a-4610-97a5-45a613db9c9f"; // 4451
 
   // JIGGERS INFESTATION
-  public static final String JIGGERS_INFESTATION = "NULL"; // Input jigger infestation concept
+  public static final String JIGGERS_INFESTATION = "72d91e67-0f6e-41dd-87ce-0c510c99aa2a"; // Input jigger infestation concept
 
   // DISEASE OF THE SKIN
   public static final String DISEASE_OF_THE_SKIN = "e9c5bea6-33b1-4af2-99ba-0ff2b2945c29"; // 1825
 
   // CHROMOSOMAL ABNORMALITIES
-  public static final String CHROMOSOMAL_ABNORMALITIES = "NULL"; // INPUT CONCEPT ID IF/WHEN ADDED
+  public static final String CHROMOSOMAL_ABNORMALITIES = "72d91e67-0f6e-41dd-87ce-0c510c99aa2a"; // INPUT CONCEPT ID IF/WHEN ADDED
 
   // CONGENITAL ANOMALIES
   public static final String CONGENITAL_ANOMALIES = "9b8b38ad-e325-4b96-85dc-e559c583505d"; // 1201
@@ -199,10 +199,10 @@ public final class EhrReportConstants {
   public static final String EXTERNAL_REFERRAL = "18b2b617-1631-457f-a36b-e593d948707f"; // 3004
 
   // RTA
-  public static final String ROAD_TRAFFIC_INJURIES = "NUll"; // INPUT CONCEPT ID IF/WHEN ADDED
+  public static final String ROAD_TRAFFIC_INJURIES = "72d91e67-0f6e-41dd-87ce-0c510c99aa2a"; // INPUT CONCEPT ID IF/WHEN ADDED
 
   // OTHER INJURIES
-  public static final String OTHER_INJURIES = "NUll"; // INPUT CONCEPT ID IF/WHEN ADDED
+  public static final String OTHER_INJURIES = "72d91e67-0f6e-41dd-87ce-0c510c99aa2a"; // INPUT CONCEPT ID IF/WHEN ADDED
 
   // SEXUAL ASSAULT
   public static final String SEXUAL_ASSAULT = "7a22663f-e9ad-11e5-bc3d-6451069f906b"; // 1001066
@@ -214,16 +214,23 @@ public final class EhrReportConstants {
   public static final String SNAKE_BITES = "9cf6dc64-3629-43ea-961b-425cd8704158"; // 1393
 
   // DOG BITES
-  public static final String DOG_BITES = "NULL"; // INPUT CONCEPT ID IF/WHEN ADDED
+  public static final String DOG_BITES = "72d91e67-0f6e-41dd-87ce-0c510c99aa2a"; // INPUT CONCEPT ID IF/WHEN ADDED
 
   // OTHER BITES
-  public static final String OTHER_BITES = "NULL"; // INPUT CONCEPT ID IF/WHEN ADDED
+  public static final String OTHER_BITES = "72d91e67-0f6e-41dd-87ce-0c510c99aa2a"; // INPUT CONCEPT ID IF/WHEN ADDED
 
   // DIABETES
   public static final String DIABETES = "119481AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // 119481
 
   // EPILEPSY
   public static final String EPILEPSY = "4e896673-d822-458e-bbfe-604747e0afe8"; // 4579
+
+  // OTHER CONVULSIVE  DISORDERS
+  public static final String OTHER_CONVULSIVE_DISORDERS = "ba8b8fac-f593-4b71-81bb-c6b33aa67814"; // 4102
+
+  // NEWLY DIAGNOSED HIV
+  public static final String NEWLY_DIAGNOSED_HIV = "72d91e67-0f6e-41dd-87ce-0c510c99aa2a"; // Concept NULL
+
 
   // program
   public static final String ANC_Program = "d83b74b7-f5ea-46fc-acc5-71e892ee1e68";

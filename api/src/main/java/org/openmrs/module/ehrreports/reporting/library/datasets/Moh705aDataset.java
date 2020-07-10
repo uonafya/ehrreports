@@ -183,6 +183,18 @@ public class Moh705aDataset extends BaseDataSet {
         getAdultChildrenColumns());
     addRow(
         dsd,
+        "45",
+        "Epilepsy",
+        EhrReportUtils.map(moh705aIndicators.getPatientsHavingEpilepsy(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "46",
+        "Other Convulsive Disorders",
+        EhrReportUtils.map(moh705aIndicators.getPatientsHavingOtherConvulsiveDisorders(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
         "OTHERS",
         "All other diseases",
         EhrReportUtils.map(
