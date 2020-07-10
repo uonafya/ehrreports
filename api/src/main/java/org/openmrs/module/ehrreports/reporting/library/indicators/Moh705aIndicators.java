@@ -209,11 +209,36 @@ public class Moh705aIndicators {
         EhrReportUtils.map(
             moh705aCohortQueries.getPatientsHavingBurns(),
             "startDate=${startDate},endDate=${endDate}"));
-  }public CohortIndicator getPatientsHavingSnakeBites() {
+  }
+  public CohortIndicator getPatientsHavingSnakeBites() {
     return ehrGeneralIndicator.getIndicator(
         "Snake Bites",
         EhrReportUtils.map(
             moh705aCohortQueries.getPatientsHavingSnakeBites(),
             "startDate=${startDate},endDate=${endDate}"));
   }
+  public CohortIndicator getPatientsHavingDogBites() {
+    return ehrGeneralIndicator.getIndicator(
+        "Dog Bites",
+        EhrReportUtils.map(
+            moh705aCohortQueries.getPatientsHavingDogBites(),
+            "startDate=${startDate},endDate=${endDate}"));
+  }
+  public CohortIndicator getPatientsHavingOtherBites() {
+    return ehrGeneralIndicator.getIndicator(
+        "Other Bites",
+        EhrReportUtils.map(
+            moh705aCohortQueries.getPatientsHavingOtherBites(),
+            "startDate=${startDate},endDate=${endDate}"));
+  }
+  public CohortIndicator getPatientsHavingDiabetes() {
+    return ehrGeneralIndicator.getIndicator(
+        "Other Bites",
+        EhrReportUtils.map(
+            moh705aCohortQueries.getPatientsHavingDiabetes(),
+            "startDate=${startDate},endDate=${endDate}"));
+  }
+
+
+
 }

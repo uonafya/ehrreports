@@ -430,6 +430,19 @@ public class OutpatientMetadata extends ProgramsMetadata {
   public Concept getSnakeBitesConcept(){
     return getConcept(EhrReportConstants.SNAKE_BITES);
   }
+  public Concept getDogBitesConcept(){
+    return getConcept(EhrReportConstants.DOG_BITES);
+  }
+  public Concept getOtherBitesConcept(){
+    return getConcept(EhrReportConstants.OTHER_BITES);
+  }
+
+  public Concept getOtherDiabetesConcept(){
+    return getConcept(EhrReportConstants.DIABETES);
+  }
+  public Concept getEpilepsyConcept(){
+    return getConcept(EhrReportConstants.EPILEPSY);
+  }
 
   /**
    * programs ANC program

@@ -209,6 +209,18 @@ public final class EhrReportConstants {
   // SNAKE BITES
   public static final String SNAKE_BITES = "9cf6dc64-3629-43ea-961b-425cd8704158"; //1393
 
+  // DOG BITES
+  public static final String DOG_BITES = "NULL"; // INPUT CONCEPT ID IF/WHEN ADDED
+
+  //OTHER BITES
+  public static final String OTHER_BITES = "NULL"; // INPUT CONCEPT ID IF/WHEN ADDED
+
+  //DIABETES
+  public static final String DIABETES = "119481AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; //119481
+
+  // EPILEPSY
+  public static final String EPILEPSY = "4e896673-d822-458e-bbfe-604747e0afe8"; //4579
+
   // program
   public static final String ANC_Program = "d83b74b7-f5ea-46fc-acc5-71e892ee1e68";
   public static final String PNC_Program = "a15f2617-9f5d-4022-8de3-181b2e286a28";
