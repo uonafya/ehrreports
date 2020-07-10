@@ -367,7 +367,7 @@ public class Moh705aCohortQueries {
             getPatientsHavingDiabetes(), "startDate=${startDate},endDate=${endDate}"));
 
     cd.setCompositionString(
-        "ALL AND NOT (1 OR 2 OR 3 OR 4 OR 5 OR 27 OR 28 OR 29 OR 30 OR 31 OR 32 OR 33 OR 34 OR 35 OR 36 OR 37 OR 38 OR 39 OR 40 OR 41 OR 42 OR 43 0r 44)");
+        "ALL AND NOT (1 OR 2 OR 3 OR 4 OR 5 OR 27 OR 28 OR 29 OR 30 OR 31 OR 32 OR 33 OR 34 OR 35 OR 36 OR 37 OR 38 OR 39 OR 40 OR 41 OR 42 OR 43 OR 44)");
     return cd;
   }
   /**
@@ -378,4 +378,5 @@ public class Moh705aCohortQueries {
   public CohortDefinition getNewAndRevisitPatients(EhrReportConstants.OccurenceStates state) {
     return moh717CohortQueries.getPatientStates(state);
   }
+  /** Get */
 }
