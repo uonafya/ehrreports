@@ -112,24 +112,31 @@ public class DiagnosisMetadata extends Metadata {
   public List<Integer> getRoadOtherInjuriesConceptList() {
     return Arrays.asList(outpatientMetadata.getOtherInjuriesConcept().getConceptId());
   }
+
   public List<Integer> getSexualAssaultConceptList() {
     return Arrays.asList(outpatientMetadata.getSexualAssaultConcept().getConceptId());
   }
+
   public List<Integer> getBurnsConceptList() {
     return Arrays.asList(outpatientMetadata.getBurnsConcept().getConceptId());
   }
+
   public List<Integer> getSnakeBitesConceptList() {
     return Arrays.asList(outpatientMetadata.getSnakeBitesConcept().getConceptId());
   }
+
   public List<Integer> getDogBitesConceptList() {
     return Arrays.asList(outpatientMetadata.getDogBitesConcept().getConceptId());
   }
+
   public List<Integer> getOtherBitesConceptList() {
     return Arrays.asList(outpatientMetadata.getOtherBitesConcept().getConceptId());
   }
+
   public List<Integer> getDiabetesConceptList() {
     return Arrays.asList(outpatientMetadata.getOtherDiabetesConcept().getConceptId());
   }
+
   public List<Integer> getEpilepsyConceptList() {
     return Arrays.asList(outpatientMetadata.getOtherDiabetesConcept().getConceptId());
   }

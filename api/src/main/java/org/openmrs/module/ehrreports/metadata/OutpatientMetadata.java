@@ -415,32 +415,39 @@ public class OutpatientMetadata extends ProgramsMetadata {
     return getConcept(EhrReportConstants.POISONING);
   }
 
-  public Concept getRoadTrafficInjuriesConcept(){
+  public Concept getRoadTrafficInjuriesConcept() {
     return getConcept(EhrReportConstants.ROAD_TRAFFIC_INJURIES);
   }
-  public Concept getOtherInjuriesConcept(){
+
+  public Concept getOtherInjuriesConcept() {
     return getConcept(EhrReportConstants.OTHER_INJURIES);
   }
- public Concept getSexualAssaultConcept(){
+
+  public Concept getSexualAssaultConcept() {
     return getConcept(EhrReportConstants.SEXUAL_ASSAULT);
   }
-  public Concept getBurnsConcept(){
+
+  public Concept getBurnsConcept() {
     return getConcept(EhrReportConstants.BURNS);
   }
-  public Concept getSnakeBitesConcept(){
+
+  public Concept getSnakeBitesConcept() {
     return getConcept(EhrReportConstants.SNAKE_BITES);
   }
-  public Concept getDogBitesConcept(){
+
+  public Concept getDogBitesConcept() {
     return getConcept(EhrReportConstants.DOG_BITES);
   }
-  public Concept getOtherBitesConcept(){
+
+  public Concept getOtherBitesConcept() {
     return getConcept(EhrReportConstants.OTHER_BITES);
   }
 
-  public Concept getOtherDiabetesConcept(){
+  public Concept getOtherDiabetesConcept() {
     return getConcept(EhrReportConstants.DIABETES);
   }
-  public Concept getEpilepsyConcept(){
+
+  public Concept getEpilepsyConcept() {
     return getConcept(EhrReportConstants.EPILEPSY);
   }
 
@@ -517,7 +524,7 @@ public class OutpatientMetadata extends ProgramsMetadata {
   }
 
   /**
-   * Finding/Symptoms class ID 13
+   *  Finding/Symptoms class ID 13
    *
    * @return ConceptClass
    */

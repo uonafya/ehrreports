@@ -188,7 +188,7 @@ public class Moh705aCohortQueries {
   public CohortDefinition getPatientsHavingPoisoning() {
     return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getPoisoningConceptList());
   }
- /**
+  /**
    * Get patients who have had RTA during period of the month
    *
    * @return @{@link CohortDefinition}
@@ -345,27 +345,26 @@ public class Moh705aCohortQueries {
     cd.addSearch(
         "39",
         EhrReportUtils.map(
-            getPatientsHavingSexualAssault() , "startDate=${startDate},endDate=${endDate}"));
+            getPatientsHavingSexualAssault(), "startDate=${startDate},endDate=${endDate}"));
     cd.addSearch(
         "40",
-        EhrReportUtils.map(
-            getPatientsHavingBurns() , "startDate=${startDate},endDate=${endDate}"));
+        EhrReportUtils.map(getPatientsHavingBurns(), "startDate=${startDate},endDate=${endDate}"));
     cd.addSearch(
         "41",
         EhrReportUtils.map(
-            getPatientsHavingSnakeBites() , "startDate=${startDate},endDate=${endDate}"));
+            getPatientsHavingSnakeBites(), "startDate=${startDate},endDate=${endDate}"));
     cd.addSearch(
         "42",
         EhrReportUtils.map(
-            getPatientsHavingDogBites() , "startDate=${startDate},endDate=${endDate}"));
+            getPatientsHavingDogBites(), "startDate=${startDate},endDate=${endDate}"));
     cd.addSearch(
         "43",
         EhrReportUtils.map(
-            getPatientsHavingOtherBites() , "startDate=${startDate},endDate=${endDate}"));
+            getPatientsHavingOtherBites(), "startDate=${startDate},endDate=${endDate}"));
     cd.addSearch(
         "44",
         EhrReportUtils.map(
-            getPatientsHavingDiabetes() , "startDate=${startDate},endDate=${endDate}"));
+            getPatientsHavingDiabetes(), "startDate=${startDate},endDate=${endDate}"));
 
     cd.setCompositionString(
         "ALL AND NOT (1 OR 2 OR 3 OR 4 OR 5 OR 27 OR 28 OR 29 OR 30 OR 31 OR 32 OR 33 OR 34 OR 35 OR 36 OR 37 OR 38 OR 39 OR 40 OR 41 OR 42 OR 43 0r 44)");

@@ -194,6 +194,7 @@ public class Moh705aIndicators {
             moh705aCohortQueries.getPatientsHavingPoisoning(),
             "startDate=${startDate},endDate=${endDate}"));
   }
+
   public CohortIndicator getPatientsHavingRoadTrafficInjuries() {
     return ehrGeneralIndicator.getIndicator(
         "Road Traffic Injuries",
@@ -209,6 +210,7 @@ public class Moh705aIndicators {
             moh705aCohortQueries.getPatientsHavingOtherInjuries(),
             "startDate=${startDate},endDate=${endDate}"));
   }
+
   public CohortIndicator getPatientsHavingSexualAssault() {
     return ehrGeneralIndicator.getIndicator(
         "Sexual Assault",
@@ -216,6 +218,7 @@ public class Moh705aIndicators {
             moh705aCohortQueries.getPatientsHavingSexualAssault(),
             "startDate=${startDate},endDate=${endDate}"));
   }
+
   public CohortIndicator getPatientsHavingBurns() {
     return ehrGeneralIndicator.getIndicator(
         "Burns",
@@ -223,6 +226,7 @@ public class Moh705aIndicators {
             moh705aCohortQueries.getPatientsHavingBurns(),
             "startDate=${startDate},endDate=${endDate}"));
   }
+
   public CohortIndicator getPatientsHavingSnakeBites() {
     return ehrGeneralIndicator.getIndicator(
         "Snake Bites",
@@ -230,6 +234,7 @@ public class Moh705aIndicators {
             moh705aCohortQueries.getPatientsHavingSnakeBites(),
             "startDate=${startDate},endDate=${endDate}"));
   }
+
   public CohortIndicator getPatientsHavingDogBites() {
     return ehrGeneralIndicator.getIndicator(
         "Dog Bites",
@@ -237,6 +242,7 @@ public class Moh705aIndicators {
             moh705aCohortQueries.getPatientsHavingDogBites(),
             "startDate=${startDate},endDate=${endDate}"));
   }
+
   public CohortIndicator getPatientsHavingOtherBites() {
     return ehrGeneralIndicator.getIndicator(
         "Other Bites",
@@ -244,6 +250,7 @@ public class Moh705aIndicators {
             moh705aCohortQueries.getPatientsHavingOtherBites(),
             "startDate=${startDate},endDate=${endDate}"));
   }
+
   public CohortIndicator getPatientsHavingDiabetes() {
     return ehrGeneralIndicator.getIndicator(
         "Other Bites",
@@ -251,7 +258,4 @@ public class Moh705aIndicators {
             moh705aCohortQueries.getPatientsHavingDiabetes(),
             "startDate=${startDate},endDate=${endDate}"));
   }
-
-
-
 }

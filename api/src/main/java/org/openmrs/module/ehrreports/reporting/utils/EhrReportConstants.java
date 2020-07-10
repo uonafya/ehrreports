@@ -198,32 +198,32 @@ public final class EhrReportConstants {
   public static final String PATIENT_REFERRED_FROM = "939e7bcc-a038-4776-8445-7ff080a813e6"; // 005
   public static final String EXTERNAL_REFERRAL = "18b2b617-1631-457f-a36b-e593d948707f"; // 3004
 
-  //RTA
+  // RTA
   public static final String ROAD_TRAFFIC_INJURIES = "NUll"; // INPUT CONCEPT ID IF/WHEN ADDED
 
-  //OTHER INJURIES
+  // OTHER INJURIES
   public static final String OTHER_INJURIES = "NUll"; // INPUT CONCEPT ID IF/WHEN ADDED
 
   // SEXUAL ASSAULT
   public static final String SEXUAL_ASSAULT = "7a22663f-e9ad-11e5-bc3d-6451069f906b"; // 1001066
 
   // BURNS
-  public static final String BURNS = "5edbfc55-2654-48c7-bc19-cd22c7a4756f"; //4325
+  public static final String BURNS = "5edbfc55-2654-48c7-bc19-cd22c7a4756f"; // 4325
 
   // SNAKE BITES
-  public static final String SNAKE_BITES = "9cf6dc64-3629-43ea-961b-425cd8704158"; //1393
+  public static final String SNAKE_BITES = "9cf6dc64-3629-43ea-961b-425cd8704158"; // 1393
 
   // DOG BITES
   public static final String DOG_BITES = "NULL"; // INPUT CONCEPT ID IF/WHEN ADDED
 
-  //OTHER BITES
+  // OTHER BITES
   public static final String OTHER_BITES = "NULL"; // INPUT CONCEPT ID IF/WHEN ADDED
 
-  //DIABETES
-  public static final String DIABETES = "119481AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; //119481
+  // DIABETES
+  public static final String DIABETES = "119481AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // 119481
 
   // EPILEPSY
-  public static final String EPILEPSY = "4e896673-d822-458e-bbfe-604747e0afe8"; //4579
+  public static final String EPILEPSY = "4e896673-d822-458e-bbfe-604747e0afe8"; // 4579
 
   // program
   public static final String ANC_Program = "d83b74b7-f5ea-46fc-acc5-71e892ee1e68";
