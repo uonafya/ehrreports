@@ -524,7 +524,7 @@ public class OutpatientMetadata extends ProgramsMetadata {
   }
 
   /**
-   *  Finding/Symptoms class ID 13
+   * Finding/Symptoms class ID 13
    *
    * @return ConceptClass
    */
