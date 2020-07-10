@@ -217,6 +217,19 @@ public class Moh705aDataset extends BaseDataSet {
             "endDate=${endDate}"),
         getAdultChildrenColumns());
 
+    addRow(
+        dsd,
+        "66",
+        "Referrals from other health facility",
+        EhrReportUtils.map(moh705aIndicators.getPatientsReferredToFacility(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "67",
+        "Referrals to other health facility",
+        EhrReportUtils.map(moh705aIndicators.getPatientsReferredToExternalFacilities(), mappings),
+        getAdultChildrenColumns());
+
     return dsd;
   }
 

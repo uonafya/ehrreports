@@ -13,6 +13,8 @@
  */
 package org.openmrs.module.ehrreports.reporting.library.indicators;
 
+import org.openmrs.module.ehrreports.metadata.OutpatientMetadata;
+import org.openmrs.module.ehrreports.reporting.library.cohorts.CommonLibrary;
 import org.openmrs.module.ehrreports.reporting.library.cohorts.Moh705aCohortQueries;
 import org.openmrs.module.ehrreports.reporting.utils.EhrReportConstants;
 import org.openmrs.module.ehrreports.reporting.utils.EhrReportUtils;
@@ -25,6 +27,10 @@ public class Moh705aIndicators {
   @Autowired private Moh705aCohortQueries moh705aCohortQueries;
 
   @Autowired private EhrGeneralIndicator ehrGeneralIndicator;
+
+  @Autowired private CommonLibrary commonLibrary;
+
+  @Autowired private OutpatientMetadata outpatientMetadata;
 
   /**
    * Get patients who are adults and have diagnosis other than the ones listed and classified
@@ -260,16 +266,34 @@ public class Moh705aIndicators {
 
   public CohortIndicator getPatientsHavingDiabetes() {
     return ehrGeneralIndicator.getIndicator(
-        "Other Bites",
+        "Patients having diabetes",
         EhrReportUtils.map(
             moh705aCohortQueries.getPatientsHavingDiabetes(),
             "startDate=${startDate},endDate=${endDate}"));
   }
+
   public CohortIndicator getPatientsHavingOtherConvulsiveDisorders() {
     return ehrGeneralIndicator.getIndicator(
         "Other Bites",
         EhrReportUtils.map(
             moh705aCohortQueries.getPatientsHavingOtherConvulsiveDisorders(),
             "startDate=${startDate},endDate=${endDate}"));
+
+
+  public CohortIndicator getPatientsReferredToFacility() {
+    return ehrGeneralIndicator.getIndicator(
+        "Patients who are referred to this facility",
+        EhrReportUtils.map(
+            commonLibrary.hasObs(outpatientMetadata.getPatientReferredFrom()),
+            "onOrAfter=${startDate},onOrBefore=${endDate}"));
+  }
+
+  public CohortIndicator getPatientsReferredToExternalFacilities() {
+    return ehrGeneralIndicator.getIndicator(
+        "Patients who are referred to external facility",
+        EhrReportUtils.map(
+            commonLibrary.hasObs(outpatientMetadata.getPatientReferredExternally()),
+            "onOrAfter=${startDate},onOrBefore=${endDate}"));
+
   }
 }
