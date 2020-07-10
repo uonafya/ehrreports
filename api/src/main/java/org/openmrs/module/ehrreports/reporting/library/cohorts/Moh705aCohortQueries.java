@@ -104,6 +104,88 @@ public class Moh705aCohortQueries {
   public CohortDefinition getPatientsHavingDysentery() {
     return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getDysenteryList());
   }
+  /**
+   * Get patients who have Pneumonia during period of the month
+   *
+   * @return @{@link CohortDefinition}
+   */
+  public CohortDefinition getPatientsHavingPneumonia() {
+    return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getPneumoniaConceptList());
+  }
+  /**
+   * Get patients who have Tonsillitis during period of the month
+   *
+   * @return @{@link CohortDefinition}
+   */
+  public CohortDefinition getPatientsHavingTonsillitis() {
+    return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getTonsillitisConceptList());
+  }
+  /**
+   * Get patients who have Other Disease Of Respiratory during period of the month
+   *
+   * @return @{@link CohortDefinition}
+   */
+  public CohortDefinition getPatientsHavingOtherDiseaseOfRespiratory() {
+    return getAdultPatientsWhoHaveDiagnosis(
+        diagnosisMetadata.getOtherDiseaseOfRespiratorySystemConceptList());
+  }
+  /**
+   * Get patients who have Mental Disorders during period of the month
+   *
+   * @return @{@link CohortDefinition}
+   */
+  public CohortDefinition getPatientsHavingMentalDisorders() {
+    return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getMentalDisordersConceptList());
+  }
+  /**
+   * Get patients who have Dental Disorders during period of the month
+   *
+   * @return @{@link CohortDefinition}
+   */
+  public CohortDefinition getPatientsHavingDentalDisorders() {
+    return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getDentalDisordersConceptList());
+  }
+  /**
+   * Get patients who have Dental Disorders during period of the month
+   *
+   * @return @{@link CohortDefinition}
+   */
+  public CohortDefinition getPatientsHavingJiggersInfestation() {
+    return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getJiggersInfestationConceptList());
+  }
+  /**
+   * Get patients who have Disease Of The Skin during period of the month
+   *
+   * @return @{@link CohortDefinition}
+   */
+  public CohortDefinition getPatientsHavingDiseaseOfTheSkin() {
+    return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getDiseaseOfTheSkinConceptList());
+  }
+  /**
+   * Get patients who have Chromosomal Abrnomalities during period of the month
+   *
+   * @return @{@link CohortDefinition}
+   */
+  public CohortDefinition getPatientsHavingChromosomalAbrnomalities() {
+    return getAdultPatientsWhoHaveDiagnosis(
+        diagnosisMetadata.getChromosomalAbnormalitiesConceptList());
+  }
+  /**
+   * Get patients who have Congenital Anomalies during period of the month
+   *
+   * @return @{@link CohortDefinition}
+   */
+  public CohortDefinition getPatientsHavingCongenitalAnomalies() {
+    return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getCongenitalAnomaliesConceptList());
+  }
+  /**
+   * Get patients who have had poisoning during period of the month
+   *
+   * @return @{@link CohortDefinition}
+   */
+  public CohortDefinition getPatientsHavingPoisoning() {
+    return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getPoisoningConceptList());
+  }
 
   /**
    * All other diseases that are taken in the facility over a period of time
@@ -142,7 +224,51 @@ public class Moh705aCohortQueries {
         EhrReportUtils.map(
             getPatientsHavingMeningococcalInfections(),
             "startDate=${startDate},endDate=${endDate}"));
-    cd.setCompositionString("ALL AND NOT (1 OR 2 OR 3 OR 4 OR 5)");
+    cd.addSearch(
+        "27",
+        EhrReportUtils.map(
+            getPatientsHavingTonsillitis(), "startDate=${startDate},endDate=${endDate}"));
+    cd.addSearch(
+        "28",
+        EhrReportUtils.map(
+            getPatientsHavingPneumonia(), "startDate=${startDate},endDate=${endDate}"));
+    cd.addSearch(
+        "29",
+        EhrReportUtils.map(
+            getPatientsHavingOtherDiseaseOfRespiratory(),
+            "startDate=${startDate},endDate=${endDate}"));
+    cd.addSearch(
+        "30",
+        EhrReportUtils.map(
+            getPatientsHavingMentalDisorders(), "startDate=${startDate},endDate=${endDate}"));
+    cd.addSearch(
+        "31",
+        EhrReportUtils.map(
+            getPatientsHavingDentalDisorders(), "startDate=${startDate},endDate=${endDate}"));
+    cd.addSearch(
+        "32",
+        EhrReportUtils.map(
+            getPatientsHavingJiggersInfestation(), "startDate=${startDate},endDate=${endDate}"));
+    cd.addSearch(
+        "33",
+        EhrReportUtils.map(
+            getPatientsHavingDiseaseOfTheSkin(), "startDate=${startDate},endDate=${endDate}"));
+    cd.addSearch(
+        "34",
+        EhrReportUtils.map(
+            getPatientsHavingChromosomalAbrnomalities(),
+            "startDate=${startDate},endDate=${endDate}"));
+    cd.addSearch(
+        "35",
+        EhrReportUtils.map(
+            getPatientsHavingCongenitalAnomalies(), "startDate=${startDate},endDate=${endDate}"));
+    cd.addSearch(
+        "36",
+        EhrReportUtils.map(
+            getPatientsHavingPoisoning(), "startDate=${startDate},endDate=${endDate}"));
+
+    cd.setCompositionString(
+        "ALL AND NOT (1 OR 2 OR 3 OR 4 OR 5 OR 27 OR 28 OR 29 OR 30 OR 31 OR 32 OR 33 OR 34 OR 35 OR 36)");
     return cd;
   }
 }
