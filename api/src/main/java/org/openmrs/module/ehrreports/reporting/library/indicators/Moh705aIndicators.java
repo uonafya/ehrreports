@@ -181,4 +181,39 @@ public class Moh705aIndicators {
             moh705aCohortQueries.getPatientsHavingPoisoning(),
             "startDate=${startDate},endDate=${endDate}"));
   }
+  public CohortIndicator getPatientsHavingRoadTrafficInjuries() {
+    return ehrGeneralIndicator.getIndicator(
+        "Road Traffic Injuries",
+        EhrReportUtils.map(
+            moh705aCohortQueries.getPatientsHavingRoadTrafficInjuries(),
+            "startDate=${startDate},endDate=${endDate}"));
+  }
+
+  public CohortIndicator getPatientsHavingOtherInjuries() {
+    return ehrGeneralIndicator.getIndicator(
+        "Other Injuries",
+        EhrReportUtils.map(
+            moh705aCohortQueries.getPatientsHavingOtherInjuries(),
+            "startDate=${startDate},endDate=${endDate}"));
+  }
+  public CohortIndicator getPatientsHavingSexualAssault() {
+    return ehrGeneralIndicator.getIndicator(
+        "Sexual Assault",
+        EhrReportUtils.map(
+            moh705aCohortQueries.getPatientsHavingSexualAssault(),
+            "startDate=${startDate},endDate=${endDate}"));
+  }
+  public CohortIndicator getPatientsHavingBurns() {
+    return ehrGeneralIndicator.getIndicator(
+        "Burns",
+        EhrReportUtils.map(
+            moh705aCohortQueries.getPatientsHavingBurns(),
+            "startDate=${startDate},endDate=${endDate}"));
+  }public CohortIndicator getPatientsHavingSnakeBites() {
+    return ehrGeneralIndicator.getIndicator(
+        "Snake Bites",
+        EhrReportUtils.map(
+            moh705aCohortQueries.getPatientsHavingSnakeBites(),
+            "startDate=${startDate},endDate=${endDate}"));
+  }
 }
