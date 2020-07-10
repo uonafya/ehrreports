@@ -163,39 +163,36 @@ public final class EhrReportConstants {
   // Cholera
   public static final String CHOLERA = "f3c41b86-b280-41af-aeaf-80a0fd6033b3";
 
-  //Tonsillitis
-  public static final String TONSILLITIS = "e83dc06a-bb71-4838-a7e9-14fbe150b6b2";// 1216
+  // Tonsillitis
+  public static final String TONSILLITIS = "e83dc06a-bb71-4838-a7e9-14fbe150b6b2"; // 1216
 
-  //Pneumonia
-  public static final String PNEUMONIA = "ae105ae8-1bb8-4c39-8957-11229ac67bd7";// 1011
+  // Pneumonia
+  public static final String PNEUMONIA = "ae105ae8-1bb8-4c39-8957-11229ac67bd7"; // 1011
 
-  //OTHER DISEASE OF RESPIRATORY SYSTEM
-  public static final  String OTHER_DISEASE_OF_RESPIRATORY_SYSTEM = "081d6ed6-1b3a-4f45-a747-1a15e4e6d3ff";// 4440
+  // OTHER DISEASE OF RESPIRATORY SYSTEM
+  public static final String OTHER_DISEASE_OF_RESPIRATORY_SYSTEM =
+      "081d6ed6-1b3a-4f45-a747-1a15e4e6d3ff"; // 4440
 
-  //MENTAL DISORDERS
-  public static final String MENTAL_DISORDERS = "10865c85-0ca8-4e94-ba80-b872817a7f80";// 2044
+  // MENTAL DISORDERS
+  public static final String MENTAL_DISORDERS = "10865c85-0ca8-4e94-ba80-b872817a7f80"; // 2044
 
   // DENTAL DISORDERS
-  public static final String DENTAL_DISORDERS = "1e886bed-ff5a-4610-97a5-45a613db9c9f";// 4451
+  public static final String DENTAL_DISORDERS = "1e886bed-ff5a-4610-97a5-45a613db9c9f"; // 4451
 
   // JIGGERS INFESTATION
-  public static final String JIGGERS_INFESTATION = "NULL";// Input jigger infestation concept
+  public static final String JIGGERS_INFESTATION = "NULL"; // Input jigger infestation concept
 
   // DISEASE OF THE SKIN
-  public static final String DISEASE_OF_THE_SKIN = "e9c5bea6-33b1-4af2-99ba-0ff2b2945c29";// 1825
+  public static final String DISEASE_OF_THE_SKIN = "e9c5bea6-33b1-4af2-99ba-0ff2b2945c29"; // 1825
 
   // CHROMOSOMAL ABNORMALITIES
-  public static final String CHROMOSOMAL_ABNORMALITIES = "NULL";// INPUT CONCEPT ID IF/WHEN ADDED//
+  public static final String CHROMOSOMAL_ABNORMALITIES = "NULL"; // INPUT CONCEPT ID IF/WHEN ADDED//
 
   // CONGENITAL ANOMALIES
-  public static final String CONGENITAL_ANOMALIES = "9b8b38ad-e325-4b96-85dc-e559c583505d";// 1201
+  public static final String CONGENITAL_ANOMALIES = "9b8b38ad-e325-4b96-85dc-e559c583505d"; // 1201
 
   // POISONING
-  public static final String POISONING = "5530d558-5dec-47c3-97b0-02c34205924c";// 1026
-
-
-
-
+  public static final String POISONING = "5530d558-5dec-47c3-97b0-02c34205924c"; // 1026
 
   // program
   public static final String ANC_Program = "d83b74b7-f5ea-46fc-acc5-71e892ee1e68";

@@ -73,28 +73,35 @@ public class DiagnosisMetadata extends Metadata {
   }
 
   public List<Integer> getOtherDiseaseOfRespiratorySystemConceptList() {
-    return Arrays.asList(outpatientMetadata.getOtherDiseaseOfRespiratorySystemConcept().getConceptId());
+    return Arrays.asList(
+        outpatientMetadata.getOtherDiseaseOfRespiratorySystemConcept().getConceptId());
   }
+
   public List<Integer> getMentalDisordersConceptList() {
     return Arrays.asList(outpatientMetadata.getMentalDisorderSConcept().getConceptId());
   }
+
   public List<Integer> getDentalDisordersConceptList() {
     return Arrays.asList(outpatientMetadata.getDentalDisorderSConcept().getConceptId());
   }
+
   public List<Integer> getJiggersInfestationConceptList() {
     return Arrays.asList(outpatientMetadata.getJiggersInfestationConcept().getConceptId());
   }
+
   public List<Integer> getDiseaseOfTheSkinConceptList() {
     return Arrays.asList(outpatientMetadata.getDiseaseOfTheSkinConcept().getConceptId());
   }
+
   public List<Integer> getChromosomalAbnormalitiesConceptList() {
     return Arrays.asList(outpatientMetadata.getChromosomalAbnormalitiesConcept().getConceptId());
   }
+
   public List<Integer> getCongenitalAnomaliesConceptList() {
     return Arrays.asList(outpatientMetadata.getCongenitalAnomaliesConcept().getConceptId());
   }
- public List<Integer> getPoisoningConceptList() {
+
+  public List<Integer> getPoisoningConceptList() {
     return Arrays.asList(outpatientMetadata.getPoisoningConcept().getConceptId());
   }
-
 }

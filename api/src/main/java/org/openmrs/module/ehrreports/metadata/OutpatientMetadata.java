@@ -370,6 +370,7 @@ public class OutpatientMetadata extends ProgramsMetadata {
   public Concept getEncounterForScreeningForRespiratoryTB() {
     return getConcept(EhrReportConstants.ENCOUNTER_FOR_SCREENING_FOR_RESPIRATORY_TUBERCULOSIS);
   }
+
   public Concept getTonsillitisConcept() {
     return getConcept(EhrReportConstants.TONSILLITIS);
   }
@@ -377,15 +378,19 @@ public class OutpatientMetadata extends ProgramsMetadata {
   public Concept getCholeraConcept() {
     return getConcept(EhrReportConstants.CHOLERA);
   }
+
   public Concept getPneumoniaConcept() {
     return getConcept(EhrReportConstants.PNEUMONIA);
   }
+
   public Concept getOtherDiseaseOfRespiratorySystemConcept() {
     return getConcept(EhrReportConstants.OTHER_DISEASE_OF_RESPIRATORY_SYSTEM);
   }
+
   public Concept getMentalDisorderSConcept() {
     return getConcept(EhrReportConstants.MENTAL_DISORDERS);
   }
+
   public Concept getDentalDisorderSConcept() {
     return getConcept(EhrReportConstants.DENTAL_DISORDERS);
   }
@@ -393,20 +398,22 @@ public class OutpatientMetadata extends ProgramsMetadata {
   public Concept getJiggersInfestationConcept() {
     return getConcept(EhrReportConstants.JIGGERS_INFESTATION);
   }
+
   public Concept getDiseaseOfTheSkinConcept() {
     return getConcept(EhrReportConstants.DISEASE_OF_THE_SKIN);
   }
+
   public Concept getChromosomalAbnormalitiesConcept() {
     return getConcept(EhrReportConstants.CHROMOSOMAL_ABNORMALITIES);
   }
+
   public Concept getCongenitalAnomaliesConcept() {
     return getConcept(EhrReportConstants.CONGENITAL_ANOMALIES);
   }
+
   public Concept getPoisoningConcept() {
     return getConcept(EhrReportConstants.POISONING);
   }
-
-
 
   /**
    * programs ANC program

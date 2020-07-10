@@ -21,11 +21,9 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Moh705aIndicators {
-  @Autowired
-  private Moh705aCohortQueries moh705aCohortQueries;
+  @Autowired private Moh705aCohortQueries moh705aCohortQueries;
 
-  @Autowired
-  private EhrGeneralIndicator ehrGeneralIndicator;
+  @Autowired private EhrGeneralIndicator ehrGeneralIndicator;
 
   /**
    * Get patients who are adults and have diagnosis other than the ones listed and classified
@@ -34,10 +32,10 @@ public class Moh705aIndicators {
    */
   public CohortIndicator getMoh705aPatientsHavingDiagnosisOtherThanTheOnesListed() {
     return ehrGeneralIndicator.getIndicator(
-            "MOH705A - OTHER",
-            EhrReportUtils.map(
-                    moh705aCohortQueries.getAllDiseasesExceptThoseClassifiedMoh705A(),
-                    "startDate=${startDate},endDate=${endDate}"));
+        "MOH705A - OTHER",
+        EhrReportUtils.map(
+            moh705aCohortQueries.getAllDiseasesExceptThoseClassifiedMoh705A(),
+            "startDate=${startDate},endDate=${endDate}"));
   }
 
   /**
@@ -47,10 +45,10 @@ public class Moh705aIndicators {
    */
   public CohortIndicator getPatientsHavingDiarrhoea() {
     return ehrGeneralIndicator.getIndicator(
-            "Diarrhoea",
-            EhrReportUtils.map(
-                    moh705aCohortQueries.getPatientsHavingDiarrhoea(),
-                    "startDate=${startDate},endDate=${endDate}"));
+        "Diarrhoea",
+        EhrReportUtils.map(
+            moh705aCohortQueries.getPatientsHavingDiarrhoea(),
+            "startDate=${startDate},endDate=${endDate}"));
   }
 
   /**
@@ -60,10 +58,10 @@ public class Moh705aIndicators {
    */
   public CohortIndicator getPatientsHavingTuberculosis() {
     return ehrGeneralIndicator.getIndicator(
-            "Tuberculosis",
-            EhrReportUtils.map(
-                    moh705aCohortQueries.getPatientsHavingTuberculosis(),
-                    "startDate=${startDate},endDate=${endDate}"));
+        "Tuberculosis",
+        EhrReportUtils.map(
+            moh705aCohortQueries.getPatientsHavingTuberculosis(),
+            "startDate=${startDate},endDate=${endDate}"));
   }
 
   /**
@@ -73,108 +71,114 @@ public class Moh705aIndicators {
    */
   public CohortIndicator getPatientsHavingCholera() {
     return ehrGeneralIndicator.getIndicator(
-            "Cholera",
-            EhrReportUtils.map(
-                    moh705aCohortQueries.getPatientsHavingCholera(),
-                    "startDate=${startDate},endDate=${endDate}"));
+        "Cholera",
+        EhrReportUtils.map(
+            moh705aCohortQueries.getPatientsHavingCholera(),
+            "startDate=${startDate},endDate=${endDate}"));
   }
 
-   /**
+  /**
    * Get patients who have Dysentery during the month
    *
    * @return @CohortIndicator
    */
   public CohortIndicator getPatientsHavingDysentery() {
     return ehrGeneralIndicator.getIndicator(
-            "Dysentery",
-            EhrReportUtils.map(
-                    moh705aCohortQueries.getPatientsHavingDysentery(),
-                    "startDate=${startDate},endDate=${endDate}"));
-  } /**
-
+        "Dysentery",
+        EhrReportUtils.map(
+            moh705aCohortQueries.getPatientsHavingDysentery(),
+            "startDate=${startDate},endDate=${endDate}"));
+  }
+  /**
    * Get patients who have Dysentery during the month
    *
    * @return @CohortIndicator
    */
   public CohortIndicator getPatientsHavingMeningococcalInfctions() {
     return ehrGeneralIndicator.getIndicator(
-            "Meningococcal",
-            EhrReportUtils.map(
-                    moh705aCohortQueries.getPatientsHavingMeningococcalInfections(),
-                    "startDate=${startDate},endDate=${endDate}"));
+        "Meningococcal",
+        EhrReportUtils.map(
+            moh705aCohortQueries.getPatientsHavingMeningococcalInfections(),
+            "startDate=${startDate},endDate=${endDate}"));
   }
 
   public CohortIndicator getPatientsHavingTonsillitis() {
     return ehrGeneralIndicator.getIndicator(
-            "Tonsillitis",
-            EhrReportUtils.map(
-                    moh705aCohortQueries.getPatientsHavingTonsillitis(),
-                    "startDate=${startDate},endDate=${endDate}"));
+        "Tonsillitis",
+        EhrReportUtils.map(
+            moh705aCohortQueries.getPatientsHavingTonsillitis(),
+            "startDate=${startDate},endDate=${endDate}"));
   }
 
   public CohortIndicator getPatientsHavingPneumonia() {
     return ehrGeneralIndicator.getIndicator(
-            "Pneumonia",
-            EhrReportUtils.map(
-                    moh705aCohortQueries.getPatientsHavingPneumonia(),
-                    "startDate=${startDate},endDate=${endDate}"));
+        "Pneumonia",
+        EhrReportUtils.map(
+            moh705aCohortQueries.getPatientsHavingPneumonia(),
+            "startDate=${startDate},endDate=${endDate}"));
   }
+
   public CohortIndicator getPatientsHavingOtherDiseaseOfRespiratorySystem() {
     return ehrGeneralIndicator.getIndicator(
-            "Other Disease of Respiratory System",
-            EhrReportUtils.map(
-                    moh705aCohortQueries.getPatientsHavingOtherDiseaseOfRespiratory(),
-                    "startDate=${startDate},endDate=${endDate}"));
+        "Other Disease of Respiratory System",
+        EhrReportUtils.map(
+            moh705aCohortQueries.getPatientsHavingOtherDiseaseOfRespiratory(),
+            "startDate=${startDate},endDate=${endDate}"));
   }
- public CohortIndicator getPatientsHavingMentalDisorders() {
+
+  public CohortIndicator getPatientsHavingMentalDisorders() {
     return ehrGeneralIndicator.getIndicator(
-            "Mental Disorders",
-            EhrReportUtils.map(
-                    moh705aCohortQueries.getPatientsHavingMentalDisorders(),
-                    "startDate=${startDate},endDate=${endDate}"));
+        "Mental Disorders",
+        EhrReportUtils.map(
+            moh705aCohortQueries.getPatientsHavingMentalDisorders(),
+            "startDate=${startDate},endDate=${endDate}"));
   }
+
   public CohortIndicator getPatientsHavingDentalDisorders() {
     return ehrGeneralIndicator.getIndicator(
-            "Dental Disorders",
-            EhrReportUtils.map(
-                    moh705aCohortQueries.getPatientsHavingDentalDisorders(),
-                    "startDate=${startDate},endDate=${endDate}"));
-  }public CohortIndicator getPatientsHavingDiseaseOfTheSkin() {
-    return ehrGeneralIndicator.getIndicator(
-            "Dental Disorders",
-            EhrReportUtils.map(
-                    moh705aCohortQueries.getPatientsHavingDiseaseOfTheSkin(),
-                    "startDate=${startDate},endDate=${endDate}"));
+        "Dental Disorders",
+        EhrReportUtils.map(
+            moh705aCohortQueries.getPatientsHavingDentalDisorders(),
+            "startDate=${startDate},endDate=${endDate}"));
   }
- public CohortIndicator getPatientsHavingJiggersInfestation() {
+
+  public CohortIndicator getPatientsHavingDiseaseOfTheSkin() {
     return ehrGeneralIndicator.getIndicator(
-            "Jiggers Infestation",
-            EhrReportUtils.map(
-                    moh705aCohortQueries.getPatientsHavingJiggersInfestation(),
-                    "startDate=${startDate},endDate=${endDate}"));
+        "Dental Disorders",
+        EhrReportUtils.map(
+            moh705aCohortQueries.getPatientsHavingDiseaseOfTheSkin(),
+            "startDate=${startDate},endDate=${endDate}"));
   }
+
+  public CohortIndicator getPatientsHavingJiggersInfestation() {
+    return ehrGeneralIndicator.getIndicator(
+        "Jiggers Infestation",
+        EhrReportUtils.map(
+            moh705aCohortQueries.getPatientsHavingJiggersInfestation(),
+            "startDate=${startDate},endDate=${endDate}"));
+  }
+
   public CohortIndicator getPatientsHavingChromosomalAbnomalities() {
     return ehrGeneralIndicator.getIndicator(
-            "Chromosomal Abnomalities",
-            EhrReportUtils.map(
-                    moh705aCohortQueries.getPatientsHavingChromosomalAbrnomalities(),
-                    "startDate=${startDate},endDate=${endDate}"));
+        "Chromosomal Abnomalities",
+        EhrReportUtils.map(
+            moh705aCohortQueries.getPatientsHavingChromosomalAbrnomalities(),
+            "startDate=${startDate},endDate=${endDate}"));
   }
+
   public CohortIndicator getPatientsHavingCongenitalAnomalies() {
     return ehrGeneralIndicator.getIndicator(
-            "Congenital Anomalies",
-            EhrReportUtils.map(
-                    moh705aCohortQueries.getPatientsHavingCongenitalAnomalies(),
-                    "startDate=${startDate},endDate=${endDate}"));
+        "Congenital Anomalies",
+        EhrReportUtils.map(
+            moh705aCohortQueries.getPatientsHavingCongenitalAnomalies(),
+            "startDate=${startDate},endDate=${endDate}"));
   }
-public CohortIndicator getPatientsHavingPoisoning() {
+
+  public CohortIndicator getPatientsHavingPoisoning() {
     return ehrGeneralIndicator.getIndicator(
-            "Poisoning",
-            EhrReportUtils.map(
-                    moh705aCohortQueries.getPatientsHavingPoisoning(),
-                    "startDate=${startDate},endDate=${endDate}"));
+        "Poisoning",
+        EhrReportUtils.map(
+            moh705aCohortQueries.getPatientsHavingPoisoning(),
+            "startDate=${startDate},endDate=${endDate}"));
   }
-
-
-
 }

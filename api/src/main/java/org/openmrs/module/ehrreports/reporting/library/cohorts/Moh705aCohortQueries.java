@@ -126,7 +126,8 @@ public class Moh705aCohortQueries {
    * @return @{@link CohortDefinition}
    */
   public CohortDefinition getPatientsHavingOtherDiseaseOfRespiratory() {
-    return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getOtherDiseaseOfRespiratorySystemConceptList());
+    return getAdultPatientsWhoHaveDiagnosis(
+        diagnosisMetadata.getOtherDiseaseOfRespiratorySystemConceptList());
   }
   /**
    * Get patients who have Mental Disorders during period of the month
@@ -166,7 +167,8 @@ public class Moh705aCohortQueries {
    * @return @{@link CohortDefinition}
    */
   public CohortDefinition getPatientsHavingChromosomalAbrnomalities() {
-    return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getChromosomalAbnormalitiesConceptList());
+    return getAdultPatientsWhoHaveDiagnosis(
+        diagnosisMetadata.getChromosomalAbnormalitiesConceptList());
   }
   /**
    * Get patients who have Congenital Anomalies during period of the month
@@ -176,7 +178,7 @@ public class Moh705aCohortQueries {
   public CohortDefinition getPatientsHavingCongenitalAnomalies() {
     return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getCongenitalAnomaliesConceptList());
   }
-/**
+  /**
    * Get patients who have had poisoning during period of the month
    *
    * @return @{@link CohortDefinition}
@@ -225,13 +227,11 @@ public class Moh705aCohortQueries {
     cd.addSearch(
         "27",
         EhrReportUtils.map(
-            getPatientsHavingTonsillitis(),
-            "startDate=${startDate},endDate=${endDate}"));
+            getPatientsHavingTonsillitis(), "startDate=${startDate},endDate=${endDate}"));
     cd.addSearch(
         "28",
         EhrReportUtils.map(
-            getPatientsHavingPneumonia(),
-            "startDate=${startDate},endDate=${endDate}"));
+            getPatientsHavingPneumonia(), "startDate=${startDate},endDate=${endDate}"));
     cd.addSearch(
         "29",
         EhrReportUtils.map(
@@ -240,23 +240,19 @@ public class Moh705aCohortQueries {
     cd.addSearch(
         "30",
         EhrReportUtils.map(
-            getPatientsHavingMentalDisorders(),
-            "startDate=${startDate},endDate=${endDate}"));
+            getPatientsHavingMentalDisorders(), "startDate=${startDate},endDate=${endDate}"));
     cd.addSearch(
         "31",
         EhrReportUtils.map(
-            getPatientsHavingDentalDisorders(),
-            "startDate=${startDate},endDate=${endDate}"));
+            getPatientsHavingDentalDisorders(), "startDate=${startDate},endDate=${endDate}"));
     cd.addSearch(
         "32",
         EhrReportUtils.map(
-            getPatientsHavingJiggersInfestation(),
-            "startDate=${startDate},endDate=${endDate}"));
+            getPatientsHavingJiggersInfestation(), "startDate=${startDate},endDate=${endDate}"));
     cd.addSearch(
         "33",
         EhrReportUtils.map(
-            getPatientsHavingDiseaseOfTheSkin(),
-            "startDate=${startDate},endDate=${endDate}"));
+            getPatientsHavingDiseaseOfTheSkin(), "startDate=${startDate},endDate=${endDate}"));
     cd.addSearch(
         "34",
         EhrReportUtils.map(
@@ -265,14 +261,14 @@ public class Moh705aCohortQueries {
     cd.addSearch(
         "35",
         EhrReportUtils.map(
-            getPatientsHavingCongenitalAnomalies(),
-            "startDate=${startDate},endDate=${endDate}"));cd.addSearch(
+            getPatientsHavingCongenitalAnomalies(), "startDate=${startDate},endDate=${endDate}"));
+    cd.addSearch(
         "36",
         EhrReportUtils.map(
-            getPatientsHavingPoisoning(),
-            "startDate=${startDate},endDate=${endDate}"));
+            getPatientsHavingPoisoning(), "startDate=${startDate},endDate=${endDate}"));
 
-    cd.setCompositionString("ALL AND NOT (1 OR 2 OR 3 OR 4 OR 5 OR 27 OR 28 OR 29 OR 30 OR 31 OR 32 OR 33 OR 34 OR 35 OR 36)");
+    cd.setCompositionString(
+        "ALL AND NOT (1 OR 2 OR 3 OR 4 OR 5 OR 27 OR 28 OR 29 OR 30 OR 31 OR 32 OR 33 OR 34 OR 35 OR 36)");
     return cd;
   }
 }
