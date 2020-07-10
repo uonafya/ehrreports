@@ -14,6 +14,7 @@
 package org.openmrs.module.ehrreports.reporting.library.indicators;
 
 import org.openmrs.module.ehrreports.reporting.library.cohorts.Moh705aCohortQueries;
+import org.openmrs.module.ehrreports.reporting.utils.EhrReportConstants;
 import org.openmrs.module.ehrreports.reporting.utils.EhrReportUtils;
 import org.openmrs.module.reporting.indicator.CohortIndicator;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -36,6 +37,18 @@ public class Moh705aIndicators {
         EhrReportUtils.map(
             moh705aCohortQueries.getAllDiseasesExceptThoseClassifiedMoh705A(),
             "startDate=${startDate},endDate=${endDate}"));
+  }
+
+  /**
+   * Get patients who are adults and have new/revisit
+   *
+   * @return CohortIndicator
+   */
+  public CohortIndicator getNewAndRevisitPatients(EhrReportConstants.OccurenceStates state) {
+    return ehrGeneralIndicator.getIndicator(
+        "New or revisit patients",
+        EhrReportUtils.map(
+            moh705aCohortQueries.getNewAndRevisitPatients(state), "onOrBefore=${endDate}"));
   }
 
   /**

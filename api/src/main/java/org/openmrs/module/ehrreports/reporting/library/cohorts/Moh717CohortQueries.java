@@ -93,7 +93,7 @@ public class Moh717CohortQueries {
   public CohortDefinition getPatientStates(EhrReportConstants.OccurenceStates state) {
     CalculationCohortDefinition cd =
         new CalculationCohortDefinition(
-            "On ART for at least 3 months",
+            "New patient or returning ones",
             Context.getRegisteredComponents(PatientOccurenceCalculation.class).get(0));
     cd.addParameter(new Parameter("onOrBefore", "End Date", Date.class));
     cd.addCalculationParameter("state", state);
