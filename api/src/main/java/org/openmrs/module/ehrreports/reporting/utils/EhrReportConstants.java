@@ -236,7 +236,11 @@ public final class EhrReportConstants {
       "ba8b8fac-f593-4b71-81bb-c6b33aa67814"; // 4102
 
   // NEWLY DIAGNOSED HIV
+
   public static final String NEWLY_DIAGNOSED_HIV ="72d91e67-0f6e-41dd-87ce-0c510c99aa2a"; // Concept NULL
+
+  public static final String NEWLY_DIAGNOSED_HIV =
+      "72d91e67-0f6e-41dd-87ce-0c510c99aa2a"; // Concept NULL
 
   // program
   public static final String ANC_Program = "d83b74b7-f5ea-46fc-acc5-71e892ee1e68";
