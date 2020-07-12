@@ -4,8 +4,8 @@ org/openmrs/module/ehrreports/reporting/library/datasets/Moh705aDataset.class
 org/openmrs/module/ehrreports/reporting/library/indicators/Moh705aIndicators.class
 org/openmrs/module/ehrreports/reporting/library/queries/CommonQueries.class
 org/openmrs/module/ehrreports/reporting/library/cohorts/Moh705aCohortQueries.class
-org/openmrs/module/ehrreports/reporting/utils/EhrReportConstants.class
 org/openmrs/module/ehrreports/reporting/reports/SetupMOH705aReport.class
+org/openmrs/module/ehrreports/reporting/utils/EhrReportConstants.class
 org/openmrs/module/ehrreports/metadata/DiagnosisMetadata.class
 org/openmrs/module/ehrreports/reporting/library/dimensions/AgeDimensionCohortInterface.class
 org/openmrs/module/ehrreports/api/impl/EhrReportsServiceImpl.class
@@ -18,11 +18,11 @@ org/openmrs/module/ehrreports/reporting/library/dimensions/CommonAgeDimensionCoh
 org/openmrs/module/ehrreports/reporting/library/indicators/EhrGeneralIndicator.class
 org/openmrs/module/ehrreports/reporting/library/dimensions/EhrCommonDimension.class
 org/openmrs/module/ehrreports/reporting/library/indicators/BaseIndicators.class
-org/openmrs/module/ehrreports/reporting/library/datasets/BaseDataSet$ColumnParameters.class
 org/openmrs/module/ehrreports/reporting/library/queries/moh705/Moh705Queries.class
+org/openmrs/module/ehrreports/reporting/library/datasets/BaseDataSet$ColumnParameters.class
 org/openmrs/module/ehrreports/metadata/MetadataLookupException.class
-org/openmrs/module/ehrreports/reporting/library/cohorts/GenderCohortQueries.class
 org/openmrs/module/ehrreports/reporting/calculation/BooleanResult.class
+org/openmrs/module/ehrreports/reporting/library/cohorts/GenderCohortQueries.class
 org/openmrs/module/ehrreports/metadata/ProgramsMetadata.class
 org/openmrs/module/ehrreports/reporting/library/datasets/Moh705Dataset.class
 org/openmrs/module/ehrreports/reporting/calculation/AbstractPatientCalculation.class
@@ -40,8 +40,8 @@ org/openmrs/module/ehrreports/reporting/utils/EhrReportConstants$OccurenceStates
 org/openmrs/module/ehrreports/reporting/utils/EhrCalculationUtils.class
 org/openmrs/module/ehrreports/reporting/reports/SetupMoh717Report.class
 org/openmrs/module/ehrreports/reporting/library/cohorts/GenericCohortQueries.class
-org/openmrs/module/ehrreports/reporting/library/datasets/BaseDataSet.class
 org/openmrs/module/ehrreports/reporting/calculation/EhrCalculationService.class
+org/openmrs/module/ehrreports/reporting/library/datasets/BaseDataSet.class
 org/openmrs/module/ehrreports/reporting/cohort/definition/CalculationCohortDefinition.class
 org/openmrs/module/ehrreports/metadata/OutpatientMetadata.class
 org/openmrs/module/ehrreports/api/EhrReportsService.class

@@ -140,8 +140,8 @@ public class DiagnosisMetadata extends Metadata {
   public List<Integer> getEpilepsyConceptList() {
     return Arrays.asList(outpatientMetadata.getEpilepsyConcept().getConceptId());
   }
+
   public List<Integer> getOtherConvulsiveDisordersConceptList() {
     return Arrays.asList(outpatientMetadata.getOtherConvulsiveDisordersConcept().getConceptId());
   }
-
 }
