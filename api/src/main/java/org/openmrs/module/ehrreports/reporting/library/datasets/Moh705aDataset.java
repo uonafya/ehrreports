@@ -73,6 +73,48 @@ public class Moh705aDataset extends BaseDataSet {
         getAdultChildrenColumns());
     addRow(
         dsd,
+        "6",
+        "Other Meningitis",
+        EhrReportUtils.map(moh705aIndicators.getPatientsOtherMeningitis(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "7",
+        "Neonatal Tetanus",
+        EhrReportUtils.map(moh705aIndicators.getPatientsHavingNeonatalTetanus(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "8",
+        "Poliomyelitis(AFP)",
+        EhrReportUtils.map(moh705aIndicators.getPatientsHavingPoliomyelitis(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "9",
+        "Chicken Pox",
+        EhrReportUtils.map(moh705aIndicators.getPatientsHavingChickenPox(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "10",
+        "Measles",
+        EhrReportUtils.map(moh705aIndicators.getPatientsHavingMeasles(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "11",
+        "Hepatitis",
+        EhrReportUtils.map(moh705aIndicators.getPatientsHavingHepatitis(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "12",
+        "Mumps",
+        EhrReportUtils.map(moh705aIndicators.getPatientsHavingMumps(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
         "27",
         "Tonsillitis",
         EhrReportUtils.map(moh705aIndicators.getPatientsHavingTonsillitis(), mappings),

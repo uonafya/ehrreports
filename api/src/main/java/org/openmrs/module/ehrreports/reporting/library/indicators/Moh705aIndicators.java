@@ -120,6 +120,90 @@ public class Moh705aIndicators {
             moh705aCohortQueries.getPatientsHavingMeningococcalInfections(),
             "startDate=${startDate},endDate=${endDate}"));
   }
+  /**
+   * Get patients who have other meningitis during the month
+   *
+   * @return @CohortIndicator
+   */
+  public CohortIndicator getPatientsOtherMeningitis() {
+    return ehrGeneralIndicator.getIndicator(
+        "Other Meningitis",
+        EhrReportUtils.map(
+            moh705aCohortQueries.getPatientsHavingOtherMeningitis(),
+            "startDate=${startDate},endDate=${endDate}"));
+  }
+  /**
+   * Get patients who have Neonatal tetanus during the month
+   *
+   * @return @CohortIndicator
+   */
+  public CohortIndicator getPatientsHavingNeonatalTetanus() {
+    return ehrGeneralIndicator.getIndicator(
+        "Neonatal Tetanus",
+        EhrReportUtils.map(
+            moh705aCohortQueries.getPatientsHavingNeonatorumtTetanus(),
+            "startDate=${startDate},endDate=${endDate}"));
+  }
+  /**
+   * Get patients who have Poliomyelitis(AFP) during the month
+   *
+   * @return @CohortIndicator
+   */
+  public CohortIndicator getPatientsHavingPoliomyelitis() {
+    return ehrGeneralIndicator.getIndicator(
+        "Poliomyelitis(AFP) ",
+        EhrReportUtils.map(
+            moh705aCohortQueries.getPatientsHavingPoliomyelitis(),
+            "startDate=${startDate},endDate=${endDate}"));
+  }
+  /**
+   * Get patients who have Chicken Pox during the month
+   *
+   * @return @CohortIndicator
+   */
+  public CohortIndicator getPatientsHavingChickenPox() {
+    return ehrGeneralIndicator.getIndicator(
+        "Chicken Pox ",
+        EhrReportUtils.map(
+            moh705aCohortQueries.getPatientsHavingChickenPox(),
+            "startDate=${startDate},endDate=${endDate}"));
+  }
+  /**
+   * Get patients who have Measles during the month
+   *
+   * @return @CohortIndicator
+   */
+  public CohortIndicator getPatientsHavingMeasles() {
+    return ehrGeneralIndicator.getIndicator(
+        "Measles ",
+        EhrReportUtils.map(
+            moh705aCohortQueries.getPatientsHavingMeasles(),
+            "startDate=${startDate},endDate=${endDate}"));
+  }
+  /**
+   * Get patients who have Hepatitis during the month
+   *
+   * @return @CohortIndicator
+   */
+  public CohortIndicator getPatientsHavingHepatitis() {
+    return ehrGeneralIndicator.getIndicator(
+        "Hepatitis ",
+        EhrReportUtils.map(
+            moh705aCohortQueries.getPatientsHavingHepatitis(),
+            "startDate=${startDate},endDate=${endDate}"));
+  }
+  /**
+   * Get patients who have Mumps during the month
+   *
+   * @return @CohortIndicator
+   */
+  public CohortIndicator getPatientsHavingMumps() {
+    return ehrGeneralIndicator.getIndicator(
+        "Mumps ",
+        EhrReportUtils.map(
+            moh705aCohortQueries.getPatientsHavingMumps(),
+            "startDate=${startDate},endDate=${endDate}"));
+  }
 
   public CohortIndicator getPatientsHavingTonsillitis() {
     return ehrGeneralIndicator.getIndicator(
