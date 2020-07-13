@@ -502,22 +502,16 @@ public class Moh705aCohortQueries {
     return getAdultPatientsWhoHaveDiagnosis(
         diagnosisMetadata.getDeathtsDueToRoadTrafficInjuriesConceptList());
   }
-
   /**
-   * All other diseases that are taken in the facility over a period of time
+   * Get first 10 diseases to exclude form the main query of other diseases
    *
    * @return @{@link CohortDefinition}
    */
-  public CohortDefinition getAllDiseasesExceptThoseClassifiedMoh705A() {
+  private CohortDefinition get1st10DiseasesToExcludeFromMainQuery() {
     CompositionCohortDefinition cd = new CompositionCohortDefinition();
-    cd.setName("Get other adults diagnosis other than the ones classified");
+    cd.setName("Get other adults diagnosis other than the ones classified first 10");
     cd.addParameter(new Parameter("startDate", "Start Date", Date.class));
     cd.addParameter(new Parameter("endDate", "End Date", Date.class));
-    cd.addSearch(
-        "ALL",
-        EhrReportUtils.map(
-            getAdultsPatientsWithAllDiagnosisRecorded(),
-            "startDate=${startDate},endDate=${endDate}"));
     cd.addSearch(
         "1",
         EhrReportUtils.map(
@@ -560,6 +554,20 @@ public class Moh705aCohortQueries {
         "10",
         EhrReportUtils.map(
             getPatientsHavingMeasles(), "startDate=${startDate},endDate=${endDate}"));
+    cd.setCompositionString("1 OR 2 OR 3 OR 4 OR 5 OR 6 OR 7 OR 8 OR 9 OR 10");
+    return cd;
+  }
+
+  /**
+   * Get the second 10 diseases to exclude from the main query
+   *
+   * @return @{@link CohortDefinition}
+   */
+  private CohortDefinition get2nd10DiseasesToExcludeFromMainQuery() {
+    CompositionCohortDefinition cd = new CompositionCohortDefinition();
+    cd.setName("Get other adults diagnosis other than the ones classified second 10");
+    cd.addParameter(new Parameter("startDate", "Start Date", Date.class));
+    cd.addParameter(new Parameter("endDate", "End Date", Date.class));
     cd.addSearch(
         "11",
         EhrReportUtils.map(
@@ -570,7 +578,20 @@ public class Moh705aCohortQueries {
     cd.addSearch(
         "13",
         EhrReportUtils.map(getPatientsHavingFevers(), "startDate=${startDate},endDate=${endDate}"));
+    cd.setCompositionString("11 OR 12 OR 13");
+    return cd;
+  }
 
+  /**
+   * Get the third 10 disease to exclude from the main query
+   *
+   * @return @{@link CohortDefinition}
+   */
+  private CohortDefinition get3rd10DiseasesToExcludeFromMainQuery() {
+    CompositionCohortDefinition cd = new CompositionCohortDefinition();
+    cd.setName("Get other adults diagnosis other than the ones classified third 10");
+    cd.addParameter(new Parameter("startDate", "Start Date", Date.class));
+    cd.addParameter(new Parameter("endDate", "End Date", Date.class));
     cd.addSearch(
         "27",
         EhrReportUtils.map(
@@ -588,6 +609,20 @@ public class Moh705aCohortQueries {
         "30",
         EhrReportUtils.map(
             getPatientsHavingMentalDisorders(), "startDate=${startDate},endDate=${endDate}"));
+    cd.setCompositionString("27 OR 28 OR 29 OR 30");
+    return cd;
+  }
+
+  /**
+   * Get 4th 10 diseases to be excluded from the main query
+   *
+   * @retrun @{@link CohortDefinition}
+   */
+  private CohortDefinition get4th10DiseasesToExcludeFromMainQuery() {
+    CompositionCohortDefinition cd = new CompositionCohortDefinition();
+    cd.setName("Get other adults diagnosis other than the ones classified 4th 10 ");
+    cd.addParameter(new Parameter("startDate", "Start Date", Date.class));
+    cd.addParameter(new Parameter("endDate", "End Date", Date.class));
     cd.addSearch(
         "31",
         EhrReportUtils.map(
@@ -628,6 +663,21 @@ public class Moh705aCohortQueries {
     cd.addSearch(
         "40",
         EhrReportUtils.map(getPatientsHavingBurns(), "startDate=${startDate},endDate=${endDate}"));
+
+    cd.setCompositionString("31 OR 32 OR 33 OR 34 OR 35 OR 36 OR 37 OR 38 OR 39 OR 40");
+    return cd;
+  }
+
+  /**
+   * Get 5th 10 diseases to exclude from the main query
+   *
+   * @return @{@link CohortDefinition}
+   */
+  private CohortDefinition get5th10DiseasesToExcludeFromMainQuery() {
+    CompositionCohortDefinition cd = new CompositionCohortDefinition();
+    cd.setName("Get other adults diagnosis other than the ones classified 5th 10");
+    cd.addParameter(new Parameter("startDate", "Start Date", Date.class));
+    cd.addParameter(new Parameter("endDate", "End Date", Date.class));
     cd.addSearch(
         "41",
         EhrReportUtils.map(
@@ -670,6 +720,20 @@ public class Moh705aCohortQueries {
         EhrReportUtils.map(
             getPatientsHavingCardiovascularCondition(),
             "startDate=${startDate},endDate=${endDate}"));
+    cd.setCompositionString("41 OR 42 OR 43 OR 44 OR 45 OR 46 OR 47 OR 48 OR 49 OR 50");
+    return cd;
+  }
+
+  /**
+   * Get 6th 10 diseases to be excluded from the main query
+   *
+   * @return @{@link CohortDefinition}
+   */
+  private CohortDefinition get6th10DiseasesToExcludeFromMainQuery() {
+    CompositionCohortDefinition cd = new CompositionCohortDefinition();
+    cd.setName("Get other adults diagnosis other than the ones classified the rest");
+    cd.addParameter(new Parameter("startDate", "Start Date", Date.class));
+    cd.addParameter(new Parameter("endDate", "End Date", Date.class));
     cd.addSearch(
         "51",
         EhrReportUtils.map(
@@ -716,9 +780,51 @@ public class Moh705aCohortQueries {
         EhrReportUtils.map(
             getPatientsHavingDeathtsDueToRoadTrafficInjuries(),
             "startDate=${startDate},endDate=${endDate}"));
+    cd.setCompositionString("51 OR 52 OR 53 OR 54 OR 55 OR 56 OR 57 OR 58 OR 59 OR 60 OR 61");
+    return cd;
+  }
 
+  /**
+   * All other diseases that are taken in the facility over a period of time
+   *
+   * @return @{@link CohortDefinition}
+   */
+  public CohortDefinition getAllDiseasesExceptThoseClassifiedMoh705A() {
+    CompositionCohortDefinition cd = new CompositionCohortDefinition();
+    cd.setName("Get other adults diagnosis other than the ones classified");
+    cd.addParameter(new Parameter("startDate", "Start Date", Date.class));
+    cd.addParameter(new Parameter("endDate", "End Date", Date.class));
+    cd.addSearch(
+        "ALL",
+        EhrReportUtils.map(
+            getAdultsPatientsWithAllDiagnosisRecorded(),
+            "startDate=${startDate},endDate=${endDate}"));
+    cd.addSearch(
+        "first10",
+        EhrReportUtils.map(
+            get1st10DiseasesToExcludeFromMainQuery(), "startDate=${startDate},endDate=${endDate}"));
+    cd.addSearch(
+        "second10",
+        EhrReportUtils.map(
+            get2nd10DiseasesToExcludeFromMainQuery(), "startDate=${startDate},endDate=${endDate}"));
+    cd.addSearch(
+        "third10",
+        EhrReportUtils.map(
+            get3rd10DiseasesToExcludeFromMainQuery(), "startDate=${startDate},endDate=${endDate}"));
+    cd.addSearch(
+        "fourth10",
+        EhrReportUtils.map(
+            get4th10DiseasesToExcludeFromMainQuery(), "startDate=${startDate},endDate=${endDate}"));
+    cd.addSearch(
+        "fifth10",
+        EhrReportUtils.map(
+            get5th10DiseasesToExcludeFromMainQuery(), "startDate=${startDate},endDate=${endDate}"));
+    cd.addSearch(
+        "theRest",
+        EhrReportUtils.map(
+            get6th10DiseasesToExcludeFromMainQuery(), "startDate=${startDate},endDate=${endDate}"));
     cd.setCompositionString(
-        "ALL AND NOT (1 OR 2 OR 3 OR 4 OR 5 OR 6 OR 7 OR 8 OR 9 OR 10 OR 11 OR 12 OR 13 OR 27 OR 28 OR 29 OR 30 OR 31 OR 32 OR 33 OR 34 OR 35 OR 36 OR 37 OR 38 OR 39 OR 40 OR 41 OR 42 OR 43 OR 44 OR 45 OR 46 OR 47 OR 48 OR 49 OR 50 OR 51 OR 52 OR 53 OR 54 OR 55 OR 56 OR 57 OR 58 OR 59 OR 60 OR 61)");
+        "ALL AND NOT (first10 OR second10 OR third10 OR fourth10 OR fifth10 OR theRest)");
 
     return cd;
   }
