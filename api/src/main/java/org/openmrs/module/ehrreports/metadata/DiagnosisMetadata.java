@@ -97,6 +97,7 @@ public class DiagnosisMetadata extends Metadata {
   public List<Integer> getHepatitisConceptList() {
     return Arrays.asList(
         outpatientMetadata.getHepatitisAConcept().getConceptId(),
+        outpatientMetadata.getHepatitisNosConcept().getConceptId(),
         outpatientMetadata.getHepatitisBConcept().getConceptId(),
         outpatientMetadata.getHepatitisCConcept().getConceptId(),
         outpatientMetadata.getHepatitisEConcept().getConceptId(),
@@ -117,6 +118,17 @@ public class DiagnosisMetadata extends Metadata {
         outpatientMetadata.getFeverConcept().getConceptId(),
         outpatientMetadata.getFeverOfUnknownOriginConcept().getConceptId(),
         outpatientMetadata.getRespiratoryDistressHaemorrhagicFeversConcept().getConceptId());
+  }
+
+  public List<Integer> getMalariaConceptList() {
+    return Arrays.asList(
+        outpatientMetadata.getClinicalMalariaConcept().getConceptId(),
+        outpatientMetadata.getMalariaDueToSimianPlasmodiaConcept().getConceptId(),
+        outpatientMetadata.getPlasmodiumMalariaeMalariaConcept().getConceptId(),
+        outpatientMetadata.getUnspecifiedMalariaConcept().getConceptId(),
+        outpatientMetadata.getOtherCongenitalMalariaConcept().getConceptId(),
+        outpatientMetadata.getOtherSpecifiedMalariaConcept().getConceptId(),
+        outpatientMetadata.getMalariaInPregnancyConcept().getConceptId());
   }
 
   public List<Integer> getCholeraList() {
