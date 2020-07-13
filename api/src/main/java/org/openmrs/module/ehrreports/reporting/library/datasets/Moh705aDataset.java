@@ -237,6 +237,100 @@ public class Moh705aDataset extends BaseDataSet {
         getAdultChildrenColumns());
     addRow(
         dsd,
+        "47",
+        "Newly Diagnosed HIV",
+        EhrReportUtils.map(moh705aIndicators.getPatientsHavingNewlyDiagnosedHiv(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "48",
+        "Brucellosis",
+        EhrReportUtils.map(moh705aIndicators.getPatientsHavingBrucellosis(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "49",
+        "Rickets",
+        EhrReportUtils.map(moh705aIndicators.getPatientsHavingRickets(), mappings),
+        getAdultChildrenColumns());
+
+    addRow(
+        dsd,
+        "50",
+        "Cardiovascular Condition",
+        EhrReportUtils.map(moh705aIndicators.getPatientsHavingCardiovascularCondition(), mappings),
+        getAdultChildrenColumns());
+
+    addRow(
+        dsd,
+        "51",
+        "Violence Related Injuries",
+        EhrReportUtils.map(moh705aIndicators.getPatientsHavingViolenceRelatedInjuries(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "52",
+        "Cerebral Palsy",
+        EhrReportUtils.map(moh705aIndicators.getPatientsHavingCerebralPalsy(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "53",
+        "Autism",
+        EhrReportUtils.map(moh705aIndicators.getPatientsHavingAutism(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "54",
+        "Other Central Narvous SyStem Condition",
+        EhrReportUtils.map(
+            moh705aIndicators.getPatientsHavingOtherCentralNarvousSytemCondition(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "55",
+        "Tryponosomiasis",
+        EhrReportUtils.map(moh705aIndicators.getPatientsHavingTryponosomiasis(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "56",
+        "Kalazar (Leishmaniasis)",
+        EhrReportUtils.map(moh705aIndicators.getPatientsHavingKalazar(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "57",
+        "Dracunculosis(Guinea Worm) ",
+        EhrReportUtils.map(moh705aIndicators.getPatientsHavingDracunculosis(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "58",
+        "Yellow Fever",
+        EhrReportUtils.map(moh705aIndicators.getPatientsHavingYellowFever(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "59",
+        "Viral Haemorrhagic Fever",
+        EhrReportUtils.map(moh705aIndicators.getPatientsHavingViralHaemorrhagicFever(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "60",
+        "Plague",
+        EhrReportUtils.map(moh705aIndicators.getPatientsHavingPlague(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "61",
+        "Deathts Due To Road Traffic Injuries",
+        EhrReportUtils.map(
+            moh705aIndicators.getPatientsHavingDeathtsDueToRoadTrafficInjuries(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
         "OTHERS",
         "All other diseases",
         EhrReportUtils.map(

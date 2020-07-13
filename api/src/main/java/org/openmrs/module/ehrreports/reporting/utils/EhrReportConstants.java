@@ -278,6 +278,53 @@ public final class EhrReportConstants {
   public static final String NEWLY_DIAGNOSED_HIV =
       "72d91e67-0f6e-41dd-87ce-0c510c99aa2a"; // Concept NULL
 
+  // BRUCELLOSIS
+  public static final String BRUCELLOSIS = "e4d255d0-a744-483d-b9d1-d0ffeadf42ef"; // 4576
+
+  // RICKETS
+  public static final String RICKETS = "db57e5a5-3c74-4dff-8ef3-2e779a034e15"; // 1194
+
+  // CARDIOVASCULAR CONDITIONS
+  public static final String CARDIVASCULAR_CONDITIONS =
+      "64cf24cc-f7c0-464b-9e8d-07f3a9cf9504"; // 1755
+
+  // VIOLENCE RELATED INJURIES
+  public static final String VIOLENCE_RELATED_INJURIES =
+      "72d91e67-0f6e-41dd-87ce-0c510c99aa2a"; // INPUT CONCEPT ID IF/WHEN ADDED
+
+  // CEREBRAL PALSY
+  public static final String CEREBRAL_PALSY = "ee492d82-7e64-4244-9e3b-0120a2df4eab"; // 1157
+
+  // AUTISM
+  public static final String AUTISM = "f6e72dc4-e858-4c04-99e8-62bfdffe37da"; // 4574
+
+  // OTHER CENTRAL NERVOUS SYSTEM CONDITIONS
+  public static final String OTHER_CENTRAL_NERVOUS_SYSTEM_CONDITIONS =
+      "41297379-6733-4df0-b6bb-4123f25becc6"; // 4558
+
+  // TRYPONOSOMIASIS
+  public static final String TRYPONOSOMIASIS = "aadca18b-d875-41dc-b44b-6aef62fcf3d8"; // 4553
+
+  // KALAZAR
+  public static final String KALAZAR = "56c7799a-39c2-4778-9e3b-0b0b5baa6475"; // 4548
+
+  // DRACUNCULOSIS (GUINEA WORM)
+  public static final String DRACUNCULOSIS = "037865b5-4282-4a60-8095-0e525ee2b792"; // 4578
+
+  // YELLOW FEVER
+  public static final String YELLOW_FEVER = "cfc66a03-c2fb-44a3-bab0-c1611a979b3e"; // 1018
+
+  // VIRAL HAEMORRHAGIC FEVER
+  public static final String VIRAL_HAEMORRHAGIC_FEVER =
+      "4cd84add-83cd-4c09-8825-1aea071afa57e"; // 4289
+
+  // PLAGUE
+  public static final String PLAGUE = "d86f7c87-7023-4dab-9334-b217fa09d857"; // 1709
+
+  // DEATHS_DUE_TO_ROAD_TRAFFIC_INJURIES
+  public static final String DEATHS_DUE_TO_ROAD_TRAFFIC_INJURIES =
+      "72d91e67-0f6e-41dd-87ce-0c510c99aa2a"; // TO BE POPULATED
+
   // program
   public static final String ANC_Program = "d83b74b7-f5ea-46fc-acc5-71e892ee1e68";
   public static final String PNC_Program = "a15f2617-9f5d-4022-8de3-181b2e286a28";

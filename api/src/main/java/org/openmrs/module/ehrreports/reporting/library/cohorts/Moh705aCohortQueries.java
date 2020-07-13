@@ -152,6 +152,7 @@ public class Moh705aCohortQueries {
   public CohortDefinition getPatientsHavingHepatitis() {
     return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getHepatitisConceptList());
   }
+
   /**
    * Get patients who have Mumps during period of the month
    *
@@ -160,6 +161,7 @@ public class Moh705aCohortQueries {
   public CohortDefinition getPatientsHavingMumps() {
     return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getMumpsConceptList());
   }
+
   /**
    * Get patients who have Fevers during period of the month
    *
@@ -362,6 +364,146 @@ public class Moh705aCohortQueries {
   }
 
   /**
+   * Get patients who have had Epilepsy during period of the month
+   *
+   * @return @{@link CohortDefinition}
+   */
+  public CohortDefinition getPatientsHavingBrucellosis() {
+    return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getBrucellosisConceptList());
+  }
+
+  /**
+   * Get patients who have had Epilepsy during period of the month
+   *
+   * @return @{@link CohortDefinition}
+   */
+  public CohortDefinition getPatientsHavingRickets() {
+    return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getRicketsConceptList());
+  }
+
+  /**
+   * Get patients who have been Newly Diagnosed HIV during period of the month
+   *
+   * @return @{@link CohortDefinition}
+   */
+  public CohortDefinition getPatientsHavingNewlyDiagnosedHiv() {
+    return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getNewlyDiagnoseHivConceptList());
+  }
+
+  /**
+   * Get patients who had Violence Related Injuries period of the month
+   *
+   * @return @{@link CohortDefinition}
+   */
+  public CohortDefinition getPatientsHavingCardiovascularCondition() {
+    return getAdultPatientsWhoHaveDiagnosis(
+        diagnosisMetadata.getCardiovascularConditionConceptList());
+  }
+
+  /**
+   * Get patients who Had Violence Related Injuries during period of the month
+   *
+   * @return @{@link CohortDefinition}
+   */
+  public CohortDefinition getPatientsHavingViolenceRelatedInjuries() {
+    return getAdultPatientsWhoHaveDiagnosis(
+        diagnosisMetadata.getViolenceRelatedInjuriesConceptList());
+  }
+
+  /**
+   * Get patients who Had Cerebral Palsy during period of the month
+   *
+   * @return @{@link CohortDefinition}
+   */
+  public CohortDefinition getPatientsHavingCerebralPalsy() {
+    return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getCerebralPalsyConceptList());
+  }
+
+  /**
+   * Get patients who Had Autism during period of the month
+   *
+   * @return @{@link CohortDefinition}
+   */
+  public CohortDefinition getPatientsHavingAutism() {
+    return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getAutismConceptList());
+  }
+
+  /**
+   * Get patients who Had Other Central Narvous Sysytem Condition during period of the month
+   *
+   * @return @{@link CohortDefinition}
+   */
+  public CohortDefinition getPatientsHavingOtherCentralNarvousSytemCondition() {
+    return getAdultPatientsWhoHaveDiagnosis(
+        diagnosisMetadata.getOtherCentralNarvousSytemConditionConceptList());
+  }
+
+  /**
+   * Get patients who Had Tryponosomiasis during period of the month
+   *
+   * @return @{@link CohortDefinition}
+   */
+  public CohortDefinition getPatientsHavingTryponosomiasis() {
+    return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getTryponosomiasisConceptList());
+  }
+
+  /**
+   * Get patients who Had Kalazar during period of the month
+   *
+   * @return @{@link CohortDefinition}
+   */
+  public CohortDefinition getPatientsHavingKalazar() {
+    return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getKalazarConceptList());
+  }
+
+  /**
+   * Get patients who Had Dracunculosis during period of the month
+   *
+   * @return @{@link CohortDefinition}
+   */
+  public CohortDefinition getPatientsHavingDracunculosis() {
+    return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getDracunculosisConceptList());
+  }
+
+  /**
+   * Get patients who Had Yellow Fever during period of the month
+   *
+   * @return @{@link CohortDefinition}
+   */
+  public CohortDefinition getPatientsHavingYellowFever() {
+    return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getYellowFeverConceptList());
+  }
+
+  /**
+   * Get patients who Had Viral Haemorrhagic Fever during period of the month
+   *
+   * @return @{@link CohortDefinition}
+   */
+  public CohortDefinition getPatientsHavingViralHaemorrhagicFever() {
+    return getAdultPatientsWhoHaveDiagnosis(
+        diagnosisMetadata.getViralHaemorrhagicFeverConceptList());
+  }
+
+  /**
+   * Get patients who Had Plague during period of the month
+   *
+   * @return @{@link CohortDefinition}
+   */
+  public CohortDefinition getPatientsHavingPlague() {
+    return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getPlagueConceptList());
+  }
+
+  /**
+   * Get patients who Had Deathts Due To Road Traffic Injuries during period of the month
+   *
+   * @return @{@link CohortDefinition}
+   */
+  public CohortDefinition getPatientsHavingDeathtsDueToRoadTrafficInjuries() {
+    return getAdultPatientsWhoHaveDiagnosis(
+        diagnosisMetadata.getDeathtsDueToRoadTrafficInjuriesConceptList());
+  }
+
+  /**
    * All other diseases that are taken in the facility over a period of time
    *
    * @return @{@link CohortDefinition}
@@ -511,9 +653,72 @@ public class Moh705aCohortQueries {
         EhrReportUtils.map(
             getPatientsHavingOtherConvulsiveDisorders(),
             "startDate=${startDate},endDate=${endDate}"));
+    cd.addSearch(
+        "47",
+        EhrReportUtils.map(
+            getPatientsHavingNewlyDiagnosedHiv(), "startDate=${startDate},endDate=${endDate}"));
+    cd.addSearch(
+        "48",
+        EhrReportUtils.map(
+            getPatientsHavingBrucellosis(), "startDate=${startDate},endDate=${endDate}"));
+    cd.addSearch(
+        "49",
+        EhrReportUtils.map(
+            getPatientsHavingRickets(), "startDate=${startDate},endDate=${endDate}"));
+    cd.addSearch(
+        "50",
+        EhrReportUtils.map(
+            getPatientsHavingCardiovascularCondition(),
+            "startDate=${startDate},endDate=${endDate}"));
+    cd.addSearch(
+        "51",
+        EhrReportUtils.map(
+            getPatientsHavingViolenceRelatedInjuries(),
+            "startDate=${startDate},endDate=${endDate}"));
+    cd.addSearch(
+        "52",
+        EhrReportUtils.map(
+            getPatientsHavingCerebralPalsy(), "startDate=${startDate},endDate=${endDate}"));
+    cd.addSearch(
+        "53",
+        EhrReportUtils.map(getPatientsHavingAutism(), "startDate=${startDate},endDate=${endDate}"));
+    cd.addSearch(
+        "54",
+        EhrReportUtils.map(
+            getPatientsHavingOtherCentralNarvousSytemCondition(),
+            "startDate=${startDate},endDate=${endDate}"));
+    cd.addSearch(
+        "55",
+        EhrReportUtils.map(
+            getPatientsHavingTryponosomiasis(), "startDate=${startDate},endDate=${endDate}"));
+    cd.addSearch(
+        "56",
+        EhrReportUtils.map(
+            getPatientsHavingKalazar(), "startDate=${startDate},endDate=${endDate}"));
+    cd.addSearch(
+        "57",
+        EhrReportUtils.map(
+            getPatientsHavingDracunculosis(), "startDate=${startDate},endDate=${endDate}"));
+    cd.addSearch(
+        "58",
+        EhrReportUtils.map(
+            getPatientsHavingYellowFever(), "startDate=${startDate},endDate=${endDate}"));
+    cd.addSearch(
+        "59",
+        EhrReportUtils.map(
+            getPatientsHavingViralHaemorrhagicFever(),
+            "startDate=${startDate},endDate=${endDate}"));
+    cd.addSearch(
+        "60",
+        EhrReportUtils.map(getPatientsHavingPlague(), "startDate=${startDate},endDate=${endDate}"));
+    cd.addSearch(
+        "61",
+        EhrReportUtils.map(
+            getPatientsHavingDeathtsDueToRoadTrafficInjuries(),
+            "startDate=${startDate},endDate=${endDate}"));
 
     cd.setCompositionString(
-        "ALL AND NOT (1 OR 2 OR 3 OR 4 OR 5 OR 6 OR 7 OR 8 OR 9 OR 10 OR 11 OR 12 OR 13 OR 27 OR 28 OR 29 OR 30 OR 31 OR 32 OR 33 OR 34 OR 35 OR 36 OR 37 OR 38 OR 39 OR 40 OR 41 OR 42 OR 43 OR 44)");
+        "ALL AND NOT (1 OR 2 OR 3 OR 4 OR 5 OR 6 OR 7 OR 8 OR 9 OR 10 OR 11 OR 12 OR 13 OR 27 OR 28 OR 29 OR 30 OR 31 OR 32 OR 33 OR 34 OR 35 OR 36 OR 37 OR 38 OR 39 OR 40 OR 41 OR 42 OR 43 OR 44 OR 45 OR 46 OR 47 OR 48 OR 49 OR 50 OR 51 OR 52 OR 53 OR 54 OR 55 OR 56 OR 57 OR 58 OR 59 OR 60 OR 61)");
 
     return cd;
   }
