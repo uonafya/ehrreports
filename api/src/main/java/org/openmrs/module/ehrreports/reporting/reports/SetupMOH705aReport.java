@@ -4,8 +4,10 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Properties;
+import org.openmrs.module.ehrreports.reporting.library.cohorts.GenericCohortQueries;
 import org.openmrs.module.ehrreports.reporting.library.datasets.Moh705aDataset;
 import org.openmrs.module.ehrreports.reporting.reports.manager.EhrDataExportManager;
+import org.openmrs.module.ehrreports.reporting.utils.EhrReportUtils;
 import org.openmrs.module.reporting.evaluation.parameter.Mapped;
 import org.openmrs.module.reporting.report.ReportDesign;
 import org.openmrs.module.reporting.report.definition.ReportDefinition;
@@ -16,6 +18,8 @@ import org.springframework.stereotype.Component;
 public class SetupMOH705aReport extends EhrDataExportManager {
 
   @Autowired private Moh705aDataset moh705Dataset;
+
+  @Autowired private GenericCohortQueries genericCohortQueries;
 
   @Override
   public String getUuid() {
@@ -54,6 +58,10 @@ public class SetupMOH705aReport extends EhrDataExportManager {
         "MOH705A", Mapped.mapStraightThrough(moh705Dataset.constructMoh705aDataset()));
     reportDefinition.addDataSetDefinition(
         "C", Mapped.mapStraightThrough(moh705Dataset.constructCustomDataset()));
+    reportDefinition.setBaseCohortDefinition(
+        EhrReportUtils.map(
+            genericCohortQueries.getBaseCohort(),
+            "startDate=${startDate-1d},endDate=${endDate+1d}"));
     return reportDefinition;
   }
 

@@ -18,6 +18,7 @@ import java.util.Date;
 import java.util.List;
 import org.openmrs.Location;
 import org.openmrs.Program;
+import org.openmrs.module.ehrreports.reporting.library.queries.CommonQueries;
 import org.openmrs.module.reporting.cohort.definition.CohortDefinition;
 import org.openmrs.module.reporting.cohort.definition.InProgramCohortDefinition;
 import org.openmrs.module.reporting.cohort.definition.SqlCohortDefinition;
@@ -39,7 +40,6 @@ public class GenericCohortQueries {
     sql.setName(name);
     sql.addParameter(new Parameter("startDate", "Start Date", Date.class));
     sql.addParameter(new Parameter("endDate", "End Date", Date.class));
-    sql.addParameter(new Parameter("location", "Facility", Location.class));
     sql.setQuery(query);
     return sql;
   }
@@ -61,5 +61,14 @@ public class GenericCohortQueries {
     inProgram.addParameter(new Parameter("onOrBefore", "Before Date", Date.class));
     inProgram.addParameter(new Parameter("locations", "Location", Location.class));
     return inProgram;
+  }
+
+  /**
+   * Get the base patients for our results, we don't need to have all patients
+   *
+   * @return @{@link CohortDefinition}
+   */
+  public CohortDefinition getBaseCohort() {
+    return generalSql("Base cohort", CommonQueries.patientsHavingEncountersBetweenDateBaseCohort());
   }
 }
