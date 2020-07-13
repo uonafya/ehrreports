@@ -455,6 +455,66 @@ public class OutpatientMetadata extends ProgramsMetadata {
     return getConcept(EhrReportConstants.OTHER_CONVULSIVE_DISORDERS);
   }
 
+  public Concept getNewlyDiagnosedHivConcept() {
+    return getConcept(EhrReportConstants.NEWLY_DIAGNOSED_HIV);
+  }
+
+  public Concept getBrucellosisConcept() {
+    return getConcept(EhrReportConstants.BRUCELLOSIS);
+  }
+
+  public Concept getRicketsConcept() {
+    return getConcept(EhrReportConstants.RICKETS);
+  }
+
+  public Concept getCardiovascularConditionConcept() {
+    return getConcept(EhrReportConstants.CARDIVASCULAR_CONDITIONS);
+  }
+
+  public Concept getViolenceRelatedInjuriesConcept() {
+    return getConcept(EhrReportConstants.VIOLENCE_RELATED_INJURIES);
+  }
+
+  public Concept getCerebralPalsyConcept() {
+    return getConcept(EhrReportConstants.CEREBRAL_PALSY);
+  }
+
+  public Concept getAutismConcept() {
+    return getConcept(EhrReportConstants.AUTISM);
+  }
+
+  public Concept getOtherCentralNarvousSytemConditionConcept() {
+    return getConcept(EhrReportConstants.OTHER_CENTRAL_NERVOUS_SYSTEM_CONDITIONS);
+  }
+
+  public Concept getTryponosomiasisConcept() {
+    return getConcept(EhrReportConstants.TRYPONOSOMIASIS);
+  }
+
+  public Concept getKalazarConcept() {
+    return getConcept(EhrReportConstants.KALAZAR);
+  }
+
+  public Concept getDracunculosisConcept() {
+    return getConcept(EhrReportConstants.DRACUNCULOSIS);
+  }
+
+  public Concept getYellowFeverConcept() {
+    return getConcept(EhrReportConstants.YELLOW_FEVER);
+  }
+
+  public Concept getViralHaemorrhagicFeverConcept() {
+    return getConcept(EhrReportConstants.VIRAL_HAEMORRHAGIC_FEVER);
+  }
+
+  public Concept getPlagueConcept() {
+    return getConcept(EhrReportConstants.PLAGUE);
+  }
+
+  public Concept getDeathtsDueToRoadTrafficInjuriesConcept() {
+    return getConcept(EhrReportConstants.DEATHS_DUE_TO_ROAD_TRAFFIC_INJURIES);
+  }
+
   /**
    * Get patient referred from concept
    *

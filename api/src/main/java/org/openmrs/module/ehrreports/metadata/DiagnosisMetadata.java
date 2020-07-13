@@ -144,4 +144,66 @@ public class DiagnosisMetadata extends Metadata {
   public List<Integer> getOtherConvulsiveDisordersConceptList() {
     return Arrays.asList(outpatientMetadata.getOtherConvulsiveDisordersConcept().getConceptId());
   }
+
+  public List<Integer> getNewlyDiagnoseHivConceptList() {
+    return Arrays.asList(outpatientMetadata.getNewlyDiagnosedHivConcept().getConceptId());
+  }
+
+  public List<Integer> getBrucellosisConceptList() {
+    return Arrays.asList(outpatientMetadata.getBrucellosisConcept().getConceptId());
+  }
+
+  public List<Integer> getRicketsConceptList() {
+    return Arrays.asList(outpatientMetadata.getRicketsConcept().getConceptId());
+  }
+
+  public List<Integer> getCardiovascularConditionConceptList() {
+    return Arrays.asList(outpatientMetadata.getCardiovascularConditionConcept().getConceptId());
+  }
+
+  public List<Integer> getViolenceRelatedInjuriesConceptList() {
+    return Arrays.asList(outpatientMetadata.getViolenceRelatedInjuriesConcept().getConceptId());
+  }
+
+  public List<Integer> getCerebralPalsyConceptList() {
+    return Arrays.asList(outpatientMetadata.getCerebralPalsyConcept().getConceptId());
+  }
+
+  public List<Integer> getAutismConceptList() {
+    return Arrays.asList(outpatientMetadata.getAutismConcept().getConceptId());
+  }
+
+  public List<Integer> getOtherCentralNarvousSytemConditionConceptList() {
+    return Arrays.asList(
+        outpatientMetadata.getOtherCentralNarvousSytemConditionConcept().getConceptId());
+  }
+
+  public List<Integer> getTryponosomiasisConceptList() {
+    return Arrays.asList(outpatientMetadata.getTryponosomiasisConcept().getConceptId());
+  }
+
+  public List<Integer> getKalazarConceptList() {
+    return Arrays.asList(outpatientMetadata.getKalazarConcept().getConceptId());
+  }
+
+  public List<Integer> getDracunculosisConceptList() {
+    return Arrays.asList(outpatientMetadata.getDracunculosisConcept().getConceptId());
+  }
+
+  public List<Integer> getYellowFeverConceptList() {
+    return Arrays.asList(outpatientMetadata.getYellowFeverConcept().getConceptId());
+  }
+
+  public List<Integer> getViralHaemorrhagicFeverConceptList() {
+    return Arrays.asList(outpatientMetadata.getViralHaemorrhagicFeverConcept().getConceptId());
+  }
+
+  public List<Integer> getPlagueConceptList() {
+    return Arrays.asList(outpatientMetadata.getPlagueConcept().getConceptId());
+  }
+
+  public List<Integer> getDeathtsDueToRoadTrafficInjuriesConceptList() {
+    return Arrays.asList(
+        outpatientMetadata.getDeathtsDueToRoadTrafficInjuriesConcept().getConceptId());
+  }
 }
