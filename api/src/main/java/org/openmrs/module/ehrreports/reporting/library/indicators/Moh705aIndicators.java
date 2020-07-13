@@ -281,6 +281,126 @@ public class Moh705aIndicators {
             "startDate=${startDate},endDate=${endDate}"));
   }
 
+  public CohortIndicator getPatientsHavingNewlyDiagnosedHiv() {
+    return ehrGeneralIndicator.getIndicator(
+        "Newly Diagnosed HIV",
+        EhrReportUtils.map(
+            moh705aCohortQueries.getPatientsHavingNewlyDiagnosedHiv(),
+            "startDate=${startDate},endDate=${endDate}"));
+  }
+
+  public CohortIndicator getPatientsHavingBrucellosis() {
+    return ehrGeneralIndicator.getIndicator(
+        "Brucellosis",
+        EhrReportUtils.map(
+            moh705aCohortQueries.getPatientsHavingBrucellosis(),
+            "startDate=${startDate},endDate=${endDate}"));
+  }
+
+  public CohortIndicator getPatientsHavingRickets() {
+    return ehrGeneralIndicator.getIndicator(
+        "Rickets",
+        EhrReportUtils.map(
+            moh705aCohortQueries.getPatientsHavingRickets(),
+            "startDate=${startDate},endDate=${endDate}"));
+  }
+
+  public CohortIndicator getPatientsHavingCardiovascularCondition() {
+    return ehrGeneralIndicator.getIndicator(
+        "Cardiovascular Condition",
+        EhrReportUtils.map(
+            moh705aCohortQueries.getPatientsHavingCardiovascularCondition(),
+            "startDate=${startDate},endDate=${endDate}"));
+  }
+
+  public CohortIndicator getPatientsHavingViolenceRelatedInjuries() {
+    return ehrGeneralIndicator.getIndicator(
+        "Violence Related Injuries",
+        EhrReportUtils.map(
+            moh705aCohortQueries.getPatientsHavingViolenceRelatedInjuries(),
+            "startDate=${startDate},endDate=${endDate}"));
+  }
+
+  public CohortIndicator getPatientsHavingCerebralPalsy() {
+    return ehrGeneralIndicator.getIndicator(
+        "Cerebral Palsy",
+        EhrReportUtils.map(
+            moh705aCohortQueries.getPatientsHavingCerebralPalsy(),
+            "startDate=${startDate},endDate=${endDate}"));
+  }
+
+  public CohortIndicator getPatientsHavingAutism() {
+    return ehrGeneralIndicator.getIndicator(
+        "Autism",
+        EhrReportUtils.map(
+            moh705aCohortQueries.getPatientsHavingAutism(),
+            "startDate=${startDate},endDate=${endDate}"));
+  }
+
+  public CohortIndicator getPatientsHavingOtherCentralNarvousSytemCondition() {
+    return ehrGeneralIndicator.getIndicator(
+        "Other Central Narvous System Condition",
+        EhrReportUtils.map(
+            moh705aCohortQueries.getPatientsHavingOtherCentralNarvousSytemCondition(),
+            "startDate=${startDate},endDate=${endDate}"));
+  }
+
+  public CohortIndicator getPatientsHavingTryponosomiasis() {
+    return ehrGeneralIndicator.getIndicator(
+        "Tryponosomiasis",
+        EhrReportUtils.map(
+            moh705aCohortQueries.getPatientsHavingTryponosomiasis(),
+            "startDate=${startDate},endDate=${endDate}"));
+  }
+
+  public CohortIndicator getPatientsHavingKalazar() {
+    return ehrGeneralIndicator.getIndicator(
+        "Kalazar(Leishmaniasis)",
+        EhrReportUtils.map(
+            moh705aCohortQueries.getPatientsHavingKalazar(),
+            "startDate=${startDate},endDate=${endDate}"));
+  }
+
+  public CohortIndicator getPatientsHavingDracunculosis() {
+    return ehrGeneralIndicator.getIndicator(
+        "Dracunculosis (Guinea Worm)",
+        EhrReportUtils.map(
+            moh705aCohortQueries.getPatientsHavingDracunculosis(),
+            "startDate=${startDate},endDate=${endDate}"));
+  }
+
+  public CohortIndicator getPatientsHavingYellowFever() {
+    return ehrGeneralIndicator.getIndicator(
+        "Yellow Fever",
+        EhrReportUtils.map(
+            moh705aCohortQueries.getPatientsHavingYellowFever(),
+            "startDate=${startDate},endDate=${endDate}"));
+  }
+
+  public CohortIndicator getPatientsHavingViralHaemorrhagicFever() {
+    return ehrGeneralIndicator.getIndicator(
+        "Viral Haemorrhagic Fever",
+        EhrReportUtils.map(
+            moh705aCohortQueries.getPatientsHavingViralHaemorrhagicFever(),
+            "startDate=${startDate},endDate=${endDate}"));
+  }
+
+  public CohortIndicator getPatientsHavingPlague() {
+    return ehrGeneralIndicator.getIndicator(
+        "Plague",
+        EhrReportUtils.map(
+            moh705aCohortQueries.getPatientsHavingPlague(),
+            "startDate=${startDate},endDate=${endDate}"));
+  }
+
+  public CohortIndicator getPatientsHavingDeathtsDueToRoadTrafficInjuries() {
+    return ehrGeneralIndicator.getIndicator(
+        "Deathts Due To Road Traffic Injuries",
+        EhrReportUtils.map(
+            moh705aCohortQueries.getPatientsHavingDeathtsDueToRoadTrafficInjuries(),
+            "startDate=${startDate},endDate=${endDate}"));
+  }
+
   public CohortIndicator getPatientsReferredToFacility() {
     return ehrGeneralIndicator.getIndicator(
         "Patients who are referred to this facility",
