@@ -4,8 +4,10 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Properties;
+import org.openmrs.module.ehrreports.reporting.library.cohorts.GenericCohortQueries;
 import org.openmrs.module.ehrreports.reporting.library.datasets.Moh705bDataset;
 import org.openmrs.module.ehrreports.reporting.reports.manager.EhrDataExportManager;
+import org.openmrs.module.ehrreports.reporting.utils.EhrReportUtils;
 import org.openmrs.module.reporting.evaluation.parameter.Mapped;
 import org.openmrs.module.reporting.report.ReportDesign;
 import org.openmrs.module.reporting.report.definition.ReportDefinition;
@@ -15,6 +17,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class SetupMOH705bReport extends EhrDataExportManager {
   @Autowired private Moh705bDataset moh705bDataset;
+  @Autowired private GenericCohortQueries genericCohortQueries;
 
   @Override
   public String getExcelDesignUuid() {
@@ -47,6 +50,10 @@ public class SetupMOH705bReport extends EhrDataExportManager {
         "MOH705B", Mapped.mapStraightThrough(moh705bDataset.constructMoh705bDataset()));
     reportDefinition.addDataSetDefinition(
         "B", Mapped.mapStraightThrough(moh705bDataset.constructCustomDataset()));
+    reportDefinition.setBaseCohortDefinition(
+        EhrReportUtils.map(
+            genericCohortQueries.getBaseCohort(),
+            "startDate=${startDate-1d},endDate=${endDate+1d}"));
     return reportDefinition;
   }
 
