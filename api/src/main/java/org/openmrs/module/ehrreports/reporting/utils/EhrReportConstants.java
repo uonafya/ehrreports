@@ -199,6 +199,18 @@ public final class EhrReportConstants {
   public static final String FEVER = "17aa2537-707d-49a9-96bd-d2ae6bbe8a6b"; // 1202
   public static final String FEVER_OF_UNKNOWN_ORIGIN =
       "c6516631-c608-419c-81d6-0d7e95202090"; // 1152
+  //MALARIA
+  public static final String CLINICAL_MALARIA = "5ac3a7d1-a596-44cd-a051-8c14abd6a62c";//1041
+  public static final String MALARIA_IN_PREGNANCY = "5ac3a7d1-a596-44cd-a051-8c14abd6a62c";//4290
+  public static final String UNSPECIFIED_MALARIA = "8b7a94a1-2df7-4bf7-bd21-1ae432a9bec0"; //4027
+  public static final String MALARIA_DUE_TO_SIMIAN_PLASMODIA = "c2ab8b00-999d-4079-bbe3-fccbde54fcfb"; //4041
+  public static final String PLASMODIUM_MALARIAE_MALARIA= "501bf3e6-f49f-4cdf-b237-240691d2229f"; //4516
+  public static final String OTHER_SPECIFIED_MALARIA= "906cb089-9f25-4920-9165-530653995d83"; //4293
+  public static final String OTHER_CONGENITAL_MALARIA= "3850f805-9850-4cf0-a5d5-bb7adc009e06"; //4492
+
+  //
+
+
   // Cholera
   public static final String CHOLERA = "f3c41b86-b280-41af-aeaf-80a0fd6033b3";
 
