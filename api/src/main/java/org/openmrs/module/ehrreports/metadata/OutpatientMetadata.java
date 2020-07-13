@@ -233,14 +233,17 @@ public class OutpatientMetadata extends ProgramsMetadata {
   public Concept getDysentery() {
     return getConcept(EhrReportConstants.DYSENTERY);
   }
+
   // 1003
   public Concept getAmoebicDysentery() {
     return getConcept(EhrReportConstants.AMOEBIC_DYSENTERY);
   }
+
   // 1668
   public Concept getShigellaDysentery() {
     return getConcept(EhrReportConstants.SHIGELLA_DYSENTERY);
   }
+
   // 3667
   public Concept getBacillaryDysentery() {
     return getConcept(EhrReportConstants.BACILLARY_DYSENTERY);
@@ -251,9 +254,28 @@ public class OutpatientMetadata extends ProgramsMetadata {
   public Concept getMeningococcalMenengaitis() {
     return getConcept(EhrReportConstants.MENINGOCOCCAL_MENINGITIS);
   }
+
   // 1714
   public Concept getMeningococcalInfections() {
     return getConcept(EhrReportConstants.MENINGOCOCCAL_INFECTIONS);
+  }
+  // 1019
+  public Concept getMeningococcalNos() {
+    return getConcept(EhrReportConstants.MENINGITIS_NOS);
+  }
+
+  // Other meningitis concepts
+
+  public Concept getBacterialMeningitisConcept() {
+    return getConcept(EhrReportConstants.BACTERIAL_MENINGITIS);
+  }
+
+  public Concept getCryptococcalMeningitisConcept() {
+    return getConcept(EhrReportConstants.CRYPTOCOCCAL_MENINGITIS);
+  }
+
+  public Concept getViralMeningitisConcept() {
+    return getConcept(EhrReportConstants.VIRAL_MENINGITIS);
   }
 
   // Tetanus concepts
@@ -261,10 +283,89 @@ public class OutpatientMetadata extends ProgramsMetadata {
   public Concept getTetanus() {
     return getConcept(EhrReportConstants.TETANUS);
   }
+
   // 1519
-  public Concept getTetanusNeonatorum() {
+  public Concept getTetanusNeonatorumTetanus() {
     return getConcept(EhrReportConstants.TETANUS_NEONATORUM);
   }
+
+  // 1195
+  public Concept getAcutePoliomyelitisConcept() {
+    return getConcept(EhrReportConstants.ACUTE_POLIOMYELITIS);
+  }
+  // 1146
+  public Concept getChickenPoxConcept() {
+    return getConcept(EhrReportConstants.CHICKEN_POX);
+  }
+  // 1020
+  public Concept getMeaslesConcept() {
+    return getConcept(EhrReportConstants.MEASLES);
+  }
+  // 4458
+  public Concept getMeaslesWithoutComplicationConcept() {
+    return getConcept(EhrReportConstants.MEASLES_WITHOUT_COMPLICATION);
+  }
+  // 1744
+  public Concept getGermanMeaslesConcept() {
+    return getConcept(EhrReportConstants.GERMAN_MEASLES);
+  }
+
+  public Concept getHepatitisNosConcept() {
+    return getConcept(EhrReportConstants.HEPATITIS_NOS);
+  }
+
+  public Concept getHepatitisAConcept() {
+    return getConcept(EhrReportConstants.HEPATITIS_A);
+  }
+  // 1006
+  public Concept getHepatitisBConcept() {
+    return getConcept(EhrReportConstants.HEPATITIS_B);
+  }
+  // 1007
+  public Concept getHepatitisCConcept() {
+    return getConcept(EhrReportConstants.HEPATITIS_C);
+  }
+
+  public Concept getHepatitisEConcept() {
+    return getConcept(EhrReportConstants.HEPATITIS_E);
+  }
+
+  public Concept getViralHepatitisAConcept() {
+    return getConcept(EhrReportConstants.VIRAL_HEPATITIS_A);
+  }
+
+  public Concept getViralHepatitisBConcept() {
+    return getConcept(EhrReportConstants.VIRAL_HEPATITIS_B);
+  }
+
+  public Concept getViralHepatitisEConcept() {
+    return getConcept(EhrReportConstants.VIRAL_HEPATITIS_D);
+  }
+
+  public Concept getViralHepatitisDConcept() {
+    return getConcept(EhrReportConstants.VIRAL_HEPATITIS_E);
+  }
+
+  public Concept getLiverInfectionWithHepatitisAConcept() {
+    return getConcept(EhrReportConstants.LIVER_INFECTION_WITH_HEPATITIS_A);
+  }
+
+  public Concept getMumpsConcept() {
+    return getConcept(EhrReportConstants.MUMPS);
+  }
+
+  public Concept getRespiratoryDistressHaemorrhagicFeversConcept() {
+    return getConcept(EhrReportConstants.RESPIRATORY_DISTRESS_HAEMORRHAGIC_FEVERS);
+  }
+
+  public Concept getFeverConcept() {
+    return getConcept(EhrReportConstants.FEVER);
+  }
+
+  public Concept getFeverOfUnknownOriginConcept() {
+    return getConcept(EhrReportConstants.FEVER_OF_UNKNOWN_ORIGIN);
+  }
+
   // 1712
   public Concept getObstericalTetanus() {
     return getConcept(EhrReportConstants.OBSTETRICAL_TETANUS);
