@@ -155,11 +155,50 @@ public final class EhrReportConstants {
   public static final String MENINGOCOCCAL_INFECTIONS =
       "ddd803b4-b581-4642-9eaa-053b3a40bb53"; // 1714
 
+  // OTHER MENINGITIS
+  public static final String MENINGITIS_NOS = "58cf77f3-6899-434e-aca7-54a73405e88f"; // 1019
+  public static final String BACTERIAL_MENINGITIS = "5e6d7420-deb6-4be6-af90-ba565e7d1ed0"; // 1167
+  public static final String CRYPTOCOCCAL_MENINGITIS =
+      "0eef9672-84c4-40fc-a679-055f3e58ac76"; // 1179
+  public static final String VIRAL_MENINGITIS = "6160cb4b-aecb-4402-b108-ae1901237f08"; // 1723
+
   // Tetanus
   public static final String TETANUS = "8e87b1e0-3d56-4135-be89-6ef6f8e9f368"; // 1521
   public static final String TETANUS_NEONATORUM = "5e87fc96-95e2-48c7-bdff-7d9202715f1d"; // 1519
   public static final String OBSTETRICAL_TETANUS = "ea889e1d-ba0a-473f-90cc-bf6eae356638"; // 1712
 
+  // POLIOMYELITIS(AFP)
+  public static final String ACUTE_POLIOMYELITIS = "ea7f3d9c-30a1-400c-8633-9dce20bbfd9b"; // 1195
+
+  // CHICKEN POX
+  public static final String CHICKEN_POX = "f7ee3e9a-95bb-4517-a4f1-0203e62af399"; // 1146
+  // MEASLES
+  public static final String MEASLES = "3e5cb737-f043-44f0-ae78-9ac76696b4fc"; // 1020
+  public static final String MEASLES_WITHOUT_COMPLICATION =
+      "54f63bbc-bc55-4078-9fc9-8096fcde9a09"; // 4458
+  public static final String GERMAN_MEASLES = "14995aa4-aff8-4180-9548-bac33783b4a6"; // 1744
+
+  // HEPATITIS
+  public static final String HEPATITIS_NOS = "8c59b3c2-c5c3-4c25-83c6-a9c38274c6a8"; // 1008
+  public static final String HEPATITIS_A = "5f4c22a7-574b-4266-9bb2-f69bc7d21687"; // 2524
+  public static final String HEPATITIS_B = "140b5477-2221-4f1f-a73f-6e8c1715fde8"; // 1006
+  public static final String HEPATITIS_C = "1929b19a-9218-4008-a2e2-f2f00b4e0a4a"; // 1007
+  public static final String HEPATITIS_E = "99773186-0111-427f-a975-8d6705b0968b"; // 1506
+  public static final String VIRAL_HEPATITIS_A = "5f4c22a7-574b-4266-9bb2-f69bc7d21687"; // 2524
+  public static final String VIRAL_HEPATITIS_B = "28c3ddae-fe7d-4382-9d6e-419f84e5b53c"; // 2525
+  public static final String VIRAL_HEPATITIS_D = "54dc84be-472c-4f58-95c2-e173c9cfb56d"; // 2527
+  public static final String VIRAL_HEPATITIS_E = "f7b7c9e5-6fee-45b7-820f-b49c07e930f6"; // 2528
+  public static final String LIVER_INFECTION_WITH_HEPATITIS_A =
+      "e6dfba35-671f-4b67-a575-9fff1161e926"; // 1005
+  // MUMPS
+  public static final String MUMPS = "c196599b-4a7e-47a7-8e6c-53219350029e"; // 1021
+
+  // FEVERS
+  public static final String RESPIRATORY_DISTRESS_HAEMORRHAGIC_FEVERS =
+      "edfbdd2c-fb7a-47ea-81ef-608414cf6164"; // 3671
+  public static final String FEVER = "17aa2537-707d-49a9-96bd-d2ae6bbe8a6b"; // 1202
+  public static final String FEVER_OF_UNKNOWN_ORIGIN =
+      "c6516631-c608-419c-81d6-0d7e95202090"; // 1152
   // Cholera
   public static final String CHOLERA = "f3c41b86-b280-41af-aeaf-80a0fd6033b3";
 

@@ -71,6 +71,7 @@ public class Moh705aCohortQueries {
   public CohortDefinition getPatientsHavingDiarrhoea() {
     return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getDiarrhoeaConceptList());
   }
+
   /**
    * Get patients who have Tuberculosis during period of the month
    *
@@ -99,13 +100,86 @@ public class Moh705aCohortQueries {
   }
 
   /**
-   * Get patients who have MenongococcalInfectionsList during period of the month
+   * Get patients who have Other Meningitis List during period of the month
+   *
+   * @return @{@link CohortDefinition}
+   */
+  public CohortDefinition getPatientsHavingOtherMeningitis() {
+    return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getOtherMeningitisConceptList());
+  }
+
+  /**
+   * Get patients who have Other Neonatorum Tetanus List during period of the month
+   *
+   * @return @{@link CohortDefinition}
+   */
+  public CohortDefinition getPatientsHavingNeonatorumtTetanus() {
+    return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getNeonatorumTetanusConceptList());
+  }
+
+  /**
+   * Get patients who have Poliomyelitis during period of the month
+   *
+   * @return @{@link CohortDefinition}
+   */
+  public CohortDefinition getPatientsHavingPoliomyelitis() {
+    return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getAcutePoliomyelitisConceptList());
+  }
+
+  /**
+   * Get patients who have Chicken Pox during period of the month
+   *
+   * @return @{@link CohortDefinition}
+   */
+  public CohortDefinition getPatientsHavingChickenPox() {
+    return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getAcutePoliomyelitisConceptList());
+  }
+
+  /**
+   * Get patients who have Measles during period of the month
+   *
+   * @return @{@link CohortDefinition}
+   */
+  public CohortDefinition getPatientsHavingMeasles() {
+    return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getMeaslesConceptList());
+  }
+
+  /**
+   * Get patients who have Hepatitis during period of the month
+   *
+   * @return @{@link CohortDefinition}
+   */
+  public CohortDefinition getPatientsHavingHepatitis() {
+    return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getHepatitisConceptList());
+  }
+
+  /**
+   * Get patients who have Mumps during period of the month
+   *
+   * @return @{@link CohortDefinition}
+   */
+  public CohortDefinition getPatientsHavingMumps() {
+    return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getMumpsConceptList());
+  }
+
+  /**
+   * Get patients who have Fevers during period of the month
+   *
+   * @return @{@link CohortDefinition}
+   */
+  public CohortDefinition getPatientsHavingFevers() {
+    return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getFeversConceptList());
+  }
+
+  /**
+   * Get patients who have Dysentery during period of the month
    *
    * @return @{@link CohortDefinition}
    */
   public CohortDefinition getPatientsHavingDysentery() {
     return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getDysenteryList());
   }
+
   /**
    * Get patients who have Pneumonia during period of the month
    *
@@ -114,6 +188,7 @@ public class Moh705aCohortQueries {
   public CohortDefinition getPatientsHavingPneumonia() {
     return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getPneumoniaConceptList());
   }
+
   /**
    * Get patients who have Tonsillitis during period of the month
    *
@@ -122,6 +197,7 @@ public class Moh705aCohortQueries {
   public CohortDefinition getPatientsHavingTonsillitis() {
     return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getTonsillitisConceptList());
   }
+
   /**
    * Get patients who have Other Disease Of Respiratory during period of the month
    *
@@ -131,6 +207,7 @@ public class Moh705aCohortQueries {
     return getAdultPatientsWhoHaveDiagnosis(
         diagnosisMetadata.getOtherDiseaseOfRespiratorySystemConceptList());
   }
+
   /**
    * Get patients who have Mental Disorders during period of the month
    *
@@ -139,6 +216,7 @@ public class Moh705aCohortQueries {
   public CohortDefinition getPatientsHavingMentalDisorders() {
     return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getMentalDisordersConceptList());
   }
+
   /**
    * Get patients who have Dental Disorders during period of the month
    *
@@ -147,6 +225,7 @@ public class Moh705aCohortQueries {
   public CohortDefinition getPatientsHavingDentalDisorders() {
     return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getDentalDisordersConceptList());
   }
+
   /**
    * Get patients who have Dental Disorders during period of the month
    *
@@ -155,6 +234,7 @@ public class Moh705aCohortQueries {
   public CohortDefinition getPatientsHavingJiggersInfestation() {
     return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getJiggersInfestationConceptList());
   }
+
   /**
    * Get patients who have Disease Of The Skin during period of the month
    *
@@ -163,6 +243,7 @@ public class Moh705aCohortQueries {
   public CohortDefinition getPatientsHavingDiseaseOfTheSkin() {
     return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getDiseaseOfTheSkinConceptList());
   }
+
   /**
    * Get patients who have Chromosomal Abrnomalities during period of the month
    *
@@ -172,6 +253,7 @@ public class Moh705aCohortQueries {
     return getAdultPatientsWhoHaveDiagnosis(
         diagnosisMetadata.getChromosomalAbnormalitiesConceptList());
   }
+
   /**
    * Get patients who have Congenital Anomalies during period of the month
    *
@@ -180,6 +262,7 @@ public class Moh705aCohortQueries {
   public CohortDefinition getPatientsHavingCongenitalAnomalies() {
     return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getCongenitalAnomaliesConceptList());
   }
+
   /**
    * Get patients who have had poisoning during period of the month
    *
@@ -188,6 +271,7 @@ public class Moh705aCohortQueries {
   public CohortDefinition getPatientsHavingPoisoning() {
     return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getPoisoningConceptList());
   }
+
   /**
    * Get patients who have had RTA during period of the month
    *
@@ -214,6 +298,7 @@ public class Moh705aCohortQueries {
   public CohortDefinition getPatientsHavingSexualAssault() {
     return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getSexualAssaultConceptList());
   }
+
   /**
    * Get patients who have had Burns during period of the month
    *
@@ -222,6 +307,7 @@ public class Moh705aCohortQueries {
   public CohortDefinition getPatientsHavingBurns() {
     return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getBurnsConceptList());
   }
+
   /**
    * Get patients who have had Snake Bites during period of the month
    *
@@ -230,6 +316,7 @@ public class Moh705aCohortQueries {
   public CohortDefinition getPatientsHavingSnakeBites() {
     return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getSnakeBitesConceptList());
   }
+
   /**
    * Get patients who have had Snake Bites during period of the month
    *
@@ -238,6 +325,7 @@ public class Moh705aCohortQueries {
   public CohortDefinition getPatientsHavingDogBites() {
     return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getDogBitesConceptList());
   }
+
   /**
    * Get patients who have had Other Bites during period of the month
    *
@@ -246,6 +334,7 @@ public class Moh705aCohortQueries {
   public CohortDefinition getPatientsHavingOtherBites() {
     return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getOtherBitesConceptList());
   }
+
   /**
    * Get patients who have had Diabetes during period of the month
    *
@@ -254,6 +343,7 @@ public class Moh705aCohortQueries {
   public CohortDefinition getPatientsHavingDiabetes() {
     return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getDiabetesConceptList());
   }
+
   /**
    * Get patients who have had Epilepsy during period of the month
    *
@@ -262,6 +352,7 @@ public class Moh705aCohortQueries {
   public CohortDefinition getPatientsHavingEpilepsy() {
     return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getEpilepsyConceptList());
   }
+
   /**
    * Get patients who have had Epilepsy during period of the month
    *
@@ -271,6 +362,7 @@ public class Moh705aCohortQueries {
     return getAdultPatientsWhoHaveDiagnosis(
         diagnosisMetadata.getOtherConvulsiveDisordersConceptList());
   }
+
   /**
    * Get patients who have had Epilepsy during period of the month
    *
@@ -279,6 +371,7 @@ public class Moh705aCohortQueries {
   public CohortDefinition getPatientsHavingBrucellosis() {
     return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getBrucellosisConceptList());
   }
+
   /**
    * Get patients who have had Epilepsy during period of the month
    *
@@ -287,6 +380,7 @@ public class Moh705aCohortQueries {
   public CohortDefinition getPatientsHavingRickets() {
     return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getRicketsConceptList());
   }
+
   /**
    * Get patients who have been Newly Diagnosed HIV during period of the month
    *
@@ -295,6 +389,7 @@ public class Moh705aCohortQueries {
   public CohortDefinition getPatientsHavingNewlyDiagnosedHiv() {
     return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getNewlyDiagnoseHivConceptList());
   }
+
   /**
    * Get patients who had Violence Related Injuries period of the month
    *
@@ -304,6 +399,7 @@ public class Moh705aCohortQueries {
     return getAdultPatientsWhoHaveDiagnosis(
         diagnosisMetadata.getCardiovascularConditionConceptList());
   }
+
   /**
    * Get patients who Had Violence Related Injuries during period of the month
    *
@@ -313,6 +409,7 @@ public class Moh705aCohortQueries {
     return getAdultPatientsWhoHaveDiagnosis(
         diagnosisMetadata.getViolenceRelatedInjuriesConceptList());
   }
+
   /**
    * Get patients who Had Cerebral Palsy during period of the month
    *
@@ -321,6 +418,7 @@ public class Moh705aCohortQueries {
   public CohortDefinition getPatientsHavingCerebralPalsy() {
     return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getCerebralPalsyConceptList());
   }
+
   /**
    * Get patients who Had Autism during period of the month
    *
@@ -329,6 +427,7 @@ public class Moh705aCohortQueries {
   public CohortDefinition getPatientsHavingAutism() {
     return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getAutismConceptList());
   }
+
   /**
    * Get patients who Had Other Central Narvous Sysytem Condition during period of the month
    *
@@ -338,6 +437,7 @@ public class Moh705aCohortQueries {
     return getAdultPatientsWhoHaveDiagnosis(
         diagnosisMetadata.getOtherCentralNarvousSytemConditionConceptList());
   }
+
   /**
    * Get patients who Had Tryponosomiasis during period of the month
    *
@@ -346,6 +446,7 @@ public class Moh705aCohortQueries {
   public CohortDefinition getPatientsHavingTryponosomiasis() {
     return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getTryponosomiasisConceptList());
   }
+
   /**
    * Get patients who Had Kalazar during period of the month
    *
@@ -354,6 +455,7 @@ public class Moh705aCohortQueries {
   public CohortDefinition getPatientsHavingKalazar() {
     return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getKalazarConceptList());
   }
+
   /**
    * Get patients who Had Dracunculosis during period of the month
    *
@@ -362,6 +464,7 @@ public class Moh705aCohortQueries {
   public CohortDefinition getPatientsHavingDracunculosis() {
     return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getDracunculosisConceptList());
   }
+
   /**
    * Get patients who Had Yellow Fever during period of the month
    *
@@ -370,6 +473,7 @@ public class Moh705aCohortQueries {
   public CohortDefinition getPatientsHavingYellowFever() {
     return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getYellowFeverConceptList());
   }
+
   /**
    * Get patients who Had Viral Haemorrhagic Fever during period of the month
    *
@@ -379,6 +483,7 @@ public class Moh705aCohortQueries {
     return getAdultPatientsWhoHaveDiagnosis(
         diagnosisMetadata.getViralHaemorrhagicFeverConceptList());
   }
+
   /**
    * Get patients who Had Plague during period of the month
    *
@@ -387,6 +492,7 @@ public class Moh705aCohortQueries {
   public CohortDefinition getPatientsHavingPlague() {
     return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getPlagueConceptList());
   }
+
   /**
    * Get patients who Had Deathts Due To Road Traffic Injuries during period of the month
    *
@@ -434,6 +540,37 @@ public class Moh705aCohortQueries {
         EhrReportUtils.map(
             getPatientsHavingMeningococcalInfections(),
             "startDate=${startDate},endDate=${endDate}"));
+    cd.addSearch(
+        "6",
+        EhrReportUtils.map(
+            getPatientsHavingOtherMeningitis(), "startDate=${startDate},endDate=${endDate}"));
+    cd.addSearch(
+        "7",
+        EhrReportUtils.map(
+            getPatientsHavingNeonatorumtTetanus(), "startDate=${startDate},endDate=${endDate}"));
+    cd.addSearch(
+        "8",
+        EhrReportUtils.map(
+            getPatientsHavingPoliomyelitis(), "startDate=${startDate},endDate=${endDate}"));
+    cd.addSearch(
+        "9",
+        EhrReportUtils.map(
+            getPatientsHavingChickenPox(), "startDate=${startDate},endDate=${endDate}"));
+    cd.addSearch(
+        "10",
+        EhrReportUtils.map(
+            getPatientsHavingMeasles(), "startDate=${startDate},endDate=${endDate}"));
+    cd.addSearch(
+        "11",
+        EhrReportUtils.map(
+            getPatientsHavingHepatitis(), "startDate=${startDate},endDate=${endDate}"));
+    cd.addSearch(
+        "12",
+        EhrReportUtils.map(getPatientsHavingMumps(), "startDate=${startDate},endDate=${endDate}"));
+    cd.addSearch(
+        "13",
+        EhrReportUtils.map(getPatientsHavingFevers(), "startDate=${startDate},endDate=${endDate}"));
+
     cd.addSearch(
         "27",
         EhrReportUtils.map(
@@ -581,10 +718,11 @@ public class Moh705aCohortQueries {
             "startDate=${startDate},endDate=${endDate}"));
 
     cd.setCompositionString(
-        "ALL AND NOT (1 OR 2 OR 3 OR 4 OR 5 OR 27 OR 28 OR 29 OR 30 OR 31 OR 32 OR 33 OR 34 OR 35 OR 36 OR 37 OR 38 OR 39 OR 40 OR 41 OR 42 OR 43 OR 44 OR 45 OR 46 OR 47 OR 48 OR 49 OR 50 OR 51 OR 52 OR 53 OR 54 OR 55 OR 56 OR 57 OR 58 OR 59 OR 60 OR 61)");
+        "ALL AND NOT (1 OR 2 OR 3 OR 4 OR 5 OR 6 OR 7 OR 8 OR 9 OR 10 OR 11 OR 12 OR 13 OR 27 OR 28 OR 29 OR 30 OR 31 OR 32 OR 33 OR 34 OR 35 OR 36 OR 37 OR 38 OR 39 OR 40 OR 41 OR 42 OR 43 OR 44 OR 45 OR 46 OR 47 OR 48 OR 49 OR 50 OR 51 OR 52 OR 53 OR 54 OR 55 OR 56 OR 57 OR 58 OR 59 OR 60 OR 61)");
 
     return cd;
   }
+
   /**
    * Get number of first/revisit attendancies column 64
    *
