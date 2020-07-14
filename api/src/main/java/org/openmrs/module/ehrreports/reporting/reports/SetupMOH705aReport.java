@@ -17,7 +17,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class SetupMOH705aReport extends EhrDataExportManager {
 
-  @Autowired private Moh705aDataset moh705Dataset;
+  @Autowired private Moh705aDataset moh705aDataset;
 
   @Autowired private GenericCohortQueries genericCohortQueries;
 
@@ -52,12 +52,12 @@ public class SetupMOH705aReport extends EhrDataExportManager {
     reportDefinition.setUuid(getUuid());
     reportDefinition.setName(getName());
     reportDefinition.setDescription(getDescription());
-    reportDefinition.setParameters(moh705Dataset.getParameters());
+    reportDefinition.setParameters(moh705aDataset.getParameters());
     // tie the dataset here, you can add more than one data set definition
     reportDefinition.addDataSetDefinition(
-        "MOH705A", Mapped.mapStraightThrough(moh705Dataset.constructMoh705aDataset()));
+        "MOH705A", Mapped.mapStraightThrough(moh705aDataset.constructMoh705aDataset()));
     reportDefinition.addDataSetDefinition(
-        "C", Mapped.mapStraightThrough(moh705Dataset.constructCustomDataset()));
+        "C", Mapped.mapStraightThrough(moh705aDataset.constructCustomDataset()));
     reportDefinition.setBaseCohortDefinition(
         EhrReportUtils.map(
             genericCohortQueries.getBaseCohort(),
