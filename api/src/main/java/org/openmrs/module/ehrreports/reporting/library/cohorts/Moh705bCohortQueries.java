@@ -87,7 +87,33 @@ public class Moh705bCohortQueries {
         EhrReportUtils.map(
             getAdultsPatientsWhoHaveDiagnosis(diagnosisMetadata.getMenongococcalInfectionsList()),
             "startDate=${startDate},endDate=${endDate}"));
-    cd.setCompositionString("1 OR 2 OR 3 OR 4 OR 5");
+    cd.addSearch(
+        "6",
+        EhrReportUtils.map(
+            getAdultsPatientsWhoHaveDiagnosis(diagnosisMetadata.getOtherMeningitisConceptList()),
+            "startDate=${startDate},endDate=${endDate}"));
+    cd.addSearch(
+        "7",
+        EhrReportUtils.map(
+            getAdultsPatientsWhoHaveDiagnosis(diagnosisMetadata.getTetanusConceptList()),
+            "startDate=${startDate},endDate=${endDate}"));
+
+    cd.addSearch(
+        "8",
+        EhrReportUtils.map(
+            getAdultsPatientsWhoHaveDiagnosis(diagnosisMetadata.getAcutePoliomyelitisConceptList()),
+            "startDate=${startDate},endDate=${endDate}"));
+    cd.addSearch(
+        "9",
+        EhrReportUtils.map(
+            getAdultsPatientsWhoHaveDiagnosis(diagnosisMetadata.getChickenPoxConceptList()),
+            "startDate=${startDate},endDate=${endDate}"));
+    cd.addSearch(
+        "10",
+        EhrReportUtils.map(
+            getAdultsPatientsWhoHaveDiagnosis(diagnosisMetadata.getMeaslesConceptList()),
+            "startDate=${startDate},endDate=${endDate}"));
+    cd.setCompositionString("1 OR 2 OR 3 OR 4 OR 5 OR 6 OR 7 OR 8 OR 9 OR 10");
     return cd;
   }
 

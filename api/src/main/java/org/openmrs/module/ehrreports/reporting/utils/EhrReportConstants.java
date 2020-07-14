@@ -402,6 +402,37 @@ public final class EhrReportConstants {
   // PROVISIONAL DIAGNOSIS
   // public static final String PROVISIONAL_DIAGNOSIS = "b8bc4c9f-7ccb-4435-bc4e-646d4cf83f0a";
 
+  // MEDICAL ABORTION
+  public static final String MEDICAL_ABORTION = "0a5c0c0f-4513-4932-bf83-7252a63f2e91"; // 2779
+  public static final String MISSED_ABORTION = "e6e096a1-3026-48e7-849a-4fecb4888464"; // 1312
+  public static final String SEPTIC_ABORTION = "51206e7c-4557-46cc-acc0-6bdc73313071"; // 1314
+  public static final String COMPLETE_ABORTION = "cba944f9-7ef6-4235-ab8e-be1e6b0335a5"; // 1309
+  public static final String RECURRENT_ABORTION = "c272b407-320e-4d48-8e0d-cbd90552b7fe"; // 1313
+  public static final String INCOMPLETE_ABORTION = "868cf084-4137-4a2f-8447-3a83a73f71e3"; // 1310
+  public static final String THREATENED_ABORTION = "02240bf2-fe38-4e8e-8a34-8596e8d6f565"; // 1214
+  public static final String INEVITABLE_ABORTION = "b93f28b4-a897-4c5f-b1ca-795ba9c98052"; // 1398
+  public static final String SPONTANEOUS_ABORTION = "de1aa7b8-5134-4cb0-877f-b93adb67273f"; // 1015
+  public static final String INCOMPLETE_SPONTANEOUS_ABORTION_WITHOUT_COMPLICATION =
+      "0e18f899-b001-442f-b54d-55a42f5b4cd1"; // 4375
+  public static final String UNSPECIFIED_SPONTANEOUS_ABORTION_WITH_OTHER_COMPLICATIONS =
+      "ad9a7945-ba29-42e4-b075-ed0aab5de57a"; // 4053
+
+  // HYPERTENTION
+  public static final String HYPERTENSION = "a8390549-394c-44c7-a0c3-404c1799b1b9"; // 1078
+  public static final String PRIMARY_HYPERTENSION = "c3caada3-7d85-449d-82db-aca37c8dc6e"; // 1154
+  public static final String RENOVASCULAR_HYPERTENSION =
+      "c96756d4-3507-486d-8bbd-8b3219c5d070"; // 3761
+  public static final String MALIGNANT_HYPERTENSION =
+      "db33ce48-0f81-4f54-9845-047dc1be0c31"; // 3758
+  public static final String IDIOPATHIC_HYPERTENSION =
+      "f0078c66-3c54-4e58-a2bc-76cb324a0fd0"; // 4253
+  public static final String PREGNANCY_INDUCED_HYPERTENSION =
+      "53539560-84bb-4c52-9e91-4c9249122cca"; // 1014
+  public static final String BENIGN_INTRACRANIAL_HYPERTENSION =
+      "4ef81f2d-8b59-4b05-ba4e-a3eb41fb40fd"; // 4190
+  public static final String ELEVATED_BLOOD_PRESSURE_READING_WITHOUT_DIAGNOSIS_OF_HYPERTENSION =
+      "5cd9b4ee-2d3d-4dc7-8393-e4b562752b9f"; // 4309
+
   // program
   public static final String ANC_Program = "d83b74b7-f5ea-46fc-acc5-71e892ee1e68";
   public static final String PNC_Program = "a15f2617-9f5d-4022-8de3-181b2e286a28";

@@ -131,6 +131,10 @@ public class DiagnosisMetadata extends Metadata {
         outpatientMetadata.getMalariaInPregnancyConcept().getConceptId());
   }
 
+  public List<Integer> getMalariaInPregnancyList() {
+    return Arrays.asList(outpatientMetadata.getMalariaInPregnancyConcept().getConceptId());
+  }
+
   public List<Integer> getUrinaryTractInfectionConceptList() {
     return Arrays.asList(
         outpatientMetadata.getUrinaryTractInfecionConcept().getConceptId(),
