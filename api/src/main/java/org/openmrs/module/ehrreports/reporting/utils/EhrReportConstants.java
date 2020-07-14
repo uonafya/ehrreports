@@ -399,6 +399,8 @@ public final class EhrReportConstants {
   // DEATHS_DUE_TO_ROAD_TRAFFIC_INJURIES
   public static final String DEATHS_DUE_TO_ROAD_TRAFFIC_INJURIES =
       "72d91e67-0f6e-41dd-87ce-0c510c99aa2a"; // TO BE POPULATED
+  // PROVISIONAL DIAGNOSIS
+  // public static final String PROVISIONAL_DIAGNOSIS = "b8bc4c9f-7ccb-4435-bc4e-646d4cf83f0a";
 
   // program
   public static final String ANC_Program = "d83b74b7-f5ea-46fc-acc5-71e892ee1e68";
