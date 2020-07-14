@@ -16,7 +16,7 @@ public class Moh705bCohortQueries {
   @Autowired private OutpatientMetadata outpatientMetadata;
 
   /**
-   * Get children patients who have given diagnosis - MOH705B
+   * Get children patients who have given diagnosis - MOH705A
    *
    * @return @{@link org.openmrs.module.reporting.cohort.definition.CohortDefinition}
    */
