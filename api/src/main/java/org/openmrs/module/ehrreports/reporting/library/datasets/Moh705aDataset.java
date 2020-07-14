@@ -73,6 +73,121 @@ public class Moh705aDataset extends BaseDataSet {
         getAdultChildrenColumns());
     addRow(
         dsd,
+        "6",
+        "Other Meningitis",
+        EhrReportUtils.map(moh705aIndicators.getPatientsOtherMeningitis(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "7",
+        "Neonatal Tetanus",
+        EhrReportUtils.map(moh705aIndicators.getPatientsHavingNeonatalTetanus(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "8",
+        "Poliomyelitis(AFP)",
+        EhrReportUtils.map(moh705aIndicators.getPatientsHavingPoliomyelitis(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "9",
+        "Chicken Pox",
+        EhrReportUtils.map(moh705aIndicators.getPatientsHavingChickenPox(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "10",
+        "Measles",
+        EhrReportUtils.map(moh705aIndicators.getPatientsHavingMeasles(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "11",
+        "Hepatitis",
+        EhrReportUtils.map(moh705aIndicators.getPatientsHavingHepatitis(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "12",
+        "Mumps",
+        EhrReportUtils.map(moh705aIndicators.getPatientsHavingMumps(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "13",
+        "Fevers",
+        EhrReportUtils.map(moh705aIndicators.getPatientsHavingFevers(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "16",
+        "Urinary Tract Infection",
+        EhrReportUtils.map(moh705aIndicators.getPatientsHavingUrinaryTractInfection(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "17",
+        "Typhoid fever",
+        EhrReportUtils.map(moh705aIndicators.getPatientsHavingTyphoidFever(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "18",
+        "Bilharzia",
+        EhrReportUtils.map(moh705aIndicators.getPatientsHavingBilharzia(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "19",
+        "Intestinal worms",
+        EhrReportUtils.map(moh705aIndicators.getPatientsHavingIntestinalWorms(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "20",
+        "Malnutrition",
+        EhrReportUtils.map(moh705aIndicators.getPatientsHavingMalnutrition(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "21",
+        "Anaemia",
+        EhrReportUtils.map(moh705aIndicators.getPatientsHavingAnaemia(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "22",
+        "Eye Infections",
+        EhrReportUtils.map(moh705aIndicators.getPatientsHavingEyeInfections(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "23",
+        "Other Eye Conditions",
+        EhrReportUtils.map(moh705aIndicators.getPatientsHavingOtherEyeConditions(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "24",
+        "Ear Infections/Conditions",
+        EhrReportUtils.map(moh705aIndicators.getPatientsHavingEarInfections(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "25",
+        "Upper Respiratory Tract Infections",
+        EhrReportUtils.map(
+            moh705aIndicators.getPatientsHavingUpperRespiratoryTractInfections(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "26",
+        "Asthma",
+        EhrReportUtils.map(moh705aIndicators.getPatientsHavingAsthma(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
         "27",
         "Tonsillitis",
         EhrReportUtils.map(moh705aIndicators.getPatientsHavingTonsillitis(), mappings),
