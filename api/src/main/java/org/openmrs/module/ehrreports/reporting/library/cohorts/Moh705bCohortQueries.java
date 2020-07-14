@@ -16,17 +16,17 @@ public class Moh705bCohortQueries {
   @Autowired private OutpatientMetadata outpatientMetadata;
 
   /**
-   * Get children patients who have given diagnosis - MOH705A
+   * Get children patients who have given diagnosis - MOH705B
    *
    * @return @{@link org.openmrs.module.reporting.cohort.definition.CohortDefinition}
    */
-  public CohortDefinition getChildrenPatientsWhoHaveDiagnosis(List<Integer> list) {
+  public CohortDefinition getAdultsPatientsWhoHaveDiagnosis(List<Integer> list) {
     SqlCohortDefinition cd = new SqlCohortDefinition();
-    cd.setName("Get children patients who have diagnosis");
+    cd.setName("Get adults patients who have diagnosis");
     cd.addParameter(new Parameter("startDate", "Start Date", Date.class));
     cd.addParameter(new Parameter("endDate", "End Date", Date.class));
     cd.setQuery(
-        Moh705Queries.getChildrenPatientsWhoMatchDiagnosisBasedOnConcepts(
+        Moh705Queries.getAdultPatientsWhoMatchDiagnosisBasedOnConcepts(
             outpatientMetadata.getDiagnosisConceptClass().getConceptClassId(), list));
     return cd;
   }
@@ -36,13 +36,13 @@ public class Moh705bCohortQueries {
    *
    * @return @{@link CohortDefinition} of patient ids of adult patients
    */
-  public CohortDefinition getChildrenPatientsWithAllDiagnosisRecorded() {
+  public CohortDefinition getAdultsPatientsWithAllDiagnosisRecorded() {
     SqlCohortDefinition cd = new SqlCohortDefinition();
-    cd.setName("Get children patients who have diagnosis - all");
+    cd.setName("Get Adults patients who have diagnosis - all");
     cd.addParameter(new Parameter("startDate", "Start Date", Date.class));
     cd.addParameter(new Parameter("endDate", "End Date", Date.class));
     cd.setQuery(
-        Moh705Queries.getChildrenPatientsWhoMatchDiagnosisAll(
+        Moh705Queries.getAdultsPatientsWhoMatchDiagnosisAll(
             outpatientMetadata.getDiagnosisConceptClass().getConceptClassId()));
     return cd;
   }

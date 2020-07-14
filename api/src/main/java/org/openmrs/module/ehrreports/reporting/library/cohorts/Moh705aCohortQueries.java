@@ -38,29 +38,29 @@ public class Moh705aCohortQueries {
    *
    * @return @{@link org.openmrs.module.reporting.cohort.definition.CohortDefinition}
    */
-  public CohortDefinition getAdultPatientsWhoHaveDiagnosis(List<Integer> list) {
+  public CohortDefinition getChildrenPatientsWhoHaveDiagnosis(List<Integer> list) {
     SqlCohortDefinition cd = new SqlCohortDefinition();
-    cd.setName("Get adult patients who have diagnosis based on list of concepts");
+    cd.setName("Get children patients who have diagnosis based on list of concepts");
     cd.addParameter(new Parameter("startDate", "Start Date", Date.class));
     cd.addParameter(new Parameter("endDate", "End Date", Date.class));
     cd.setQuery(
-        Moh705Queries.getAdultPatientsWhoMatchDiagnosisBasedOnConcepts(
+        Moh705Queries.getChildrenPatientsWhoMatchDiagnosisBasedOnConcepts(
             outpatientMetadata.getDiagnosisConceptClass().getConceptClassId(), list));
     return cd;
   }
 
   /**
-   * Get adults patients having any diagnosis specified in the observation collected
+   * Get children patients having any diagnosis specified in the observation collected
    *
    * @return @{@link CohortDefinition} of patient ids of adult patients
    */
-  public CohortDefinition getAdultsPatientsWithAllDiagnosisRecorded() {
+  public CohortDefinition getchildrenPatientsWithAllDiagnosisRecorded() {
     SqlCohortDefinition cd = new SqlCohortDefinition();
-    cd.setName("Get adult patients who have diagnosis - all");
+    cd.setName("Get children patients who have diagnosis - all");
     cd.addParameter(new Parameter("startDate", "Start Date", Date.class));
     cd.addParameter(new Parameter("endDate", "End Date", Date.class));
     cd.setQuery(
-        Moh705Queries.getAdultsPatientsWhoMatchDiagnosisAll(
+        Moh705Queries.getChildrenPatientsWhoMatchDiagnosisAll(
             outpatientMetadata.getDiagnosisConceptClass().getConceptClassId()));
     return cd;
   }
@@ -71,7 +71,7 @@ public class Moh705aCohortQueries {
    * @return @{@link CohortDefinition}
    */
   public CohortDefinition getPatientsHavingDiarrhoea() {
-    return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getDiarrhoeaConceptList());
+    return getChildrenPatientsWhoHaveDiagnosis(diagnosisMetadata.getDiarrhoeaConceptList());
   }
 
   /**
@@ -80,7 +80,7 @@ public class Moh705aCohortQueries {
    * @return @{@link CohortDefinition}
    */
   public CohortDefinition getPatientsHavingTuberculosis() {
-    return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getTuberculosisConceptList());
+    return getChildrenPatientsWhoHaveDiagnosis(diagnosisMetadata.getTuberculosisConceptList());
   }
 
   /**
@@ -89,7 +89,7 @@ public class Moh705aCohortQueries {
    * @return @{@link CohortDefinition}
    */
   public CohortDefinition getPatientsHavingCholera() {
-    return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getCholeraList());
+    return getChildrenPatientsWhoHaveDiagnosis(diagnosisMetadata.getCholeraList());
   }
 
   /**
@@ -98,7 +98,7 @@ public class Moh705aCohortQueries {
    * @return @{@link CohortDefinition}
    */
   public CohortDefinition getPatientsHavingMeningococcalInfections() {
-    return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getMenongococcalInfectionsList());
+    return getChildrenPatientsWhoHaveDiagnosis(diagnosisMetadata.getMenongococcalInfectionsList());
   }
 
   /**
@@ -107,7 +107,7 @@ public class Moh705aCohortQueries {
    * @return @{@link CohortDefinition}
    */
   public CohortDefinition getPatientsHavingOtherMeningitis() {
-    return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getOtherMeningitisConceptList());
+    return getChildrenPatientsWhoHaveDiagnosis(diagnosisMetadata.getOtherMeningitisConceptList());
   }
 
   /**
@@ -116,7 +116,7 @@ public class Moh705aCohortQueries {
    * @return @{@link CohortDefinition}
    */
   public CohortDefinition getPatientsHavingNeonatorumtTetanus() {
-    return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getNeonatorumTetanusConceptList());
+    return getChildrenPatientsWhoHaveDiagnosis(diagnosisMetadata.getNeonatorumTetanusConceptList());
   }
 
   /**
@@ -125,7 +125,8 @@ public class Moh705aCohortQueries {
    * @return @{@link CohortDefinition}
    */
   public CohortDefinition getPatientsHavingPoliomyelitis() {
-    return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getAcutePoliomyelitisConceptList());
+    return getChildrenPatientsWhoHaveDiagnosis(
+        diagnosisMetadata.getAcutePoliomyelitisConceptList());
   }
 
   /**
@@ -134,7 +135,8 @@ public class Moh705aCohortQueries {
    * @return @{@link CohortDefinition}
    */
   public CohortDefinition getPatientsHavingChickenPox() {
-    return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getAcutePoliomyelitisConceptList());
+    return getChildrenPatientsWhoHaveDiagnosis(
+        diagnosisMetadata.getAcutePoliomyelitisConceptList());
   }
 
   /**
@@ -143,7 +145,7 @@ public class Moh705aCohortQueries {
    * @return @{@link CohortDefinition}
    */
   public CohortDefinition getPatientsHavingMeasles() {
-    return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getMeaslesConceptList());
+    return getChildrenPatientsWhoHaveDiagnosis(diagnosisMetadata.getMeaslesConceptList());
   }
 
   /**
@@ -152,7 +154,7 @@ public class Moh705aCohortQueries {
    * @return @{@link CohortDefinition}
    */
   public CohortDefinition getPatientsHavingHepatitis() {
-    return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getHepatitisConceptList());
+    return getChildrenPatientsWhoHaveDiagnosis(diagnosisMetadata.getHepatitisConceptList());
   }
 
   /**
@@ -161,7 +163,7 @@ public class Moh705aCohortQueries {
    * @return @{@link CohortDefinition}
    */
   public CohortDefinition getPatientsHavingMumps() {
-    return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getMumpsConceptList());
+    return getChildrenPatientsWhoHaveDiagnosis(diagnosisMetadata.getMumpsConceptList());
   }
 
   /**
@@ -170,7 +172,7 @@ public class Moh705aCohortQueries {
    * @return @{@link CohortDefinition}
    */
   public CohortDefinition getPatientsHavingFevers() {
-    return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getFeversConceptList());
+    return getChildrenPatientsWhoHaveDiagnosis(diagnosisMetadata.getFeversConceptList());
   }
   /**
    * Get patients who have Urinary Tract Infection during period of the month
@@ -178,7 +180,7 @@ public class Moh705aCohortQueries {
    * @return @{@link CohortDefinition}
    */
   public CohortDefinition getPatientsHavingUrinaryTractInfection() {
-    return getAdultPatientsWhoHaveDiagnosis(
+    return getChildrenPatientsWhoHaveDiagnosis(
         diagnosisMetadata.getUrinaryTractInfectionConceptList());
   }
   /**
@@ -187,7 +189,7 @@ public class Moh705aCohortQueries {
    * @return @{@link CohortDefinition}
    */
   public CohortDefinition getPatientsHavingTyphoidFever() {
-    return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getTyphoidFeverConceptList());
+    return getChildrenPatientsWhoHaveDiagnosis(diagnosisMetadata.getTyphoidFeverConceptList());
   }
   /**
    * Get patients who have Bilharzia during period of the month
@@ -195,7 +197,7 @@ public class Moh705aCohortQueries {
    * @return @{@link CohortDefinition}
    */
   public CohortDefinition getPatientsHavingBilharzia() {
-    return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getBilharziaConceptList());
+    return getChildrenPatientsWhoHaveDiagnosis(diagnosisMetadata.getBilharziaConceptList());
   }
   /**
    * Get patients who have Intestinal worms during period of the month
@@ -203,7 +205,7 @@ public class Moh705aCohortQueries {
    * @return @{@link CohortDefinition}
    */
   public CohortDefinition getPatientsHavingIntestinalWorms() {
-    return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getIntestinalWormsConceptist());
+    return getChildrenPatientsWhoHaveDiagnosis(diagnosisMetadata.getIntestinalWormsConceptist());
   }
   /**
    * Get patients who have Malnutrition during period of the month
@@ -211,7 +213,7 @@ public class Moh705aCohortQueries {
    * @return @{@link CohortDefinition}
    */
   public CohortDefinition getPatientsHavingMalnutrition() {
-    return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getMalnutritionConceptist());
+    return getChildrenPatientsWhoHaveDiagnosis(diagnosisMetadata.getMalnutritionConceptist());
   }
   /**
    * Get patients who have Anaemia during period of the month
@@ -219,7 +221,7 @@ public class Moh705aCohortQueries {
    * @return @{@link CohortDefinition}
    */
   public CohortDefinition getPatientsHavingAnaemia() {
-    return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getAnaemiaConceptList());
+    return getChildrenPatientsWhoHaveDiagnosis(diagnosisMetadata.getAnaemiaConceptList());
   }
   /**
    * Get patients who have Eye Infections during period of the month
@@ -227,7 +229,7 @@ public class Moh705aCohortQueries {
    * @return @{@link CohortDefinition}
    */
   public CohortDefinition getPatientsHavingEyeInfections() {
-    return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getEyeInfectionsConceptList());
+    return getChildrenPatientsWhoHaveDiagnosis(diagnosisMetadata.getEyeInfectionsConceptList());
   }
   /**
    * Get patients who have Other Eye Conditions during period of the month
@@ -235,7 +237,8 @@ public class Moh705aCohortQueries {
    * @return @{@link CohortDefinition}
    */
   public CohortDefinition getPatientsHavingOtherEyeConditions() {
-    return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getOtherEyeConditionsConceptList());
+    return getChildrenPatientsWhoHaveDiagnosis(
+        diagnosisMetadata.getOtherEyeConditionsConceptList());
   }
   /**
    * Get patients who have Ear Infections/conditions during period of the month
@@ -243,7 +246,7 @@ public class Moh705aCohortQueries {
    * @return @{@link CohortDefinition}
    */
   public CohortDefinition getPatientsHavingEarInfections() {
-    return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getEarInfectionsConceptList());
+    return getChildrenPatientsWhoHaveDiagnosis(diagnosisMetadata.getEarInfectionsConceptList());
   }
   /**
    * Get patients who have Upper Respiratory Tract Infections during period of the month
@@ -251,7 +254,7 @@ public class Moh705aCohortQueries {
    * @return @{@link CohortDefinition}
    */
   public CohortDefinition getPatientsHavingUpperRespiratoryTractInfections() {
-    return getAdultPatientsWhoHaveDiagnosis(
+    return getChildrenPatientsWhoHaveDiagnosis(
         diagnosisMetadata.getUpperRespiratoryTractInfectionsConceptList());
   }
   /**
@@ -260,7 +263,7 @@ public class Moh705aCohortQueries {
    * @return @{@link CohortDefinition}
    */
   public CohortDefinition getPatientsHavingAsthma() {
-    return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getAsthmaConceptList());
+    return getChildrenPatientsWhoHaveDiagnosis(diagnosisMetadata.getAsthmaConceptList());
   }
 
   /**
@@ -269,7 +272,7 @@ public class Moh705aCohortQueries {
    * @return @{@link CohortDefinition}
    */
   public CohortDefinition getPatientsHavingDysentery() {
-    return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getDysenteryList());
+    return getChildrenPatientsWhoHaveDiagnosis(diagnosisMetadata.getDysenteryList());
   }
 
   /**
@@ -278,7 +281,7 @@ public class Moh705aCohortQueries {
    * @return @{@link CohortDefinition}
    */
   public CohortDefinition getPatientsHavingPneumonia() {
-    return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getPneumoniaConceptList());
+    return getChildrenPatientsWhoHaveDiagnosis(diagnosisMetadata.getPneumoniaConceptList());
   }
 
   /**
@@ -287,7 +290,7 @@ public class Moh705aCohortQueries {
    * @return @{@link CohortDefinition}
    */
   public CohortDefinition getPatientsHavingTonsillitis() {
-    return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getTonsillitisConceptList());
+    return getChildrenPatientsWhoHaveDiagnosis(diagnosisMetadata.getTonsillitisConceptList());
   }
 
   /**
@@ -296,7 +299,7 @@ public class Moh705aCohortQueries {
    * @return @{@link CohortDefinition}
    */
   public CohortDefinition getPatientsHavingOtherDiseaseOfRespiratory() {
-    return getAdultPatientsWhoHaveDiagnosis(
+    return getChildrenPatientsWhoHaveDiagnosis(
         diagnosisMetadata.getOtherDiseaseOfRespiratorySystemConceptList());
   }
 
@@ -306,7 +309,7 @@ public class Moh705aCohortQueries {
    * @return @{@link CohortDefinition}
    */
   public CohortDefinition getPatientsHavingMentalDisorders() {
-    return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getMentalDisordersConceptList());
+    return getChildrenPatientsWhoHaveDiagnosis(diagnosisMetadata.getMentalDisordersConceptList());
   }
 
   /**
@@ -315,7 +318,7 @@ public class Moh705aCohortQueries {
    * @return @{@link CohortDefinition}
    */
   public CohortDefinition getPatientsHavingDentalDisorders() {
-    return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getDentalDisordersConceptList());
+    return getChildrenPatientsWhoHaveDiagnosis(diagnosisMetadata.getDentalDisordersConceptList());
   }
 
   /**
@@ -324,7 +327,8 @@ public class Moh705aCohortQueries {
    * @return @{@link CohortDefinition}
    */
   public CohortDefinition getPatientsHavingJiggersInfestation() {
-    return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getJiggersInfestationConceptList());
+    return getChildrenPatientsWhoHaveDiagnosis(
+        diagnosisMetadata.getJiggersInfestationConceptList());
   }
 
   /**
@@ -333,7 +337,7 @@ public class Moh705aCohortQueries {
    * @return @{@link CohortDefinition}
    */
   public CohortDefinition getPatientsHavingDiseaseOfTheSkin() {
-    return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getDiseaseOfTheSkinConceptList());
+    return getChildrenPatientsWhoHaveDiagnosis(diagnosisMetadata.getDiseaseOfTheSkinConceptList());
   }
 
   /**
@@ -342,7 +346,7 @@ public class Moh705aCohortQueries {
    * @return @{@link CohortDefinition}
    */
   public CohortDefinition getPatientsHavingChromosomalAbrnomalities() {
-    return getAdultPatientsWhoHaveDiagnosis(
+    return getChildrenPatientsWhoHaveDiagnosis(
         diagnosisMetadata.getChromosomalAbnormalitiesConceptList());
   }
 
@@ -352,7 +356,8 @@ public class Moh705aCohortQueries {
    * @return @{@link CohortDefinition}
    */
   public CohortDefinition getPatientsHavingCongenitalAnomalies() {
-    return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getCongenitalAnomaliesConceptList());
+    return getChildrenPatientsWhoHaveDiagnosis(
+        diagnosisMetadata.getCongenitalAnomaliesConceptList());
   }
 
   /**
@@ -361,7 +366,7 @@ public class Moh705aCohortQueries {
    * @return @{@link CohortDefinition}
    */
   public CohortDefinition getPatientsHavingPoisoning() {
-    return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getPoisoningConceptList());
+    return getChildrenPatientsWhoHaveDiagnosis(diagnosisMetadata.getPoisoningConceptList());
   }
 
   /**
@@ -370,7 +375,8 @@ public class Moh705aCohortQueries {
    * @return @{@link CohortDefinition}
    */
   public CohortDefinition getPatientsHavingRoadTrafficInjuries() {
-    return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getRoadTrafficInjuriesConceptList());
+    return getChildrenPatientsWhoHaveDiagnosis(
+        diagnosisMetadata.getRoadTrafficInjuriesConceptList());
   }
 
   /**
@@ -379,7 +385,7 @@ public class Moh705aCohortQueries {
    * @return @{@link CohortDefinition}
    */
   public CohortDefinition getPatientsHavingOtherInjuries() {
-    return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getRoadOtherInjuriesConceptList());
+    return getChildrenPatientsWhoHaveDiagnosis(diagnosisMetadata.getRoadOtherInjuriesConceptList());
   }
 
   /**
@@ -388,7 +394,7 @@ public class Moh705aCohortQueries {
    * @return @{@link CohortDefinition}
    */
   public CohortDefinition getPatientsHavingSexualAssault() {
-    return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getSexualAssaultConceptList());
+    return getChildrenPatientsWhoHaveDiagnosis(diagnosisMetadata.getSexualAssaultConceptList());
   }
 
   /**
@@ -397,7 +403,7 @@ public class Moh705aCohortQueries {
    * @return @{@link CohortDefinition}
    */
   public CohortDefinition getPatientsHavingBurns() {
-    return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getBurnsConceptList());
+    return getChildrenPatientsWhoHaveDiagnosis(diagnosisMetadata.getBurnsConceptList());
   }
 
   /**
@@ -406,7 +412,7 @@ public class Moh705aCohortQueries {
    * @return @{@link CohortDefinition}
    */
   public CohortDefinition getPatientsHavingSnakeBites() {
-    return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getSnakeBitesConceptList());
+    return getChildrenPatientsWhoHaveDiagnosis(diagnosisMetadata.getSnakeBitesConceptList());
   }
 
   /**
@@ -415,7 +421,7 @@ public class Moh705aCohortQueries {
    * @return @{@link CohortDefinition}
    */
   public CohortDefinition getPatientsHavingDogBites() {
-    return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getDogBitesConceptList());
+    return getChildrenPatientsWhoHaveDiagnosis(diagnosisMetadata.getDogBitesConceptList());
   }
 
   /**
@@ -424,7 +430,7 @@ public class Moh705aCohortQueries {
    * @return @{@link CohortDefinition}
    */
   public CohortDefinition getPatientsHavingOtherBites() {
-    return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getOtherBitesConceptList());
+    return getChildrenPatientsWhoHaveDiagnosis(diagnosisMetadata.getOtherBitesConceptList());
   }
 
   /**
@@ -433,7 +439,7 @@ public class Moh705aCohortQueries {
    * @return @{@link CohortDefinition}
    */
   public CohortDefinition getPatientsHavingDiabetes() {
-    return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getDiabetesConceptList());
+    return getChildrenPatientsWhoHaveDiagnosis(diagnosisMetadata.getDiabetesConceptList());
   }
 
   /**
@@ -442,7 +448,7 @@ public class Moh705aCohortQueries {
    * @return @{@link CohortDefinition}
    */
   public CohortDefinition getPatientsHavingEpilepsy() {
-    return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getEpilepsyConceptList());
+    return getChildrenPatientsWhoHaveDiagnosis(diagnosisMetadata.getEpilepsyConceptList());
   }
 
   /**
@@ -451,7 +457,7 @@ public class Moh705aCohortQueries {
    * @return @{@link CohortDefinition}
    */
   public CohortDefinition getPatientsHavingOtherConvulsiveDisorders() {
-    return getAdultPatientsWhoHaveDiagnosis(
+    return getChildrenPatientsWhoHaveDiagnosis(
         diagnosisMetadata.getOtherConvulsiveDisordersConceptList());
   }
 
@@ -461,7 +467,7 @@ public class Moh705aCohortQueries {
    * @return @{@link CohortDefinition}
    */
   public CohortDefinition getPatientsHavingBrucellosis() {
-    return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getBrucellosisConceptList());
+    return getChildrenPatientsWhoHaveDiagnosis(diagnosisMetadata.getBrucellosisConceptList());
   }
 
   /**
@@ -470,7 +476,7 @@ public class Moh705aCohortQueries {
    * @return @{@link CohortDefinition}
    */
   public CohortDefinition getPatientsHavingRickets() {
-    return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getRicketsConceptList());
+    return getChildrenPatientsWhoHaveDiagnosis(diagnosisMetadata.getRicketsConceptList());
   }
 
   /**
@@ -479,7 +485,7 @@ public class Moh705aCohortQueries {
    * @return @{@link CohortDefinition}
    */
   public CohortDefinition getPatientsHavingNewlyDiagnosedHiv() {
-    return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getNewlyDiagnoseHivConceptList());
+    return getChildrenPatientsWhoHaveDiagnosis(diagnosisMetadata.getNewlyDiagnoseHivConceptList());
   }
 
   /**
@@ -488,7 +494,7 @@ public class Moh705aCohortQueries {
    * @return @{@link CohortDefinition}
    */
   public CohortDefinition getPatientsHavingCardiovascularCondition() {
-    return getAdultPatientsWhoHaveDiagnosis(
+    return getChildrenPatientsWhoHaveDiagnosis(
         diagnosisMetadata.getCardiovascularConditionConceptList());
   }
 
@@ -498,7 +504,7 @@ public class Moh705aCohortQueries {
    * @return @{@link CohortDefinition}
    */
   public CohortDefinition getPatientsHavingViolenceRelatedInjuries() {
-    return getAdultPatientsWhoHaveDiagnosis(
+    return getChildrenPatientsWhoHaveDiagnosis(
         diagnosisMetadata.getViolenceRelatedInjuriesConceptList());
   }
 
@@ -508,7 +514,7 @@ public class Moh705aCohortQueries {
    * @return @{@link CohortDefinition}
    */
   public CohortDefinition getPatientsHavingCerebralPalsy() {
-    return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getCerebralPalsyConceptList());
+    return getChildrenPatientsWhoHaveDiagnosis(diagnosisMetadata.getCerebralPalsyConceptList());
   }
 
   /**
@@ -517,7 +523,7 @@ public class Moh705aCohortQueries {
    * @return @{@link CohortDefinition}
    */
   public CohortDefinition getPatientsHavingAutism() {
-    return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getAutismConceptList());
+    return getChildrenPatientsWhoHaveDiagnosis(diagnosisMetadata.getAutismConceptList());
   }
 
   /**
@@ -526,7 +532,7 @@ public class Moh705aCohortQueries {
    * @return @{@link CohortDefinition}
    */
   public CohortDefinition getPatientsHavingOtherCentralNarvousSytemCondition() {
-    return getAdultPatientsWhoHaveDiagnosis(
+    return getChildrenPatientsWhoHaveDiagnosis(
         diagnosisMetadata.getOtherCentralNarvousSytemConditionConceptList());
   }
 
@@ -536,7 +542,7 @@ public class Moh705aCohortQueries {
    * @return @{@link CohortDefinition}
    */
   public CohortDefinition getPatientsHavingTryponosomiasis() {
-    return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getTryponosomiasisConceptList());
+    return getChildrenPatientsWhoHaveDiagnosis(diagnosisMetadata.getTryponosomiasisConceptList());
   }
 
   /**
@@ -545,7 +551,7 @@ public class Moh705aCohortQueries {
    * @return @{@link CohortDefinition}
    */
   public CohortDefinition getPatientsHavingKalazar() {
-    return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getKalazarConceptList());
+    return getChildrenPatientsWhoHaveDiagnosis(diagnosisMetadata.getKalazarConceptList());
   }
 
   /**
@@ -554,7 +560,7 @@ public class Moh705aCohortQueries {
    * @return @{@link CohortDefinition}
    */
   public CohortDefinition getPatientsHavingDracunculosis() {
-    return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getDracunculosisConceptList());
+    return getChildrenPatientsWhoHaveDiagnosis(diagnosisMetadata.getDracunculosisConceptList());
   }
 
   /**
@@ -563,7 +569,7 @@ public class Moh705aCohortQueries {
    * @return @{@link CohortDefinition}
    */
   public CohortDefinition getPatientsHavingYellowFever() {
-    return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getYellowFeverConceptList());
+    return getChildrenPatientsWhoHaveDiagnosis(diagnosisMetadata.getYellowFeverConceptList());
   }
 
   /**
@@ -572,7 +578,7 @@ public class Moh705aCohortQueries {
    * @return @{@link CohortDefinition}
    */
   public CohortDefinition getPatientsHavingViralHaemorrhagicFever() {
-    return getAdultPatientsWhoHaveDiagnosis(
+    return getChildrenPatientsWhoHaveDiagnosis(
         diagnosisMetadata.getViralHaemorrhagicFeverConceptList());
   }
 
@@ -582,7 +588,7 @@ public class Moh705aCohortQueries {
    * @return @{@link CohortDefinition}
    */
   public CohortDefinition getPatientsHavingPlague() {
-    return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getPlagueConceptList());
+    return getChildrenPatientsWhoHaveDiagnosis(diagnosisMetadata.getPlagueConceptList());
   }
 
   /**
@@ -591,7 +597,7 @@ public class Moh705aCohortQueries {
    * @return @{@link CohortDefinition}
    */
   public CohortDefinition getPatientsHavingDeathtsDueToRoadTrafficInjuries() {
-    return getAdultPatientsWhoHaveDiagnosis(
+    return getChildrenPatientsWhoHaveDiagnosis(
         diagnosisMetadata.getDeathtsDueToRoadTrafficInjuriesConceptList());
   }
 
@@ -602,7 +608,7 @@ public class Moh705aCohortQueries {
    */
   private CohortDefinition get1st10DiseasesToExcludeFromMainQuery() {
     CompositionCohortDefinition cd = new CompositionCohortDefinition();
-    cd.setName("Get other adults diagnosis other than the ones classified first 10");
+    cd.setName("Get other children diagnosis other than the ones classified first 10");
     cd.addParameter(new Parameter("startDate", "Start Date", Date.class));
     cd.addParameter(new Parameter("endDate", "End Date", Date.class));
     cd.addSearch(
@@ -658,7 +664,7 @@ public class Moh705aCohortQueries {
    */
   private CohortDefinition get2nd10DiseasesToExcludeFromMainQuery() {
     CompositionCohortDefinition cd = new CompositionCohortDefinition();
-    cd.setName("Get other adults diagnosis other than the ones classified second 10");
+    cd.setName("Get other children diagnosis other than the ones classified second 10");
     cd.addParameter(new Parameter("startDate", "Start Date", Date.class));
     cd.addParameter(new Parameter("endDate", "End Date", Date.class));
     cd.addSearch(
@@ -702,7 +708,7 @@ public class Moh705aCohortQueries {
    */
   private CohortDefinition get3rd10DiseasesToExcludeFromMainQuery() {
     CompositionCohortDefinition cd = new CompositionCohortDefinition();
-    cd.setName("Get other adults diagnosis other than the ones classified third 10");
+    cd.setName("Get other children diagnosis other than the ones classified third 10");
     cd.addParameter(new Parameter("startDate", "Start Date", Date.class));
     cd.addParameter(new Parameter("endDate", "End Date", Date.class));
     cd.addSearch(
@@ -757,7 +763,7 @@ public class Moh705aCohortQueries {
    */
   private CohortDefinition get4th10DiseasesToExcludeFromMainQuery() {
     CompositionCohortDefinition cd = new CompositionCohortDefinition();
-    cd.setName("Get other adults diagnosis other than the ones classified 4th 10 ");
+    cd.setName("Get other children diagnosis other than the ones classified 4th 10 ");
     cd.addParameter(new Parameter("startDate", "Start Date", Date.class));
     cd.addParameter(new Parameter("endDate", "End Date", Date.class));
     cd.addSearch(
@@ -812,7 +818,7 @@ public class Moh705aCohortQueries {
    */
   private CohortDefinition get5th10DiseasesToExcludeFromMainQuery() {
     CompositionCohortDefinition cd = new CompositionCohortDefinition();
-    cd.setName("Get other adults diagnosis other than the ones classified 5th 10");
+    cd.setName("Get other children diagnosis other than the ones classified 5th 10");
     cd.addParameter(new Parameter("startDate", "Start Date", Date.class));
     cd.addParameter(new Parameter("endDate", "End Date", Date.class));
     cd.addSearch(
@@ -868,7 +874,7 @@ public class Moh705aCohortQueries {
    */
   private CohortDefinition get6th10DiseasesToExcludeFromMainQuery() {
     CompositionCohortDefinition cd = new CompositionCohortDefinition();
-    cd.setName("Get other adults diagnosis other than the ones classified the rest");
+    cd.setName("Get other children diagnosis other than the ones classified the rest");
     cd.addParameter(new Parameter("startDate", "Start Date", Date.class));
     cd.addParameter(new Parameter("endDate", "End Date", Date.class));
     cd.addSearch(
@@ -928,13 +934,13 @@ public class Moh705aCohortQueries {
    */
   public CohortDefinition getAllDiseasesExceptThoseClassifiedMoh705A() {
     CompositionCohortDefinition cd = new CompositionCohortDefinition();
-    cd.setName("Get other adults diagnosis other than the ones classified");
+    cd.setName("Get other children diagnosis other than the ones classified");
     cd.addParameter(new Parameter("startDate", "Start Date", Date.class));
     cd.addParameter(new Parameter("endDate", "End Date", Date.class));
     cd.addSearch(
         "ALL",
         EhrReportUtils.map(
-            getAdultsPatientsWithAllDiagnosisRecorded(),
+            getchildrenPatientsWithAllDiagnosisRecorded(),
             "startDate=${startDate},endDate=${endDate}"));
     cd.addSearch(
         "first10",
@@ -987,7 +993,7 @@ public class Moh705aCohortQueries {
     cd.addSearch(
         "malaria",
         EhrReportUtils.map(
-            getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getMalariaConceptList()),
+            getChildrenPatientsWhoHaveDiagnosis(diagnosisMetadata.getMalariaConceptList()),
             "startDate=${startDate},endDate=${endDate}"));
     cd.addSearch(
         "status",
