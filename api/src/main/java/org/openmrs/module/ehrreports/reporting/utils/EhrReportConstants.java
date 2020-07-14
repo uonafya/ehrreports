@@ -213,6 +213,67 @@ public final class EhrReportConstants {
   public static final String OTHER_CONGENITAL_MALARIA =
       "3850f805-9850-4cf0-a5d5-bb7adc009e06"; // 4492
 
+  // URINARY TRACT INFECTION
+  public static final String URINARY_TRACT_INFECTION =
+      "d1147870-eb23-417b-b879-417dd9fe4293"; // 1017
+  public static final String URINARY_TRACT_INFECTION_IN_PREGNANCY =
+      "bcdc81a8-63e5-4f8a-b09d-6a358903c06b"; // 2522
+  public static final String URINARY_TRACT_INFECTION_IN_PREGNANCY_NOT_SPECIFIED =
+      "f6764c58-18c0-4033-abcb-938c867cdf2d"; // 4292
+  public static final String INFECTION_OF_OTHER_STOMA_OF_URINARY_TRACT =
+      "7718f725-8380-4aba-b810-ab895097dd17"; // 4376
+  public static final String INFECTIONS_OF_OTHER_PARTS_OF_URINARY_TRACT_IN_PREGNANCY =
+      "e3078356-7c35-4214-8ea8-71ea78218f7f"; // 4443
+
+  // TYPHOID FEVER
+  public static final String TYPHOID_FEVER = "4b24a7d7-406a-494d-b53f-2c0e38062d4b"; // 1056
+  // BILHARZIA
+  public static final String BILHARZIA = "e3a0bbcf-dd55-4901-ad29-01b5393065c2"; // 1104
+  public static final String OTHER_SCHISTOSOMIASIS = "16f5a687-e4fb-4e26-bafd-42e0d97d3481"; // 4507
+  // INTESTINAL WORMS
+  public static final String INTESTINAL_WORMS = "28508f4b-b0df-4f84-bcea-f6a355528600"; // 4038
+  // MALNUTRITION
+  public static final String MALNUTRITION = "28508f4b-b0df-4f84-bcea-f6a355528600"; // 4333
+  public static final String PROTEIN_ENERGY_MALNUTRITION =
+      "0ee5e782-13bc-4b90-951b-2f818cabeb5d"; // 1022
+  // ANAEMIA
+  public static final String ANAEMIA_UNSPECIFIED = "63e9c1ec-58a7-4bf5-8f29-bbac0a442248"; // 998
+  public static final String HAEMOLYTIC_ANAEMIA = "061e9322-9dfd-4772-8c18-3430a3591cc3"; // 997
+  public static final String BLOOD_LOSS_ANAEMIA = "ecdffec8-f2cb-488c-b273-e5dbfec74979"; // 996
+  public static final String SICKLE_CELL_ANAEMIA = "278d2214-cf8d-4edd-b03a-23f846986265"; // 4545
+  // EYE INFECTIONS //how do we differentiate between eye infections and other eye conditions
+  public static final String ASTHENOPIA = "f0dde4c5-ee90-4bdb-9fc5-b327538d8db6"; // 1421
+  public static final String PINK_EYE = "47b5544c-a9dc-4b27-be50-6136c7321d23"; // 1038
+  public static final String DRY_EYE_SYNDROME = "02d4f13f-8739-4db6-a7b4-daf05df7b008"; // 100001425
+  public static final String INJURY_OF_EYE = "d63e35e6-1ca9-4061-8b1f-bfbff5cb3395"; // 2471
+  public static final String LOW_VISION_BOTH_EYES = "7de44d88-1061-403e-b9d6-c804c0387a20"; // 4457
+  public static final String OPEN_WOUND_OF_EYELID_AND_PERIOCULAR_AREA =
+      "618e30f7-84c3-4884-a497-d85a11934c5a"; // 4049
+  public static final String HYDROCORTISONE = "124AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // 124
+  public static final String RETROBULBAR_NEURITIS_LEFT_EYE =
+      "1c956854-a086-415b-a1ac-c7fffbe68664"; // 4528
+  public static final String ACUTE_ATOPIC_CONJUCTIVITIS_RIGHT_EYE =
+      "7ac697c2-49ac-47ea-9c19-e71897f0f4eb"; // 4125
+
+  // EAR INFECTIONS
+  public static final String EAR_INFECTIONS = "213c707b-827c-45b2-8b44-44996d682829"; // 4439
+  public static final String DISCHARGE_OF_EAR = "9e73ab61-3633-4795-b37b-6bb9379d221c"; // 1137
+
+  // UPPER RESPIRATORY TRACT INFECTIONS
+  public static final String UPPER_RESPIRATORY_TRACT_INFECTION =
+      "4d962c5d-f2dc-46a9-93d8-9ddc4fe663a2"; // 1149
+  public static final String UPPER_RESPIRATORY_TRACT_HYPERSENSITIVITY_REACTION_SITE_UNSPECIFIED =
+      "92667e83-93bf-4054-90b9-187aef473f01"; // 4410
+  public static final String DISEASES_OF_UPPER_RESPIRATORY_TRACT_UNSPECIFIED =
+      "07c92332-711f-46b2-bff4-860803b23d58"; // 4121
+  public static final String OTHER_DISEASES_OF_UPPER_RESPIRATORY_TRACT =
+      "b8c82529-0a13-4b0e-93e3-25e1d15961e0"; // 4493
+  public static final String OTHER_SPECIFIED_DISEASES_OF_UPPER_RESPIRATORY_TRACT =
+      "83f84998-30d8-4c06-8aab-b8e7b1aed342"; // 4509
+  // ASTHMA
+  public static final String ASTHMA_NOS = "9f8b972c-83aa-4a6f-9be8-7ce80800afce"; // 1000
+  public static final String ASTHMA_UNSPECIFIED = "f915c44f-0026-4009-979f-d76c46c44e62"; // 4067
+  public static final String STHMA_EXACERBATION = "43896f9f-0efa-4b8b-978d-7b2df81a6aaf"; // 999
   // Cholera
   public static final String CHOLERA = "f3c41b86-b280-41af-aeaf-80a0fd6033b3";
 
@@ -330,7 +391,7 @@ public final class EhrReportConstants {
 
   // VIRAL HAEMORRHAGIC FEVER
   public static final String VIRAL_HAEMORRHAGIC_FEVER =
-      "4cd84add-83cd-4c09-8825-1aea071afa57e"; // 4289
+      "4cd84add-83cd-4c09-8825-1aea071afa57"; // 4289
 
   // PLAGUE
   public static final String PLAGUE = "d86f7c87-7023-4dab-9334-b217fa09d857"; // 1709

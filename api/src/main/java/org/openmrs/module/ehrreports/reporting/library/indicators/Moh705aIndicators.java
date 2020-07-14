@@ -204,6 +204,150 @@ public class Moh705aIndicators {
             moh705aCohortQueries.getPatientsHavingMumps(),
             "startDate=${startDate},endDate=${endDate}"));
   }
+  /**
+   * Get patients who have Fevers during the month
+   *
+   * @return @CohortIndicator
+   */
+  public CohortIndicator getPatientsHavingFevers() {
+    return ehrGeneralIndicator.getIndicator(
+        "Fevers ",
+        EhrReportUtils.map(
+            moh705aCohortQueries.getPatientsHavingFevers(),
+            "startDate=${startDate},endDate=${endDate}"));
+  }
+  /**
+   * Get patients who have Urinary Tract Infection during the month
+   *
+   * @return @CohortIndicator
+   */
+  public CohortIndicator getPatientsHavingUrinaryTractInfection() {
+    return ehrGeneralIndicator.getIndicator(
+        "Urinary Tract Infection ",
+        EhrReportUtils.map(
+            moh705aCohortQueries.getPatientsHavingUrinaryTractInfection(),
+            "startDate=${startDate},endDate=${endDate}"));
+  }
+  /**
+   * Get patients who have Typhoid Fevers during the month
+   *
+   * @return @CohortIndicator
+   */
+  public CohortIndicator getPatientsHavingTyphoidFever() {
+    return ehrGeneralIndicator.getIndicator(
+        "Typhoid fever ",
+        EhrReportUtils.map(
+            moh705aCohortQueries.getPatientsHavingTyphoidFever(),
+            "startDate=${startDate},endDate=${endDate}"));
+  }
+  /**
+   * Get patients who have Bilharzia during the month
+   *
+   * @return @CohortIndicator
+   */
+  public CohortIndicator getPatientsHavingBilharzia() {
+    return ehrGeneralIndicator.getIndicator(
+        "Bilharzia ",
+        EhrReportUtils.map(
+            moh705aCohortQueries.getPatientsHavingBilharzia(),
+            "startDate=${startDate},endDate=${endDate}"));
+  }
+  /**
+   * Get patients who have Intestinal worms during the month
+   *
+   * @return @CohortIndicator
+   */
+  public CohortIndicator getPatientsHavingIntestinalWorms() {
+    return ehrGeneralIndicator.getIndicator(
+        "Intestinal worms ",
+        EhrReportUtils.map(
+            moh705aCohortQueries.getPatientsHavingIntestinalWorms(),
+            "startDate=${startDate},endDate=${endDate}"));
+  }
+  /**
+   * Get patients who have malnutrition during the month
+   *
+   * @return @CohortIndicator
+   */
+  public CohortIndicator getPatientsHavingMalnutrition() {
+    return ehrGeneralIndicator.getIndicator(
+        "Malnutrition ",
+        EhrReportUtils.map(
+            moh705aCohortQueries.getPatientsHavingMalnutrition(),
+            "startDate=${startDate},endDate=${endDate}"));
+  }
+  /**
+   * Get patients who have Anaemia during the month
+   *
+   * @return @CohortIndicator
+   */
+  public CohortIndicator getPatientsHavingAnaemia() {
+    return ehrGeneralIndicator.getIndicator(
+        "Anaemia ",
+        EhrReportUtils.map(
+            moh705aCohortQueries.getPatientsHavingAnaemia(),
+            "startDate=${startDate},endDate=${endDate}"));
+  }
+  /**
+   * Get patients who have Eye Infections during the month
+   *
+   * @return @CohortIndicator
+   */
+  public CohortIndicator getPatientsHavingEyeInfections() {
+    return ehrGeneralIndicator.getIndicator(
+        "Eye Infections ",
+        EhrReportUtils.map(
+            moh705aCohortQueries.getPatientsHavingEyeInfections(),
+            "startDate=${startDate},endDate=${endDate}"));
+  }
+  /**
+   * Get patients who have Other Eye Conditions during the month
+   *
+   * @return @CohortIndicator
+   */
+  public CohortIndicator getPatientsHavingOtherEyeConditions() {
+    return ehrGeneralIndicator.getIndicator(
+        "Other Eye conditions ",
+        EhrReportUtils.map(
+            moh705aCohortQueries.getPatientsHavingOtherEyeConditions(),
+            "startDate=${startDate},endDate=${endDate}"));
+  }
+  /**
+   * Get patients who have Ear Infections/Conditions during the month
+   *
+   * @return @CohortIndicator
+   */
+  public CohortIndicator getPatientsHavingEarInfections() {
+    return ehrGeneralIndicator.getIndicator(
+        "Ear Infections/Conditions ",
+        EhrReportUtils.map(
+            moh705aCohortQueries.getPatientsHavingEarInfections(),
+            "startDate=${startDate},endDate=${endDate}"));
+  }
+  /**
+   * Get patients who have Upper Respiratory Tract Infections during the month
+   *
+   * @return @CohortIndicator
+   */
+  public CohortIndicator getPatientsHavingUpperRespiratoryTractInfections() {
+    return ehrGeneralIndicator.getIndicator(
+        "Upper Respiratory Tract Infections ",
+        EhrReportUtils.map(
+            moh705aCohortQueries.getPatientsHavingUpperRespiratoryTractInfections(),
+            "startDate=${startDate},endDate=${endDate}"));
+  }
+  /**
+   * Get patients who have ASTHMA during the month
+   *
+   * @return @CohortIndicator
+   */
+  public CohortIndicator getPatientsHavingAsthma() {
+    return ehrGeneralIndicator.getIndicator(
+        "Asthma",
+        EhrReportUtils.map(
+            moh705aCohortQueries.getPatientsHavingAsthma(),
+            "startDate=${startDate},endDate=${endDate}"));
+  }
 
   public CohortIndicator getPatientsHavingTonsillitis() {
     return ehrGeneralIndicator.getIndicator(

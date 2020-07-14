@@ -170,6 +170,96 @@ public class Moh705aCohortQueries {
   public CohortDefinition getPatientsHavingFevers() {
     return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getFeversConceptList());
   }
+  /**
+   * Get patients who have Urinary Tract Infection during period of the month
+   *
+   * @return @{@link CohortDefinition}
+   */
+  public CohortDefinition getPatientsHavingUrinaryTractInfection() {
+    return getAdultPatientsWhoHaveDiagnosis(
+        diagnosisMetadata.getUrinaryTractInfectionConceptList());
+  }
+  /**
+   * Get patients who have Typhoid Fever during period of the month
+   *
+   * @return @{@link CohortDefinition}
+   */
+  public CohortDefinition getPatientsHavingTyphoidFever() {
+    return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getTyphoidFeverConceptList());
+  }
+  /**
+   * Get patients who have Bilharzia during period of the month
+   *
+   * @return @{@link CohortDefinition}
+   */
+  public CohortDefinition getPatientsHavingBilharzia() {
+    return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getBilharziaConceptList());
+  }
+  /**
+   * Get patients who have Intestinal worms during period of the month
+   *
+   * @return @{@link CohortDefinition}
+   */
+  public CohortDefinition getPatientsHavingIntestinalWorms() {
+    return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getIntestinalWormsConceptist());
+  }
+  /**
+   * Get patients who have Malnutrition during period of the month
+   *
+   * @return @{@link CohortDefinition}
+   */
+  public CohortDefinition getPatientsHavingMalnutrition() {
+    return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getMalnutritionConceptist());
+  }
+  /**
+   * Get patients who have Anaemia during period of the month
+   *
+   * @return @{@link CohortDefinition}
+   */
+  public CohortDefinition getPatientsHavingAnaemia() {
+    return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getAnaemiaConceptList());
+  }
+  /**
+   * Get patients who have Eye Infections during period of the month
+   *
+   * @return @{@link CohortDefinition}
+   */
+  public CohortDefinition getPatientsHavingEyeInfections() {
+    return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getEyeInfectionsConceptList());
+  }
+  /**
+   * Get patients who have Other Eye Conditions during period of the month
+   *
+   * @return @{@link CohortDefinition}
+   */
+  public CohortDefinition getPatientsHavingOtherEyeConditions() {
+    return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getOtherEyeConditionsConceptList());
+  }
+  /**
+   * Get patients who have Ear Infections/conditions during period of the month
+   *
+   * @return @{@link CohortDefinition}
+   */
+  public CohortDefinition getPatientsHavingEarInfections() {
+    return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getEarInfectionsConceptList());
+  }
+  /**
+   * Get patients who have Upper Respiratory Tract Infections during period of the month
+   *
+   * @return @{@link CohortDefinition}
+   */
+  public CohortDefinition getPatientsHavingUpperRespiratoryTractInfections() {
+    return getAdultPatientsWhoHaveDiagnosis(
+        diagnosisMetadata.getUpperRespiratoryTractInfectionsConceptList());
+  }
+  /**
+   * Get patients who have Asthma during period of the month
+   *
+   * @return @{@link CohortDefinition}
+   */
+  public CohortDefinition getPatientsHavingAsthma() {
+    return getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getAsthmaConceptList());
+  }
 
   /**
    * Get patients who have Dysentery during period of the month
@@ -502,6 +592,7 @@ public class Moh705aCohortQueries {
     return getAdultPatientsWhoHaveDiagnosis(
         diagnosisMetadata.getDeathtsDueToRoadTrafficInjuriesConceptList());
   }
+
   /**
    * Get first 10 diseases to exclude form the main query of other diseases
    *
@@ -578,7 +669,27 @@ public class Moh705aCohortQueries {
     cd.addSearch(
         "13",
         EhrReportUtils.map(getPatientsHavingFevers(), "startDate=${startDate},endDate=${endDate}"));
-    cd.setCompositionString("11 OR 12 OR 13");
+    cd.addSearch(
+        "16",
+        EhrReportUtils.map(
+            getPatientsHavingUrinaryTractInfection(), "startDate=${startDate},endDate=${endDate}"));
+    cd.addSearch(
+        "17",
+        EhrReportUtils.map(
+            getPatientsHavingTyphoidFever(), "startDate=${startDate},endDate=${endDate}"));
+    cd.addSearch(
+        "18",
+        EhrReportUtils.map(
+            getPatientsHavingBilharzia(), "startDate=${startDate},endDate=${endDate}"));
+    cd.addSearch(
+        "19",
+        EhrReportUtils.map(
+            getPatientsHavingIntestinalWorms(), "startDate=${startDate},endDate=${endDate}"));
+    cd.addSearch(
+        "20",
+        EhrReportUtils.map(
+            getPatientsHavingMalnutrition(), "startDate=${startDate},endDate=${endDate}"));
+    cd.setCompositionString("11 OR 12 OR 13 OR 16 OR 17 OR 18 OR 19 OR 20");
     return cd;
   }
 
@@ -592,6 +703,30 @@ public class Moh705aCohortQueries {
     cd.setName("Get other adults diagnosis other than the ones classified third 10");
     cd.addParameter(new Parameter("startDate", "Start Date", Date.class));
     cd.addParameter(new Parameter("endDate", "End Date", Date.class));
+    cd.addSearch(
+        "21",
+        EhrReportUtils.map(
+            getPatientsHavingAnaemia(), "startDate=${startDate},endDate=${endDate}"));
+    cd.addSearch(
+        "22",
+        EhrReportUtils.map(
+            getPatientsHavingEyeInfections(), "startDate=${startDate},endDate=${endDate}"));
+    cd.addSearch(
+        "23",
+        EhrReportUtils.map(
+            getPatientsHavingOtherEyeConditions(), "startDate=${startDate},endDate=${endDate}"));
+    cd.addSearch(
+        "24",
+        EhrReportUtils.map(
+            getPatientsHavingUpperRespiratoryTractInfections(),
+            "startDate=${startDate},endDate=${endDate}"));
+    cd.addSearch(
+        "25",
+        EhrReportUtils.map(
+            getPatientsHavingEarInfections(), "startDate=${startDate},endDate=${endDate}"));
+    cd.addSearch(
+        "26",
+        EhrReportUtils.map(getPatientsHavingAsthma(), "startDate=${startDate},endDate=${endDate}"));
     cd.addSearch(
         "27",
         EhrReportUtils.map(
@@ -609,7 +744,7 @@ public class Moh705aCohortQueries {
         "30",
         EhrReportUtils.map(
             getPatientsHavingMentalDisorders(), "startDate=${startDate},endDate=${endDate}"));
-    cd.setCompositionString("27 OR 28 OR 29 OR 30");
+    cd.setCompositionString("21 OR 22 OR 23 OR 24 OR 25 OR 26 OR 27 OR 28 OR 29 OR 30");
     return cd;
   }
 

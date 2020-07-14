@@ -131,6 +131,91 @@ public class DiagnosisMetadata extends Metadata {
         outpatientMetadata.getMalariaInPregnancyConcept().getConceptId());
   }
 
+  public List<Integer> getUrinaryTractInfectionConceptList() {
+    return Arrays.asList(
+        outpatientMetadata.getUrinaryTractInfecionConcept().getConceptId(),
+        outpatientMetadata.getUrinaryTractInfecionInPregnancyConcept().getConceptId(),
+        outpatientMetadata.getUrinaryTractInfecionInPregnancyNotSpecifiedConcept().getConceptId(),
+        outpatientMetadata
+            .getInfectionOfOtherPartsOfUrinayTractConceptInPregnancyConcept()
+            .getConceptId(),
+        outpatientMetadata.getInfectionOfOtherStomaOfUrinayTractConcept().getConceptId());
+  }
+
+  public List<Integer> getTyphoidFeverConceptList() {
+    return Arrays.asList(outpatientMetadata.getTyphoidFeverConcept().getConceptId());
+  }
+
+  public List<Integer> getBilharziaConceptList() {
+    return Arrays.asList(
+        outpatientMetadata.getBilhaziaConcept().getConceptId(),
+        outpatientMetadata.getOtherSchitosomiasisConcept().getConceptId());
+  }
+
+  public List<Integer> getIntestinalWormsConceptist() {
+    return Arrays.asList(outpatientMetadata.getIntestnalWormsConcept().getConceptId());
+  }
+
+  public List<Integer> getMalnutritionConceptist() {
+    return Arrays.asList(
+        outpatientMetadata.getMalnutritionConcept().getConceptId(),
+        outpatientMetadata.getProteinEnergyMalnutritionConcept().getConceptId());
+  }
+
+  public List<Integer> getAnaemiaConceptList() {
+    return Arrays.asList(
+        outpatientMetadata.getAnaemiaUnspecifiedConcept().getConceptId(),
+        outpatientMetadata.getHaemolyticAnaemiaConcept().getConceptId(),
+        outpatientMetadata.getBloodLossAnaemiaConcept().getConceptId(),
+        outpatientMetadata.getSickleCellAnaemiaConcept().getConceptId());
+  }
+
+  public List<Integer> getEyeInfectionsConceptList() {
+    return Arrays.asList(
+        outpatientMetadata.getAsthenopiaConcept().getConceptId(),
+        outpatientMetadata.getPinkEyeConcept().getConceptId(),
+        outpatientMetadata.getDryEyeSyndromeConcept().getConceptId(),
+        outpatientMetadata.getInjuryOfEyeConcept().getConceptId(),
+        outpatientMetadata.getLowVisionBothEyeConcept().getConceptId(),
+        outpatientMetadata.getOpenWoundEyelidAndPerocularAreaConcept().getConceptId(),
+        outpatientMetadata.getHydrocortisoneConcept().getConceptId(),
+        outpatientMetadata.getRetrobulbarNeuritisLeftEyeConcept().getConceptId(),
+        outpatientMetadata.getAcuteAtopicConjuctivitisRightEyeConcept().getConceptId());
+  }
+
+  // To do -> when does an eye indicator qualify to be  put under other eye conditions
+  public List<Integer> getOtherEyeConditionsConceptList() {
+    return Arrays.asList(
+        outpatientMetadata.getInjuryOfEyeConcept().getConceptId(),
+        outpatientMetadata.getOpenWoundEyelidAndPerocularAreaConcept().getConceptId());
+  }
+
+  public List<Integer> getEarInfectionsConceptList() {
+    return Arrays.asList(
+        outpatientMetadata.getEarInfectionsConcept().getConceptId(),
+        outpatientMetadata.getDischargeOfEarConcept().getConceptId());
+  }
+
+  public List<Integer> getUpperRespiratoryTractInfectionsConceptList() {
+    return Arrays.asList(
+        outpatientMetadata.getUpperRespiratoryTractInfectionConcept().getConceptId(),
+        outpatientMetadata
+            .getUpperRespiratoryTractInfectionHyperSensitivityReactionSiteUnspecifiedConcept()
+            .getConceptId(),
+        outpatientMetadata.getDiseasesOfUpperRespiratoryTractUnspecifiedConcept().getConceptId(),
+        outpatientMetadata.getOtherDiseasesOfUpperRespiratoryTractConcept().getConceptId(),
+        outpatientMetadata
+            .getOtherSpecifiedDiseasesOfUpperRespiratoryTractConcept()
+            .getConceptId());
+  }
+
+  public List<Integer> getAsthmaConceptList() {
+    return Arrays.asList(
+        outpatientMetadata.getAsthmaNosConcept().getConceptId(),
+        outpatientMetadata.getAstheNopiaConcept().getConceptId(),
+        outpatientMetadata.getAsthmaUnspecifiedConcept().getConceptId());
+  }
+
   public List<Integer> getCholeraList() {
     return Arrays.asList(outpatientMetadata.getCholeraConcept().getConceptId());
   }
