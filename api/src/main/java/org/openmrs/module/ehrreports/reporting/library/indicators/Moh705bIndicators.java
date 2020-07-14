@@ -60,4 +60,76 @@ public class Moh705bIndicators {
                 diagnosisMetadata.getTuberculosisConceptList()),
             "startDate=${startDate},endDate=${endDate}"));
   }
+  /** DY */
+  public CohortIndicator getAdultsWithDysentery() {
+    return ehrGeneralIndicator.getIndicator(
+        "Dysentery",
+        EhrReportUtils.map(
+            moh705bCohortQueries.getAdultsPatientsWhoHaveDiagnosis(
+                diagnosisMetadata.getDysenteryList()),
+            "startDate=${startDate},endDate=${endDate}"));
+  }
+  /** DY */
+  public CohortIndicator getAdultsWithCholera() {
+    return ehrGeneralIndicator.getIndicator(
+        "Dysentery",
+        EhrReportUtils.map(
+            moh705bCohortQueries.getAdultsPatientsWhoHaveDiagnosis(
+                diagnosisMetadata.getCholeraList()),
+            "startDate=${startDate},endDate=${endDate}"));
+  }
+  /** MenongococcalInfectionsList */
+  public CohortIndicator getAdultsWithMenongococcalInfectionsList() {
+    return ehrGeneralIndicator.getIndicator(
+        "MenongococcalInfectionsList",
+        EhrReportUtils.map(
+            moh705bCohortQueries.getAdultsPatientsWhoHaveDiagnosis(
+                diagnosisMetadata.getMenongococcalInfectionsList()),
+            "startDate=${startDate},endDate=${endDate}"));
+  }
+  /** OtherMeningitis */
+  public CohortIndicator getAdultsWithOtherMeningitis() {
+    return ehrGeneralIndicator.getIndicator(
+        "OtherMeningitis",
+        EhrReportUtils.map(
+            moh705bCohortQueries.getAdultsPatientsWhoHaveDiagnosis(
+                diagnosisMetadata.getOtherMeningitisConceptList()),
+            "startDate=${startDate},endDate=${endDate}"));
+  }
+  /** Tetanus */
+  public CohortIndicator getAdultsWithTetanus() {
+    return ehrGeneralIndicator.getIndicator(
+        "Tetanus",
+        EhrReportUtils.map(
+            moh705bCohortQueries.getAdultsPatientsWhoHaveDiagnosis(
+                diagnosisMetadata.getTetanusConceptList()),
+            "startDate=${startDate},endDate=${endDate}"));
+  }
+  /** Poliomyelitis */
+  public CohortIndicator getAdultsWithPoliomyelitis() {
+    return ehrGeneralIndicator.getIndicator(
+        "Poliomyelitis",
+        EhrReportUtils.map(
+            moh705bCohortQueries.getAdultsPatientsWhoHaveDiagnosis(
+                diagnosisMetadata.getAcutePoliomyelitisConceptList()), // TO DO REFACTOR TO POLIO
+            "startDate=${startDate},endDate=${endDate}"));
+  }
+  /** ChickenPox */
+  public CohortIndicator getAdultsWithChickenPox() {
+    return ehrGeneralIndicator.getIndicator(
+        "ChickenPox",
+        EhrReportUtils.map(
+            moh705bCohortQueries.getAdultsPatientsWhoHaveDiagnosis(
+                diagnosisMetadata.getChickenPoxConceptList()), // TO DO REFACTOR TO POLIO
+            "startDate=${startDate},endDate=${endDate}"));
+  }
+  /** Measles */
+  public CohortIndicator getAdultsWithMeasles() {
+    return ehrGeneralIndicator.getIndicator(
+        "Measles",
+        EhrReportUtils.map(
+            moh705bCohortQueries.getAdultsPatientsWhoHaveDiagnosis(
+                diagnosisMetadata.getMeaslesConceptList()), // TO DO REFACTOR TO POLIO
+            "startDate=${startDate},endDate=${endDate}"));
+  }
 }
