@@ -216,7 +216,7 @@ public class Moh705aIndicators {
             moh705aCohortQueries.getPatientsHavingFevers(),
             "startDate=${startDate},endDate=${endDate}"));
   }
- /**
+  /**
    * Get patients who have Urinary Tract Infection during the month
    *
    * @return @CohortIndicator
@@ -240,8 +240,8 @@ public class Moh705aIndicators {
             moh705aCohortQueries.getPatientsHavingTyphoidFever(),
             "startDate=${startDate},endDate=${endDate}"));
   }
-/**
-   * Get patients who have Bilharzia  during the month
+  /**
+   * Get patients who have Bilharzia during the month
    *
    * @return @CohortIndicator
    */
@@ -252,8 +252,8 @@ public class Moh705aIndicators {
             moh705aCohortQueries.getPatientsHavingBilharzia(),
             "startDate=${startDate},endDate=${endDate}"));
   }
-/**
-   * Get patients who have Intestinal worms  during the month
+  /**
+   * Get patients who have Intestinal worms during the month
    *
    * @return @CohortIndicator
    */
@@ -264,7 +264,7 @@ public class Moh705aIndicators {
             moh705aCohortQueries.getPatientsHavingIntestinalWorms(),
             "startDate=${startDate},endDate=${endDate}"));
   }
-/**
+  /**
    * Get patients who have malnutrition during the month
    *
    * @return @CohortIndicator
@@ -276,7 +276,7 @@ public class Moh705aIndicators {
             moh705aCohortQueries.getPatientsHavingMalnutrition(),
             "startDate=${startDate},endDate=${endDate}"));
   }
-/**
+  /**
    * Get patients who have Anaemia during the month
    *
    * @return @CohortIndicator
@@ -288,7 +288,7 @@ public class Moh705aIndicators {
             moh705aCohortQueries.getPatientsHavingAnaemia(),
             "startDate=${startDate},endDate=${endDate}"));
   }
-/**
+  /**
    * Get patients who have Eye Infections during the month
    *
    * @return @CohortIndicator
@@ -337,7 +337,7 @@ public class Moh705aIndicators {
             "startDate=${startDate},endDate=${endDate}"));
   }
   /**
-   * Get patients who have  ASTHMA during the month
+   * Get patients who have ASTHMA during the month
    *
    * @return @CohortIndicator
    */

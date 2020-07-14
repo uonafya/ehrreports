@@ -400,30 +400,36 @@ public class OutpatientMetadata extends ProgramsMetadata {
   public Concept getUnspecifiedMalariaConcept() {
     return getConcept(EhrReportConstants.UNSPECIFIED_MALARIA);
   }
- public Concept getUrinaryTractInfecionConcept() {
+
+  public Concept getUrinaryTractInfecionConcept() {
     return getConcept(EhrReportConstants.URINARY_TRACT_INFECTION);
   }
+
   public Concept getUrinaryTractInfecionInPregnancyConcept() {
     return getConcept(EhrReportConstants.URINARY_TRACT_INFECTION_IN_PREGNANCY);
   }
- public Concept getUrinaryTractInfecionInPregnancyNotSpecifiedConcept() {
+
+  public Concept getUrinaryTractInfecionInPregnancyNotSpecifiedConcept() {
     return getConcept(EhrReportConstants.URINARY_TRACT_INFECTION_IN_PREGNANCY_NOT_SPECIFIED);
   }
+
   public Concept getInfectionOfOtherStomaOfUrinayTractConcept() {
     return getConcept(EhrReportConstants.INFECTION_OF_OTHER_STOMA_OF_URINARY_TRACT);
   }
- public Concept getInfectionOfOtherPartsOfUrinayTractConceptInPregnancyConcept() {
+
+  public Concept getInfectionOfOtherPartsOfUrinayTractConceptInPregnancyConcept() {
     return getConcept(EhrReportConstants.INFECTIONS_OF_OTHER_PARTS_OF_URINARY_TRACT_IN_PREGNANCY);
   }
-public Concept getTyphoidFeverConcept() {
+
+  public Concept getTyphoidFeverConcept() {
     return getConcept(EhrReportConstants.TYPHOID_FEVER);
   }
 
-public Concept getBilhaziaConcept() {
+  public Concept getBilhaziaConcept() {
     return getConcept(EhrReportConstants.BILHARZIA);
   }
 
-public Concept getOtherSchitosomiasisConcept() {
+  public Concept getOtherSchitosomiasisConcept() {
     return getConcept(EhrReportConstants.OTHER_SCHISTOSOMIASIS);
   }
 
@@ -431,9 +437,10 @@ public Concept getOtherSchitosomiasisConcept() {
     return getConcept(EhrReportConstants.INTESTINAL_WORMS);
   }
 
-   public Concept getMalnutritionConcept() {
+  public Concept getMalnutritionConcept() {
     return getConcept(EhrReportConstants.MALNUTRITION);
   }
+
   public Concept getProteinEnergyMalnutritionConcept() {
     return getConcept(EhrReportConstants.PROTEIN_ENERGY_MALNUTRITION);
   }
@@ -441,77 +448,95 @@ public Concept getOtherSchitosomiasisConcept() {
   public Concept getAnaemiaUnspecifiedConcept() {
     return getConcept(EhrReportConstants.ANAEMIA_UNSPECIFIED);
   }
- public Concept getHaemolyticAnaemiaConcept() {
+
+  public Concept getHaemolyticAnaemiaConcept() {
     return getConcept(EhrReportConstants.HAEMOLYTIC_ANAEMIA);
   }
- public Concept getBloodLossAnaemiaConcept() {
+
+  public Concept getBloodLossAnaemiaConcept() {
     return getConcept(EhrReportConstants.BLOOD_LOSS_ANAEMIA);
   }
-public Concept getSickleCellAnaemiaConcept() {
+
+  public Concept getSickleCellAnaemiaConcept() {
     return getConcept(EhrReportConstants.SICKLE_CELL_ANAEMIA);
   }
 
-public Concept getAsthenopiaConcept() {
+  public Concept getAsthenopiaConcept() {
     return getConcept(EhrReportConstants.ASTHENOPIA);
   }
+
   public Concept getPinkEyeConcept() {
     return getConcept(EhrReportConstants.PINK_EYE);
   }
+
   public Concept getDryEyeSyndromeConcept() {
     return getConcept(EhrReportConstants.DRY_EYE_SYNDROME);
   }
-public Concept getInjuryOfEyeConcept() {
+
+  public Concept getInjuryOfEyeConcept() {
     return getConcept(EhrReportConstants.INJURY_OF_EYE);
   }
-public Concept getLowVisionBothEyeConcept() {
+
+  public Concept getLowVisionBothEyeConcept() {
     return getConcept(EhrReportConstants.LOW_VISION_BOTH_EYES);
   }
+
   public Concept getOpenWoundEyelidAndPerocularAreaConcept() {
     return getConcept(EhrReportConstants.OPEN_WOUND_OF_EYELID_AND_PERIOCULAR_AREA);
   }
+
   public Concept getHydrocortisoneConcept() {
     return getConcept(EhrReportConstants.HYDROCORTISONE);
   }
+
   public Concept getRetrobulbarNeuritisLeftEyeConcept() {
     return getConcept(EhrReportConstants.RETROBULBAR_NEURITIS_LEFT_EYE);
   }
+
   public Concept getAcuteAtopicConjuctivitisRightEyeConcept() {
     return getConcept(EhrReportConstants.ACUTE_ATOPIC_CONJUCTIVITIS_RIGHT_EYE);
   }
+
   public Concept getEarInfectionsConcept() {
     return getConcept(EhrReportConstants.EAR_INFECTIONS);
   }
+
   public Concept getDischargeOfEarConcept() {
     return getConcept(EhrReportConstants.DISCHARGE_OF_EAR);
   }
-  //TO Do pending more ear inections
- public Concept getUpperRespiratoryTractInfectionConcept() {
+  // TO Do pending more ear inections
+  public Concept getUpperRespiratoryTractInfectionConcept() {
     return getConcept(EhrReportConstants.UPPER_RESPIRATORY_TRACT_INFECTION);
   }
- public Concept getUpperRespiratoryTractInfectionHyperSensitivityReactionSiteUnspecifiedConcept() {
-    return getConcept(EhrReportConstants.UPPER_RESPIRATORY_TRACT_HYPERSENSITIVITY_REACTION_SITE_UNSPECIFIED);
+
+  public Concept getUpperRespiratoryTractInfectionHyperSensitivityReactionSiteUnspecifiedConcept() {
+    return getConcept(
+        EhrReportConstants.UPPER_RESPIRATORY_TRACT_HYPERSENSITIVITY_REACTION_SITE_UNSPECIFIED);
   }
- public Concept getDiseasesOfUpperRespiratoryTractUnspecifiedConcept() {
+
+  public Concept getDiseasesOfUpperRespiratoryTractUnspecifiedConcept() {
     return getConcept(EhrReportConstants.DISEASES_OF_UPPER_RESPIRATORY_TRACT_UNSPECIFIED);
   }
+
   public Concept getOtherDiseasesOfUpperRespiratoryTractConcept() {
     return getConcept(EhrReportConstants.OTHER_DISEASES_OF_UPPER_RESPIRATORY_TRACT);
   }
-public Concept getOtherSpecifiedDiseasesOfUpperRespiratoryTractConcept() {
+
+  public Concept getOtherSpecifiedDiseasesOfUpperRespiratoryTractConcept() {
     return getConcept(EhrReportConstants.OTHER_SPECIFIED_DISEASES_OF_UPPER_RESPIRATORY_TRACT);
   }
 
-public Concept getAsthmaNosConcept() {
+  public Concept getAsthmaNosConcept() {
     return getConcept(EhrReportConstants.ASTHMA_NOS);
   }
-public Concept getAstheNopiaConcept() {
+
+  public Concept getAstheNopiaConcept() {
     return getConcept(EhrReportConstants.ASTHENOPIA);
   }
-public Concept getAsthmaUnspecifiedConcept() {
+
+  public Concept getAsthmaUnspecifiedConcept() {
     return getConcept(EhrReportConstants.ASTHMA_UNSPECIFIED);
   }
-
-
 
   // 1712
   public Concept getObstericalTetanus() {

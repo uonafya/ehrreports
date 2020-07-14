@@ -177,7 +177,8 @@ public class Moh705aDataset extends BaseDataSet {
         dsd,
         "25",
         "Upper Respiratory Tract Infections",
-        EhrReportUtils.map(moh705aIndicators.getPatientsHavingUpperRespiratoryTractInfections(), mappings),
+        EhrReportUtils.map(
+            moh705aIndicators.getPatientsHavingUpperRespiratoryTractInfections(), mappings),
         getAdultChildrenColumns());
     addRow(
         dsd,
