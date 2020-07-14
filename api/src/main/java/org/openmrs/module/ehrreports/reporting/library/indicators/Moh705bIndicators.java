@@ -13,7 +13,10 @@
  */
 package org.openmrs.module.ehrreports.reporting.library.indicators;
 
+import org.openmrs.module.ehrreports.metadata.DiagnosisMetadata;
 import org.openmrs.module.ehrreports.reporting.library.cohorts.Moh705bCohortQueries;
+import org.openmrs.module.ehrreports.reporting.utils.EhrReportUtils;
+import org.openmrs.module.reporting.indicator.CohortIndicator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -23,9 +26,38 @@ public class Moh705bIndicators {
 
   @Autowired private EhrGeneralIndicator ehrGeneralIndicator;
 
+  @Autowired private DiagnosisMetadata diagnosisMetadata;
+
   /**
-   * Get patients who are children and have diagnosis based on the concepts supplied
+   * Get patients who are adults and have diagnosis other than the ones listed and classified
    *
    * @return CohortIndicator
    */
+  public CohortIndicator getAdultsOtherDiseasesThatAreNotClassified() {
+    return ehrGeneralIndicator.getIndicator(
+        "MOH705B - OTHER",
+        EhrReportUtils.map(
+            moh705bCohortQueries.getAdultsOtherIllinessThatAreNotClassified(),
+            "startDate=${startDate},endDate=${endDate}"));
+  }
+  /** Diah */
+  public CohortIndicator getAdultsWithDiarrhoea() {
+    return ehrGeneralIndicator.getIndicator(
+        "Diah",
+        EhrReportUtils.map(
+            moh705bCohortQueries.getAdultsPatientsWhoHaveDiagnosis(
+                diagnosisMetadata.getDiarrhoeaConceptList()),
+            "startDate=${startDate},endDate=${endDate}"));
+  }
+
+  /** */
+  /** TB */
+  public CohortIndicator getAdultsWithTuberclosis() {
+    return ehrGeneralIndicator.getIndicator(
+        "TB",
+        EhrReportUtils.map(
+            moh705bCohortQueries.getAdultsPatientsWhoHaveDiagnosis(
+                diagnosisMetadata.getTuberculosisConceptList()),
+            "startDate=${startDate},endDate=${endDate}"));
+  }
 }
