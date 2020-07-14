@@ -784,12 +784,30 @@ public class OutpatientMetadata extends ProgramsMetadata {
     return getConcept(EhrReportConstants.PLAGUE);
   }
 
-  public Concept getDeathtsDueToRoadTrafficInjuriesConcept() {
-    return getConcept(EhrReportConstants.DEATHS_DUE_TO_ROAD_TRAFFIC_INJURIES);
-  }
-  public Concept getSexuallyTransmittedInfectionsConcept() {
-      return getConcept(EhrReportConstants.SEXUALLY_TRANSMITTED_INFECTIONS);
-    }
+  public Concept getDeathtsDueToRoadTrafficInjuriesConcept() { return getConcept(EhrReportConstants.DEATHS_DUE_TO_ROAD_TRAFFIC_INJURIES);}
+
+  public Concept getSexuallyTransmittedInfectionsConcept() { return getConcept(EhrReportConstants.SEXUALLY_TRANSMITTED_INFECTIONS);}
+
+  public Concept getGonorrhoeaConcept() { return getConcept(EhrReportConstants.GONORROHEA);}
+
+  public Concept getHpvConcept() { return getConcept(EhrReportConstants.HPV);}
+
+  public Concept getGenitalHerpesConcept() {return getConcept(EhrReportConstants.GENITAL_HERPES);}
+
+  public Concept getChlamydiaConcept() {return getConcept(EhrReportConstants.CHLAMYDIA);}
+
+  public Concept getHivConcept() {return getConcept(EhrReportConstants.HIV);}
+
+  public Concept getTrichomoniasisInfectionConcept() {return getConcept(EhrReportConstants.TRICHOMONIASIS_INFECTION);}
+
+  public Concept getHerpesSimplexConcept() {return getConcept(EhrReportConstants.HERPES_SIMPLEX);}
+
+
+
+
+
+
+
 
   /**
    * Get patient referred from concept
