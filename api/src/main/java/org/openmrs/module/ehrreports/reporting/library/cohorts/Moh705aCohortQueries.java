@@ -13,6 +13,7 @@ package org.openmrs.module.ehrreports.reporting.library.cohorts;
 
 import java.util.Date;
 import java.util.List;
+import org.openmrs.Concept;
 import org.openmrs.module.ehrreports.metadata.DiagnosisMetadata;
 import org.openmrs.module.ehrreports.metadata.OutpatientMetadata;
 import org.openmrs.module.ehrreports.reporting.library.queries.moh705.Moh705Queries;
@@ -30,6 +31,7 @@ public class Moh705aCohortQueries {
   @Autowired private OutpatientMetadata outpatientMetadata;
   @Autowired private DiagnosisMetadata diagnosisMetadata;
   @Autowired private Moh717CohortQueries moh717CohortQueries;
+  @Autowired private CommonLibrary commonLibrary;
 
   /**
    * Get adult patients who have given diagnosis - MOH705A
@@ -972,5 +974,26 @@ public class Moh705aCohortQueries {
   public CohortDefinition getNewAndRevisitPatients(EhrReportConstants.OccurenceStates state) {
     return moh717CohortQueries.getPatientStates(state);
   }
-  /** Get */
+  /**
+   * Get patient shaving provisional malaria
+   *
+   * @return @CohortDefinition
+   */
+  public CohortDefinition getMalariaCases(Concept concept) {
+    CompositionCohortDefinition cd = new CompositionCohortDefinition();
+    cd.setName("Get patients with provisional malaria cases");
+    cd.addParameter(new Parameter("startDate", "Start Date", Date.class));
+    cd.addParameter(new Parameter("endDate", "End Date", Date.class));
+    cd.addSearch(
+        "malaria",
+        EhrReportUtils.map(
+            getAdultPatientsWhoHaveDiagnosis(diagnosisMetadata.getMalariaConceptList()),
+            "startDate=${startDate},endDate=${endDate}"));
+    cd.addSearch(
+        "status",
+        EhrReportUtils.map(
+            commonLibrary.hasObs(concept), "onOrAfter=${startDate},onOrBefore=${endDate}"));
+    cd.setCompositionString("malaria AND status");
+    return cd;
+  }
 }
