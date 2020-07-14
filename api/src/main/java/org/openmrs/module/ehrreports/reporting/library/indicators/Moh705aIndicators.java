@@ -34,7 +34,7 @@ public class Moh705aIndicators {
   @Autowired private OutpatientMetadata outpatientMetadata;
 
   /**
-   * Get patients who are adults and have diagnosis other than the ones listed and classified
+   * Get patients who are children and have diagnosis other than the ones listed and classified
    *
    * @return CohortIndicator
    */
@@ -47,7 +47,7 @@ public class Moh705aIndicators {
   }
 
   /**
-   * Get patients who are adults and have new/revisit
+   * Get patients who are children and have new/revisit
    *
    * @return CohortIndicator
    */
