@@ -13,13 +13,13 @@
  */
 package org.openmrs.module.ehrreports.reporting.library.indicators;
 
-import org.openmrs.module.ehrreports.reporting.library.cohorts.Moh705aCohortQueries;
+import org.openmrs.module.ehrreports.reporting.library.cohorts.Moh705bCohortQueries;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
 public class Moh705bIndicators {
-  @Autowired private Moh705aCohortQueries moh705aCohortQueries;
+  @Autowired private Moh705bCohortQueries moh705bCohortQueries;
 
   @Autowired private EhrGeneralIndicator ehrGeneralIndicator;
 

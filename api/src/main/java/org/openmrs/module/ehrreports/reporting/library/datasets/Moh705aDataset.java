@@ -13,6 +13,7 @@ package org.openmrs.module.ehrreports.reporting.library.datasets;
 
 import static org.openmrs.module.ehrreports.reporting.utils.EhrReportUtils.getAdultChildrenColumns;
 
+import org.openmrs.module.ehrreports.metadata.OutpatientMetadata;
 import org.openmrs.module.ehrreports.reporting.cohort.definition.CustomConfigurationsDataDefinition;
 import org.openmrs.module.ehrreports.reporting.library.dimensions.EhrCommonDimension;
 import org.openmrs.module.ehrreports.reporting.library.indicators.Moh705aIndicators;
@@ -29,6 +30,8 @@ public class Moh705aDataset extends BaseDataSet {
   @Autowired private Moh705aIndicators moh705aIndicators;
 
   @Autowired private EhrCommonDimension ehrCommonDimension;
+
+  @Autowired private OutpatientMetadata outpatientMetadata;
 
   public DataSetDefinition constructMoh705aDataset() {
 
@@ -118,6 +121,22 @@ public class Moh705aDataset extends BaseDataSet {
         "13",
         "Fevers",
         EhrReportUtils.map(moh705aIndicators.getPatientsHavingFevers(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "14",
+        "Malaria Provisional",
+        EhrReportUtils.map(
+            moh705aIndicators.getPatientsWithMalaria(outpatientMetadata.getProvisionalDiagnosis()),
+            mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "15",
+        "Malaria Confirmed",
+        EhrReportUtils.map(
+            moh705aIndicators.getPatientsWithMalaria(outpatientMetadata.getFinalDiagnosis()),
+            mappings),
         getAdultChildrenColumns());
     addRow(
         dsd,
