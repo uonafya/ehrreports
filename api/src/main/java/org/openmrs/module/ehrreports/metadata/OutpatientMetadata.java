@@ -787,6 +787,36 @@ public class OutpatientMetadata extends ProgramsMetadata {
   public Concept getDeathtsDueToRoadTrafficInjuriesConcept() {
     return getConcept(EhrReportConstants.DEATHS_DUE_TO_ROAD_TRAFFIC_INJURIES);
   }
+  public Concept getCompleteAbortionConcept () {
+    return getConcept(EhrReportConstants.COMPLETE_ABORTION);
+  }
+  public Concept getIncompleteAbortionConcept () {
+    return getConcept(EhrReportConstants.INCOMPLETE_ABORTION);
+  }
+  public Concept getIncompleteSpontaneousAbortionConcept () {
+    return getConcept(EhrReportConstants.INCOMPLETE_SPONTANEOUS_ABORTION_WITHOUT_COMPLICATION);
+  }
+ public Concept getInevitableAbortionConcept () {
+    return getConcept(EhrReportConstants.INEVITABLE_ABORTION);
+  }
+  public Concept getMedicalAbortionConcept () {
+    return getConcept(EhrReportConstants.MEDICAL_ABORTION);
+  }
+  public Concept getMissedAbortionConcept () {
+    return getConcept(EhrReportConstants.MISSED_ABORTION);
+  }
+  public Concept getRecurentAbortionConcept () {
+    return getConcept(EhrReportConstants.RECURRENT_ABORTION);
+  }
+  public Concept getSepticAbortionConcept () {
+    return getConcept(EhrReportConstants.SEPTIC_ABORTION);
+  }
+ public Concept getThreatenedAbortionConcept () {
+    return getConcept(EhrReportConstants.THREATENED_ABORTION);
+  }
+  public Concept getUnspecifiedSpontaneousAbortionWithOtherComplicationsConcept () {
+    return getConcept(EhrReportConstants.UNSPECIFIED_SPONTANEOUS_ABORTION_WITH_OTHER_COMPLICATIONS);
+  }
 
   /**
    * Get patient referred from concept
