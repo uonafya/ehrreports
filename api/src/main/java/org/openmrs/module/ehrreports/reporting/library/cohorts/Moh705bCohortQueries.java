@@ -5,6 +5,7 @@ import java.util.List;
 import org.openmrs.module.ehrreports.metadata.DiagnosisMetadata;
 import org.openmrs.module.ehrreports.metadata.OutpatientMetadata;
 import org.openmrs.module.ehrreports.reporting.library.queries.moh705.Moh705Queries;
+import org.openmrs.module.ehrreports.reporting.utils.EhrReportConstants;
 import org.openmrs.module.ehrreports.reporting.utils.EhrReportUtils;
 import org.openmrs.module.reporting.cohort.definition.CohortDefinition;
 import org.openmrs.module.reporting.cohort.definition.CompositionCohortDefinition;
@@ -19,6 +20,8 @@ public class Moh705bCohortQueries {
   @Autowired private OutpatientMetadata outpatientMetadata;
 
   @Autowired private DiagnosisMetadata diagnosisMetadata;
+
+  @Autowired private Moh705aCohortQueries moh705aCohortQueries;
 
   /**
    * Get children patients who have given diagnosis - MOH705B
@@ -139,5 +142,14 @@ public class Moh705bCohortQueries {
             "startDate=${startDate},endDate=${endDate}"));
     cd.setCompositionString("ALL AND NOT (first10)");
     return cd;
+  }
+
+  /**
+   * Get number of first/revisit attendancies column 66 and 67
+   *
+   * @return @CohortDefinition
+   */
+  public CohortDefinition getNewAndRevisitPatients(EhrReportConstants.OccurenceStates state) {
+    return moh705aCohortQueries.getNewAndRevisitPatients(state);
   }
 }
