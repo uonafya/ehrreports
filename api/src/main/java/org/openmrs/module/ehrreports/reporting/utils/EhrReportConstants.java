@@ -399,8 +399,29 @@ public final class EhrReportConstants {
   // DEATHS_DUE_TO_ROAD_TRAFFIC_INJURIES
   public static final String DEATHS_DUE_TO_ROAD_TRAFFIC_INJURIES =
       "72d91e67-0f6e-41dd-87ce-0c510c99aa2a"; // TO BE POPULATED
+
+  //STIs
+  public static final String SEXUALLY_TRANSMITTED_INFECTIONS = "4c9b4d7d-7cb0-4d49-a833-2a13490b4632"; // 1073
+  public static final String GONORROHEA = "6fc3a8fd-cdfb-4fcd-92a7-1103c25fc75a"; //1147
+  public static final String HPV  = "d9e59d57-149e-4401-9f4e-d46280c6b9a8"; // 1858
+  public static final String GENITAL_HERPES  = "88d7a443-6772-4739-b934-f9763a378cbf";//1355
+  public static final String CHLAMYDIA  = "6687720f-da9e-4273-8697-df01dde59dc0";//1297
+  public static final String HIV  = "272777e7-ee57-4230-b26b-cf7517375252";//1749
+  public static final String TRICHOMONIASIS_INFECTION = "91029b03-dc60-4b67-a91c-2482bf70daf8";//1001371
+  public static final String HERPES_SIMPLEX  = "3e2b12a0-a64a-4707-b02d-3b3e2fd80852";//1339
+  public static final String HERPES_ZOSTER = "4958d692-ee5d-4cf5-b73a-0f59ea9de211";//1130
+  public static final String HERPES_ZOSTER_OPHTHALMICUS = "113514a6-551d-4f07-881c-d28d4b12b4f6";//4459
+  public static final String HERPESVIRAL_INFECTION_UNSPECIFIED = "7bd37263-5f68-489b-a609-e1baff444f59";//4431
+  public static final String ANOGENITAL_HERPES_SIMPLEX_VIRUS_INFECTION = "3f4cbbf0-e055-40f0-8b5c-b28987f739e2";//11721
+  public static final String CHANCROID = "e3004799-63e5-448f-9e51-6ed2338610ab";//1295
+
+
+
+
   // PROVISIONAL DIAGNOSIS
   // public static final String PROVISIONAL_DIAGNOSIS = "b8bc4c9f-7ccb-4435-bc4e-646d4cf83f0a";
+
+
 
   // program
   public static final String ANC_Program = "d83b74b7-f5ea-46fc-acc5-71e892ee1e68";

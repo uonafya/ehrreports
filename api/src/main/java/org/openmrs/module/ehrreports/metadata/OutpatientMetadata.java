@@ -787,6 +787,9 @@ public class OutpatientMetadata extends ProgramsMetadata {
   public Concept getDeathtsDueToRoadTrafficInjuriesConcept() {
     return getConcept(EhrReportConstants.DEATHS_DUE_TO_ROAD_TRAFFIC_INJURIES);
   }
+  public Concept getSexuallyTransmittedInfectionsConcept() {
+      return getConcept(EhrReportConstants.SEXUALLY_TRANSMITTED_INFECTIONS);
+    }
 
   /**
    * Get patient referred from concept

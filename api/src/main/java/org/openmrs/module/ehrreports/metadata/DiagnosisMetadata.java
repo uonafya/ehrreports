@@ -362,4 +362,8 @@ public class DiagnosisMetadata extends Metadata {
     return Arrays.asList(
         outpatientMetadata.getDeathtsDueToRoadTrafficInjuriesConcept().getConceptId());
   }
+  public List<Integer> getSexuallyTransmittedInfectionsConceptList() {
+    return Arrays.asList(
+        outpatientMetadata.getSexuallyTransmittedInfectionsConcept().getConceptId());
+  }
 }
