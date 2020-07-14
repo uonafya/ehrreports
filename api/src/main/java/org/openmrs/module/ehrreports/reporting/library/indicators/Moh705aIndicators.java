@@ -13,6 +13,7 @@
  */
 package org.openmrs.module.ehrreports.reporting.library.indicators;
 
+import org.openmrs.Concept;
 import org.openmrs.module.ehrreports.metadata.OutpatientMetadata;
 import org.openmrs.module.ehrreports.reporting.library.cohorts.CommonLibrary;
 import org.openmrs.module.ehrreports.reporting.library.cohorts.Moh705aCohortQueries;
@@ -643,5 +644,13 @@ public class Moh705aIndicators {
         EhrReportUtils.map(
             commonLibrary.hasObs(outpatientMetadata.getPatientReferredExternally()),
             "onOrAfter=${startDate},onOrBefore=${endDate}"));
+  }
+
+  public CohortIndicator getPatientsWithMalaria(Concept concept) {
+    return ehrGeneralIndicator.getIndicator(
+        "Patients who have malaria depending on status",
+        EhrReportUtils.map(
+            moh705aCohortQueries.getMalariaCases(concept),
+            "startDate=${startDate},endDate=${endDate}"));
   }
 }
