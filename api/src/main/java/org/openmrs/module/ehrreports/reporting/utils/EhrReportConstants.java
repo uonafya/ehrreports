@@ -256,7 +256,10 @@ public static final String		UPPER_RESPIRATORY_TRACT_HYPERSENSITIVITY_REACTION_SI
 public static final String		DISEASES_OF_UPPER_RESPIRATORY_TRACT_UNSPECIFIED= "07c92332-711f-46b2-bff4-860803b23d58";//4121
 public static final String		OTHER_DISEASES_OF_UPPER_RESPIRATORY_TRACT= "b8c82529-0a13-4b0e-93e3-25e1d15961e0";//4493
 public static final String			OTHER_SPECIFIED_DISEASES_OF_UPPER_RESPIRATORY_TRACT= "83f84998-30d8-4c06-8aab-b8e7b1aed342";//4509
-
+//ASTHMA
+public static final String ASTHMA_NOS = "9f8b972c-83aa-4a6f-9be8-7ce80800afce";//1000
+public static final String ASTHMA_UNSPECIFIED = "f915c44f-0026-4009-979f-d76c46c44e62";//4067
+public static final String STHMA_EXACERBATION = "43896f9f-0efa-4b8b-978d-7b2df81a6aaf";//999
   // Cholera
   public static final String CHOLERA = "f3c41b86-b280-41af-aeaf-80a0fd6033b3";
 

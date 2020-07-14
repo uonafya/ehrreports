@@ -501,6 +501,16 @@ public Concept getOtherSpecifiedDiseasesOfUpperRespiratoryTractConcept() {
     return getConcept(EhrReportConstants.OTHER_SPECIFIED_DISEASES_OF_UPPER_RESPIRATORY_TRACT);
   }
 
+public Concept getAsthmaNosConcept() {
+    return getConcept(EhrReportConstants.ASTHMA_NOS);
+  }
+public Concept getAstheNopiaConcept() {
+    return getConcept(EhrReportConstants.ASTHENOPIA);
+  }
+public Concept getAsthmaUnspecifiedConcept() {
+    return getConcept(EhrReportConstants.ASTHMA_UNSPECIFIED);
+  }
+
 
 
   // 1712
