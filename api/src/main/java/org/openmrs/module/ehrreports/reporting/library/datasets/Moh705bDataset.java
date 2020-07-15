@@ -36,6 +36,66 @@ public class Moh705bDataset extends BaseDataSet {
         EhrReportUtils.map(
             moh705bIndicators.getAdultsOtherDiseasesThatAreNotClassified(), mappings),
         getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "1",
+        "Diarrhoea",
+        EhrReportUtils.map(moh705bIndicators.getAdultsWithDiarrhoea(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "2",
+        "TB",
+        EhrReportUtils.map(moh705bIndicators.getAdultsWithTuberclosis(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "3",
+        "Dysentery",
+        EhrReportUtils.map(moh705bIndicators.getAdultsWithDysentery(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "4",
+        "Cholera",
+        EhrReportUtils.map(moh705bIndicators.getAdultsWithCholera(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "5",
+        "Menongococcal Infections",
+        EhrReportUtils.map(moh705bIndicators.getAdultsWithMenongococcalInfectionsList(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "6",
+        "Other Meningitis",
+        EhrReportUtils.map(moh705bIndicators.getAdultsWithOtherMeningitis(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "7",
+        "Tetanus",
+        EhrReportUtils.map(moh705bIndicators.getAdultsWithTetanus(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "8",
+        "Poliomyelitis(AFP)",
+        EhrReportUtils.map(moh705bIndicators.getAdultsWithPoliomyelitis(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "9",
+        "Chicken Pox)",
+        EhrReportUtils.map(moh705bIndicators.getAdultsWithChickenPox(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "10",
+        "Measles)",
+        EhrReportUtils.map(moh705bIndicators.getAdultsWithMeasles(), mappings),
+        getAdultChildrenColumns());
     return dsd;
   }
 
