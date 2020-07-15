@@ -386,5 +386,12 @@ public class DiagnosisMetadata extends Metadata {
     );
 
 
+  }public List<Integer> getHypertensionConceptList() {
+    return Arrays.asList(
+        outpatientMetadata.getHypertensionConcept().getConceptId(),
+        outpatientMetadata.getPrimaryHypertensionConcept().getConceptId()
+    );
+
+
   }
 }

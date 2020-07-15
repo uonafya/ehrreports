@@ -257,6 +257,24 @@ public class Moh705bIndicators {
                 diagnosisMetadata.getOtherEyeConditionsConceptList()),
             "startDate=${startDate},endDate=${endDate}"));
   }
+  /** STIs */
+  public CohortIndicator getAdultsWithSexuallyTransmittedInfections() {
+    return ehrGeneralIndicator.getIndicator(
+        "Sexually Transmitted Infections",
+        EhrReportUtils.map(
+            moh705bCohortQueries.getAdultsPatientsWhoHaveDiagnosis(
+                diagnosisMetadata.getSexuallyTransmittedInfectionsConceptList()),
+            "startDate=${startDate},endDate=${endDate}"));
+  }
+  /** Hypertension */
+  public CohortIndicator getAdultsWithHypertension() {
+    return ehrGeneralIndicator.getIndicator(
+        "Hypertension",
+        EhrReportUtils.map(
+            moh705bCohortQueries.getAdultsPatientsWhoHaveDiagnosis(
+                diagnosisMetadata.getHypertensionConceptList()),
+            "startDate=${startDate},endDate=${endDate}"));
+  }
 
   /**
    * Get patients who are adults and have new/revisit

@@ -812,15 +812,6 @@ public class OutpatientMetadata extends ProgramsMetadata {
 
   public Concept getChacroidConcept() {return getConcept(EhrReportConstants.CHANCROID);}
 
-
-
-
-
-
-
-
-
-
   public Concept getCompleteAbortionConcept() {
     return getConcept(EhrReportConstants.COMPLETE_ABORTION);
   }
@@ -859,6 +850,12 @@ public class OutpatientMetadata extends ProgramsMetadata {
 
   public Concept getUnspecifiedSpontaneousAbortionWithOtherComplicationsConcept() {
     return getConcept(EhrReportConstants.UNSPECIFIED_SPONTANEOUS_ABORTION_WITH_OTHER_COMPLICATIONS);
+  }
+  public Concept getHypertensionConcept() {
+    return getConcept(EhrReportConstants.HYPERTENSION);
+  }
+  public Concept getPrimaryHypertensionConcept() {
+    return getConcept(EhrReportConstants.PRIMARY_HYPERTENSION);
   }
 
   /**
