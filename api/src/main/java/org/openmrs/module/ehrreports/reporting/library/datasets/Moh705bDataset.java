@@ -157,8 +157,14 @@ public class Moh705bDataset extends BaseDataSet {
         "Typhoid Fever)",
         EhrReportUtils.map(moh705bIndicators.getAdultsWithTyphoidFever(), mappings),
         getAdultChildrenColumns());
-    // 18
 
+    // 18
+    addRow(
+            dsd,
+            "18",
+            "Sexually Transmitted Infections)",
+            EhrReportUtils.map(moh705bIndicators.getAdultsWithSexuallyTransmittedInfections(), mappings),
+            getAdultChildrenColumns());
     addRow(
         dsd,
         "19",
@@ -200,6 +206,48 @@ public class Moh705bDataset extends BaseDataSet {
         "25",
         "Other Eye Conditions)",
         EhrReportUtils.map(moh705bIndicators.getAdultsWithOtherEyeConditions(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "26",
+        "Ear Infections Conditions)",
+        EhrReportUtils.map(moh705bIndicators.getAdultsWithEarInfectionsConditions(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "27",
+        "Upper Respiratory Tract Infections)",
+        EhrReportUtils.map(moh705bIndicators.getAdultsWithUpperRespiratoryTractInfections(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "28",
+        "Asthma)",
+        EhrReportUtils.map(moh705bIndicators.getAdultsWithAsthma(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "29",
+        "Pneumonia)",
+        EhrReportUtils.map(moh705bIndicators.getAdultsWithPneumonia(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "30",
+        "Other Disease of Respiratory System)",
+        EhrReportUtils.map(moh705bIndicators.getAdultsWithOtherDiseaseOfRespiratorySystem(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "31",
+        "Abortion)",
+        EhrReportUtils.map(moh705bIndicators.getAdultsWithAbortion(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "32",
+        "Disease of Puerperium and Child Birth)",
+        EhrReportUtils.map(moh705bIndicators.getAdultsWithDiseaseOfPueperiumAndChildBirth(), mappings),
         getAdultChildrenColumns());
     // 33
     addRow(
