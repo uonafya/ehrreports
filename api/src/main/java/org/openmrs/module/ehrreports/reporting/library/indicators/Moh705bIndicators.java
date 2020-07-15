@@ -15,6 +15,7 @@ package org.openmrs.module.ehrreports.reporting.library.indicators;
 
 import org.openmrs.module.ehrreports.metadata.DiagnosisMetadata;
 import org.openmrs.module.ehrreports.reporting.library.cohorts.Moh705bCohortQueries;
+import org.openmrs.module.ehrreports.reporting.utils.EhrReportConstants;
 import org.openmrs.module.ehrreports.reporting.utils.EhrReportUtils;
 import org.openmrs.module.reporting.indicator.CohortIndicator;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -131,5 +132,17 @@ public class Moh705bIndicators {
             moh705bCohortQueries.getAdultsPatientsWhoHaveDiagnosis(
                 diagnosisMetadata.getMeaslesConceptList()), // TO DO REFACTOR TO POLIO
             "startDate=${startDate},endDate=${endDate}"));
+  }
+
+  /**
+   * Get patients who are adults and have new/revisit
+   *
+   * @return CohortIndicator
+   */
+  public CohortIndicator getNewAndRevisitPatients(EhrReportConstants.OccurenceStates state) {
+    return ehrGeneralIndicator.getIndicator(
+        "New or revisit patients adults",
+        EhrReportUtils.map(
+            moh705bCohortQueries.getNewAndRevisitPatients(state), "onOrBefore=${endDate}"));
   }
 }
