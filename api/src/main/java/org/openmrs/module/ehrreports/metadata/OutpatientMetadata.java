@@ -887,6 +887,7 @@ public class OutpatientMetadata extends ProgramsMetadata {
   public Concept getPrimaryHypertensionConcept() {
     return getConcept(EhrReportConstants.PRIMARY_HYPERTENSION);
   }
+
   public Concept getDiseaseOfPuerperiumAndChildBirthConcept() {
     return getConcept(EhrReportConstants.DISEASE_OF_PUERPERUM_AND_CHILD_BIRTH);
   }

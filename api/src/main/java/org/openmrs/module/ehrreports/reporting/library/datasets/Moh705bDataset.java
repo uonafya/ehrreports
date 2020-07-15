@@ -160,11 +160,12 @@ public class Moh705bDataset extends BaseDataSet {
 
     // 18
     addRow(
-            dsd,
-            "18",
-            "Sexually Transmitted Infections)",
-            EhrReportUtils.map(moh705bIndicators.getAdultsWithSexuallyTransmittedInfections(), mappings),
-            getAdultChildrenColumns());
+        dsd,
+        "18",
+        "Sexually Transmitted Infections)",
+        EhrReportUtils.map(
+            moh705bIndicators.getAdultsWithSexuallyTransmittedInfections(), mappings),
+        getAdultChildrenColumns());
     addRow(
         dsd,
         "19",
@@ -217,7 +218,8 @@ public class Moh705bDataset extends BaseDataSet {
         dsd,
         "27",
         "Upper Respiratory Tract Infections)",
-        EhrReportUtils.map(moh705bIndicators.getAdultsWithUpperRespiratoryTractInfections(), mappings),
+        EhrReportUtils.map(
+            moh705bIndicators.getAdultsWithUpperRespiratoryTractInfections(), mappings),
         getAdultChildrenColumns());
     addRow(
         dsd,
@@ -235,7 +237,8 @@ public class Moh705bDataset extends BaseDataSet {
         dsd,
         "30",
         "Other Disease of Respiratory System)",
-        EhrReportUtils.map(moh705bIndicators.getAdultsWithOtherDiseaseOfRespiratorySystem(), mappings),
+        EhrReportUtils.map(
+            moh705bIndicators.getAdultsWithOtherDiseaseOfRespiratorySystem(), mappings),
         getAdultChildrenColumns());
     addRow(
         dsd,
@@ -247,7 +250,8 @@ public class Moh705bDataset extends BaseDataSet {
         dsd,
         "32",
         "Disease of Puerperium and Child Birth)",
-        EhrReportUtils.map(moh705bIndicators.getAdultsWithDiseaseOfPueperiumAndChildBirth(), mappings),
+        EhrReportUtils.map(
+            moh705bIndicators.getAdultsWithDiseaseOfPueperiumAndChildBirth(), mappings),
         getAdultChildrenColumns());
     // 33
     addRow(

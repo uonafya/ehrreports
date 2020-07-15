@@ -468,7 +468,8 @@ public final class EhrReportConstants {
   public static final String PHYSICAL_DISABILITY =
       "72d91e67-0f6e-41dd-87ce-0c510c99aa2a"; // Input concept when added
   // PHYSICAL DISABILITY
-  public static final String DISEASE_OF_PUERPERUM_AND_CHILD_BIRTH = "72d91e67-0f6e-41dd-87ce-0c510c99aa2a"; // Input concept when added
+  public static final String DISEASE_OF_PUERPERUM_AND_CHILD_BIRTH =
+      "72d91e67-0f6e-41dd-87ce-0c510c99aa2a"; // Input concept when added
 
   // program
   public static final String ANC_Program = "d83b74b7-f5ea-46fc-acc5-71e892ee1e68";

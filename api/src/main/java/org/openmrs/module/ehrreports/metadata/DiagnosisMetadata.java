@@ -389,6 +389,7 @@ public class DiagnosisMetadata extends Metadata {
         outpatientMetadata.getHypertensionConcept().getConceptId(),
         outpatientMetadata.getPrimaryHypertensionConcept().getConceptId());
   }
+
   public List<Integer> getAbortionConceptList() {
     return Arrays.asList(
         outpatientMetadata.getCompleteAbortionConcept().getConceptId(),
@@ -399,12 +400,13 @@ public class DiagnosisMetadata extends Metadata {
         outpatientMetadata.getRecurentAbortionConcept().getConceptId(),
         outpatientMetadata.getThreatenedAbortionConcept().getConceptId(),
         outpatientMetadata.getSepticAbortionConcept().getConceptId(),
-        outpatientMetadata.getUnspecifiedSpontaneousAbortionWithOtherComplicationsConcept().getConceptId()
-    );
+        outpatientMetadata
+            .getUnspecifiedSpontaneousAbortionWithOtherComplicationsConcept()
+            .getConceptId());
   }
+
   public List<Integer> getDiseaseOfPuerperiumAndChildBirthConceptList() {
     return Arrays.asList(
-        outpatientMetadata.getDiseaseOfPuerperiumAndChildBirthConcept().getConceptId()
-    );
+        outpatientMetadata.getDiseaseOfPuerperiumAndChildBirthConcept().getConceptId());
   }
 }

@@ -466,7 +466,7 @@ public class Moh705bIndicators {
                 diagnosisMetadata.getAbortionConceptList()),
             "startDate=${startDate},endDate=${endDate}"));
   }
- /** Disease of Puerperium and Child Birth */
+  /** Disease of Puerperium and Child Birth */
   public CohortIndicator getAdultsWithDiseaseOfPueperiumAndChildBirth() {
     return ehrGeneralIndicator.getIndicator(
         "Disease of Puerperium and Child Birth",
