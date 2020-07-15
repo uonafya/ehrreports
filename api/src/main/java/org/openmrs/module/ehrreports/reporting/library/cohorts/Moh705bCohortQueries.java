@@ -25,6 +25,8 @@ public class Moh705bCohortQueries {
 
   @Autowired private AgeCohortQueries ageCohortQueries;
 
+  @Autowired private CommonLibrary commonLibrary;
+
   /**
    * Get children patients who have given diagnosis - MOH705B
    *
@@ -172,6 +174,52 @@ public class Moh705bCohortQueries {
     cd.addSearch(
         "state", EhrReportUtils.map(getNewAndRevisitPatients(state), "onOrBefore=${endDate}"));
     cd.setCompositionString("state AND age");
+    return cd;
+  }
+
+  /**
+   * Get patients with referals based on age
+   *
+   * @return @{@link CohortDefinition}
+   */
+  public CohortDefinition getAdultsPatientsReferredToFacility() {
+    CompositionCohortDefinition cd = new CompositionCohortDefinition();
+    cd.setName("Adult referred to other health facilities");
+    cd.addParameter(new Parameter("startDate", "Start Date", Date.class));
+    cd.addParameter(new Parameter("endDate", "End Date", Date.class));
+    cd.addSearch(
+        "age",
+        EhrReportUtils.map(
+            ageCohortQueries.createXtoYAgeCohort("age", 5, null), "effectiveDate=${endDate}"));
+    cd.addSearch(
+        "obs",
+        EhrReportUtils.map(
+            commonLibrary.hasObs(outpatientMetadata.getPatientReferredFrom()),
+            "onOrAfter=${startDate},onOrBefore=${endDate}"));
+    cd.setCompositionString("obs AND age");
+    return cd;
+  }
+
+  /**
+   * Get patients with referals based on age adults
+   *
+   * @return @{@link CohortDefinition}
+   */
+  public CohortDefinition getAdultsPatientsReferredFromFacility() {
+    CompositionCohortDefinition cd = new CompositionCohortDefinition();
+    cd.setName("Adult referred to other health facilities");
+    cd.addParameter(new Parameter("startDate", "Start Date", Date.class));
+    cd.addParameter(new Parameter("endDate", "End Date", Date.class));
+    cd.addSearch(
+        "age",
+        EhrReportUtils.map(
+            ageCohortQueries.createXtoYAgeCohort("age", 5, null), "effectiveDate=${endDate}"));
+    cd.addSearch(
+        "obs",
+        EhrReportUtils.map(
+            commonLibrary.hasObs(outpatientMetadata.getPatientReferredExternally()),
+            "onOrAfter=${startDate},onOrBefore=${endDate}"));
+    cd.setCompositionString("obs AND age");
     return cd;
   }
 }

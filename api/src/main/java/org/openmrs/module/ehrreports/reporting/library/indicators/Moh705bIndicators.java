@@ -145,4 +145,20 @@ public class Moh705bIndicators {
         EhrReportUtils.map(
             moh705bCohortQueries.getNewAndRevisitsOfAdults(state), "endDate=${endDate}"));
   }
+
+  public CohortIndicator getPatientsReferredToFacility() {
+    return ehrGeneralIndicator.getIndicator(
+        "Patients who are referred to this facility adults",
+        EhrReportUtils.map(
+            moh705bCohortQueries.getAdultsPatientsReferredToFacility(),
+            "startDate=${startDate},endDate=${endDate}"));
+  }
+
+  public CohortIndicator getPatientsReferredToExternalFacilities() {
+    return ehrGeneralIndicator.getIndicator(
+        "Children patients who are referred to external facility adults",
+        EhrReportUtils.map(
+            moh705bCohortQueries.getAdultsPatientsReferredFromFacility(),
+            "startDate=${startDate},endDate=${endDate}"));
+  }
 }

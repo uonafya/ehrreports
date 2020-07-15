@@ -55,6 +55,18 @@ public class Moh705bDataset extends BaseDataSet {
         getAdultChildrenColumns());
     addRow(
         dsd,
+        "68",
+        "Referrals from other health facility adults",
+        EhrReportUtils.map(moh705bIndicators.getPatientsReferredToFacility(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "69",
+        "Referrals to other health facility adults",
+        EhrReportUtils.map(moh705bIndicators.getPatientsReferredToExternalFacilities(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
         "1",
         "Diarrhoea",
         EhrReportUtils.map(moh705bIndicators.getAdultsWithDiarrhoea(), mappings),

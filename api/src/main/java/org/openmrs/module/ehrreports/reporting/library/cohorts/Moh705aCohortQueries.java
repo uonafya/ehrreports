@@ -1023,4 +1023,50 @@ public class Moh705aCohortQueries {
     cd.setCompositionString("state AND age");
     return cd;
   }
+
+  /**
+   * Get patients with referals based on age
+   *
+   * @return @{@link CohortDefinition}
+   */
+  public CohortDefinition getChildrenPatientsReferredToFacility() {
+    CompositionCohortDefinition cd = new CompositionCohortDefinition();
+    cd.setName("Children referred to other health facilities");
+    cd.addParameter(new Parameter("startDate", "Start Date", Date.class));
+    cd.addParameter(new Parameter("endDate", "End Date", Date.class));
+    cd.addSearch(
+        "age",
+        EhrReportUtils.map(
+            ageCohortQueries.createXtoYAgeCohort("age", null, 4), "effectiveDate=${endDate}"));
+    cd.addSearch(
+        "obs",
+        EhrReportUtils.map(
+            commonLibrary.hasObs(outpatientMetadata.getPatientReferredFrom()),
+            "onOrAfter=${startDate},onOrBefore=${endDate}"));
+    cd.setCompositionString("obs AND age");
+    return cd;
+  }
+
+  /**
+   * Get patients with referals to other health facilities based on age
+   *
+   * @return @{@link CohortDefinition}
+   */
+  public CohortDefinition getChildrenPatientsReferredFromFacility() {
+    CompositionCohortDefinition cd = new CompositionCohortDefinition();
+    cd.setName("Children referred from other health facilities");
+    cd.addParameter(new Parameter("startDate", "Start Date", Date.class));
+    cd.addParameter(new Parameter("endDate", "End Date", Date.class));
+    cd.addSearch(
+        "age",
+        EhrReportUtils.map(
+            ageCohortQueries.createXtoYAgeCohort("age", null, 4), "effectiveDate=${endDate}"));
+    cd.addSearch(
+        "obs",
+        EhrReportUtils.map(
+            commonLibrary.hasObs(outpatientMetadata.getPatientReferredExternally()),
+            "onOrAfter=${startDate},onOrBefore=${endDate}"));
+    cd.setCompositionString("obs AND age");
+    return cd;
+  }
 }
