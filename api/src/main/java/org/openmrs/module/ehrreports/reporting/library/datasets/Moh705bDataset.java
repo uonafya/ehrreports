@@ -6,6 +6,7 @@ import org.openmrs.module.ehrreports.metadata.OutpatientMetadata;
 import org.openmrs.module.ehrreports.reporting.cohort.definition.CustomConfigurationsDataDefinition;
 import org.openmrs.module.ehrreports.reporting.library.dimensions.EhrCommonDimension;
 import org.openmrs.module.ehrreports.reporting.library.indicators.Moh705bIndicators;
+import org.openmrs.module.ehrreports.reporting.utils.EhrReportConstants;
 import org.openmrs.module.ehrreports.reporting.utils.EhrReportUtils;
 import org.openmrs.module.reporting.dataset.definition.CohortIndicatorDataSetDefinition;
 import org.openmrs.module.reporting.dataset.definition.DataSetDefinition;
@@ -35,6 +36,22 @@ public class Moh705bDataset extends BaseDataSet {
         "All other diseases",
         EhrReportUtils.map(
             moh705bIndicators.getAdultsOtherDiseasesThatAreNotClassified(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "66",
+        "Number of first attendances adults",
+        EhrReportUtils.map(
+            moh705bIndicators.getNewAndRevisitPatients(EhrReportConstants.OccurenceStates.NEW),
+            "endDate=${endDate}"),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "67",
+        "Number of re attendances adults",
+        EhrReportUtils.map(
+            moh705bIndicators.getNewAndRevisitPatients(EhrReportConstants.OccurenceStates.REVISIT),
+            "endDate=${endDate}"),
         getAdultChildrenColumns());
     addRow(
         dsd,
@@ -172,6 +189,7 @@ public class Moh705bDataset extends BaseDataSet {
         "Other Eye Conditions)",
         EhrReportUtils.map(moh705bIndicators.getAdultsWithOtherEyeConditions(), mappings),
         getAdultChildrenColumns());
+
     return dsd;
   }
 

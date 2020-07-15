@@ -15,6 +15,7 @@ package org.openmrs.module.ehrreports.reporting.library.indicators;
 
 import org.openmrs.module.ehrreports.metadata.DiagnosisMetadata;
 import org.openmrs.module.ehrreports.reporting.library.cohorts.Moh705bCohortQueries;
+import org.openmrs.module.ehrreports.reporting.utils.EhrReportConstants;
 import org.openmrs.module.ehrreports.reporting.utils.EhrReportUtils;
 import org.openmrs.module.reporting.indicator.CohortIndicator;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -61,7 +62,6 @@ public class Moh705bIndicators {
                 diagnosisMetadata.getTuberculosisConceptList()),
             "startDate=${startDate},endDate=${endDate}"));
   }
-
   /** DY */
   public CohortIndicator getAdultsWithDysentery() {
     return ehrGeneralIndicator.getIndicator(
@@ -72,7 +72,7 @@ public class Moh705bIndicators {
             "startDate=${startDate},endDate=${endDate}"));
   }
 
-  /** DY */
+  /** cholera */
   public CohortIndicator getAdultsWithCholera() {
     return ehrGeneralIndicator.getIndicator(
         "Dysentery",
@@ -91,7 +91,6 @@ public class Moh705bIndicators {
                 diagnosisMetadata.getMenongococcalInfectionsList()),
             "startDate=${startDate},endDate=${endDate}"));
   }
-
   /** OtherMeningitis */
   public CohortIndicator getAdultsWithOtherMeningitis() {
     return ehrGeneralIndicator.getIndicator(
@@ -101,7 +100,6 @@ public class Moh705bIndicators {
                 diagnosisMetadata.getOtherMeningitisConceptList()),
             "startDate=${startDate},endDate=${endDate}"));
   }
-
   /** Tetanus */
   public CohortIndicator getAdultsWithTetanus() {
     return ehrGeneralIndicator.getIndicator(
@@ -127,8 +125,7 @@ public class Moh705bIndicators {
     return ehrGeneralIndicator.getIndicator(
         "ChickenPox",
         EhrReportUtils.map(
-            moh705bCohortQueries.getAdultsPatientsWhoHaveDiagnosis(
-                diagnosisMetadata.getChickenPoxConceptList()),
+            moh705bCohortQueries.getAdultsPatientsWhoHaveDiagnosis(diagnosisMetadata.getChickenPoxConceptList()),
             "startDate=${startDate},endDate=${endDate}"));
   }
 
@@ -259,5 +256,17 @@ public class Moh705bIndicators {
             moh705bCohortQueries.getAdultsPatientsWhoHaveDiagnosis(
                 diagnosisMetadata.getOtherEyeConditionsConceptList()),
             "startDate=${startDate},endDate=${endDate}"));
+  }
+
+  /**
+   * Get patients who are adults and have new/revisit
+   *
+   * @return CohortIndicator
+   */
+  public CohortIndicator getNewAndRevisitPatients(EhrReportConstants.OccurenceStates state) {
+    return ehrGeneralIndicator.getIndicator(
+        "New or revisit patients adults",
+        EhrReportUtils.map(
+            moh705bCohortQueries.getNewAndRevisitPatients(state), "onOrBefore=${endDate}"));
   }
 }
