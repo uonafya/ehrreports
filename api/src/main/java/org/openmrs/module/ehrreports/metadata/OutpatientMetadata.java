@@ -880,6 +880,14 @@ public class OutpatientMetadata extends ProgramsMetadata {
     return getConcept(EhrReportConstants.UNSPECIFIED_SPONTANEOUS_ABORTION_WITH_OTHER_COMPLICATIONS);
   }
 
+  public Concept getHypertensionConcept() {
+    return getConcept(EhrReportConstants.HYPERTENSION);
+  }
+
+  public Concept getPrimaryHypertensionConcept() {
+    return getConcept(EhrReportConstants.PRIMARY_HYPERTENSION);
+  }
+
   /**
    * Get patient referred from concept
    *

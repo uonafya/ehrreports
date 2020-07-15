@@ -383,4 +383,10 @@ public class DiagnosisMetadata extends Metadata {
         outpatientMetadata.getHerpesviralInfectionUnspecifiedConcept().getConceptId(),
         outpatientMetadata.getChacroidConcept().getConceptId());
   }
+
+  public List<Integer> getHypertensionConceptList() {
+    return Arrays.asList(
+        outpatientMetadata.getHypertensionConcept().getConceptId(),
+        outpatientMetadata.getPrimaryHypertensionConcept().getConceptId());
+  }
 }

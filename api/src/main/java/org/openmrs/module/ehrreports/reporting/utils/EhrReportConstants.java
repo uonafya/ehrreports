@@ -454,6 +454,20 @@ public final class EhrReportConstants {
   public static final String ELEVATED_BLOOD_PRESSURE_READING_WITHOUT_DIAGNOSIS_OF_HYPERTENSION =
       "5cd9b4ee-2d3d-4dc7-8393-e4b562752b9f"; // 4309
 
+  // OVERWEIGHT (BMI > 25)
+  public static final String OVERWEIGHT_BMI_125 =
+      "72d91e67-0f6e-41dd-87ce-0c510c99aa2a"; // Input concept when added
+  // OVERWEIGHT (BMI > 25)
+  public static final String MUSCULAR_SKELETAL_CONDITIONS =
+      "72d91e67-0f6e-41dd-87ce-0c510c99aa2a"; // Input concept when added
+  // FISTULA_BIRTH_RELATED
+  public static final String FISTULA_BIRTH_RELATED = "7c435519-98ce-4470-a6af-b449ffbf8800"; // 1388
+  // NEOPLAMS
+  public static final String NEOPLAMS = "ef07b580-203e-409b-bd21-38ff4cc0b8a5"; // 1024
+  // PHYSICAL DISABILITY
+  public static final String PHYSICAL_DISABILITY =
+      "72d91e67-0f6e-41dd-87ce-0c510c99aa2a"; // Input concept when added
+
   // program
   public static final String ANC_Program = "d83b74b7-f5ea-46fc-acc5-71e892ee1e68";
   public static final String PNC_Program = "a15f2617-9f5d-4022-8de3-181b2e286a28";
