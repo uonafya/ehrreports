@@ -377,8 +377,12 @@ public class DiagnosisMetadata extends Metadata {
         outpatientMetadata.getChlamydiaConcept().getConceptId(),
         outpatientMetadata.getTrichomoniasisInfectionConcept().getConceptId(),
         outpatientMetadata.getHivConcept().getConceptId(),
-        outpatientMetadata.getHerpesSimplexConcept().getConceptId()
-
+        outpatientMetadata.getHerpesSimplexConcept().getConceptId(),
+        outpatientMetadata.getHerpesZosterConcept().getConceptId(),
+        outpatientMetadata.getHerpesZosterOphthalmicusConcept().getConceptId(),
+        outpatientMetadata.getAnogenitalHerpesSimplexVirusInfectionConcept().getConceptId(),
+        outpatientMetadata.getHerpesviralInfectionUnspecifiedConcept().getConceptId(),
+        outpatientMetadata.getChacroidConcept().getConceptId()
     );
 
 

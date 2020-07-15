@@ -802,6 +802,18 @@ public class OutpatientMetadata extends ProgramsMetadata {
 
   public Concept getHerpesSimplexConcept() {return getConcept(EhrReportConstants.HERPES_SIMPLEX);}
 
+  public Concept getHerpesZosterConcept() {return getConcept(EhrReportConstants.HERPES_ZOSTER);}
+
+  public Concept getHerpesZosterOphthalmicusConcept() {return getConcept(EhrReportConstants.HERPES_ZOSTER_OPHTHALMICUS);}
+
+  public Concept getHerpesviralInfectionUnspecifiedConcept() {return getConcept(EhrReportConstants.HERPESVIRAL_INFECTION_UNSPECIFIED);}
+
+  public Concept getAnogenitalHerpesSimplexVirusInfectionConcept() {return getConcept(EhrReportConstants.ANOGENITAL_HERPES_SIMPLEX_VIRUS_INFECTION);}
+
+  public Concept getChacroidConcept() {return getConcept(EhrReportConstants.CHANCROID);}
+
+
+
 
 
 
