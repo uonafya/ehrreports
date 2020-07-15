@@ -784,42 +784,61 @@ public class OutpatientMetadata extends ProgramsMetadata {
     return getConcept(EhrReportConstants.PLAGUE);
   }
 
-  public Concept getDeathtsDueToRoadTrafficInjuriesConcept() { return getConcept(EhrReportConstants.DEATHS_DUE_TO_ROAD_TRAFFIC_INJURIES);}
+  public Concept getDeathtsDueToRoadTrafficInjuriesConcept() {
+    return getConcept(EhrReportConstants.DEATHS_DUE_TO_ROAD_TRAFFIC_INJURIES);
+  }
 
-  public Concept getSexuallyTransmittedInfectionsConcept() { return getConcept(EhrReportConstants.SEXUALLY_TRANSMITTED_INFECTIONS);}
+  public Concept getSexuallyTransmittedInfectionsConcept() {
+    return getConcept(EhrReportConstants.SEXUALLY_TRANSMITTED_INFECTIONS);
+  }
 
-  public Concept getGonorrhoeaConcept() { return getConcept(EhrReportConstants.GONORROHEA);}
+  public Concept getGonorrhoeaConcept() {
+    return getConcept(EhrReportConstants.GONORROHEA);
+  }
 
-  public Concept getHpvConcept() { return getConcept(EhrReportConstants.HPV);}
+  public Concept getHpvConcept() {
+    return getConcept(EhrReportConstants.HPV);
+  }
 
-  public Concept getGenitalHerpesConcept() {return getConcept(EhrReportConstants.GENITAL_HERPES);}
+  public Concept getGenitalHerpesConcept() {
+    return getConcept(EhrReportConstants.GENITAL_HERPES);
+  }
 
-  public Concept getChlamydiaConcept() {return getConcept(EhrReportConstants.CHLAMYDIA);}
+  public Concept getChlamydiaConcept() {
+    return getConcept(EhrReportConstants.CHLAMYDIA);
+  }
 
-  public Concept getHivConcept() {return getConcept(EhrReportConstants.HIV);}
+  public Concept getHivConcept() {
+    return getConcept(EhrReportConstants.HIV);
+  }
 
-  public Concept getTrichomoniasisInfectionConcept() {return getConcept(EhrReportConstants.TRICHOMONIASIS_INFECTION);}
+  public Concept getTrichomoniasisInfectionConcept() {
+    return getConcept(EhrReportConstants.TRICHOMONIASIS_INFECTION);
+  }
 
-  public Concept getHerpesSimplexConcept() {return getConcept(EhrReportConstants.HERPES_SIMPLEX);}
+  public Concept getHerpesSimplexConcept() {
+    return getConcept(EhrReportConstants.HERPES_SIMPLEX);
+  }
 
-  public Concept getHerpesZosterConcept() {return getConcept(EhrReportConstants.HERPES_ZOSTER);}
+  public Concept getHerpesZosterConcept() {
+    return getConcept(EhrReportConstants.HERPES_ZOSTER);
+  }
 
-  public Concept getHerpesZosterOphthalmicusConcept() {return getConcept(EhrReportConstants.HERPES_ZOSTER_OPHTHALMICUS);}
+  public Concept getHerpesZosterOphthalmicusConcept() {
+    return getConcept(EhrReportConstants.HERPES_ZOSTER_OPHTHALMICUS);
+  }
 
-  public Concept getHerpesviralInfectionUnspecifiedConcept() {return getConcept(EhrReportConstants.HERPESVIRAL_INFECTION_UNSPECIFIED);}
+  public Concept getHerpesviralInfectionUnspecifiedConcept() {
+    return getConcept(EhrReportConstants.HERPESVIRAL_INFECTION_UNSPECIFIED);
+  }
 
-  public Concept getAnogenitalHerpesSimplexVirusInfectionConcept() {return getConcept(EhrReportConstants.ANOGENITAL_HERPES_SIMPLEX_VIRUS_INFECTION);}
+  public Concept getAnogenitalHerpesSimplexVirusInfectionConcept() {
+    return getConcept(EhrReportConstants.ANOGENITAL_HERPES_SIMPLEX_VIRUS_INFECTION);
+  }
 
-  public Concept getChacroidConcept() {return getConcept(EhrReportConstants.CHANCROID);}
-
-
-
-
-
-
-
-
-
+  public Concept getChacroidConcept() {
+    return getConcept(EhrReportConstants.CHANCROID);
+  }
 
   public Concept getCompleteAbortionConcept() {
     return getConcept(EhrReportConstants.COMPLETE_ABORTION);

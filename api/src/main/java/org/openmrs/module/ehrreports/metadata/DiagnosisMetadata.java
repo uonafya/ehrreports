@@ -355,19 +355,18 @@ public class DiagnosisMetadata extends Metadata {
   }
 
   public List<Integer> getViralHaemorrhagicFeverConceptList() {
-    return Arrays.asList(outpatientMetadata.getViralHaemorrhagicFeverConcept().getConceptId()
-    );
+    return Arrays.asList(outpatientMetadata.getViralHaemorrhagicFeverConcept().getConceptId());
   }
 
   public List<Integer> getPlagueConceptList() {
-    return Arrays.asList(outpatientMetadata.getPlagueConcept().getConceptId()
-    );
+    return Arrays.asList(outpatientMetadata.getPlagueConcept().getConceptId());
   }
 
   public List<Integer> getDeathtsDueToRoadTrafficInjuriesConceptList() {
     return Arrays.asList(
         outpatientMetadata.getDeathtsDueToRoadTrafficInjuriesConcept().getConceptId());
   }
+
   public List<Integer> getSexuallyTransmittedInfectionsConceptList() {
     return Arrays.asList(
         outpatientMetadata.getSexuallyTransmittedInfectionsConcept().getConceptId(),
@@ -382,9 +381,6 @@ public class DiagnosisMetadata extends Metadata {
         outpatientMetadata.getHerpesZosterOphthalmicusConcept().getConceptId(),
         outpatientMetadata.getAnogenitalHerpesSimplexVirusInfectionConcept().getConceptId(),
         outpatientMetadata.getHerpesviralInfectionUnspecifiedConcept().getConceptId(),
-        outpatientMetadata.getChacroidConcept().getConceptId()
-    );
-
-
+        outpatientMetadata.getChacroidConcept().getConceptId());
   }
 }
