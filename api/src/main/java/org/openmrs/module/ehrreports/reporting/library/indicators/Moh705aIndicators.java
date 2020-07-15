@@ -53,9 +53,9 @@ public class Moh705aIndicators {
    */
   public CohortIndicator getNewAndRevisitPatients(EhrReportConstants.OccurenceStates state) {
     return ehrGeneralIndicator.getIndicator(
-        "New or revisit patients",
+        "New or revisit patients for children",
         EhrReportUtils.map(
-            moh705aCohortQueries.getNewAndRevisitPatients(state), "onOrBefore=${endDate}"));
+            moh705aCohortQueries.getNewAndRevisitsOfChildren(state), "endDate=${endDate}"));
   }
 
   /**

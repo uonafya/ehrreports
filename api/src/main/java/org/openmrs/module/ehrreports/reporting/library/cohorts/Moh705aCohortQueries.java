@@ -32,6 +32,7 @@ public class Moh705aCohortQueries {
   @Autowired private DiagnosisMetadata diagnosisMetadata;
   @Autowired private Moh717CohortQueries moh717CohortQueries;
   @Autowired private CommonLibrary commonLibrary;
+  @Autowired private AgeCohortQueries ageCohortQueries;
 
   /**
    * Get adult patients who have given diagnosis - MOH705A
@@ -1000,6 +1001,26 @@ public class Moh705aCohortQueries {
         EhrReportUtils.map(
             commonLibrary.hasObs(concept), "onOrAfter=${startDate},onOrBefore=${endDate}"));
     cd.setCompositionString("malaria AND status");
+    return cd;
+  }
+
+  /**
+   * Get new and reattendancies of children
+   *
+   * @return @{@link CohortDefinition}
+   */
+  public CohortDefinition getNewAndRevisitsOfChildren(EhrReportConstants.OccurenceStates state) {
+    CompositionCohortDefinition cd = new CompositionCohortDefinition();
+    cd.setName("Get patients with new and reattendances for children");
+    cd.addParameter(new Parameter("startDate", "Start Date", Date.class));
+    cd.addParameter(new Parameter("endDate", "End Date", Date.class));
+    cd.addSearch(
+        "age",
+        EhrReportUtils.map(
+            ageCohortQueries.createXtoYAgeCohort("age", null, 4), "effectiveDate=${endDate}"));
+    cd.addSearch(
+        "state", EhrReportUtils.map(getNewAndRevisitPatients(state), "onOrBefore=${endDate}"));
+    cd.setCompositionString("state AND age");
     return cd;
   }
 }

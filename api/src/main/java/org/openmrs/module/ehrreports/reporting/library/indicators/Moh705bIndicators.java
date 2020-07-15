@@ -143,6 +143,6 @@ public class Moh705bIndicators {
     return ehrGeneralIndicator.getIndicator(
         "New or revisit patients adults",
         EhrReportUtils.map(
-            moh705bCohortQueries.getNewAndRevisitPatients(state), "onOrBefore=${endDate}"));
+            moh705bCohortQueries.getNewAndRevisitsOfAdults(state), "endDate=${endDate}"));
   }
 }

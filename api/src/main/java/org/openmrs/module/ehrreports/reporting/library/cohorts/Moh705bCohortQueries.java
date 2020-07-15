@@ -23,6 +23,8 @@ public class Moh705bCohortQueries {
 
   @Autowired private Moh705aCohortQueries moh705aCohortQueries;
 
+  @Autowired private AgeCohortQueries ageCohortQueries;
+
   /**
    * Get children patients who have given diagnosis - MOH705B
    *
@@ -151,5 +153,25 @@ public class Moh705bCohortQueries {
    */
   public CohortDefinition getNewAndRevisitPatients(EhrReportConstants.OccurenceStates state) {
     return moh705aCohortQueries.getNewAndRevisitPatients(state);
+  }
+
+  /**
+   * Get new and reattendancies of Adults
+   *
+   * @return @{@link CohortDefinition}
+   */
+  public CohortDefinition getNewAndRevisitsOfAdults(EhrReportConstants.OccurenceStates state) {
+    CompositionCohortDefinition cd = new CompositionCohortDefinition();
+    cd.setName("Get patients with new and reattendances for children");
+    cd.addParameter(new Parameter("startDate", "Start Date", Date.class));
+    cd.addParameter(new Parameter("endDate", "End Date", Date.class));
+    cd.addSearch(
+        "age",
+        EhrReportUtils.map(
+            ageCohortQueries.createXtoYAgeCohort("age", 5, null), "effectiveDate=${endDate}"));
+    cd.addSearch(
+        "state", EhrReportUtils.map(getNewAndRevisitPatients(state), "onOrBefore=${endDate}"));
+    cd.setCompositionString("state AND age");
+    return cd;
   }
 }
