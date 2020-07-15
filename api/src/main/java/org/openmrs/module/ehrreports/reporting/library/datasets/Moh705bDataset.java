@@ -145,7 +145,12 @@ public class Moh705bDataset extends BaseDataSet {
         "Typhoid Fever)",
         EhrReportUtils.map(moh705bIndicators.getAdultsWithTyphoidFever(), mappings),
         getAdultChildrenColumns());
-    // 18
+    addRow(
+        dsd,
+        "18",
+        "Sexually Transmitted Infections)",
+        EhrReportUtils.map(moh705bIndicators.getAdultsWithSexuallyTransmittedInfections(), mappings),
+        getAdultChildrenColumns());
 
     addRow(
         dsd,
@@ -188,6 +193,13 @@ public class Moh705bDataset extends BaseDataSet {
         "25",
         "Other Eye Conditions)",
         EhrReportUtils.map(moh705bIndicators.getAdultsWithOtherEyeConditions(), mappings),
+        getAdultChildrenColumns());
+    //33
+    addRow(
+        dsd,
+        "33",
+        "Hypertension)",
+        EhrReportUtils.map(moh705bIndicators.getAdultsWithHypertension(), mappings),
         getAdultChildrenColumns());
 
     return dsd;
