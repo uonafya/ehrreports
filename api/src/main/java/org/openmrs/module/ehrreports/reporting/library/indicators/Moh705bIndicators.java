@@ -198,8 +198,6 @@ public class Moh705bIndicators {
             "startDate=${startDate},endDate=${endDate}"));
   }
 
-  /** STIs */
-
   /** UrinaryTractInfection */
   public CohortIndicator getAdultsWithUrinaryTractInfection() {
     return ehrGeneralIndicator.getIndicator(
@@ -289,6 +287,24 @@ public class Moh705bIndicators {
                 diagnosisMetadata.getHypertensionConceptList()),
             "startDate=${startDate},endDate=${endDate}"));
   }
+  /** Other Injuries */
+  public CohortIndicator getAdultsWithOtherInjuries() {
+    return ehrGeneralIndicator.getIndicator(
+        "Hypertension",
+        EhrReportUtils.map(
+            moh705bCohortQueries.getAdultsPatientsWhoHaveDiagnosis(
+                diagnosisMetadata.getRoadOtherInjuriesConceptList()),
+            "startDate=${startDate},endDate=${endDate}"));
+  }
+  /** Road Traffic Injuries */
+  public CohortIndicator getAdultsWithRoadTrafficInjuries() {
+    return ehrGeneralIndicator.getIndicator(
+        "Road Traffic Injuries",
+        EhrReportUtils.map(
+            moh705bCohortQueries.getAdultsPatientsWhoHaveDiagnosis(
+                diagnosisMetadata.getRoadTrafficInjuriesConceptList()),
+            "startDate=${startDate},endDate=${endDate}"));
+  }
 
   /** Sexual Assault */
   public CohortIndicator getAdultsWithSexualAssault() {
@@ -303,7 +319,7 @@ public class Moh705bIndicators {
   /** Violence related injuries */
   public CohortIndicator getAdultsWithViolenceRelatedInjuries() {
     return ehrGeneralIndicator.getIndicator(
-        "Other Bites",
+        "Violence related injuries",
         EhrReportUtils.map(
             moh705bCohortQueries.getAdultsPatientsWhoHaveDiagnosis(
                 diagnosisMetadata.getViolenceRelatedInjuriesConceptList()),
@@ -313,7 +329,7 @@ public class Moh705bIndicators {
   /** Burns */
   public CohortIndicator getAdultsWithBurns() {
     return ehrGeneralIndicator.getIndicator(
-        "Other Bites",
+        "Burns",
         EhrReportUtils.map(
             moh705bCohortQueries.getAdultsPatientsWhoHaveDiagnosis(
                 diagnosisMetadata.getBurnsConceptList()),
@@ -323,7 +339,7 @@ public class Moh705bIndicators {
   /** Snake Bites */
   public CohortIndicator getAdultsWithSnakeBites() {
     return ehrGeneralIndicator.getIndicator(
-        "Other Bites",
+        "Snake Bites",
         EhrReportUtils.map(
             moh705bCohortQueries.getAdultsPatientsWhoHaveDiagnosis(
                 diagnosisMetadata.getSnakeBitesConceptList()),
@@ -333,7 +349,7 @@ public class Moh705bIndicators {
   /** Dog Bites */
   public CohortIndicator getAdultsWithDogBites() {
     return ehrGeneralIndicator.getIndicator(
-        "Other Bites",
+        "Dog Bites",
         EhrReportUtils.map(
             moh705bCohortQueries.getAdultsPatientsWhoHaveDiagnosis(
                 diagnosisMetadata.getDogBitesConceptList()),

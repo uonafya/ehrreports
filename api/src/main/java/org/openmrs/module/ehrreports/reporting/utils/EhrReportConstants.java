@@ -440,7 +440,7 @@ public final class EhrReportConstants {
 
   // HYPERTENTION
   public static final String HYPERTENSION = "a8390549-394c-44c7-a0c3-404c1799b1b9"; // 1078
-  public static final String PRIMARY_HYPERTENSION = "c3caada3-7d85-449d-82db-aca37c8dc6e"; // 1154
+  public static final String PRIMARY_HYPERTENSION = "c3caada3-7d85-449d-82db-aca37c8dc6e6"; // 1154
   public static final String RENOVASCULAR_HYPERTENSION =
       "c96756d4-3507-486d-8bbd-8b3219c5d070"; // 3761
   public static final String MALIGNANT_HYPERTENSION =
