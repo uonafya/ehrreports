@@ -23,6 +23,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Moh705bIndicators {
+
   @Autowired private Moh705bCohortQueries moh705bCohortQueries;
 
   @Autowired private EhrGeneralIndicator ehrGeneralIndicator;
@@ -62,6 +63,7 @@ public class Moh705bIndicators {
                 diagnosisMetadata.getTuberculosisConceptList()),
             "startDate=${startDate},endDate=${endDate}"));
   }
+
   /** DY */
   public CohortIndicator getAdultsWithDysentery() {
     return ehrGeneralIndicator.getIndicator(
@@ -91,6 +93,7 @@ public class Moh705bIndicators {
                 diagnosisMetadata.getMenongococcalInfectionsList()),
             "startDate=${startDate},endDate=${endDate}"));
   }
+
   /** OtherMeningitis */
   public CohortIndicator getAdultsWithOtherMeningitis() {
     return ehrGeneralIndicator.getIndicator(
@@ -100,6 +103,7 @@ public class Moh705bIndicators {
                 diagnosisMetadata.getOtherMeningitisConceptList()),
             "startDate=${startDate},endDate=${endDate}"));
   }
+
   /** Tetanus */
   public CohortIndicator getAdultsWithTetanus() {
     return ehrGeneralIndicator.getIndicator(
@@ -125,7 +129,8 @@ public class Moh705bIndicators {
     return ehrGeneralIndicator.getIndicator(
         "ChickenPox",
         EhrReportUtils.map(
-            moh705bCohortQueries.getAdultsPatientsWhoHaveDiagnosis(diagnosisMetadata.getChickenPoxConceptList()),
+            moh705bCohortQueries.getAdultsPatientsWhoHaveDiagnosis(
+                diagnosisMetadata.getChickenPoxConceptList()),
             "startDate=${startDate},endDate=${endDate}"));
   }
 
@@ -148,6 +153,7 @@ public class Moh705bIndicators {
                 diagnosisMetadata.getHepatitisConceptList()),
             "startDate=${startDate},endDate=${endDate}"));
   }
+
   /** Mumps */
   public CohortIndicator getAdultsWithMumps() {
     return ehrGeneralIndicator.getIndicator(
@@ -157,6 +163,7 @@ public class Moh705bIndicators {
                 diagnosisMetadata.getMumpsConceptList()),
             "startDate=${startDate},endDate=${endDate}"));
   }
+
   /** Fevers */
   public CohortIndicator getAdultsWithFevers() {
     return ehrGeneralIndicator.getIndicator(
@@ -180,6 +187,7 @@ public class Moh705bIndicators {
                 diagnosisMetadata.getMalariaInPregnancyList()),
             "startDate=${startDate},endDate=${endDate}"));
   }
+
   /** TyphoidFever */
   public CohortIndicator getAdultsWithTyphoidFever() {
     return ehrGeneralIndicator.getIndicator(
@@ -211,6 +219,7 @@ public class Moh705bIndicators {
                 diagnosisMetadata.getBilharziaConceptList()),
             "startDate=${startDate},endDate=${endDate}"));
   }
+
   /** IntestinalWorms */
   public CohortIndicator getAdultsWithIntestinalWorms() {
     return ehrGeneralIndicator.getIndicator(
@@ -220,6 +229,7 @@ public class Moh705bIndicators {
                 diagnosisMetadata.getIntestinalWormsConceptist()),
             "startDate=${startDate},endDate=${endDate}"));
   }
+
   /** Malnutrition */
   public CohortIndicator getAdultsWithMalnutrition() {
     return ehrGeneralIndicator.getIndicator(
@@ -229,6 +239,7 @@ public class Moh705bIndicators {
                 diagnosisMetadata.getMalnutritionConceptist()),
             "startDate=${startDate},endDate=${endDate}"));
   }
+
   /** Anaemia */
   public CohortIndicator getAdultsWithAnaemia() {
     return ehrGeneralIndicator.getIndicator(
@@ -238,6 +249,7 @@ public class Moh705bIndicators {
                 diagnosisMetadata.getAnaemiaConceptList()),
             "startDate=${startDate},endDate=${endDate}"));
   }
+
   /** EyeInfections */
   public CohortIndicator getAdultsWithEyeInfections() {
     return ehrGeneralIndicator.getIndicator(
@@ -251,12 +263,13 @@ public class Moh705bIndicators {
   /** OtherEyeConditions */
   public CohortIndicator getAdultsWithOtherEyeConditions() {
     return ehrGeneralIndicator.getIndicator(
-        "OtherEyeConditions",
+        "EyeInfections",
         EhrReportUtils.map(
             moh705bCohortQueries.getAdultsPatientsWhoHaveDiagnosis(
-                diagnosisMetadata.getOtherEyeConditionsConceptList()),
+                diagnosisMetadata.getEyeInfectionsConceptList()),
             "startDate=${startDate},endDate=${endDate}"));
   }
+
   /** STIs */
   public CohortIndicator getAdultsWithSexuallyTransmittedInfections() {
     return ehrGeneralIndicator.getIndicator(
@@ -266,6 +279,7 @@ public class Moh705bIndicators {
                 diagnosisMetadata.getSexuallyTransmittedInfectionsConceptList()),
             "startDate=${startDate},endDate=${endDate}"));
   }
+
   /** Hypertension */
   public CohortIndicator getAdultsWithHypertension() {
     return ehrGeneralIndicator.getIndicator(
@@ -273,6 +287,126 @@ public class Moh705bIndicators {
         EhrReportUtils.map(
             moh705bCohortQueries.getAdultsPatientsWhoHaveDiagnosis(
                 diagnosisMetadata.getHypertensionConceptList()),
+            "startDate=${startDate},endDate=${endDate}"));
+  }
+
+  /** Sexual Assault */
+  public CohortIndicator getAdultsWithSexualAssault() {
+    return ehrGeneralIndicator.getIndicator(
+        "Sexual assault",
+        EhrReportUtils.map(
+            moh705bCohortQueries.getAdultsPatientsWhoHaveDiagnosis(
+                diagnosisMetadata.getSexualAssaultConceptList()),
+            "startDate=${startDate},endDate=${endDate}"));
+  }
+
+  /** Violence related injuries */
+  public CohortIndicator getAdultsWithViolenceRelatedInjuries() {
+    return ehrGeneralIndicator.getIndicator(
+        "Other Bites",
+        EhrReportUtils.map(
+            moh705bCohortQueries.getAdultsPatientsWhoHaveDiagnosis(
+                diagnosisMetadata.getViolenceRelatedInjuriesConceptList()),
+            "startDate=${startDate},endDate=${endDate}"));
+  }
+
+  /** Burns */
+  public CohortIndicator getAdultsWithBurns() {
+    return ehrGeneralIndicator.getIndicator(
+        "Other Bites",
+        EhrReportUtils.map(
+            moh705bCohortQueries.getAdultsPatientsWhoHaveDiagnosis(
+                diagnosisMetadata.getBurnsConceptList()),
+            "startDate=${startDate},endDate=${endDate}"));
+  }
+
+  /** Snake Bites */
+  public CohortIndicator getAdultsWithSnakeBites() {
+    return ehrGeneralIndicator.getIndicator(
+        "Other Bites",
+        EhrReportUtils.map(
+            moh705bCohortQueries.getAdultsPatientsWhoHaveDiagnosis(
+                diagnosisMetadata.getSnakeBitesConceptList()),
+            "startDate=${startDate},endDate=${endDate}"));
+  }
+
+  /** Dog Bites */
+  public CohortIndicator getAdultsWithDogBites() {
+    return ehrGeneralIndicator.getIndicator(
+        "Other Bites",
+        EhrReportUtils.map(
+            moh705bCohortQueries.getAdultsPatientsWhoHaveDiagnosis(
+                diagnosisMetadata.getDogBitesConceptList()),
+            "startDate=${startDate},endDate=${endDate}"));
+  }
+
+  /** Other Bites */
+  public CohortIndicator getAdultsWithOtherBites() {
+    return ehrGeneralIndicator.getIndicator(
+        "Other Bites",
+        EhrReportUtils.map(
+            moh705bCohortQueries.getAdultsPatientsWhoHaveDiagnosis(
+                diagnosisMetadata.getOtherBitesConceptList()),
+            "startDate=${startDate},endDate=${endDate}"));
+  }
+
+  /** Diabetes */
+  public CohortIndicator getAdultsWithDiabetes() {
+    return ehrGeneralIndicator.getIndicator(
+        "Diabetes",
+        EhrReportUtils.map(
+            moh705bCohortQueries.getAdultsPatientsWhoHaveDiagnosis(
+                diagnosisMetadata.getDiabetesConceptList()),
+            "startDate=${startDate},endDate=${endDate}"));
+  }
+
+  /** Epilepsy */
+  public CohortIndicator getAdultsWithEpilepsy() {
+    return ehrGeneralIndicator.getIndicator(
+        "Epilepsy",
+        EhrReportUtils.map(
+            moh705bCohortQueries.getAdultsPatientsWhoHaveDiagnosis(
+                diagnosisMetadata.getEpilepsyConceptList()),
+            "startDate=${startDate},endDate=${endDate}"));
+  }
+
+  /** Newly Diagnosed HIV */
+  public CohortIndicator getAdultsWithNewlyDiagnosedHIV() {
+    return ehrGeneralIndicator.getIndicator(
+        "Newly Diagnosed HIV",
+        EhrReportUtils.map(
+            moh705bCohortQueries.getAdultsPatientsWhoHaveDiagnosis(
+                diagnosisMetadata.getNewlyDiagnoseHivConceptList()),
+            "startDate=${startDate},endDate=${endDate}"));
+  }
+
+  /** Brucellosis */
+  public CohortIndicator getAdultsWithBrucellosis() {
+    return ehrGeneralIndicator.getIndicator(
+        "Brucellosis",
+        EhrReportUtils.map(
+            moh705bCohortQueries.getAdultsPatientsWhoHaveDiagnosis(
+                diagnosisMetadata.getBrucellosisConceptList()),
+            "startDate=${startDate},endDate=${endDate}"));
+  }
+
+  /** Cardiovascular Condition */
+  public CohortIndicator getAdultsWithCardiovascularCondition() {
+    return ehrGeneralIndicator.getIndicator(
+        "CardiovascularCondition",
+        EhrReportUtils.map(
+            moh705bCohortQueries.getAdultsPatientsWhoHaveDiagnosis(
+                diagnosisMetadata.getCardiovascularConditionConceptList()),
+            "startDate=${startDate},endDate=${endDate}"));
+  }
+
+  /** Central Narvous System Condition */
+  public CohortIndicator getAdultsWithOtherCentralNarvousSystemCondition() {
+    return ehrGeneralIndicator.getIndicator(
+        "OtherCentral Narvous System Condition",
+        EhrReportUtils.map(
+            moh705bCohortQueries.getAdultsPatientsWhoHaveDiagnosis(
+                diagnosisMetadata.getOtherCentralNarvousSytemConditionConceptList()),
             "startDate=${startDate},endDate=${endDate}"));
   }
 

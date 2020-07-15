@@ -145,12 +145,7 @@ public class Moh705bDataset extends BaseDataSet {
         "Typhoid Fever)",
         EhrReportUtils.map(moh705bIndicators.getAdultsWithTyphoidFever(), mappings),
         getAdultChildrenColumns());
-    addRow(
-        dsd,
-        "18",
-        "Sexually Transmitted Infections)",
-        EhrReportUtils.map(moh705bIndicators.getAdultsWithSexuallyTransmittedInfections(), mappings),
-        getAdultChildrenColumns());
+    // 18
 
     addRow(
         dsd,
@@ -194,7 +189,7 @@ public class Moh705bDataset extends BaseDataSet {
         "Other Eye Conditions)",
         EhrReportUtils.map(moh705bIndicators.getAdultsWithOtherEyeConditions(), mappings),
         getAdultChildrenColumns());
-    //33
+    // 33
     addRow(
         dsd,
         "33",
@@ -202,6 +197,85 @@ public class Moh705bDataset extends BaseDataSet {
         EhrReportUtils.map(moh705bIndicators.getAdultsWithHypertension(), mappings),
         getAdultChildrenColumns());
 
+    addRow(
+        dsd,
+        "42",
+        "Sexual Assault",
+        EhrReportUtils.map(moh705bIndicators.getAdultsWithSexualAssault(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "43",
+        "Violence related injuries",
+        EhrReportUtils.map(moh705bIndicators.getAdultsWithViolenceRelatedInjuries(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "44",
+        "Burns",
+        EhrReportUtils.map(moh705bIndicators.getAdultsWithBurns(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "45",
+        "Snake Bites",
+        EhrReportUtils.map(moh705bIndicators.getAdultsWithSnakeBites(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "46",
+        "Dog Bites",
+        EhrReportUtils.map(moh705bIndicators.getAdultsWithDogBites(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "47",
+        "Other Bites",
+        EhrReportUtils.map(moh705bIndicators.getAdultsWithOtherBites(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "48",
+        "Diabetes",
+        EhrReportUtils.map(moh705bIndicators.getAdultsWithDiabetes(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "49",
+        "Epilepsy",
+        EhrReportUtils.map(moh705bIndicators.getAdultsWithEpilepsy(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "50",
+        "Newly Diagnosed HIV",
+        EhrReportUtils.map(moh705bIndicators.getAdultsWithNewlyDiagnosedHIV(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "51",
+        "Brucellosis",
+        EhrReportUtils.map(moh705bIndicators.getAdultsWithBrucellosis(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "52",
+        "Central Narvous System Condition",
+        EhrReportUtils.map(
+            moh705bIndicators.getAdultsWithOtherCentralNarvousSystemCondition(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "53",
+        "Cardiovascular Condition",
+        EhrReportUtils.map(moh705bIndicators.getAdultsWithCardiovascularCondition(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "54",
+        "Cardiovascular Condition",
+        EhrReportUtils.map(moh705bIndicators.getAdultsWithCardiovascularCondition(), mappings),
+        getAdultChildrenColumns());
     return dsd;
   }
 

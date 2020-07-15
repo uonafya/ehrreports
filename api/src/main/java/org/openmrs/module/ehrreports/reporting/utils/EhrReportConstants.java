@@ -400,23 +400,29 @@ public final class EhrReportConstants {
   public static final String DEATHS_DUE_TO_ROAD_TRAFFIC_INJURIES =
       "72d91e67-0f6e-41dd-87ce-0c510c99aa2a"; // TO BE POPULATED
 
-  //STIs
-  public static final String SEXUALLY_TRANSMITTED_INFECTIONS = "4c9b4d7d-7cb0-4d49-a833-2a13490b4632"; // 1073
-  public static final String GONORROHEA = "6fc3a8fd-cdfb-4fcd-92a7-1103c25fc75a"; //1147
-  public static final String HPV  = "d9e59d57-149e-4401-9f4e-d46280c6b9a8"; // 1858
-  public static final String GENITAL_HERPES  = "88d7a443-6772-4739-b934-f9763a378cbf";//1355
-  public static final String CHLAMYDIA  = "6687720f-da9e-4273-8697-df01dde59dc0";//1297
-  public static final String HIV  = "272777e7-ee57-4230-b26b-cf7517375252";//1749
-  public static final String TRICHOMONIASIS_INFECTION = "91029b03-dc60-4b67-a91c-2482bf70daf8";//1001371
-  public static final String HERPES_SIMPLEX  = "3e2b12a0-a64a-4707-b02d-3b3e2fd80852";//1339
-  public static final String HERPES_ZOSTER = "4958d692-ee5d-4cf5-b73a-0f59ea9de211";//1130
-  public static final String HERPES_ZOSTER_OPHTHALMICUS = "113514a6-551d-4f07-881c-d28d4b12b4f6";//4459
-  public static final String HERPESVIRAL_INFECTION_UNSPECIFIED = "7bd37263-5f68-489b-a609-e1baff444f59";//4431
-  public static final String ANOGENITAL_HERPES_SIMPLEX_VIRUS_INFECTION = "3f4cbbf0-e055-40f0-8b5c-b28987f739e2";//11721
-  public static final String CHANCROID = "e3004799-63e5-448f-9e51-6ed2338610ab";//1295
+  // STIs
+  public static final String SEXUALLY_TRANSMITTED_INFECTIONS =
+      "4c9b4d7d-7cb0-4d49-a833-2a13490b4632"; // 1073
+  public static final String GONORROHEA = "6fc3a8fd-cdfb-4fcd-92a7-1103c25fc75a"; // 1147
+  public static final String HPV = "d9e59d57-149e-4401-9f4e-d46280c6b9a8"; // 1858
+  public static final String GENITAL_HERPES = "88d7a443-6772-4739-b934-f9763a378cbf"; // 1355
+  public static final String CHLAMYDIA = "6687720f-da9e-4273-8697-df01dde59dc0"; // 1297
+  public static final String HIV = "272777e7-ee57-4230-b26b-cf7517375252"; // 1749
+  public static final String TRICHOMONIASIS_INFECTION =
+      "91029b03-dc60-4b67-a91c-2482bf70daf8"; // 1001371
+  public static final String HERPES_SIMPLEX = "3e2b12a0-a64a-4707-b02d-3b3e2fd80852"; // 1339
+  public static final String HERPES_ZOSTER = "4958d692-ee5d-4cf5-b73a-0f59ea9de211"; // 1130
+  public static final String HERPES_ZOSTER_OPHTHALMICUS =
+      "113514a6-551d-4f07-881c-d28d4b12b4f6"; // 4459
+  public static final String HERPESVIRAL_INFECTION_UNSPECIFIED =
+      "7bd37263-5f68-489b-a609-e1baff444f59"; // 4431
+  public static final String ANOGENITAL_HERPES_SIMPLEX_VIRUS_INFECTION =
+      "3f4cbbf0-e055-40f0-8b5c-b28987f739e2"; // 11721
+  public static final String CHANCROID = "e3004799-63e5-448f-9e51-6ed2338610ab"; // 1295
 
   // PROVISIONAL DIAGNOSIS
   // public static final String PROVISIONAL_DIAGNOSIS = "b8bc4c9f-7ccb-4435-bc4e-646d4cf83f0a";
+
   // MEDICAL ABORTION
   public static final String MEDICAL_ABORTION = "0a5c0c0f-4513-4932-bf83-7252a63f2e91"; // 2779
   public static final String MISSED_ABORTION = "e6e096a1-3026-48e7-849a-4fecb4888464"; // 1312
@@ -427,29 +433,40 @@ public final class EhrReportConstants {
   public static final String THREATENED_ABORTION = "02240bf2-fe38-4e8e-8a34-8596e8d6f565"; // 1214
   public static final String INEVITABLE_ABORTION = "b93f28b4-a897-4c5f-b1ca-795ba9c98052"; // 1398
   public static final String SPONTANEOUS_ABORTION = "de1aa7b8-5134-4cb0-877f-b93adb67273f"; // 1015
-  public static final String INCOMPLETE_SPONTANEOUS_ABORTION_WITHOUT_COMPLICATION = "0e18f899-b001-442f-b54d-55a42f5b4cd1"; // 4375
-  public static final String UNSPECIFIED_SPONTANEOUS_ABORTION_WITH_OTHER_COMPLICATIONS = "ad9a7945-ba29-42e4-b075-ed0aab5de57a"; // 4053
+  public static final String INCOMPLETE_SPONTANEOUS_ABORTION_WITHOUT_COMPLICATION =
+      "0e18f899-b001-442f-b54d-55a42f5b4cd1"; // 4375
+  public static final String UNSPECIFIED_SPONTANEOUS_ABORTION_WITH_OTHER_COMPLICATIONS =
+      "ad9a7945-ba29-42e4-b075-ed0aab5de57a"; // 4053
 
   // HYPERTENTION
   public static final String HYPERTENSION = "a8390549-394c-44c7-a0c3-404c1799b1b9"; // 1078
   public static final String PRIMARY_HYPERTENSION = "c3caada3-7d85-449d-82db-aca37c8dc6e"; // 1154
-  public static final String RENOVASCULAR_HYPERTENSION = "c96756d4-3507-486d-8bbd-8b3219c5d070"; // 3761
-  public static final String MALIGNANT_HYPERTENSION = "db33ce48-0f81-4f54-9845-047dc1be0c31"; // 3758
-  public static final String IDIOPATHIC_HYPERTENSION = "f0078c66-3c54-4e58-a2bc-76cb324a0fd0"; // 4253
-  public static final String PREGNANCY_INDUCED_HYPERTENSION = "53539560-84bb-4c52-9e91-4c9249122cca"; // 1014
-  public static final String BENIGN_INTRACRANIAL_HYPERTENSION =  "4ef81f2d-8b59-4b05-ba4e-a3eb41fb40fd"; // 4190
-  public static final String ELEVATED_BLOOD_PRESSURE_READING_WITHOUT_DIAGNOSIS_OF_HYPERTENSION = "5cd9b4ee-2d3d-4dc7-8393-e4b562752b9f"; // 4309
+  public static final String RENOVASCULAR_HYPERTENSION =
+      "c96756d4-3507-486d-8bbd-8b3219c5d070"; // 3761
+  public static final String MALIGNANT_HYPERTENSION =
+      "db33ce48-0f81-4f54-9845-047dc1be0c31"; // 3758
+  public static final String IDIOPATHIC_HYPERTENSION =
+      "f0078c66-3c54-4e58-a2bc-76cb324a0fd0"; // 4253
+  public static final String PREGNANCY_INDUCED_HYPERTENSION =
+      "53539560-84bb-4c52-9e91-4c9249122cca"; // 1014
+  public static final String BENIGN_INTRACRANIAL_HYPERTENSION =
+      "4ef81f2d-8b59-4b05-ba4e-a3eb41fb40fd"; // 4190
+  public static final String ELEVATED_BLOOD_PRESSURE_READING_WITHOUT_DIAGNOSIS_OF_HYPERTENSION =
+      "5cd9b4ee-2d3d-4dc7-8393-e4b562752b9f"; // 4309
 
-  //OVERWEIGHT (BMI > 25)
-  public static final String OVERWEIGHT_BMI_125 = "72d91e67-0f6e-41dd-87ce-0c510c99aa2a"; //Input concept when added
   // OVERWEIGHT (BMI > 25)
-  public static final String MUSCULAR_SKELETAL_CONDITIONS = "72d91e67-0f6e-41dd-87ce-0c510c99aa2a"; //Input concept when added
-  //FISTULA_BIRTH_RELATED
-  public static final String FISTULA_BIRTH_RELATED= "7c435519-98ce-4470-a6af-b449ffbf8800"; //1388
-  //NEOPLAMS
-  public static final String NEOPLAMS = "ef07b580-203e-409b-bd21-38ff4cc0b8a5"; //1024
-  //PHYSICAL DISABILITY
-  public static final String PHYSICAL_DISABILITY = "72d91e67-0f6e-41dd-87ce-0c510c99aa2a"; //Input concept when added
+  public static final String OVERWEIGHT_BMI_125 =
+      "72d91e67-0f6e-41dd-87ce-0c510c99aa2a"; // Input concept when added
+  // OVERWEIGHT (BMI > 25)
+  public static final String MUSCULAR_SKELETAL_CONDITIONS =
+      "72d91e67-0f6e-41dd-87ce-0c510c99aa2a"; // Input concept when added
+  // FISTULA_BIRTH_RELATED
+  public static final String FISTULA_BIRTH_RELATED = "7c435519-98ce-4470-a6af-b449ffbf8800"; // 1388
+  // NEOPLAMS
+  public static final String NEOPLAMS = "ef07b580-203e-409b-bd21-38ff4cc0b8a5"; // 1024
+  // PHYSICAL DISABILITY
+  public static final String PHYSICAL_DISABILITY =
+      "72d91e67-0f6e-41dd-87ce-0c510c99aa2a"; // Input concept when added
 
   // program
   public static final String ANC_Program = "d83b74b7-f5ea-46fc-acc5-71e892ee1e68";
