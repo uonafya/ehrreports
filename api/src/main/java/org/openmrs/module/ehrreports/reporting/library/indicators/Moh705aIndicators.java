@@ -53,9 +53,9 @@ public class Moh705aIndicators {
    */
   public CohortIndicator getNewAndRevisitPatients(EhrReportConstants.OccurenceStates state) {
     return ehrGeneralIndicator.getIndicator(
-        "New or revisit patients",
+        "New or revisit patients for children",
         EhrReportUtils.map(
-            moh705aCohortQueries.getNewAndRevisitPatients(state), "onOrBefore=${endDate}"));
+            moh705aCohortQueries.getNewAndRevisitsOfChildren(state), "endDate=${endDate}"));
   }
 
   /**
@@ -634,16 +634,16 @@ public class Moh705aIndicators {
     return ehrGeneralIndicator.getIndicator(
         "Patients who are referred to this facility",
         EhrReportUtils.map(
-            commonLibrary.hasObs(outpatientMetadata.getPatientReferredFrom()),
-            "onOrAfter=${startDate},onOrBefore=${endDate}"));
+            moh705aCohortQueries.getChildrenPatientsReferredToFacility(),
+            "startDate=${startDate},endDate=${endDate}"));
   }
 
   public CohortIndicator getPatientsReferredToExternalFacilities() {
     return ehrGeneralIndicator.getIndicator(
-        "Patients who are referred to external facility",
+        "Children patients who are referred to external facility",
         EhrReportUtils.map(
-            commonLibrary.hasObs(outpatientMetadata.getPatientReferredExternally()),
-            "onOrAfter=${startDate},onOrBefore=${endDate}"));
+            moh705aCohortQueries.getChildrenPatientsReferredFromFacility(),
+            "startDate=${startDate},endDate=${endDate}"));
   }
 
   public CohortIndicator getPatientsWithMalaria(Concept concept) {
