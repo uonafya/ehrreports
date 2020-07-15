@@ -113,6 +113,83 @@ public class Moh705bDataset extends BaseDataSet {
         "Measles)",
         EhrReportUtils.map(moh705bIndicators.getAdultsWithMeasles(), mappings),
         getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "11",
+        "Hepatitis)",
+        EhrReportUtils.map(moh705bIndicators.getAdultsWithHepatitis(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "12",
+        "Mumps)",
+        EhrReportUtils.map(moh705bIndicators.getAdultsWithMumps(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "13",
+        "Fevers)",
+        EhrReportUtils.map(moh705bIndicators.getAdultsWithFevers(), mappings),
+        getAdultChildrenColumns());
+    // 14
+    // 15
+    addRow(
+        dsd,
+        "16",
+        "Malaria In Pregnancy)",
+        EhrReportUtils.map(moh705bIndicators.getAdultsWithMalariaInPregnancy(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "17",
+        "Typhoid Fever)",
+        EhrReportUtils.map(moh705bIndicators.getAdultsWithTyphoidFever(), mappings),
+        getAdultChildrenColumns());
+    // 18
+
+    addRow(
+        dsd,
+        "19",
+        "Urinary Tract Infection)",
+        EhrReportUtils.map(moh705bIndicators.getAdultsWithUrinaryTractInfection(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "20",
+        "Bilharzia)",
+        EhrReportUtils.map(moh705bIndicators.getAdultsWithBilharzia(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "21",
+        "Intestinal Worms)",
+        EhrReportUtils.map(moh705bIndicators.getAdultsWithIntestinalWorms(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "22",
+        "Malnutrition)",
+        EhrReportUtils.map(moh705bIndicators.getAdultsWithMalnutrition(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "23",
+        "Anaemia)",
+        EhrReportUtils.map(moh705bIndicators.getAdultsWithAnaemia(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "24",
+        "Eye Infections)",
+        EhrReportUtils.map(moh705bIndicators.getAdultsWithEyeInfections(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "25",
+        "Other Eye Conditions)",
+        EhrReportUtils.map(moh705bIndicators.getAdultsWithOtherEyeConditions(), mappings),
+        getAdultChildrenColumns());
+
     return dsd;
   }
 
