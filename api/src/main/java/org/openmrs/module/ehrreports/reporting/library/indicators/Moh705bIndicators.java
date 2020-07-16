@@ -13,6 +13,7 @@
  */
 package org.openmrs.module.ehrreports.reporting.library.indicators;
 
+import org.openmrs.Concept;
 import org.openmrs.module.ehrreports.metadata.DiagnosisMetadata;
 import org.openmrs.module.ehrreports.reporting.library.cohorts.Moh705bCohortQueries;
 import org.openmrs.module.ehrreports.reporting.utils.EhrReportConstants;
@@ -626,9 +627,17 @@ public class Moh705bIndicators {
 
   public CohortIndicator getPatientsReferredToExternalFacilities() {
     return ehrGeneralIndicator.getIndicator(
-        "Children patients who are referred to external facility adults",
+        "Adults patients who are referred to external facility adults",
         EhrReportUtils.map(
             moh705bCohortQueries.getAdultsPatientsReferredFromFacility(),
+            "startDate=${startDate},endDate=${endDate}"));
+  }
+
+  public CohortIndicator getPatientsWithMalaria(Concept concept) {
+    return ehrGeneralIndicator.getIndicator(
+        "Adult patients who have malaria depending on status",
+        EhrReportUtils.map(
+            moh705bCohortQueries.getMalariaCases(concept),
             "startDate=${startDate},endDate=${endDate}"));
   }
 }
