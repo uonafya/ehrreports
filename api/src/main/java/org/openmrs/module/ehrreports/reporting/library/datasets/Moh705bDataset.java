@@ -143,8 +143,23 @@ public class Moh705bDataset extends BaseDataSet {
         "Fevers)",
         EhrReportUtils.map(moh705bIndicators.getAdultsWithFevers(), mappings),
         getAdultChildrenColumns());
-    // 14
-    // 15
+
+    addRow(
+        dsd,
+        "14",
+        "Malaria Provisional",
+        EhrReportUtils.map(
+            moh705bIndicators.getPatientsWithMalaria(outpatientMetadata.getProvisionalDiagnosis()),
+            mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "15",
+        "Malaria Confirmed",
+        EhrReportUtils.map(
+            moh705bIndicators.getPatientsWithMalaria(outpatientMetadata.getFinalDiagnosis()),
+            mappings),
+        getAdultChildrenColumns());
     addRow(
         dsd,
         "16",
