@@ -386,7 +386,7 @@ public class Moh705aCohortQueries {
    * @return @{@link CohortDefinition}
    */
   public CohortDefinition getPatientsHavingOtherInjuries() {
-    return getChildrenPatientsWhoHaveDiagnosis(diagnosisMetadata.getRoadOtherInjuriesConceptList());
+    return getChildrenPatientsWhoHaveDiagnosis(diagnosisMetadata.getOtherInjuriesConceptList());
   }
 
   /**
