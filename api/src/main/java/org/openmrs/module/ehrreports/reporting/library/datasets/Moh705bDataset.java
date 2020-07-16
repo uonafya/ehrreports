@@ -343,6 +343,18 @@ public class Moh705bDataset extends BaseDataSet {
         getAdultChildrenColumns());
     addRow(
         dsd,
+        "55",
+        "Muscular skeletal conditions)",
+        EhrReportUtils.map(moh705bIndicators.getAdultsWithMuscularSkeletalConditions(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "56",
+        "Fistula (Birth related))",
+        EhrReportUtils.map(moh705bIndicators.getAdultsWithFistulaConditions(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
         "60",
         "Kalazar)",
         EhrReportUtils.map(moh705bIndicators.getAdultsWithKalazar(), mappings),
@@ -373,7 +385,7 @@ public class Moh705bDataset extends BaseDataSet {
         getAdultChildrenColumns());
     addRow(
         dsd,
-        "64",
+        "65",
         "Deaths Due To Road Traffic Injuries)",
         EhrReportUtils.map(
             moh705bIndicators.getAdultsWithDeathtsDueToRoadTrafficInjuries(), mappings),

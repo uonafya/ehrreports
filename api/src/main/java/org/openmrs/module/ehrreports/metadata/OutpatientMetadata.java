@@ -892,6 +892,14 @@ public class OutpatientMetadata extends ProgramsMetadata {
     return getConcept(EhrReportConstants.DISEASE_OF_PUERPERUM_AND_CHILD_BIRTH);
   }
 
+  public Concept getMuscularDystrophyConcept() {
+    return getConcept(EhrReportConstants.MUSCULAR_DYSTROPHY);
+  }
+
+  public Concept getUterovesicalFistula() {
+    return getConcept(EhrReportConstants.UTEROVESICAL_FISTULA);
+  }
+
   /**
    * Get patient referred from concept
    *

@@ -549,6 +549,24 @@ public class Moh705bIndicators {
                 diagnosisMetadata.getDeathtsDueToRoadTrafficInjuriesConceptList()),
             "startDate=${startDate},endDate=${endDate}"));
   }
+  /** Muscular Skeletal Conditions */
+  public CohortIndicator getAdultsWithMuscularSkeletalConditions() {
+    return ehrGeneralIndicator.getIndicator(
+        " Muscular Skeletal Conditions",
+        EhrReportUtils.map(
+            moh705bCohortQueries.getAdultsPatientsWhoHaveDiagnosis(
+                diagnosisMetadata.getMuscularSkeletalConditionsConceptList()),
+            "startDate=${startDate},endDate=${endDate}"));
+  }
+  /** Fistula Birth related * */
+  public CohortIndicator getAdultsWithFistulaConditions() {
+    return ehrGeneralIndicator.getIndicator(
+        " Fistula (Birth related)",
+        EhrReportUtils.map(
+            moh705bCohortQueries.getAdultsPatientsWhoHaveDiagnosis(
+                diagnosisMetadata.getFistulaBirthRelatedConceptList()),
+            "startDate=${startDate},endDate=${endDate}"));
+  }
 
   /**
    * Get patients who are adults and have new/revisit

@@ -405,6 +405,14 @@ public class DiagnosisMetadata extends Metadata {
             .getConceptId());
   }
 
+  public List<Integer> getMuscularSkeletalConditionsConceptList() {
+    return Arrays.asList(outpatientMetadata.getMuscularDystrophyConcept().getConceptId());
+  }
+
+  public List<Integer> getFistulaBirthRelatedConceptList() {
+    return Arrays.asList(outpatientMetadata.getUterovesicalFistula().getConceptId());
+  }
+
   public List<Integer> getDiseaseOfPuerperiumAndChildBirthConceptList() {
     return Arrays.asList(
         outpatientMetadata.getDiseaseOfPuerperiumAndChildBirthConcept().getConceptId());
