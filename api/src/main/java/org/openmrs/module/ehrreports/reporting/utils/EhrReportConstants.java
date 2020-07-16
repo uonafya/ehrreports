@@ -212,6 +212,8 @@ public final class EhrReportConstants {
       "906cb089-9f25-4920-9165-530653995d83"; // 4293
   public static final String OTHER_CONGENITAL_MALARIA =
       "3850f805-9850-4cf0-a5d5-bb7adc009e06"; // 4492
+  // public static final String CONFIRMED_MALARIA =
+  // "8e83be01-17d3-4cf0-9f2c-c22d482b8138"; // 4055
 
   // URINARY TRACT INFECTION
   public static final String URINARY_TRACT_INFECTION =
@@ -273,7 +275,7 @@ public final class EhrReportConstants {
   // ASTHMA
   public static final String ASTHMA_NOS = "9f8b972c-83aa-4a6f-9be8-7ce80800afce"; // 1000
   public static final String ASTHMA_UNSPECIFIED = "f915c44f-0026-4009-979f-d76c46c44e62"; // 4067
-  public static final String STHMA_EXACERBATION = "43896f9f-0efa-4b8b-978d-7b2df81a6aaf"; // 999
+  public static final String ASTHMA_EXACERBATION = "43896f9f-0efa-4b8b-978d-7b2df81a6aaf"; // 999
   // Cholera
   public static final String CHOLERA = "f3c41b86-b280-41af-aeaf-80a0fd6033b3";
 
@@ -455,7 +457,9 @@ public final class EhrReportConstants {
       "5cd9b4ee-2d3d-4dc7-8393-e4b562752b9f"; // 4309
 
   //	MUSCULAR SKELETON CONDITIONS
-  public static final String MUSCULAR_DYSTROPHY = "71c88f51-104b-491c-bd4c-644816c845f4"; // 4567
+  public static final String MUSCULAR_DYSTROPHY =
+      "71c88f51-104b-491c-bd4c-644816c845f4"; // 4567 desc for this match MUSCULAR SKELETON
+                                              // CONDITIONS
 
   // OVERWEIGHT (BMI > 25)
   public static final String OVERWEIGHT_BMI_125 =
@@ -470,9 +474,17 @@ public final class EhrReportConstants {
   // PHYSICAL DISABILITY
   public static final String PHYSICAL_DISABILITY =
       "72d91e67-0f6e-41dd-87ce-0c510c99aa2a"; // Input concept when added
-  // PHYSICAL DISABILITY
+  // PHYSICAL DISABILITY - DISEASE OF PUERPERIUM & CHILDBIRTH
   public static final String DISEASE_OF_PUERPERUM_AND_CHILD_BIRTH =
-      "72d91e67-0f6e-41dd-87ce-0c510c99aa2a"; // Input concept when added
+      "be97c89d-62f2-42f7-98c2-58481de66aec"; // 4445
+  // ARTHRITIS
+  public static final String ARTHRITIS =
+      "0512a0da-662f-481e-a271-9773aec9a658"; // 1037 ADD MORE CONCEPTS DIAGNOSIS
+
+  // WEIGHT
+  public static String WEIGHT = "5089AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+  // HEIGHT
+  public static String HEIGHT = "";
 
   // program
   public static final String ANC_Program = "d83b74b7-f5ea-46fc-acc5-71e892ee1e68";

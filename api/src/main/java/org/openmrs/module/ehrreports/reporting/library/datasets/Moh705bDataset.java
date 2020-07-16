@@ -68,7 +68,7 @@ public class Moh705bDataset extends BaseDataSet {
     addRow(
         dsd,
         "1",
-        "Diarrhoea",
+        "Diarrhoea)",
         EhrReportUtils.map(moh705bIndicators.getAdultsWithDiarrhoea(), mappings),
         getAdultChildrenColumns());
     addRow(
@@ -143,8 +143,24 @@ public class Moh705bDataset extends BaseDataSet {
         "Fevers)",
         EhrReportUtils.map(moh705bIndicators.getAdultsWithFevers(), mappings),
         getAdultChildrenColumns());
-    // 14
-    // 15
+
+    addRow(
+        dsd,
+        "14",
+        "Malaria Provisional",
+        EhrReportUtils.map(
+            moh705bIndicators.getPatientsWithMalaria(outpatientMetadata.getProvisionalDiagnosis()),
+            mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "15",
+        "Malaria Confirmed",
+        EhrReportUtils.map(
+            moh705bIndicators.getPatientsWithMalaria(outpatientMetadata.getFinalDiagnosis()),
+            mappings),
+        getAdultChildrenColumns());
+
     addRow(
         dsd,
         "16",
@@ -260,7 +276,49 @@ public class Moh705bDataset extends BaseDataSet {
         "Hypertension)",
         EhrReportUtils.map(moh705bIndicators.getAdultsWithHypertension(), mappings),
         getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "34",
+        "Mental Disorders)",
+        EhrReportUtils.map(moh705bIndicators.getAdultsWithMentalDisorders(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "35",
+        "Dental Disorders)",
+        EhrReportUtils.map(moh705bIndicators.getAdultsWithDentalDisorders(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "36",
+        "Jiggers Infestation)",
+        EhrReportUtils.map(moh705bIndicators.getAdultsWithJiggersInfestation(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "37",
+        "Disease of The Skin)",
+        EhrReportUtils.map(moh705bIndicators.getAdultsWithDiseaseOfTheSkin(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "38",
+        "Arthritis)",
+        EhrReportUtils.map(moh705bIndicators.getAdultsWithArthritis(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "39",
+        "Poisoning)",
+        EhrReportUtils.map(moh705bIndicators.getAdultsWithPoisoning(), mappings),
+        getAdultChildrenColumns());
 
+    addRow(
+        dsd,
+        "40",
+        "Road Traffic Injuries)",
+        EhrReportUtils.map(moh705bIndicators.getAdultsWithRoadTrafficInjuries(), mappings),
+        getAdultChildrenColumns());
     addRow(
         dsd,
         "41",
@@ -343,15 +401,39 @@ public class Moh705bDataset extends BaseDataSet {
         getAdultChildrenColumns());
     addRow(
         dsd,
+        "54",
+        "BMI > 25",
+        EhrReportUtils.map(moh705bIndicators.getPatientsWith25BmiAndAbove(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
         "55",
-        "Muscular skeletal conditions)",
+        " Muscular Skeletal Conditions)",
         EhrReportUtils.map(moh705bIndicators.getAdultsWithMuscularSkeletalConditions(), mappings),
         getAdultChildrenColumns());
     addRow(
         dsd,
         "56",
-        "Fistula (Birth related))",
-        EhrReportUtils.map(moh705bIndicators.getAdultsWithFistulaConditions(), mappings),
+        "Fistula Birth Related)",
+        EhrReportUtils.map(moh705bIndicators.getAdultsWithFistulaBirthRelated(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "57",
+        "Neoplams)",
+        EhrReportUtils.map(moh705bIndicators.getAdultsWithNeoplams(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "58",
+        "Physical Disability)",
+        EhrReportUtils.map(moh705bIndicators.getAdultsWithPhysicalDisabilityConcept(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "59",
+        "Tryponomiasis",
+        EhrReportUtils.map(moh705bIndicators.getAdultsWithTryponomiasisConcept(), mappings),
         getAdultChildrenColumns());
     addRow(
         dsd,

@@ -149,6 +149,12 @@ public class DiagnosisMetadata extends Metadata {
   public List<Integer> getTyphoidFeverConceptList() {
     return Arrays.asList(outpatientMetadata.getTyphoidFeverConcept().getConceptId());
   }
+  // public List<Integer> getConfirmedMalariaConceptList() {
+  //  return Arrays.asList(outpatientMetadata.getConfirmedMalariaConcept().getConceptId());
+  // }
+  // public List<Integer> getSuspectedMalariaConceptList() {
+  // return Arrays.asList(outpatientMetadata.getConfirmedMalariaConcept().getConceptId());
+  // }
 
   public List<Integer> getBilharziaConceptList() {
     return Arrays.asList(
@@ -269,7 +275,7 @@ public class DiagnosisMetadata extends Metadata {
     return Arrays.asList(outpatientMetadata.getRoadTrafficInjuriesConcept().getConceptId());
   }
 
-  public List<Integer> getRoadOtherInjuriesConceptList() {
+  public List<Integer> getOtherInjuriesConceptList() {
     return Arrays.asList(outpatientMetadata.getOtherInjuriesConcept().getConceptId());
   }
 
@@ -387,7 +393,13 @@ public class DiagnosisMetadata extends Metadata {
   public List<Integer> getHypertensionConceptList() {
     return Arrays.asList(
         outpatientMetadata.getHypertensionConcept().getConceptId(),
-        outpatientMetadata.getPrimaryHypertensionConcept().getConceptId());
+        outpatientMetadata.getPrimaryHypertensionConcept().getConceptId(),
+        outpatientMetadata.getRenovascularHypertensionConcept().getConceptId(),
+        outpatientMetadata.getMalignantHypertensionConcept().getConceptId(),
+        outpatientMetadata.getIdiopathicHypertensionConcept().getConceptId(),
+        outpatientMetadata.getPregnancyInducedHypertensionConcept().getConceptId(),
+        outpatientMetadata.getBenignIntracranialHypertensionConcept().getConceptId(),
+        outpatientMetadata.getElevateBPWithoutDiagnosisOfHypertensionConcept().getConceptId());
   }
 
   public List<Integer> getAbortionConceptList() {
@@ -400,9 +412,23 @@ public class DiagnosisMetadata extends Metadata {
         outpatientMetadata.getRecurentAbortionConcept().getConceptId(),
         outpatientMetadata.getThreatenedAbortionConcept().getConceptId(),
         outpatientMetadata.getSepticAbortionConcept().getConceptId(),
+        outpatientMetadata.getIncompleteSpontaneousAbortionConcept().getConceptId(),
         outpatientMetadata
             .getUnspecifiedSpontaneousAbortionWithOtherComplicationsConcept()
             .getConceptId());
+  }
+
+  public List<Integer> getDiseaseOfPuerperiumAndChildBirthConceptList() {
+    return Arrays.asList(
+        outpatientMetadata.getDiseaseOfPuerperiumAndChildBirthConcept().getConceptId());
+  }
+
+  public List<Integer> getArthritisConceptList() {
+    return Arrays.asList(outpatientMetadata.getArthritisConcept().getConceptId());
+  }
+
+  public List<Integer> getOverWeightConceptList() {
+    return Arrays.asList(outpatientMetadata.getOverweightConcept().getConceptId());
   }
 
   public List<Integer> getMuscularSkeletalConditionsConceptList() {
@@ -410,11 +436,16 @@ public class DiagnosisMetadata extends Metadata {
   }
 
   public List<Integer> getFistulaBirthRelatedConceptList() {
-    return Arrays.asList(outpatientMetadata.getUterovesicalFistula().getConceptId());
+    return Arrays.asList(
+        outpatientMetadata.getVesicovaginalFistulaConcept().getConceptId(),
+        outpatientMetadata.getUterovesicalFistula().getConceptId());
   }
 
-  public List<Integer> getDiseaseOfPuerperiumAndChildBirthConceptList() {
-    return Arrays.asList(
-        outpatientMetadata.getDiseaseOfPuerperiumAndChildBirthConcept().getConceptId());
+  public List<Integer> getNeoplamsConceptList() {
+    return Arrays.asList(outpatientMetadata.getNeoplamsConcept().getConceptId());
+  }
+
+  public List<Integer> getPhysicalDisabilityConceptList() {
+    return Arrays.asList(outpatientMetadata.getPhysicalDisabilityConcept().getConceptId());
   }
 }

@@ -2,6 +2,7 @@ package org.openmrs.module.ehrreports.reporting.library.cohorts;
 
 import java.util.Date;
 import java.util.List;
+import org.openmrs.Concept;
 import org.openmrs.module.ehrreports.metadata.DiagnosisMetadata;
 import org.openmrs.module.ehrreports.metadata.OutpatientMetadata;
 import org.openmrs.module.ehrreports.reporting.library.queries.moh705.Moh705Queries;
@@ -220,6 +221,60 @@ public class Moh705bCohortQueries {
             commonLibrary.hasObs(outpatientMetadata.getPatientReferredExternally()),
             "onOrAfter=${startDate},onOrBefore=${endDate}"));
     cd.setCompositionString("obs AND age");
+    return cd;
+  }
+
+  /**
+   * Get patient shaving provisional malaria
+   *
+   * @return @CohortDefinition
+   */
+  public CohortDefinition getMalariaCases(Concept concept) {
+    CompositionCohortDefinition cd = new CompositionCohortDefinition();
+    cd.setName("Get adult patients with provisional/final malaria cases");
+    cd.addParameter(new Parameter("startDate", "Start Date", Date.class));
+    cd.addParameter(new Parameter("endDate", "End Date", Date.class));
+    cd.addSearch(
+        "malaria",
+        EhrReportUtils.map(
+            getAdultsPatientsWhoHaveDiagnosis(diagnosisMetadata.getMalariaConceptList()),
+            "startDate=${startDate},endDate=${endDate}"));
+    cd.addSearch(
+        "status",
+        EhrReportUtils.map(
+            commonLibrary.hasObs(concept), "onOrAfter=${startDate},onOrBefore=${endDate}"));
+    cd.setCompositionString("malaria AND status");
+    return cd;
+  }
+
+  private CohortDefinition getPatientsWith25BmiAndAbove() {
+    SqlCohortDefinition cd = new SqlCohortDefinition();
+    cd.setName("Get patients with BMI of over 25 query evalution");
+    cd.addParameter(new Parameter("startDate", "Start Date", Date.class));
+    cd.addParameter(new Parameter("endDate", "End Date", Date.class));
+    cd.setQuery(Moh705Queries.getAdultsPatientsWithGreaterThan25BMI());
+    return cd;
+  }
+
+  /**
+   * Get new and reattendancies of Adults
+   *
+   * @return @{@link CohortDefinition}
+   */
+  public CohortDefinition getBmiOfAdults() {
+    CompositionCohortDefinition cd = new CompositionCohortDefinition();
+    cd.setName("Get patients with BMI of over 25");
+    cd.addParameter(new Parameter("startDate", "Start Date", Date.class));
+    cd.addParameter(new Parameter("endDate", "End Date", Date.class));
+    cd.addSearch(
+        "age",
+        EhrReportUtils.map(
+            ageCohortQueries.createXtoYAgeCohort("age", 5, null), "effectiveDate=${endDate}"));
+    cd.addSearch(
+        "bmi",
+        EhrReportUtils.map(
+            getPatientsWith25BmiAndAbove(), "startDate=${startDate},endDate=${endDate}"));
+    cd.setCompositionString("bmi AND age");
     return cd;
   }
 }
