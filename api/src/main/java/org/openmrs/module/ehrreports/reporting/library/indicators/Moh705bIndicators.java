@@ -288,13 +288,58 @@ public class Moh705bIndicators {
                 diagnosisMetadata.getHypertensionConceptList()),
             "startDate=${startDate},endDate=${endDate}"));
   }
-  /** Other Injuries */
-  public CohortIndicator getAdultsWithOtherInjuries() {
+  /** Mental Disorders */
+  public CohortIndicator getAdultsWithMentalDisorders() {
     return ehrGeneralIndicator.getIndicator(
-        "Hypertension",
+        "Mental Disorders",
         EhrReportUtils.map(
             moh705bCohortQueries.getAdultsPatientsWhoHaveDiagnosis(
-                diagnosisMetadata.getRoadOtherInjuriesConceptList()),
+                diagnosisMetadata.getMentalDisordersConceptList()),
+            "startDate=${startDate},endDate=${endDate}"));
+  }
+  /** Mental Disorders */
+  public CohortIndicator getAdultsWithDentalDisorders() {
+    return ehrGeneralIndicator.getIndicator(
+        "Dental Disorders",
+        EhrReportUtils.map(
+            moh705bCohortQueries.getAdultsPatientsWhoHaveDiagnosis(
+                diagnosisMetadata.getDentalDisordersConceptList()),
+            "startDate=${startDate},endDate=${endDate}"));
+  }
+  /** Jiggers Infestation */
+  public CohortIndicator getAdultsWithJiggersInfestation() {
+    return ehrGeneralIndicator.getIndicator(
+        "Jiggers Infestation",
+        EhrReportUtils.map(
+            moh705bCohortQueries.getAdultsPatientsWhoHaveDiagnosis(
+                diagnosisMetadata.getJiggersInfestationConceptList()),
+            "startDate=${startDate},endDate=${endDate}"));
+  }
+  /** Disease Of The Skin */
+  public CohortIndicator getAdultsWithDiseaseOfTheSkin() {
+    return ehrGeneralIndicator.getIndicator(
+        "Disease Of The Skin",
+        EhrReportUtils.map(
+            moh705bCohortQueries.getAdultsPatientsWhoHaveDiagnosis(
+                diagnosisMetadata.getDiseaseOfTheSkinConceptList()),
+            "startDate=${startDate},endDate=${endDate}"));
+  }
+  /** Arthritis */
+  public CohortIndicator getAdultsWithArthritis() {
+    return ehrGeneralIndicator.getIndicator(
+        "Arthritis,Joint Pains",
+        EhrReportUtils.map(
+            moh705bCohortQueries.getAdultsPatientsWhoHaveDiagnosis(
+                diagnosisMetadata.getArthritisConceptList()),
+            "startDate=${startDate},endDate=${endDate}"));
+  }
+  /** Poisoning */
+  public CohortIndicator getAdultsWithPoisoning() {
+    return ehrGeneralIndicator.getIndicator(
+        "Poisoning",
+        EhrReportUtils.map(
+            moh705bCohortQueries.getAdultsPatientsWhoHaveDiagnosis(
+                diagnosisMetadata.getPoisoningConceptList()),
             "startDate=${startDate},endDate=${endDate}"));
   }
   /** Road Traffic Injuries */
@@ -304,6 +349,15 @@ public class Moh705bIndicators {
         EhrReportUtils.map(
             moh705bCohortQueries.getAdultsPatientsWhoHaveDiagnosis(
                 diagnosisMetadata.getRoadTrafficInjuriesConceptList()),
+            "startDate=${startDate},endDate=${endDate}"));
+  }
+  /** Other Injuries */
+  public CohortIndicator getAdultsWithOtherInjuries() {
+    return ehrGeneralIndicator.getIndicator(
+        "Other Injuries",
+        EhrReportUtils.map(
+            moh705bCohortQueries.getAdultsPatientsWhoHaveDiagnosis(
+                diagnosisMetadata.getOtherInjuriesConceptList()),
             "startDate=${startDate},endDate=${endDate}"));
   }
 
