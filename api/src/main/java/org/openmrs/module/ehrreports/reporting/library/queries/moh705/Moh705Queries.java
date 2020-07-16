@@ -213,4 +213,22 @@ public class Moh705Queries {
             + " AND c.class_id IN(%d) ";
     return String.format(query, classId);
   }
+
+  /**
+   * Get the BMI of the patients based on sql query
+   *
+   * @return String
+   */
+  public static String getAdultsPatientsWithGreaterThan25BMI() {
+    String query =
+        "SELECT patient_id FROM triage_patient_data WHERE created_on BETWEEN :startDate AND DATE_ADD(:endDate, interval 1 DAY) AND weight > 0 AND height > 0";
+
+    return query;
+  }
+
+  private static boolean getBMI(String w, String h) {
+    double weight = Double.parseDouble(w);
+    double height = Double.parseDouble(h);
+    return (100 * 100 * weight) / (height * height) > 25;
+  }
 }

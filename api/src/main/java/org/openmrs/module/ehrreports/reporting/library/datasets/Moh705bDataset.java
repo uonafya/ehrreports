@@ -358,6 +358,12 @@ public class Moh705bDataset extends BaseDataSet {
         getAdultChildrenColumns());
     addRow(
         dsd,
+        "54",
+        "BMI > 25",
+        EhrReportUtils.map(moh705bIndicators.getPatientsWith25BmiAndAbove(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
         "60",
         "Kalazar)",
         EhrReportUtils.map(moh705bIndicators.getAdultsWithKalazar(), mappings),

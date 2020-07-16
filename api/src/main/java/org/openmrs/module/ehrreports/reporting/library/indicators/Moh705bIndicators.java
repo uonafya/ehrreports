@@ -586,4 +586,11 @@ public class Moh705bIndicators {
             moh705bCohortQueries.getMalariaCases(concept),
             "startDate=${startDate},endDate=${endDate}"));
   }
+
+  public CohortIndicator getPatientsWith25BmiAndAbove() {
+    return ehrGeneralIndicator.getIndicator(
+        "Adult patients who have BMI > 25",
+        EhrReportUtils.map(
+            moh705bCohortQueries.getBmiOfAdults(), "startDate=${startDate},endDate=${endDate}"));
+  }
 }

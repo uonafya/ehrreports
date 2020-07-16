@@ -246,4 +246,35 @@ public class Moh705bCohortQueries {
     cd.setCompositionString("malaria AND status");
     return cd;
   }
+
+  private CohortDefinition getPatientsWith25BmiAndAbove() {
+    SqlCohortDefinition cd = new SqlCohortDefinition();
+    cd.setName("Get patients with BMI of over 25 query evalution");
+    cd.addParameter(new Parameter("startDate", "Start Date", Date.class));
+    cd.addParameter(new Parameter("endDate", "End Date", Date.class));
+    cd.setQuery(Moh705Queries.getAdultsPatientsWithGreaterThan25BMI());
+    return cd;
+  }
+
+  /**
+   * Get new and reattendancies of Adults
+   *
+   * @return @{@link CohortDefinition}
+   */
+  public CohortDefinition getBmiOfAdults() {
+    CompositionCohortDefinition cd = new CompositionCohortDefinition();
+    cd.setName("Get patients with BMI of over 25");
+    cd.addParameter(new Parameter("startDate", "Start Date", Date.class));
+    cd.addParameter(new Parameter("endDate", "End Date", Date.class));
+    cd.addSearch(
+        "age",
+        EhrReportUtils.map(
+            ageCohortQueries.createXtoYAgeCohort("age", 5, null), "effectiveDate=${endDate}"));
+    cd.addSearch(
+        "bmi",
+        EhrReportUtils.map(
+            getPatientsWith25BmiAndAbove(), "startDate=${startDate},endDate=${endDate}"));
+    cd.setCompositionString("bmi AND age");
+    return cd;
+  }
 }

@@ -471,6 +471,11 @@ public final class EhrReportConstants {
   public static final String DISEASE_OF_PUERPERUM_AND_CHILD_BIRTH =
       "72d91e67-0f6e-41dd-87ce-0c510c99aa2a"; // Input concept when added
 
+  // WEIGHT
+  public static String WEIGHT = "5089AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+  // HEIGHT
+  public static String HEIGHT = "";
+
   // program
   public static final String ANC_Program = "d83b74b7-f5ea-46fc-acc5-71e892ee1e68";
   public static final String PNC_Program = "a15f2617-9f5d-4022-8de3-181b2e286a28";

@@ -16,6 +16,7 @@ import java.util.Date;
 import java.util.List;
 import org.openmrs.Concept;
 import org.openmrs.EncounterType;
+import org.openmrs.Location;
 import org.openmrs.calculation.patient.PatientCalculationContext;
 import org.openmrs.calculation.result.CalculationResultMap;
 import org.openmrs.module.ehrreports.reporting.utils.EhrCalculationUtils;
@@ -70,6 +71,46 @@ public class EhrCalculationService {
     ObsForPersonDataDefinition def =
         new ObsForPersonDataDefinition(
             "last obs", TimeQualifier.LAST, concept, context.getNow(), null);
+    return EhrCalculationUtils.evaluateWithReporting(def, cohort, null, null, context);
+  }
+
+  /**
+   * Evaluate for obs based on the time modifier
+   *
+   * @param concept
+   * @param encounterTypes
+   * @param cohort
+   * @param locationList
+   * @param timeQualifier
+   * @param startDate
+   * @param context
+   * @return
+   */
+  public CalculationResultMap getObs(
+      Concept concept,
+      List<EncounterType> encounterTypes,
+      Collection<Integer> cohort,
+      List<Location> locationList,
+      TimeQualifier timeQualifier,
+      Date startDate,
+      Date endDate,
+      PatientCalculationContext context) {
+    ObsForPersonDataDefinition def = new ObsForPersonDataDefinition();
+    def.setName(timeQualifier.name() + "obs");
+    def.setWhich(timeQualifier);
+    def.setQuestion(concept);
+    if (encounterTypes != null) {
+      def.setEncounterTypeList(encounterTypes);
+    }
+    if (startDate != null) {
+      def.setOnOrAfter(startDate);
+    }
+    if (endDate != null) {
+      def.setOnOrBefore(endDate);
+    }
+    if (!locationList.isEmpty()) {
+      def.setLocationList(locationList);
+    }
     return EhrCalculationUtils.evaluateWithReporting(def, cohort, null, null, context);
   }
 }
