@@ -400,9 +400,9 @@ public class OutpatientMetadata extends ProgramsMetadata {
   public Concept getUnspecifiedMalariaConcept() {
     return getConcept(EhrReportConstants.UNSPECIFIED_MALARIA);
   }
-  //public Concept getConfirmedMalariaConcept() {
-    //return getConcept(EhrReportConstants.UNSPECIFIED_MALARIA);
- // }
+  // public Concept getConfirmedMalariaConcept() {
+  // return getConcept(EhrReportConstants.UNSPECIFIED_MALARIA);
+  // }
 
   public Concept getUrinaryTractInfecionConcept() {
     return getConcept(EhrReportConstants.URINARY_TRACT_INFECTION);
@@ -897,6 +897,26 @@ public class OutpatientMetadata extends ProgramsMetadata {
 
   public Concept getArthritisConcept() {
     return getConcept(EhrReportConstants.ARTHRITIS);
+  }
+
+  public Concept getOverweightConcept() {
+    return getConcept(EhrReportConstants.OVERWEIGHT_BMI_125);
+  }
+
+  public Concept getMuscularSkeletalConditionsConcept() {
+    return getConcept(EhrReportConstants.MUSCULAR_SKELETAL_CONDITIONS);
+  }
+
+  public Concept getFistulaBirthRelatedConcept() {
+    return getConcept(EhrReportConstants.FISTULA_BIRTH_RELATED);
+  }
+
+  public Concept getNeoplamsConcept() {
+    return getConcept(EhrReportConstants.NEOPLAMS);
+  }
+
+  public Concept getPhysicalDisabilityConcept() {
+    return getConcept(EhrReportConstants.PHYSICAL_DISABILITY);
   }
 
   /**

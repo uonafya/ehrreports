@@ -44,10 +44,10 @@ public class Moh705bIndicators {
             "startDate=${startDate},endDate=${endDate}"));
   }
 
-  /** Diah */
+  /** Diarrhoea */
   public CohortIndicator getAdultsWithDiarrhoea() {
     return ehrGeneralIndicator.getIndicator(
-        "Diah",
+        "Diarrhoea",
         EhrReportUtils.map(
             moh705bCohortQueries.getAdultsPatientsWhoHaveDiagnosis(
                 diagnosisMetadata.getDiarrhoeaConceptList()),
@@ -480,6 +480,15 @@ public class Moh705bIndicators {
                 diagnosisMetadata.getOtherCentralNarvousSytemConditionConceptList()),
             "startDate=${startDate},endDate=${endDate}"));
   }
+  /** Over Weight with BNI > 125 */
+  public CohortIndicator getAdultsWithOverWeight() {
+    return ehrGeneralIndicator.getIndicator(
+        "Over Weight BMI > 125",
+        EhrReportUtils.map(
+            moh705bCohortQueries.getAdultsPatientsWhoHaveDiagnosis(
+                diagnosisMetadata.getOverWeightConceptList()),
+            "startDate=${startDate},endDate=${endDate}"));
+  }
 
   // overweigt
 
@@ -490,6 +499,51 @@ public class Moh705bIndicators {
         EhrReportUtils.map(
             moh705bCohortQueries.getAdultsPatientsWhoHaveDiagnosis(
                 diagnosisMetadata.getEarInfectionsConceptList()),
+            "startDate=${startDate},endDate=${endDate}"));
+  }
+  /** Muscular Skeletal Conditions */
+  public CohortIndicator getAdultsWithMuscularSkeletalConditions() {
+    return ehrGeneralIndicator.getIndicator(
+        " Muscular Skeletal Conditions",
+        EhrReportUtils.map(
+            moh705bCohortQueries.getAdultsPatientsWhoHaveDiagnosis(
+                diagnosisMetadata.getMuscularSkeletalConditionsConceptList()),
+            "startDate=${startDate},endDate=${endDate}"));
+  }
+  /** Fistula Birth Related */
+  public CohortIndicator getAdultsWithFistulaBirthRelated() {
+    return ehrGeneralIndicator.getIndicator(
+        "Fistula Birth Related",
+        EhrReportUtils.map(
+            moh705bCohortQueries.getAdultsPatientsWhoHaveDiagnosis(
+                diagnosisMetadata.getFistulaBirthRelatedConceptList()),
+            "startDate=${startDate},endDate=${endDate}"));
+  }
+  /** Neoplams */
+  public CohortIndicator getAdultsWithNeoplams() {
+    return ehrGeneralIndicator.getIndicator(
+        "Neoplams",
+        EhrReportUtils.map(
+            moh705bCohortQueries.getAdultsPatientsWhoHaveDiagnosis(
+                diagnosisMetadata.getNeoplamsConceptList()),
+            "startDate=${startDate},endDate=${endDate}"));
+  }
+  /** Physical Disability */
+  public CohortIndicator getAdultsWithPhysicalDisabilityConcept() {
+    return ehrGeneralIndicator.getIndicator(
+        "Physical Disability",
+        EhrReportUtils.map(
+            moh705bCohortQueries.getAdultsPatientsWhoHaveDiagnosis(
+                diagnosisMetadata.getPhysicalDisabilityConceptList()),
+            "startDate=${startDate},endDate=${endDate}"));
+  }
+  /** Tryponomiasis */
+  public CohortIndicator getAdultsWithTryponomiasisConcept() {
+    return ehrGeneralIndicator.getIndicator(
+        "Tryponomiasis",
+        EhrReportUtils.map(
+            moh705bCohortQueries.getAdultsPatientsWhoHaveDiagnosis(
+                diagnosisMetadata.getTryponosomiasisConceptList()),
             "startDate=${startDate},endDate=${endDate}"));
   }
 

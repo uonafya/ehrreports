@@ -68,7 +68,7 @@ public class Moh705bDataset extends BaseDataSet {
     addRow(
         dsd,
         "1",
-        "Diarrhoea",
+        "Diarrhoea)",
         EhrReportUtils.map(moh705bIndicators.getAdultsWithDiarrhoea(), mappings),
         getAdultChildrenColumns());
     addRow(
@@ -401,6 +401,42 @@ public class Moh705bDataset extends BaseDataSet {
         getAdultChildrenColumns());
     addRow(
         dsd,
+        "54",
+        "Over Weight BMI >125)",
+        EhrReportUtils.map(moh705bIndicators.getAdultsWithOverWeight(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "55",
+        " Muscular Skeletal Conditions)",
+        EhrReportUtils.map(moh705bIndicators.getAdultsWithMuscularSkeletalConditions(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "56",
+        "Fistula Birth Related)",
+        EhrReportUtils.map(moh705bIndicators.getAdultsWithFistulaBirthRelated(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "57",
+        "Neoplams)",
+        EhrReportUtils.map(moh705bIndicators.getAdultsWithNeoplams(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "58",
+        "Physical Disability)",
+        EhrReportUtils.map(moh705bIndicators.getAdultsWithPhysicalDisabilityConcept(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "59",
+        "Tryponomiasis",
+        EhrReportUtils.map(moh705bIndicators.getAdultsWithTryponomiasisConcept(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
         "60",
         "Kalazar)",
         EhrReportUtils.map(moh705bIndicators.getAdultsWithKalazar(), mappings),
@@ -431,7 +467,7 @@ public class Moh705bDataset extends BaseDataSet {
         getAdultChildrenColumns());
     addRow(
         dsd,
-        "64",
+        "65",
         "Deaths Due To Road Traffic Injuries)",
         EhrReportUtils.map(
             moh705bIndicators.getAdultsWithDeathtsDueToRoadTrafficInjuries(), mappings),
