@@ -327,24 +327,56 @@ public class Moh705bDataset extends BaseDataSet {
         "Brucellosis)",
         EhrReportUtils.map(moh705bIndicators.getAdultsWithBrucellosis(), mappings),
         getAdultChildrenColumns());
+
     addRow(
         dsd,
         "52",
+        "Cardiovascular Condition)",
+        EhrReportUtils.map(moh705bIndicators.getAdultsWithCardiovascularCondition(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "53",
         "Central Narvous System Condition)",
         EhrReportUtils.map(
             moh705bIndicators.getAdultsWithOtherCentralNarvousSystemCondition(), mappings),
         getAdultChildrenColumns());
     addRow(
         dsd,
-        "53",
-        "Cardiovascular Condition)",
-        EhrReportUtils.map(moh705bIndicators.getAdultsWithCardiovascularCondition(), mappings),
+        "60",
+        "Kalazar)",
+        EhrReportUtils.map(moh705bIndicators.getAdultsWithKalazar(), mappings),
         getAdultChildrenColumns());
     addRow(
         dsd,
-        "54",
-        "Cardiovascular Condition)",
-        EhrReportUtils.map(moh705bIndicators.getAdultsWithCardiovascularCondition(), mappings),
+        "61",
+        "Dracunculosis(Guinea Worm))",
+        EhrReportUtils.map(moh705bIndicators.getAdultsWithDracunculosis(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "62",
+        "Yellow Fever)",
+        EhrReportUtils.map(moh705bIndicators.getAdultsWithYellowFever(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "63",
+        "Viral Haemorrhagic Feverr)",
+        EhrReportUtils.map(moh705bIndicators.getAdultsWithHaemorrhagicFever(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "64",
+        "Plague)",
+        EhrReportUtils.map(moh705bIndicators.getAdultsWithPlague(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "64",
+        "Deaths Due To Road Traffic Injuries)",
+        EhrReportUtils.map(
+            moh705bIndicators.getAdultsWithDeathtsDueToRoadTrafficInjuries(), mappings),
         getAdultChildrenColumns());
     return dsd;
   }
