@@ -425,6 +425,72 @@ public class Moh705bIndicators {
                 diagnosisMetadata.getOtherCentralNarvousSytemConditionConceptList()),
             "startDate=${startDate},endDate=${endDate}"));
   }
+  /** Ear Infections Condition */
+  public CohortIndicator getAdultsWithEarInfectionsConditions() {
+    return ehrGeneralIndicator.getIndicator(
+        "Ear Infections Condition",
+        EhrReportUtils.map(
+            moh705bCohortQueries.getAdultsPatientsWhoHaveDiagnosis(
+                diagnosisMetadata.getEarInfectionsConceptList()),
+            "startDate=${startDate},endDate=${endDate}"));
+  }
+
+  /** Upper Respiratory Tract Infections */
+  public CohortIndicator getAdultsWithUpperRespiratoryTractInfections() {
+    return ehrGeneralIndicator.getIndicator(
+        "Upper Respiratory Tract Infections",
+        EhrReportUtils.map(
+            moh705bCohortQueries.getAdultsPatientsWhoHaveDiagnosis(
+                diagnosisMetadata.getUpperRespiratoryTractInfectionsConceptList()),
+            "startDate=${startDate},endDate=${endDate}"));
+  }
+
+  /** Upper Respiratory Tract Infections */
+  public CohortIndicator getAdultsWithAsthma() {
+    return ehrGeneralIndicator.getIndicator(
+        "Asthma",
+        EhrReportUtils.map(
+            moh705bCohortQueries.getAdultsPatientsWhoHaveDiagnosis(
+                diagnosisMetadata.getAsthmaConceptList()),
+            "startDate=${startDate},endDate=${endDate}"));
+  }
+  /** Pneumonia */
+  public CohortIndicator getAdultsWithPneumonia() {
+    return ehrGeneralIndicator.getIndicator(
+        "Pneumonia",
+        EhrReportUtils.map(
+            moh705bCohortQueries.getAdultsPatientsWhoHaveDiagnosis(
+                diagnosisMetadata.getPneumoniaConceptList()),
+            "startDate=${startDate},endDate=${endDate}"));
+  }
+
+  /** Other Disease of Respiratory System */
+  public CohortIndicator getAdultsWithOtherDiseaseOfRespiratorySystem() {
+    return ehrGeneralIndicator.getIndicator(
+        "Other Dis Of Respiratory System",
+        EhrReportUtils.map(
+            moh705bCohortQueries.getAdultsPatientsWhoHaveDiagnosis(
+                diagnosisMetadata.getOtherDiseaseOfRespiratorySystemConceptList()),
+            "startDate=${startDate},endDate=${endDate}"));
+  }
+  /** Abortion */
+  public CohortIndicator getAdultsWithAbortion() {
+    return ehrGeneralIndicator.getIndicator(
+        "Abortion",
+        EhrReportUtils.map(
+            moh705bCohortQueries.getAdultsPatientsWhoHaveDiagnosis(
+                diagnosisMetadata.getAbortionConceptList()),
+            "startDate=${startDate},endDate=${endDate}"));
+  }
+  /** Disease of Puerperium and Child Birth */
+  public CohortIndicator getAdultsWithDiseaseOfPueperiumAndChildBirth() {
+    return ehrGeneralIndicator.getIndicator(
+        "Disease of Puerperium and Child Birth",
+        EhrReportUtils.map(
+            moh705bCohortQueries.getAdultsPatientsWhoHaveDiagnosis(
+                diagnosisMetadata.getDiseaseOfPuerperiumAndChildBirthConceptList()),
+            "startDate=${startDate},endDate=${endDate}"));
+  }
 
   /**
    * Get patients who are adults and have new/revisit
