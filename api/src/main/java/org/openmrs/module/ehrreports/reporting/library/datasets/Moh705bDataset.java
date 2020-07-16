@@ -263,82 +263,120 @@ public class Moh705bDataset extends BaseDataSet {
 
     addRow(
         dsd,
+        "41",
+        "Other Injuries)",
+        EhrReportUtils.map(moh705bIndicators.getAdultsWithOtherInjuries(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
         "42",
-        "Sexual Assault",
+        "Sexual Assault)",
         EhrReportUtils.map(moh705bIndicators.getAdultsWithSexualAssault(), mappings),
         getAdultChildrenColumns());
     addRow(
         dsd,
         "43",
-        "Violence related injuries",
+        "Violence related injuries)",
         EhrReportUtils.map(moh705bIndicators.getAdultsWithViolenceRelatedInjuries(), mappings),
         getAdultChildrenColumns());
     addRow(
         dsd,
         "44",
-        "Burns",
+        "Burns)",
         EhrReportUtils.map(moh705bIndicators.getAdultsWithBurns(), mappings),
         getAdultChildrenColumns());
     addRow(
         dsd,
         "45",
-        "Snake Bites",
+        "Snake Bites)",
         EhrReportUtils.map(moh705bIndicators.getAdultsWithSnakeBites(), mappings),
         getAdultChildrenColumns());
     addRow(
         dsd,
         "46",
-        "Dog Bites",
+        "Dog Bites)",
         EhrReportUtils.map(moh705bIndicators.getAdultsWithDogBites(), mappings),
         getAdultChildrenColumns());
     addRow(
         dsd,
         "47",
-        "Other Bites",
+        "Other Bites)",
         EhrReportUtils.map(moh705bIndicators.getAdultsWithOtherBites(), mappings),
         getAdultChildrenColumns());
     addRow(
         dsd,
         "48",
-        "Diabetes",
+        "Diabetes)",
         EhrReportUtils.map(moh705bIndicators.getAdultsWithDiabetes(), mappings),
         getAdultChildrenColumns());
     addRow(
         dsd,
         "49",
-        "Epilepsy",
+        "Epilepsy)",
         EhrReportUtils.map(moh705bIndicators.getAdultsWithEpilepsy(), mappings),
         getAdultChildrenColumns());
     addRow(
         dsd,
         "50",
-        "Newly Diagnosed HIV",
+        "Newly Diagnosed HIV)",
         EhrReportUtils.map(moh705bIndicators.getAdultsWithNewlyDiagnosedHIV(), mappings),
         getAdultChildrenColumns());
     addRow(
         dsd,
         "51",
-        "Brucellosis",
+        "Brucellosis)",
         EhrReportUtils.map(moh705bIndicators.getAdultsWithBrucellosis(), mappings),
         getAdultChildrenColumns());
+
     addRow(
         dsd,
         "52",
-        "Central Narvous System Condition",
+        "Cardiovascular Condition)",
+        EhrReportUtils.map(moh705bIndicators.getAdultsWithCardiovascularCondition(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "53",
+        "Central Narvous System Condition)",
         EhrReportUtils.map(
             moh705bIndicators.getAdultsWithOtherCentralNarvousSystemCondition(), mappings),
         getAdultChildrenColumns());
     addRow(
         dsd,
-        "53",
-        "Cardiovascular Condition",
-        EhrReportUtils.map(moh705bIndicators.getAdultsWithCardiovascularCondition(), mappings),
+        "60",
+        "Kalazar)",
+        EhrReportUtils.map(moh705bIndicators.getAdultsWithKalazar(), mappings),
         getAdultChildrenColumns());
     addRow(
         dsd,
-        "54",
-        "Cardiovascular Condition",
-        EhrReportUtils.map(moh705bIndicators.getAdultsWithCardiovascularCondition(), mappings),
+        "61",
+        "Dracunculosis(Guinea Worm))",
+        EhrReportUtils.map(moh705bIndicators.getAdultsWithDracunculosis(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "62",
+        "Yellow Fever)",
+        EhrReportUtils.map(moh705bIndicators.getAdultsWithYellowFever(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "63",
+        "Viral Haemorrhagic Feverr)",
+        EhrReportUtils.map(moh705bIndicators.getAdultsWithHaemorrhagicFever(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "64",
+        "Plague)",
+        EhrReportUtils.map(moh705bIndicators.getAdultsWithPlague(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "64",
+        "Deaths Due To Road Traffic Injuries)",
+        EhrReportUtils.map(
+            moh705bIndicators.getAdultsWithDeathtsDueToRoadTrafficInjuries(), mappings),
         getAdultChildrenColumns());
     return dsd;
   }
