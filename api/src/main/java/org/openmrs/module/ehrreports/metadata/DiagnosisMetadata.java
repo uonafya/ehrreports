@@ -149,12 +149,12 @@ public class DiagnosisMetadata extends Metadata {
   public List<Integer> getTyphoidFeverConceptList() {
     return Arrays.asList(outpatientMetadata.getTyphoidFeverConcept().getConceptId());
   }
- // public List<Integer> getConfirmedMalariaConceptList() {
+  // public List<Integer> getConfirmedMalariaConceptList() {
   //  return Arrays.asList(outpatientMetadata.getConfirmedMalariaConcept().getConceptId());
- // }
-  //public List<Integer> getSuspectedMalariaConceptList() {
-   // return Arrays.asList(outpatientMetadata.getConfirmedMalariaConcept().getConceptId());
- // }
+  // }
+  // public List<Integer> getSuspectedMalariaConceptList() {
+  // return Arrays.asList(outpatientMetadata.getConfirmedMalariaConcept().getConceptId());
+  // }
 
   public List<Integer> getBilharziaConceptList() {
     return Arrays.asList(
@@ -418,5 +418,25 @@ public class DiagnosisMetadata extends Metadata {
 
   public List<Integer> getArthritisConceptList() {
     return Arrays.asList(outpatientMetadata.getArthritisConcept().getConceptId());
+  }
+
+  public List<Integer> getOverWeightConceptList() {
+    return Arrays.asList(outpatientMetadata.getOverweightConcept().getConceptId());
+  }
+
+  public List<Integer> getMuscularSkeletalConditionsConceptList() {
+    return Arrays.asList(outpatientMetadata.getMuscularSkeletalConditionsConcept().getConceptId());
+  }
+
+  public List<Integer> getFistulaBirthRelatedConceptList() {
+    return Arrays.asList(outpatientMetadata.getFistulaBirthRelatedConcept().getConceptId());
+  }
+
+  public List<Integer> getNeoplamsConceptList() {
+    return Arrays.asList(outpatientMetadata.getNeoplamsConcept().getConceptId());
+  }
+
+  public List<Integer> getPhysicalDisabilityConceptList() {
+    return Arrays.asList(outpatientMetadata.getPhysicalDisabilityConcept().getConceptId());
   }
 }

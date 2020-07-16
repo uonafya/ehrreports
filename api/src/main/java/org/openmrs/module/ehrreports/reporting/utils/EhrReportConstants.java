@@ -212,8 +212,8 @@ public final class EhrReportConstants {
       "906cb089-9f25-4920-9165-530653995d83"; // 4293
   public static final String OTHER_CONGENITAL_MALARIA =
       "3850f805-9850-4cf0-a5d5-bb7adc009e06"; // 4492
- // public static final String CONFIRMED_MALARIA =
-      //"8e83be01-17d3-4cf0-9f2c-c22d482b8138"; // 4055
+  // public static final String CONFIRMED_MALARIA =
+  // "8e83be01-17d3-4cf0-9f2c-c22d482b8138"; // 4055
 
   // URINARY TRACT INFECTION
   public static final String URINARY_TRACT_INFECTION =
