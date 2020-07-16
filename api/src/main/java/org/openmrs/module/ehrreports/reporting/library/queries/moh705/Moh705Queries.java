@@ -221,7 +221,7 @@ public class Moh705Queries {
    */
   public static String getAdultsPatientsWithGreaterThan25BMI() {
     String query =
-        "SELECT patient_id FROM triage_patient_data WHERE created_on BETWEEN :startDate AND DATE_ADD(:endDate, interval 1 DAY) AND weight > 0 AND height > 0";
+        "SELECT patient_id FROM triage_patient_data WHERE created_on BETWEEN :startDate AND DATE_ADD(:endDate, interval 1 DAY) AND weight > 0 AND height > 0 AND ((100 * 100 * weight) / (height * height))>25";
 
     return query;
   }
