@@ -400,6 +400,9 @@ public class OutpatientMetadata extends ProgramsMetadata {
   public Concept getUnspecifiedMalariaConcept() {
     return getConcept(EhrReportConstants.UNSPECIFIED_MALARIA);
   }
+  //public Concept getConfirmedMalariaConcept() {
+    //return getConcept(EhrReportConstants.UNSPECIFIED_MALARIA);
+ // }
 
   public Concept getUrinaryTractInfecionConcept() {
     return getConcept(EhrReportConstants.URINARY_TRACT_INFECTION);
@@ -890,6 +893,10 @@ public class OutpatientMetadata extends ProgramsMetadata {
 
   public Concept getDiseaseOfPuerperiumAndChildBirthConcept() {
     return getConcept(EhrReportConstants.DISEASE_OF_PUERPERUM_AND_CHILD_BIRTH);
+  }
+
+  public Concept getArthritisConcept() {
+    return getConcept(EhrReportConstants.ARTHRITIS);
   }
 
   /**

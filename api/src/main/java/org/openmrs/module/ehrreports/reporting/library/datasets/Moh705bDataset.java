@@ -145,6 +145,7 @@ public class Moh705bDataset extends BaseDataSet {
         getAdultChildrenColumns());
     // 14
     // 15
+
     addRow(
         dsd,
         "16",
@@ -260,7 +261,49 @@ public class Moh705bDataset extends BaseDataSet {
         "Hypertension)",
         EhrReportUtils.map(moh705bIndicators.getAdultsWithHypertension(), mappings),
         getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "34",
+        "Mental Disorders)",
+        EhrReportUtils.map(moh705bIndicators.getAdultsWithMentalDisorders(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "35",
+        "Dental Disorders)",
+        EhrReportUtils.map(moh705bIndicators.getAdultsWithDentalDisorders(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "36",
+        "Jiggers Infestation)",
+        EhrReportUtils.map(moh705bIndicators.getAdultsWithJiggersInfestation(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "37",
+        "Disease of The Skin)",
+        EhrReportUtils.map(moh705bIndicators.getAdultsWithDiseaseOfTheSkin(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "38",
+        "Arthritis)",
+        EhrReportUtils.map(moh705bIndicators.getAdultsWithArthritis(), mappings),
+        getAdultChildrenColumns());
+    addRow(
+        dsd,
+        "39",
+        "Poisoning)",
+        EhrReportUtils.map(moh705bIndicators.getAdultsWithPoisoning(), mappings),
+        getAdultChildrenColumns());
 
+    addRow(
+        dsd,
+        "40",
+        "Road Traffic Injuries)",
+        EhrReportUtils.map(moh705bIndicators.getAdultsWithRoadTrafficInjuries(), mappings),
+        getAdultChildrenColumns());
     addRow(
         dsd,
         "41",
