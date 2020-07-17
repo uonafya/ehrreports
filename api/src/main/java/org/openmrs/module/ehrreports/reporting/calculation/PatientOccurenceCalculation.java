@@ -54,13 +54,14 @@ public class PatientOccurenceCalculation extends AbstractPatientCalculation {
 
       if ((encounterList.size() > 0
           && (state.equals(EhrReportConstants.OccurenceStates.REVISIT)
-              || (obs != null
+              && (obs != null
                   && obs.getValueCoded() != null
                   && obs.getValueCoded().equals(outpatientMetadata.getRevisitConcept()))))) {
         isCandidate = true;
-      }
-      if ((encounterList.size() == 0 && (state.equals(EhrReportConstants.OccurenceStates.NEW))
-          || (obs != null
+
+      } else if ((encounterList.size() > 0
+          && (state.equals(EhrReportConstants.OccurenceStates.NEW))
+          && (obs != null
               && obs.getValueCoded() != null
               && obs.getValueCoded().equals(outpatientMetadata.getNewPatientConcept())))) {
         isCandidate = true;
