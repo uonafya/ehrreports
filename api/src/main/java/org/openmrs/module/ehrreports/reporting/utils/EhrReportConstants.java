@@ -459,7 +459,7 @@ public final class EhrReportConstants {
   //	MUSCULAR SKELETON CONDITIONS
   public static final String MUSCULAR_DYSTROPHY =
       "71c88f51-104b-491c-bd4c-644816c845f4"; // 4567 desc for this match MUSCULAR SKELETON
-                                              // CONDITIONS
+  // CONDITIONS
 
   // OVERWEIGHT (BMI > 25)
   public static final String OVERWEIGHT_BMI_125 =
