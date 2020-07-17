@@ -154,12 +154,6 @@ public class DiagnosisMetadata extends Metadata {
   public List<Integer> getTyphoidFeverConceptList() {
     return Arrays.asList(outpatientMetadata.getTyphoidFeverConcept().getConceptId());
   }
-  // public List<Integer> getConfirmedMalariaConceptList() {
-  //  return Arrays.asList(outpatientMetadata.getConfirmedMalariaConcept().getConceptId());
-  // }
-  // public List<Integer> getSuspectedMalariaConceptList() {
-  // return Arrays.asList(outpatientMetadata.getConfirmedMalariaConcept().getConceptId());
-  // }
 
   public List<Integer> getBilharziaConceptList() {
     return Arrays.asList(
