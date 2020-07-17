@@ -133,6 +133,7 @@ public class DiagnosisMetadata extends Metadata {
         outpatientMetadata.getUnspecifiedMalariaConcept().getConceptId(),
         outpatientMetadata.getOtherCongenitalMalariaConcept().getConceptId(),
         outpatientMetadata.getOtherSpecifiedMalariaConcept().getConceptId(),
+        outpatientMetadata.getConfirmedMalariaConcept().getConceptId(),
         outpatientMetadata.getMalariaInPregnancyConcept().getConceptId());
   }
 
@@ -392,7 +393,13 @@ public class DiagnosisMetadata extends Metadata {
   public List<Integer> getHypertensionConceptList() {
     return Arrays.asList(
         outpatientMetadata.getHypertensionConcept().getConceptId(),
-        outpatientMetadata.getPrimaryHypertensionConcept().getConceptId());
+        outpatientMetadata.getPrimaryHypertensionConcept().getConceptId(),
+        outpatientMetadata.getRenovascularHypertensionConcept().getConceptId(),
+        outpatientMetadata.getMalignantHypertensionConcept().getConceptId(),
+        outpatientMetadata.getIdiopathicHypertensionConcept().getConceptId(),
+        outpatientMetadata.getPregnancyInducedHypertensionConcept().getConceptId(),
+        outpatientMetadata.getBenignIntracranialHypertensionConcept().getConceptId(),
+        outpatientMetadata.getElevateBPWithoutDiagnosisOfHypertensionConcept().getConceptId());
   }
 
   public List<Integer> getAbortionConceptList() {
@@ -405,6 +412,7 @@ public class DiagnosisMetadata extends Metadata {
         outpatientMetadata.getRecurentAbortionConcept().getConceptId(),
         outpatientMetadata.getThreatenedAbortionConcept().getConceptId(),
         outpatientMetadata.getSepticAbortionConcept().getConceptId(),
+        outpatientMetadata.getIncompleteSpontaneousAbortionConcept().getConceptId(),
         outpatientMetadata
             .getUnspecifiedSpontaneousAbortionWithOtherComplicationsConcept()
             .getConceptId());
@@ -424,11 +432,13 @@ public class DiagnosisMetadata extends Metadata {
   }
 
   public List<Integer> getMuscularSkeletalConditionsConceptList() {
-    return Arrays.asList(outpatientMetadata.getMuscularSkeletalConditionsConcept().getConceptId());
+    return Arrays.asList(outpatientMetadata.getMuscularDystrophyConcept().getConceptId());
   }
 
   public List<Integer> getFistulaBirthRelatedConceptList() {
-    return Arrays.asList(outpatientMetadata.getFistulaBirthRelatedConcept().getConceptId());
+    return Arrays.asList(
+        outpatientMetadata.getVesicovaginalFistulaConcept().getConceptId(),
+        outpatientMetadata.getUterovesicalFistula().getConceptId());
   }
 
   public List<Integer> getNeoplamsConceptList() {

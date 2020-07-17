@@ -421,9 +421,9 @@ public class OutpatientMetadata extends ProgramsMetadata {
   public Concept getUnspecifiedMalariaConcept() {
     return getConcept(EhrReportConstants.UNSPECIFIED_MALARIA);
   }
-  // public Concept getConfirmedMalariaConcept() {
-  // return getConcept(EhrReportConstants.UNSPECIFIED_MALARIA);
-  // }
+  public Concept getConfirmedMalariaConcept() {
+  return getConcept(EhrReportConstants.CONFIRMED_MALARIA);
+  }
 
   public Concept getUrinaryTractInfecionConcept() {
     return getConcept(EhrReportConstants.URINARY_TRACT_INFECTION);
@@ -528,6 +528,7 @@ public class OutpatientMetadata extends ProgramsMetadata {
   public Concept getDischargeOfEarConcept() {
     return getConcept(EhrReportConstants.DISCHARGE_OF_EAR);
   }
+
   // TO Do pending more ear inections
   public Concept getUpperRespiratoryTractInfectionConcept() {
     return getConcept(EhrReportConstants.UPPER_RESPIRATORY_TRACT_INFECTION);
@@ -904,6 +905,8 @@ public class OutpatientMetadata extends ProgramsMetadata {
     return getConcept(EhrReportConstants.UNSPECIFIED_SPONTANEOUS_ABORTION_WITH_OTHER_COMPLICATIONS);
   }
 
+  // HYPERTENSION
+
   public Concept getHypertensionConcept() {
     return getConcept(EhrReportConstants.HYPERTENSION);
   }
@@ -912,8 +915,41 @@ public class OutpatientMetadata extends ProgramsMetadata {
     return getConcept(EhrReportConstants.PRIMARY_HYPERTENSION);
   }
 
+  public Concept getRenovascularHypertensionConcept() {
+    return getConcept(EhrReportConstants.RENOVASCULAR_HYPERTENSION);
+  }
+
+  public Concept getMalignantHypertensionConcept() {
+    return getConcept(EhrReportConstants.MALIGNANT_HYPERTENSION);
+  }
+
+  public Concept getIdiopathicHypertensionConcept() {
+    return getConcept(EhrReportConstants.IDIOPATHIC_HYPERTENSION);
+  }
+
+  public Concept getPregnancyInducedHypertensionConcept() {
+    return getConcept(EhrReportConstants.PREGNANCY_INDUCED_HYPERTENSION);
+  }
+
+  public Concept getBenignIntracranialHypertensionConcept() {
+    return getConcept(EhrReportConstants.BENIGN_INTRACRANIAL_HYPERTENSION);
+  }
+  // 4309
+  public Concept getElevateBPWithoutDiagnosisOfHypertensionConcept() {
+    return getConcept(
+        EhrReportConstants.ELEVATED_BLOOD_PRESSURE_READING_WITHOUT_DIAGNOSIS_OF_HYPERTENSION);
+  }
+
   public Concept getDiseaseOfPuerperiumAndChildBirthConcept() {
     return getConcept(EhrReportConstants.DISEASE_OF_PUERPERUM_AND_CHILD_BIRTH);
+  }
+
+  /* public Concept getMuscularDystrophyConcept() {
+      return getConcept(EhrReportConstants.MUSCULAR_DYSTROPHY);
+  }*/
+
+  public Concept getUterovesicalFistula() {
+    return getConcept(EhrReportConstants.UTEROVESICAL_FISTULA);
   }
 
   public Concept getArthritisConcept() {
@@ -924,12 +960,12 @@ public class OutpatientMetadata extends ProgramsMetadata {
     return getConcept(EhrReportConstants.OVERWEIGHT_BMI_125);
   }
 
-  public Concept getMuscularSkeletalConditionsConcept() {
-    return getConcept(EhrReportConstants.MUSCULAR_SKELETAL_CONDITIONS);
+  public Concept getMuscularDystrophyConcept() {
+    return getConcept(EhrReportConstants.MUSCULAR_DYSTROPHY);
   }
 
-  public Concept getFistulaBirthRelatedConcept() {
-    return getConcept(EhrReportConstants.FISTULA_BIRTH_RELATED);
+  public Concept getVesicovaginalFistulaConcept() {
+    return getConcept(EhrReportConstants.VESICOVAGINAL_FISTULA);
   }
 
   public Concept getNeoplamsConcept() {

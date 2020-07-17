@@ -220,8 +220,8 @@ public final class EhrReportConstants {
       "906cb089-9f25-4920-9165-530653995d83"; // 4293
   public static final String OTHER_CONGENITAL_MALARIA =
       "3850f805-9850-4cf0-a5d5-bb7adc009e06"; // 4492
-  // public static final String CONFIRMED_MALARIA =
-  // "8e83be01-17d3-4cf0-9f2c-c22d482b8138"; // 4055
+  public static final String CONFIRMED_MALARIA =
+   "8e83be01-17d3-4cf0-9f2c-c22d482b8138"; // 4055
 
   // URINARY TRACT INFECTION
   public static final String URINARY_TRACT_INFECTION =
@@ -464,22 +464,27 @@ public final class EhrReportConstants {
   public static final String ELEVATED_BLOOD_PRESSURE_READING_WITHOUT_DIAGNOSIS_OF_HYPERTENSION =
       "5cd9b4ee-2d3d-4dc7-8393-e4b562752b9f"; // 4309
 
+  //	MUSCULAR SKELETON CONDITIONS
+  public static final String MUSCULAR_DYSTROPHY =
+      "71c88f51-104b-491c-bd4c-644816c845f4"; // 4567 desc for this match MUSCULAR SKELETON
+                                              // CONDITIONS
+
   // OVERWEIGHT (BMI > 25)
   public static final String OVERWEIGHT_BMI_125 =
       "72d91e67-0f6e-41dd-87ce-0c510c99aa2a"; // Input concept when added
   // OVERWEIGHT (BMI > 25)
-  public static final String MUSCULAR_SKELETAL_CONDITIONS =
-      "72d91e67-0f6e-41dd-87ce-0c510c99aa2a"; // Input concept when added
+
   // FISTULA_BIRTH_RELATED
-  public static final String FISTULA_BIRTH_RELATED = "7c435519-98ce-4470-a6af-b449ffbf8800"; // 1388
+  public static final String VESICOVAGINAL_FISTULA = "7c435519-98ce-4470-a6af-b449ffbf8800"; // 1388
+  public static final String UTEROVESICAL_FISTULA = "209b8032-821e-4166-b497-e024490b994a"; // 3838
   // NEOPLAMS
   public static final String NEOPLAMS = "ef07b580-203e-409b-bd21-38ff4cc0b8a5"; // 1024
   // PHYSICAL DISABILITY
   public static final String PHYSICAL_DISABILITY =
       "72d91e67-0f6e-41dd-87ce-0c510c99aa2a"; // Input concept when added
-  // PHYSICAL DISABILITY
+  // PHYSICAL DISABILITY - DISEASE OF PUERPERIUM & CHILDBIRTH
   public static final String DISEASE_OF_PUERPERUM_AND_CHILD_BIRTH =
-      "72d91e67-0f6e-41dd-87ce-0c510c99aa2a"; // Input concept when added
+      "be97c89d-62f2-42f7-98c2-58481de66aec"; // 4445
   // ARTHRITIS
   public static final String ARTHRITIS =
       "0512a0da-662f-481e-a271-9773aec9a658"; // 1037 ADD MORE CONCEPTS DIAGNOSIS
