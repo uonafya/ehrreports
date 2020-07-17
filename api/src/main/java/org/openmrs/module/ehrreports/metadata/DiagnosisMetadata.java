@@ -17,7 +17,12 @@ public class DiagnosisMetadata extends Metadata {
   public List<Integer> getDiarrhoeaConceptList() {
     return Arrays.asList(
         outpatientMetadata.getAcuteDiarrhoea().getConceptId(),
-        outpatientMetadata.getDiarrheaUnspecified().getConceptId());
+        outpatientMetadata.getDiarrheaUnspecified().getConceptId(),
+        outpatientMetadata.getFunctionalDiarrhoea().getConceptId(),
+        outpatientMetadata.getChronicDiarrhoea().getConceptId(),
+        outpatientMetadata.getDiarrhoeaAndGastroenteritisOfPresumesInfectionOrigin().getConceptId(),
+        outpatientMetadata.getHemorrhagicDiarrhea().getConceptId(),
+        outpatientMetadata.getBacterialGastroenteritis().getConceptId());
   }
 
   public List<Integer> getTuberculosisConceptList() {
