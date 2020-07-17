@@ -222,7 +222,6 @@ public final class EhrReportConstants {
       "3850f805-9850-4cf0-a5d5-bb7adc009e06"; // 4492
   public static final String CONFIRMED_MALARIA =
    "8e83be01-17d3-4cf0-9f2c-c22d482b8138"; // 4055
-<<<<<<< HEAD
 
   public static final String PLASMODIUM_FALCIPARUM_MALARIA_UNSPECIFIED =
    "b2370662-2bd1-4522-8fcb-1b626b5592b0"; // 705
@@ -257,9 +256,6 @@ public final class EhrReportConstants {
   public static final String SEVERE_MALARIA =
    "160155AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // 160155
 
-  //705 4055 4267 4314 4515  160148 160149 to 155
-=======
->>>>>>> 0c5d37cd6a62f107e51404822f3b321914f879ce
 
   // URINARY TRACT INFECTION
   public static final String URINARY_TRACT_INFECTION =

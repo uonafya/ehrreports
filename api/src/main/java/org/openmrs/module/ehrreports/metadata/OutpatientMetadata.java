@@ -421,42 +421,54 @@ public class OutpatientMetadata extends ProgramsMetadata {
   public Concept getUnspecifiedMalariaConcept() {
     return getConcept(EhrReportConstants.UNSPECIFIED_MALARIA);
   }
+
   public Concept getConfirmedMalariaConcept() {
-  return getConcept(EhrReportConstants.CONFIRMED_MALARIA);
+    return getConcept(EhrReportConstants.CONFIRMED_MALARIA);
   }
 
- public Concept getPFCMUMalariaConcept() {
-  return getConcept(EhrReportConstants.PLASMODIUM_FALCIPARUM_MALARIA_UNSPECIFIED);
+  public Concept getPFCMUMalariaConcept() {
+    return getConcept(EhrReportConstants.PLASMODIUM_FALCIPARUM_MALARIA_UNSPECIFIED);
   }
- public Concept getOMNEMalaria_ClassifiedConcept() {
-  return getConcept(EhrReportConstants.OTHER_MALARIA_NOT_ELSEWHERE_CLASSIFIED);
+
+  public Concept getOMNEMalaria_ClassifiedConcept() {
+    return getConcept(EhrReportConstants.OTHER_MALARIA_NOT_ELSEWHERE_CLASSIFIED);
   }
+
   public Concept getCongenitalFalcrumMalariaConcept() {
-  return getConcept(EhrReportConstants.CONGENITAL_FALCIPARUM_MALARIA);
+    return getConcept(EhrReportConstants.CONGENITAL_FALCIPARUM_MALARIA);
   }
+
   public Concept getPlasmodiumFalcrumMalariaConcept() {
-  return getConcept(EhrReportConstants.PLASMODIUM_FALCIPARUM_MALARIA);
+    return getConcept(EhrReportConstants.PLASMODIUM_FALCIPARUM_MALARIA);
   }
+
   public Concept getPlasmodiumVivaxMalariaConcept() {
-  return getConcept(EhrReportConstants.PLASMODIUM_VIVAX_MALARIA);
+    return getConcept(EhrReportConstants.PLASMODIUM_VIVAX_MALARIA);
   }
+
   public Concept getMalaria_confirmed_with_minor_digestive_symptomsConcept() {
-  return getConcept(EhrReportConstants.Malaria_confirmed_with_minor_digestive_symptoms);
+    return getConcept(EhrReportConstants.Malaria_confirmed_with_minor_digestive_symptoms);
   }
+
   public Concept getPresumptiveMalariaWithPregnancyConcept() {
-  return getConcept(EhrReportConstants.Presumptive_Malaria_With_Pregnancy);
+    return getConcept(EhrReportConstants.Presumptive_Malaria_With_Pregnancy);
   }
+
   public Concept getConfirmedMalariaWithPregnancyConcept() {
-  return getConcept(EhrReportConstants.Confirmed_Malaria_With_Pregnancy);
+    return getConcept(EhrReportConstants.Confirmed_Malaria_With_Pregnancy);
   }
+
   public Concept getPresumptive_malaria_with_minor_digestive_symptoms_pregnantConcept() {
-  return getConcept(EhrReportConstants.Presumptive_malaria_with_minor_digestive_symptoms_pregnant);
+    return getConcept(
+        EhrReportConstants.Presumptive_malaria_with_minor_digestive_symptoms_pregnant);
   }
+
   public Concept getConfirmed_malaria_with_minor_digestive_symptoms_pregnantConcept() {
-  return getConcept(EhrReportConstants.Confirmed_malaria_with_minor_digestive_symptoms_pregnant);
+    return getConcept(EhrReportConstants.Confirmed_malaria_with_minor_digestive_symptoms_pregnant);
   }
+
   public Concept getSevereMalariaConcept() {
-  return getConcept(EhrReportConstants.SEVERE_MALARIA);
+    return getConcept(EhrReportConstants.SEVERE_MALARIA);
   }
 
   public Concept getUrinaryTractInfecionConcept() {
