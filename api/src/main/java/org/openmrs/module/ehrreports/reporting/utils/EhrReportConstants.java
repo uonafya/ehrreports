@@ -220,8 +220,7 @@ public final class EhrReportConstants {
       "906cb089-9f25-4920-9165-530653995d83"; // 4293
   public static final String OTHER_CONGENITAL_MALARIA =
       "3850f805-9850-4cf0-a5d5-bb7adc009e06"; // 4492
-  public static final String CONFIRMED_MALARIA =
-   "8e83be01-17d3-4cf0-9f2c-c22d482b8138"; // 4055
+  public static final String CONFIRMED_MALARIA = "8e83be01-17d3-4cf0-9f2c-c22d482b8138"; // 4055
 
   // URINARY TRACT INFECTION
   public static final String URINARY_TRACT_INFECTION =
@@ -467,7 +466,7 @@ public final class EhrReportConstants {
   //	MUSCULAR SKELETON CONDITIONS
   public static final String MUSCULAR_DYSTROPHY =
       "71c88f51-104b-491c-bd4c-644816c845f4"; // 4567 desc for this match MUSCULAR SKELETON
-                                              // CONDITIONS
+  // CONDITIONS
 
   // OVERWEIGHT (BMI > 25)
   public static final String OVERWEIGHT_BMI_125 =

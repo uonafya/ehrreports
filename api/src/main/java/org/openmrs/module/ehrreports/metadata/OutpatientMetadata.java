@@ -421,8 +421,9 @@ public class OutpatientMetadata extends ProgramsMetadata {
   public Concept getUnspecifiedMalariaConcept() {
     return getConcept(EhrReportConstants.UNSPECIFIED_MALARIA);
   }
+
   public Concept getConfirmedMalariaConcept() {
-  return getConcept(EhrReportConstants.CONFIRMED_MALARIA);
+    return getConcept(EhrReportConstants.CONFIRMED_MALARIA);
   }
 
   public Concept getUrinaryTractInfecionConcept() {
