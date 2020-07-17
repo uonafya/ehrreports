@@ -220,12 +220,41 @@ public final class EhrReportConstants {
       "906cb089-9f25-4920-9165-530653995d83"; // 4293
   public static final String OTHER_CONGENITAL_MALARIA =
       "3850f805-9850-4cf0-a5d5-bb7adc009e06"; // 4492
-  public static final String MALARIA = "116128AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // 116128
-  public static final String Malaria_confirmed = "160148AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // 160148
-  // public static final String CONFIRMED_MALARIA =
-  // "8e83be01-17d3-4cf0-9f2c-c22d482b8138"; // 4055
-  public static final String CONFIRMED_MALARIA =
+  public static final String CONFIRMED_MALARIA = "8e83be01-17d3-4cf0-9f2c-c22d482b8138"; // 4055
+
+  public static final String PLASMODIUM_FALCIPARUM_MALARIA_UNSPECIFIED =
+   "b2370662-2bd1-4522-8fcb-1b626b5592b0"; // 705
+
+  public static final String OTHER_MALARIA_NOT_ELSEWHERE_CLASSIFIED =
    "8e83be01-17d3-4cf0-9f2c-c22d482b8138"; // 4055
+
+  public static final String CONGENITAL_FALCIPARUM_MALARIA =
+   "a66eb37f-5ce0-4066-ad34-539a04c5a713"; // 4267
+
+  public static final String PLASMODIUM_FALCIPARUM_MALARIA =
+   "246639aa-efdb-4a32-9303-e08f6e423e18"; // 4314
+
+  public static final String PLASMODIUM_VIVAX_MALARIA =
+   "f42394df-f2d2-43d0-9144-6e3dfafbfa15"; // 4515
+
+  public static final String Malaria_confirmed_with_minor_digestive_symptoms =
+   "160150AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // 160150
+
+  public static final String Presumptive_Malaria_With_Pregnancy =
+   "160151AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // 160151
+
+  public static final String Confirmed_Malaria_With_Pregnancy =
+   "160152AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // 160152
+
+  public static final String Presumptive_malaria_with_minor_digestive_symptoms_pregnant =
+   "160153AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // 160153
+
+  public static final String Confirmed_malaria_with_minor_digestive_symptoms_pregnant =
+   "160154AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // 160154
+
+  public static final String SEVERE_MALARIA =
+   "160155AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // 160155
+
 
   // URINARY TRACT INFECTION
   public static final String URINARY_TRACT_INFECTION =
