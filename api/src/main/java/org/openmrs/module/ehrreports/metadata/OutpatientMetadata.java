@@ -227,6 +227,27 @@ public class OutpatientMetadata extends ProgramsMetadata {
   public Concept getDiarrheaUnspecified() {
     return getConcept(EhrReportConstants.DIARRHEA_UNSPECIFIED);
   }
+  // 4421
+  public Concept getFunctionalDiarrhoea() {
+    return getConcept(EhrReportConstants.FUNCTIONAL_DIARRHOEA);
+  }
+  // 4421
+  public Concept getChronicDiarrhoea() {
+    return getConcept(EhrReportConstants.CHRONIC_DIARRHOEA);
+  }
+  // 1678
+  public Concept getDiarrhoeaAndGastroenteritisOfPresumesInfectionOrigin() {
+    return getConcept(
+        EhrReportConstants.DIARRHOEA_AND_GASTROENTERITIS_OF_PRESUMED_INFECTIOUS_ORIGIN);
+  }
+  // 138868
+  public Concept getHemorrhagicDiarrhea() {
+    return getConcept(EhrReportConstants.Hemorrhagic_Diarrhea);
+  }
+  // 148023
+  public Concept getBacterialGastroenteritis() {
+    return getConcept(EhrReportConstants.Bacterial_Gastroenteritis);
+  }
 
   // Get Dysentery Concepts
   // 2450
@@ -408,9 +429,9 @@ public class OutpatientMetadata extends ProgramsMetadata {
   public Concept getUnspecifiedMalariaConcept() {
     return getConcept(EhrReportConstants.UNSPECIFIED_MALARIA);
   }
-  // public Concept getConfirmedMalariaConcept() {
-  // return getConcept(EhrReportConstants.UNSPECIFIED_MALARIA);
-  // }
+  public Concept getConfirmedMalariaConcept() {
+  return getConcept(EhrReportConstants.CONFIRMED_MALARIA);
+  }
 
   public Concept getUrinaryTractInfecionConcept() {
     return getConcept(EhrReportConstants.URINARY_TRACT_INFECTION);

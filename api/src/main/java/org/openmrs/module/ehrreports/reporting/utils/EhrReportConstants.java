@@ -99,8 +99,16 @@ public final class EhrReportConstants {
   public static final String REVISIT = "51d88fa3-b475-4713-8db8-58b63b0f3739"; // 945
 
   // Diarrhoea
-  public static final String ACUTE_DIARRHEA = "48ec899e-8f8f-4816-8d76-b98026b7d04f";
-  public static final String DIARRHEA_UNSPECIFIED = "91e4a7f4-f3d1-455e-991e-eb64a4df415b";
+  public static final String ACUTE_DIARRHEA = "48ec899e-8f8f-4816-8d76-b98026b7d04f"; // 1215
+  public static final String DIARRHEA_UNSPECIFIED = "91e4a7f4-f3d1-455e-991e-eb64a4df415b"; // 4029
+  public static final String FUNCTIONAL_DIARRHOEA = "b240c27a-071a-4a7c-8c65-97282354e4d0"; // 4421
+  public static final String CHRONIC_DIARRHOEA = "cd385bd1-acb8-4e3a-9ada-57a38f2a4ee0"; // 962
+  public static final String DIARRHOEA_AND_GASTROENTERITIS_OF_PRESUMED_INFECTIOUS_ORIGIN =
+      "882643b0-55aa-4385-9aee-9a017bc8c6a4"; // 1678
+  public static final String Hemorrhagic_Diarrhea =
+      "138868AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // 138868
+  public static final String Bacterial_Gastroenteritis =
+      "148023AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // 148023
 
   // tuberulosis
   public static final String TUBERCULOSIS = "51ac5587-6f78-4246-8329-fbc47a86fbda"; //
@@ -216,6 +224,8 @@ public final class EhrReportConstants {
   public static final String Malaria_confirmed = "160148AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA"; // 160148
   // public static final String CONFIRMED_MALARIA =
   // "8e83be01-17d3-4cf0-9f2c-c22d482b8138"; // 4055
+  public static final String CONFIRMED_MALARIA =
+   "8e83be01-17d3-4cf0-9f2c-c22d482b8138"; // 4055
 
   // URINARY TRACT INFECTION
   public static final String URINARY_TRACT_INFECTION =
