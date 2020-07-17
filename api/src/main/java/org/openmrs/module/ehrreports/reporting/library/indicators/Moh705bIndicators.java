@@ -658,7 +658,6 @@ public class Moh705bIndicators {
                 diagnosisMetadata.getDeathtsDueToRoadTrafficInjuriesConceptList()),
             "startDate=${startDate},endDate=${endDate}"));
   }
-
   /**
    * Get patients who are adults and have new/revisit
    *
