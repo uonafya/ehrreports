@@ -17,7 +17,12 @@ public class DiagnosisMetadata extends Metadata {
   public List<Integer> getDiarrhoeaConceptList() {
     return Arrays.asList(
         outpatientMetadata.getAcuteDiarrhoea().getConceptId(),
-        outpatientMetadata.getDiarrheaUnspecified().getConceptId());
+        outpatientMetadata.getDiarrheaUnspecified().getConceptId(),
+        outpatientMetadata.getFunctionalDiarrhoea().getConceptId(),
+        outpatientMetadata.getChronicDiarrhoea().getConceptId(),
+        outpatientMetadata.getDiarrhoeaAndGastroenteritisOfPresumesInfectionOrigin().getConceptId(),
+        outpatientMetadata.getHemorrhagicDiarrhea().getConceptId(),
+        outpatientMetadata.getBacterialGastroenteritis().getConceptId());
   }
 
   public List<Integer> getTuberculosisConceptList() {
@@ -129,6 +134,7 @@ public class DiagnosisMetadata extends Metadata {
         outpatientMetadata.getOtherCongenitalMalariaConcept().getConceptId(),
         outpatientMetadata.getOtherSpecifiedMalariaConcept().getConceptId(),
         outpatientMetadata.getConfirmedMalariaConcept().getConceptId(),
+
         outpatientMetadata.getPFCMUMalariaConcept().getConceptId(),
         outpatientMetadata.getOMNEMalaria_ClassifiedConcept().getConceptId(),
         outpatientMetadata.getCongenitalFalcrumMalariaConcept().getConceptId(),
@@ -142,6 +148,8 @@ public class DiagnosisMetadata extends Metadata {
         outpatientMetadata.getSevereMalariaConcept().getConceptId(),
         outpatientMetadata.getMalaria_confirmed_with_minor_digestive_symptomsConcept().getConceptId()
     );
+
+
   }
 
   public List<Integer> getMalariaInPregnancyList() {
@@ -162,12 +170,6 @@ public class DiagnosisMetadata extends Metadata {
   public List<Integer> getTyphoidFeverConceptList() {
     return Arrays.asList(outpatientMetadata.getTyphoidFeverConcept().getConceptId());
   }
-  // public List<Integer> getConfirmedMalariaConceptList() {
-  //  return Arrays.asList(outpatientMetadata.getConfirmedMalariaConcept().getConceptId());
-  // }
-  // public List<Integer> getSuspectedMalariaConceptList() {
-  // return Arrays.asList(outpatientMetadata.getConfirmedMalariaConcept().getConceptId());
-  // }
 
   public List<Integer> getBilharziaConceptList() {
     return Arrays.asList(
