@@ -134,7 +134,24 @@ public class DiagnosisMetadata extends Metadata {
         outpatientMetadata.getOtherCongenitalMalariaConcept().getConceptId(),
         outpatientMetadata.getOtherSpecifiedMalariaConcept().getConceptId(),
         outpatientMetadata.getConfirmedMalariaConcept().getConceptId(),
-        outpatientMetadata.getMalariaInPregnancyConcept().getConceptId());
+        outpatientMetadata.getPFCMUMalariaConcept().getConceptId(),
+        outpatientMetadata.getOMNEMalaria_ClassifiedConcept().getConceptId(),
+        outpatientMetadata.getCongenitalFalcrumMalariaConcept().getConceptId(),
+        outpatientMetadata.getPlasmodiumFalcrumMalariaConcept().getConceptId(),
+        outpatientMetadata.getPlasmodiumVivaxMalariaConcept().getConceptId(),
+        outpatientMetadata.getMalariaInPregnancyConcept().getConceptId(),
+        outpatientMetadata.getPresumptiveMalariaWithPregnancyConcept().getConceptId(),
+        outpatientMetadata.getConfirmedMalariaWithPregnancyConcept().getConceptId(),
+        outpatientMetadata
+            .getPresumptive_malaria_with_minor_digestive_symptoms_pregnantConcept()
+            .getConceptId(),
+        outpatientMetadata
+            .getConfirmed_malaria_with_minor_digestive_symptoms_pregnantConcept()
+            .getConceptId(),
+        outpatientMetadata.getSevereMalariaConcept().getConceptId(),
+        outpatientMetadata
+            .getMalaria_confirmed_with_minor_digestive_symptomsConcept()
+            .getConceptId());
   }
 
   public List<Integer> getMalariaInPregnancyList() {
