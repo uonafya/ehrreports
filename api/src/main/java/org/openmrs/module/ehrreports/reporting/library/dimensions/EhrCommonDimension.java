@@ -57,6 +57,8 @@ public class EhrCommonDimension {
     dim.addCohortDefinition(
         "<5", ageDimensionCohort.createXtoYAgeCohort("Children under 5 years", 0, 4));
     dim.addCohortDefinition("5+", ageDimensionCohort.createXtoYAgeCohort("Over 5 years", 5, 200));
+    dim.addCohortDefinition(
+        ">60", ageDimensionCohort.createXtoYAgeCohort("Over 60 years", 60, 200));
     return dim;
   }
 
