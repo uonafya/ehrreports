@@ -142,7 +142,21 @@ public class Moh717Dataset extends BaseDataSet {
                     mappings)),
             mappings),
         getSpecialClinicsCategories());
-    // STI
+    // CCC
+    addRow(
+        dsd,
+        "CCC",
+        "CCC CLINIC",
+        EhrReportUtils.map(
+            ehrGeneralIndicator.getIndicator(
+                "CCC CLINIC",
+                EhrReportUtils.map(
+                    moh717CohortQueries.getSpecialClinicPatients(
+                        outpatientMetadata.getCccClinicConcept().getConceptId()),
+                    mappings)),
+            mappings),
+        getSpecialClinicsCategories());
+    // Psy
     addRow(
         dsd,
         "Psy",
@@ -293,6 +307,10 @@ public class Moh717Dataset extends BaseDataSet {
     ColumnParameters under5YearsFemaleR =
         new ColumnParameters(
             "under5YFR", "Under 5 Years Female - REVISIT", "gender=F|age=<5|state=RVT", "09");
+    ColumnParameters over60YearsNew =
+        new ColumnParameters("over60new", "Over 60 Years - NEW", "age=>60|state=NEW", "11");
+    ColumnParameters over60YearsReattendance =
+        new ColumnParameters("over60reatt", "Over 60 Years - REVISIT", "age=>60|state=RVT", "12");
     ColumnParameters totalFemale = new ColumnParameters("totalF", "Total Female", "gender=F", "10");
     return Arrays.asList(
         over5YearsMaleN,
@@ -304,6 +322,8 @@ public class Moh717Dataset extends BaseDataSet {
         over5YearsFemaleR,
         under5YearsFemaleN,
         under5YearsFemaleR,
+        over60YearsNew,
+        over60YearsReattendance,
         totalFemale);
   }
 
