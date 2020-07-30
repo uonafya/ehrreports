@@ -14,7 +14,7 @@ package org.openmrs.module.ehrreports.reporting.library.cohorts;
 import java.util.Date;
 import org.openmrs.api.context.Context;
 import org.openmrs.module.ehrreports.metadata.OutpatientMetadata;
-import org.openmrs.module.ehrreports.reporting.calculation.PatientOccurenceCalculation;
+import org.openmrs.module.ehrreports.reporting.calculation.CombinedStateCalculation;
 import org.openmrs.module.ehrreports.reporting.cohort.definition.CalculationCohortDefinition;
 import org.openmrs.module.ehrreports.reporting.library.queries.moh717.Moh717Queries;
 import org.openmrs.module.ehrreports.reporting.utils.EhrReportConstants;
@@ -90,11 +90,11 @@ public class Moh717CohortQueries {
     return cd;
   }
 
-  public CohortDefinition getPatientStates(EhrReportConstants.OccurenceStates state) {
+  public CohortDefinition getRevisitPatientStates(EhrReportConstants.OccurenceStates state) {
     CalculationCohortDefinition cd =
         new CalculationCohortDefinition(
-            "New patient or returning ones",
-            Context.getRegisteredComponents(PatientOccurenceCalculation.class).get(0));
+            "Returning Patients",
+            Context.getRegisteredComponents(CombinedStateCalculation.class).get(0));
     cd.addParameter(new Parameter("onOrBefore", "End Date", Date.class));
     cd.addCalculationParameter("state", state);
     return cd;

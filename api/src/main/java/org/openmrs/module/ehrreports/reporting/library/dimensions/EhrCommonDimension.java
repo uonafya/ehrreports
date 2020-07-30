@@ -74,12 +74,12 @@ public class EhrCommonDimension {
     dim.addCohortDefinition(
         "NEW",
         EhrReportUtils.map(
-            moh717CohortQueries.getPatientStates(EhrReportConstants.OccurenceStates.NEW),
+            moh717CohortQueries.getRevisitPatientStates(EhrReportConstants.OccurenceStates.NEW),
             "onOrBefore=${endDate}"));
     dim.addCohortDefinition(
         "RVT",
         EhrReportUtils.map(
-            moh717CohortQueries.getPatientStates(EhrReportConstants.OccurenceStates.REVISIT),
+            moh717CohortQueries.getRevisitPatientStates(EhrReportConstants.OccurenceStates.REVISIT),
             "onOrBefore=${endDate}"));
     return dim;
   }
