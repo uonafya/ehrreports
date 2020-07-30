@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Properties;
 import org.openmrs.module.ehrreports.reporting.library.cohorts.GenericCohortQueries;
-import org.openmrs.module.ehrreports.reporting.library.datasets.Moh717Dataset;
+import org.openmrs.module.ehrreports.reporting.library.datasets.Moh706Dataset;
 import org.openmrs.module.ehrreports.reporting.reports.manager.EhrDataExportManager;
 import org.openmrs.module.ehrreports.reporting.utils.EhrReportUtils;
 import org.openmrs.module.reporting.ReportingException;
@@ -16,43 +16,40 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-public class SetupMoh717Report extends EhrDataExportManager {
+public class SetupMoh706Report extends EhrDataExportManager {
 
-  @Autowired private Moh717Dataset moh717Dataset;
+  @Autowired private Moh706Dataset moh706Dataset;
 
   @Autowired private GenericCohortQueries genericCohortQueries;
 
   @Override
   public String getExcelDesignUuid() {
-    return "8e26e9aa-8f72-11ea-8404-0be251dd2c08";
+    return "565f368c-d24b-11ea-8138-5382c7570834";
   }
 
   @Override
   public String getUuid() {
-    return "9ce0f968-8f72-11ea-a3fc-077b8af7e776";
+    return "7afbd112-d24b-11ea-bdd2-b7fa7a8ce199";
   }
 
   @Override
   public String getName() {
-    return "MOH 717 Report";
+    return "MOH 706 Report";
   }
 
   @Override
   public String getDescription() {
-    return "MOH 717 MONTHLY WORKLOAD REPORT FOR HOSPITALS - MOH 717";
+    return "Monthly laboratory workload report - MOH 706";
   }
 
   @Override
   public ReportDefinition constructReportDefinition() {
     ReportDefinition rd = new ReportDefinition();
-
     rd.setUuid(getUuid());
     rd.setName(getName());
-    rd.setParameters(moh717Dataset.getParameters());
     rd.setDescription(getDescription());
-    // tie the dataset here, you can add more than one data set definition
-    rd.addDataSetDefinition("A", Mapped.mapStraightThrough(moh717Dataset.constructMoh717Dataset()));
-    rd.addDataSetDefinition("C", Mapped.mapStraightThrough(moh717Dataset.constructCustomDataset()));
+    rd.addDataSetDefinition("A", Mapped.mapStraightThrough(moh706Dataset.constructMoh706Dataset()));
+    rd.addDataSetDefinition("C", Mapped.mapStraightThrough(moh706Dataset.constructCustomDataset()));
     rd.equals(
         EhrReportUtils.map(
             genericCohortQueries.getBaseCohort(),
@@ -61,17 +58,12 @@ public class SetupMoh717Report extends EhrDataExportManager {
   }
 
   @Override
-  public String getVersion() {
-    return "1.0-SNAPSHOT";
-  }
-
-  @Override
   public List<ReportDesign> constructReportDesigns(ReportDefinition reportDefinition) {
     ReportDesign reportDesign = null;
     try {
       reportDesign =
           createXlsReportDesign(
-              reportDefinition, "MOH_717.xls", "MOH717-Report", getExcelDesignUuid(), null);
+              reportDefinition, "MOH_706.xls", "MOH706-Report", getExcelDesignUuid(), null);
       Properties props = new Properties();
       props.put("sortWeight", "5000");
       reportDesign.setProperties(props);
@@ -80,5 +72,10 @@ public class SetupMoh717Report extends EhrDataExportManager {
     }
 
     return Arrays.asList(reportDesign);
+  }
+
+  @Override
+  public String getVersion() {
+    return "1.0-SNAPSHOT";
   }
 }
