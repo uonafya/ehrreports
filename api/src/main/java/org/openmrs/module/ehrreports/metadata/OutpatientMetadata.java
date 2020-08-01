@@ -1083,6 +1083,14 @@ public class OutpatientMetadata extends ProgramsMetadata {
   public ConceptClass getDiagnosisConceptClass() {
     return Context.getConceptService().getConceptClassByUuid(EhrReportConstants.DIAGNOSIS_CLASS);
   }
+  /**
+   * Test class ID 1
+   *
+   * @return ConceptClass
+   */
+  public ConceptClass getTestConceptClass() {
+    return Context.getConceptService().getConceptClassByUuid(EhrReportConstants.TESTS_CLASS);
+  }
 
   /**
    * Finding class ID 5

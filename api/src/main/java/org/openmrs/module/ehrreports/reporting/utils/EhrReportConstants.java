@@ -535,6 +535,7 @@ public final class EhrReportConstants {
   public static final String FINDING_CLASS = "8d491a9a-c2cc-11de-8d13-0010c6dffd0f"; // 5
   public static final String SYMPTOMS_CLASS = "8d492954-c2cc-11de-8d13-0010c6dffd0f"; // 12
   public static final String SYMPTOMS_FINDING_CLASS = "8d492b2a-c2cc-11de-8d13-0010c6dffd0f"; // 13
+  public static final String TESTS_CLASS = "8d4907b2-c2cc-11de-8d13-0010c6dffd0f"; // 1
 
   public enum OccurenceStates {
     NEW,
