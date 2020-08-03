@@ -42,9 +42,10 @@ public class EhrCalculationService {
       Collection<Integer> cohort,
       Date onOrAfter,
       Date onOrBefore,
+      TimeQualifier timeQualifier,
       PatientCalculationContext context) {
     EncountersForPatientDataDefinition def = new EncountersForPatientDataDefinition();
-    def.setWhich(TimeQualifier.ANY);
+    def.setWhich(timeQualifier);
     if (onOrAfter != null) {
       def.setOnOrAfter(onOrAfter);
     }

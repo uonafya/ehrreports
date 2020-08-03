@@ -12,6 +12,7 @@ import org.openmrs.calculation.result.CalculationResultMap;
 import org.openmrs.calculation.result.ListResult;
 import org.openmrs.module.ehrreports.reporting.utils.EhrCalculationUtils;
 import org.openmrs.module.ehrreports.reporting.utils.EhrReportUtils;
+import org.openmrs.module.reporting.common.TimeQualifier;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -32,7 +33,8 @@ public class EncountersBasedOnDaySuppliedCalculation extends AbstractPatientCalc
       startDate = getDateAdayEarlier(getDateBasedOnValue(endDate, 1), -1);
     }
     CalculationResultMap allEncounters =
-        ehrCalculationService.allEncounters(null, cohort, startDate, endDate, context);
+        ehrCalculationService.allEncounters(
+            null, cohort, startDate, endDate, TimeQualifier.ANY, context);
     for (Integer pId : cohort) {
       boolean found = false;
       ListResult listResult = (ListResult) allEncounters.get(pId);
