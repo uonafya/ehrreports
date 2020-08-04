@@ -1,23 +1,24 @@
 package org.openmrs.module.ehrreports.reporting.calculation;
 
+import static org.openmrs.module.ehrreports.reporting.utils.EhrCalculationUtils.monthsSince;
+
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.List;
 import java.util.Map;
 import org.openmrs.Encounter;
 import org.openmrs.EncounterType;
-import org.openmrs.Obs;
 import org.openmrs.api.context.Context;
 import org.openmrs.calculation.patient.PatientCalculationContext;
 import org.openmrs.calculation.result.CalculationResultMap;
 import org.openmrs.calculation.result.ListResult;
 import org.openmrs.module.ehrreports.metadata.OutpatientMetadata;
 import org.openmrs.module.ehrreports.reporting.utils.EhrCalculationUtils;
-import org.openmrs.module.ehrreports.reporting.utils.EhrReportConstants;
+import org.openmrs.module.reporting.common.TimeQualifier;
 import org.springframework.stereotype.Component;
 
 @Component
-public class PatientOccurenceCalculation extends AbstractPatientCalculation {
+public class RevisitPatientOccurenceCalculation extends AbstractPatientCalculation {
 
   @Override
   public CalculationResultMap evaluate(
@@ -30,41 +31,35 @@ public class PatientOccurenceCalculation extends AbstractPatientCalculation {
     OutpatientMetadata outpatientMetadata =
         Context.getRegisteredComponents(OutpatientMetadata.class).get(0);
     EncounterType regReturn = outpatientMetadata.getRegReturnEncounterType();
-    EncounterType adultReturn = outpatientMetadata.getAdultReturnEncounterType();
-    EncounterType pedReturn = outpatientMetadata.getPedsReturnEncounterType();
+    EncounterType regInitial = outpatientMetadata.getRegInitialEncounterType();
     CalculationResultMap resultMap = new CalculationResultMap();
-    EhrReportConstants.OccurenceStates state =
-        (EhrReportConstants.OccurenceStates) parameterValues.get("state");
 
     CalculationResultMap allEncounters =
         ehrCalculationService.allEncounters(
-            Arrays.asList(regReturn, adultReturn, pedReturn),
+            Arrays.asList(regReturn, regInitial),
             cohort,
             null,
             context.getNow(),
+            TimeQualifier.ANY,
             context);
-    CalculationResultMap getObs =
-        ehrCalculationService.lastObs(
-            outpatientMetadata.getRegistrationFeeConcept(), cohort, context);
+    CalculationResultMap lastEncounterMap =
+        ehrCalculationService.allEncounters(
+            null, cohort, null, context.getNow(), TimeQualifier.LAST, context);
     for (Integer pId : cohort) {
       boolean isCandidate = false;
-      ListResult pregnantResult = (ListResult) allEncounters.get(pId);
-      List<Encounter> encounterList = EhrCalculationUtils.extractResultValues(pregnantResult);
-      Obs obs = EhrCalculationUtils.resultForPatient(getObs, pId);
-
-      if ((encounterList.size() > 0
-          && (state.equals(EhrReportConstants.OccurenceStates.REVISIT)
-              && (obs != null
-                  && obs.getValueCoded() != null
-                  && obs.getValueCoded().equals(outpatientMetadata.getRevisitConcept()))))) {
-        isCandidate = true;
-
-      } else if ((encounterList.size() > 0
-          && (state.equals(EhrReportConstants.OccurenceStates.NEW))
-          && (obs != null
-              && obs.getValueCoded() != null
-              && obs.getValueCoded().equals(outpatientMetadata.getNewPatientConcept())))) {
-        isCandidate = true;
+      ListResult listResult = (ListResult) allEncounters.get(pId);
+      List<Encounter> encounterList = EhrCalculationUtils.extractResultValues(listResult);
+      Encounter lastEncounters = EhrCalculationUtils.resultForPatient(lastEncounterMap, pId);
+      if (encounterList.size() > 0) {
+        for (Encounter encounter : encounterList) {
+          if (encounter.getEncounterType().equals(regReturn)
+              && (lastEncounters != null
+                  && lastEncounters.getEncounterDatetime() != null
+                  && monthsSince(lastEncounters.getEncounterDatetime(), context.getNow()) <= 12)) {
+            isCandidate = true;
+            break;
+          }
+        }
       }
       resultMap.put(pId, new BooleanResult(isCandidate, this));
     }

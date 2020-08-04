@@ -979,7 +979,7 @@ public class Moh705aCohortQueries {
    * @return @CohortDefinition
    */
   public CohortDefinition getNewAndRevisitPatients(EhrReportConstants.OccurenceStates state) {
-    return moh717CohortQueries.getPatientStates(state);
+    return moh717CohortQueries.getRevisitPatientStates(state);
   }
   /**
    * Get patient shaving provisional malaria

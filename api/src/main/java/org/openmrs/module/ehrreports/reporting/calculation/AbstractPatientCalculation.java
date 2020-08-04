@@ -15,7 +15,9 @@ package org.openmrs.module.ehrreports.reporting.calculation;
 
 import java.util.Collection;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 import org.openmrs.api.context.Context;
 import org.openmrs.calculation.BaseCalculation;
 import org.openmrs.calculation.patient.PatientCalculation;
@@ -30,17 +32,35 @@ public abstract class AbstractPatientCalculation extends BaseCalculation
     implements PatientCalculation {
 
   /**
-   * Filters a calculation result map to reduce results to booleans
+   * Extracts patients from calculation result map with matching results
    *
-   * @param results the result map
-   * @return the reduced result map
+   * @param results calculation result map
+   * @param requiredResult the required result value
+   * @return the extracted patient ids
    */
-  protected static CalculationResultMap passing(CalculationResultMap results) {
-    CalculationResultMap ret = new CalculationResultMap();
+  public static Set<Integer> patientsThatPass(CalculationResultMap results, Object requiredResult) {
+    Set<Integer> ret = new HashSet<Integer>();
     for (Map.Entry<Integer, CalculationResult> e : results.entrySet()) {
-      ret.put(e.getKey(), new BooleanResult(ResultUtil.isTrue(e.getValue()), null));
+      CalculationResult result = e.getValue();
+
+      // If there is no required result, just check trueness of result, otherwise check result
+      // matches required result
+      if ((requiredResult == null && ResultUtil.isTrue(result))
+          || (result != null && result.getValue().equals(requiredResult))) {
+        ret.add(e.getKey());
+      }
     }
     return ret;
+  }
+
+  /**
+   * Extracts patients from calculation result map with non-false/empty results
+   *
+   * @param results calculation result map
+   * @return the extracted patient ids
+   */
+  public static Set<Integer> patientsThatPass(CalculationResultMap results) {
+    return patientsThatPass(results, null);
   }
 
   /**
