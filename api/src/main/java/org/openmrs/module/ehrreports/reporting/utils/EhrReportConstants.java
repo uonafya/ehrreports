@@ -536,6 +536,17 @@ public final class EhrReportConstants {
   public static final String SYMPTOMS_CLASS = "8d492954-c2cc-11de-8d13-0010c6dffd0f"; // 12
   public static final String SYMPTOMS_FINDING_CLASS = "8d492b2a-c2cc-11de-8d13-0010c6dffd0f"; // 13
 
+  // Laboratory concepts constants
+  public static final String BIOCHEMISTRY = "6bfdb869-a38e-4fd3-b368-a197cf5aa8ce";
+  public static final String CYTOLOGY = "6a87b720-2707-42e9-aa78-3ffe8b765e4c";
+  public static final String HAEMATOLOGY = "33c3a795-2cd8-4506-85c1-73ed9551bfae";
+  public static final String SEROLOGY = "ca9d2766-9032-4d9e-a69e-d7d35606b698";
+  public static final String URINE_EXAMINATION = "c57b59d5-947d-4da6-ac0d-10f24c6d4008";
+  public static final String PARASITOLOGY = "c57b59d5-947d-4da6-ac0d-10f24c6d4008";
+  public static final String BLOOD_TRANSFUSION = "89a995a4-ab02-4f5d-84cb-d5f556773c7a";
+  public static final String MICROBIOLOGY = "45c32928-db3a-4da0-8b1a-461f4f03f9d9";
+  public static final String CCC_LAB = "00e9a6f9-e9ae-4e0c-8ede-917918f6cf94";
+
   public enum OccurenceStates {
     NEW,
     REVISIT

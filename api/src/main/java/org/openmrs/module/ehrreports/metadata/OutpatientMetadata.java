@@ -1111,4 +1111,41 @@ public class OutpatientMetadata extends ProgramsMetadata {
     return Context.getConceptService()
         .getConceptClassByUuid(EhrReportConstants.SYMPTOMS_FINDING_CLASS);
   }
+
+  // Lab investigations concept
+  public Concept getBiochemistry() {
+    return Context.getConceptService().getConcept(EhrReportConstants.BIOCHEMISTRY);
+  }
+
+  public Concept getCytology() {
+    return Context.getConceptService().getConcept(EhrReportConstants.CYTOLOGY);
+  }
+
+  public Concept getHaematology() {
+    return Context.getConceptService().getConcept(EhrReportConstants.HAEMATOLOGY);
+  }
+
+  public Concept getSerology() {
+    return Context.getConceptService().getConcept(EhrReportConstants.SEROLOGY);
+  }
+
+  public Concept getUrineExamination() {
+    return Context.getConceptService().getConcept(EhrReportConstants.URINE_EXAMINATION);
+  }
+
+  public Concept getParastology() {
+    return Context.getConceptService().getConcept(EhrReportConstants.PARASITOLOGY);
+  }
+
+  public Concept getBloodTransfussion() {
+    return Context.getConceptService().getConcept(EhrReportConstants.BLOOD_TRANSFUSION);
+  }
+
+  public Concept getMicrobilogy() {
+    return Context.getConceptService().getConcept(EhrReportConstants.MICROBIOLOGY);
+  }
+
+  public Concept getCccLab() {
+    return Context.getConceptService().getConcept(EhrReportConstants.CCC_LAB);
+  }
 }
