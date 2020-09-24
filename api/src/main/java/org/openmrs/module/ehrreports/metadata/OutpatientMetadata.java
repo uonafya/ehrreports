@@ -1148,4 +1148,8 @@ public class OutpatientMetadata extends ProgramsMetadata {
   public Concept getCccLab() {
     return Context.getConceptService().getConcept(EhrReportConstants.CCC_LAB);
   }
+
+  public Concept getInvestigations() {
+    return Context.getConceptService().getConcept(EhrReportConstants.INVESTIGATION);
+  }
 }

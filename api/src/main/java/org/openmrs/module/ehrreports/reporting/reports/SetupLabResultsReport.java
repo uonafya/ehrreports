@@ -24,7 +24,7 @@ public class SetupLabResultsReport extends EhrDataExportManager {
 
   @Override
   public String getUuid() {
-    return "84a54c98-fe60-11ea-9f91-bb9f56c1d71d";
+    return "c58b8014-fe89-11ea-b24c-f7edd9942c04";
   }
 
   @Override
@@ -46,7 +46,7 @@ public class SetupLabResultsReport extends EhrDataExportManager {
     reportDefinition.setParameters(labResultsDataset.getParameters());
     // tie the dataset here, you can add more than one data set definition
     reportDefinition.addDataSetDefinition(
-        "LAB", Mapped.mapStraightThrough(labResultsDataset.constructMoh705aDataset()));
+        "LAB", Mapped.mapStraightThrough(labResultsDataset.constructLabResultsDataset()));
     return reportDefinition;
   }
 

@@ -546,6 +546,7 @@ public final class EhrReportConstants {
   public static final String BLOOD_TRANSFUSION = "89a995a4-ab02-4f5d-84cb-d5f556773c7a";
   public static final String MICROBIOLOGY = "45c32928-db3a-4da0-8b1a-461f4f03f9d9";
   public static final String CCC_LAB = "00e9a6f9-e9ae-4e0c-8ede-917918f6cf94";
+  public static final String INVESTIGATION = "1ad6f4a5-13fd-47fc-a975-f5a1aa61f757";
 
   public enum OccurenceStates {
     NEW,

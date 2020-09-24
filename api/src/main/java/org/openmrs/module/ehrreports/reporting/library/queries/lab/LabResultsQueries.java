@@ -13,34 +13,29 @@
  */
 package org.openmrs.module.ehrreports.reporting.library.queries.lab;
 
-import java.util.List;
-
 public class LabResultsQueries {
   /**
    * The lab results query will go here for the test to come up
    *
    * @return String
    */
-  public static String getLabResultsQuery(List<Integer> conceptQuestionList) {
-    String str1 = String.valueOf(conceptQuestionList).replaceAll("\\[", "");
-    String list = str1.replaceAll("]", "");
+  public static String getLabResultsQuery() {
     String sql =
         "SELECT "
             + " cn.name AS Investigation , "
-            + " e.encounter_datetime AS Date, "
-            + " o.value_numeric AS Numeric, "
-            + " o.value_text AS Value, "
+            + " e.encounter_datetime, "
+            + " o.value_numeric, "
+            + " o.value_text, "
             + " o.value_coded, "
-            + " o.value_datetime, "
+            + " o.value_datetime "
             + " FROM obs o "
             + " INNER JOIN encounter e ON o.encounter_id = e.encounter_id "
             + " INNER JOIN person pe ON e.patient_id=pe.person_id "
             + " INNER JOIN person_name pn ON pe.person_id=pn.person_id "
             + " INNER JOIN concept_name cn ON cn.concept_id = o.value_coded AND locale = 'en' AND cn.locale_preferred = 1 "
             + " WHERE "
-            + " e.encounter_datetime BETWEEN :startDate AND :endDate "
-            + " AND o.concept_id IN(%s)";
+            + " e.encounter_datetime BETWEEN :startDate AND :endDate ";
 
-    return String.format(sql, list);
+    return String.format(sql);
   }
 }

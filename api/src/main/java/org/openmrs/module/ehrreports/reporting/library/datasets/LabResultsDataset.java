@@ -11,7 +11,6 @@
  */
 package org.openmrs.module.ehrreports.reporting.library.datasets;
 
-import java.util.Arrays;
 import org.openmrs.module.ehrreports.metadata.OutpatientMetadata;
 import org.openmrs.module.ehrreports.reporting.library.queries.lab.LabResultsQueries;
 import org.openmrs.module.reporting.dataset.definition.DataSetDefinition;
@@ -21,25 +20,15 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class LabResultsDataset extends BaseDataSet {
+
   @Autowired private OutpatientMetadata outpatientMetadata;
 
-  public DataSetDefinition constructMoh705aDataset() {
+  public DataSetDefinition constructLabResultsDataset() {
 
     SqlDataSetDefinition dsd = new SqlDataSetDefinition();
-    dsd.setName("Lab Results");
+    dsd.setName("LAB");
     dsd.addParameters(getParameters());
-    dsd.setSqlQuery(
-        LabResultsQueries.getLabResultsQuery(
-            Arrays.asList(
-                outpatientMetadata.getBiochemistry().getConceptId(),
-                outpatientMetadata.getCytology().getConceptId(),
-                outpatientMetadata.getHaematology().getConceptId(),
-                outpatientMetadata.getSerology().getConceptId(),
-                outpatientMetadata.getUrineExamination().getConceptId(),
-                outpatientMetadata.getParastology().getConceptId(),
-                outpatientMetadata.getBloodTransfussion().getConceptId(),
-                outpatientMetadata.getMicrobilogy().getConceptId(),
-                outpatientMetadata.getCccLab().getConceptId())));
+    dsd.setSqlQuery(LabResultsQueries.getLabResultsQuery());
     return dsd;
   }
 }

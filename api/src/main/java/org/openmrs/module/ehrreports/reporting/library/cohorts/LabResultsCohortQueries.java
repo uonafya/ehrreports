@@ -11,10 +11,8 @@
  */
 package org.openmrs.module.ehrreports.reporting.library.cohorts;
 
-import java.util.Arrays;
 import java.util.Date;
 import org.openmrs.module.ehrreports.metadata.OutpatientMetadata;
-import org.openmrs.module.ehrreports.reporting.library.queries.lab.LabResultsQueries;
 import org.openmrs.module.reporting.cohort.definition.CohortDefinition;
 import org.openmrs.module.reporting.cohort.definition.SqlCohortDefinition;
 import org.openmrs.module.reporting.evaluation.parameter.Parameter;
@@ -36,18 +34,6 @@ public class LabResultsCohortQueries {
     sql.setName("Lab results for the given period");
     sql.addParameter(new Parameter("startDate", "Start Date", Date.class));
     sql.addParameter(new Parameter("endDate", "End Date", Date.class));
-    sql.setQuery(
-        LabResultsQueries.getLabResultsQuery(
-            Arrays.asList(
-                outpatientMetadata.getBiochemistry().getConceptId(),
-                outpatientMetadata.getCytology().getConceptId(),
-                outpatientMetadata.getHaematology().getConceptId(),
-                outpatientMetadata.getSerology().getConceptId(),
-                outpatientMetadata.getUrineExamination().getConceptId(),
-                outpatientMetadata.getParastology().getConceptId(),
-                outpatientMetadata.getBloodTransfussion().getConceptId(),
-                outpatientMetadata.getMicrobilogy().getConceptId(),
-                outpatientMetadata.getCccLab().getConceptId())));
     return sql;
   }
 }
