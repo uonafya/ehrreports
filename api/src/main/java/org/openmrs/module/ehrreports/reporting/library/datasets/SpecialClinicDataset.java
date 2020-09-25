@@ -14,6 +14,7 @@ public class SpecialClinicDataset extends BaseDataSet {
   public DataSetDefinition getSpecialClinic() {
     CohortIndicatorDataSetDefinition dsd = new CohortIndicatorDataSetDefinition();
     dsd.setName("Special clinic");
+    dsd.addParameters(getParameters());
     dsd.addColumn(
         "T1",
         "Total values",
