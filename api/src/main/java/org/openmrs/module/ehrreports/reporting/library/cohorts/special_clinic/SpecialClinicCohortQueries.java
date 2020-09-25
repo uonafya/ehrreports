@@ -18,14 +18,14 @@ public class SpecialClinicCohortQueries {
    *
    * @return @{@link org.openmrs.module.reporting.cohort.definition.CohortDefinition}
    */
-  public CohortDefinition getAllSpecialClinicPatients() {
+  public CohortDefinition getAllSpecialClinicPatients(int ans) {
     SqlCohortDefinition sql = new SqlCohortDefinition();
     sql.setName("special clinic cohort");
     sql.addParameter(new Parameter("startDate", "Start Date", Date.class));
     sql.addParameter(new Parameter("endDate", "End Date", Date.class));
     sql.setQuery(
         SpecialClinicCohorts.getSpecialClinic(
-            outPatientMetadata.getSpecialClinicConcept().getConceptId()));
+            outPatientMetadata.getSpecialClinicConcept().getConceptId(), ans));
     return sql;
   }
 }
