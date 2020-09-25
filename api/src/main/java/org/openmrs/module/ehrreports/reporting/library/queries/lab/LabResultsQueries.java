@@ -22,17 +22,21 @@ public class LabResultsQueries {
   public static String getLabResultsQuery() {
     String sql =
         "SELECT "
+            + " pn.given_name, "
+            + " pn.family_name, "
+            + " pi.identifier, "
             + " cn.name AS Investigation , "
             + " e.encounter_datetime, "
+            + " o.value_coded, "
             + " o.value_numeric, "
             + " o.value_text, "
-            + " o.value_coded, "
-            + " o.value_datetime "
+            + " o.comments"
             + " FROM obs o "
             + " INNER JOIN encounter e ON o.encounter_id = e.encounter_id "
-            + " INNER JOIN person pe ON e.patient_id=pe.person_id "
-            + " INNER JOIN person_name pn ON pe.person_id=pn.person_id "
-            + " INNER JOIN concept_name cn ON cn.concept_id = o.value_coded AND locale = 'en' AND cn.locale_preferred = 1 "
+            + " INNER JOIN concept_name cn ON cn.concept_id = o.concept_id "
+            + " INNER JOIN person_name pn ON pn.person_id=o.person_id "
+            + " INNER JOIN patient_identifier pi ON pi.patient_id=pn.person_id "
+            + " INNER JOIN simplelabentry_labtest sl ON e.encounter_id=sl.encounter_id AND sl.concept_id=o.concept_id AND locale = 'en' AND cn.locale_preferred = 1 "
             + " WHERE "
             + " e.encounter_datetime BETWEEN :startDate AND :endDate ";
 
