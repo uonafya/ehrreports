@@ -63,6 +63,7 @@ public class SetupLabResultsReport extends EhrDataExportManager {
           createXlsReportDesign(
               reportDefinition, "labresults.xls", "LAB RESULTS REPORT", getExcelDesignUuid(), null);
       Properties props = new Properties();
+      props.put("repeatingSections", "sheet:1,row:4,dataset:LAB");
       props.put("sortWeight", "5000");
       reportDesign.setProperties(props);
     } catch (IOException e) {
