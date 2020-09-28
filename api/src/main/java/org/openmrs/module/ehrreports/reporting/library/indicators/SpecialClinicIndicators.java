@@ -12,21 +12,15 @@ public class SpecialClinicIndicators {
   @Autowired private EhrGeneralIndicator ehrGeneralIndicator;
 
   public CohortIndicator getSpecialClinic(int ans) {
-    CohortIndicator special_clinic_indicator =
-        ehrGeneralIndicator.getIndicator(
-            "Special clinic indicator",
-            EhrReportUtils.map(
-                queries.getAllSpecialClinicPatients(ans),
-                "startDate=${startDate},endDate=${endDate}"));
-    return special_clinic_indicator;
+    return ehrGeneralIndicator.getIndicator(
+        "Special clinic indicator",
+        EhrReportUtils.map(
+            queries.getAllSpecialClinicPatients(ans), "startDate=${startDate},endDate=${endDate}"));
   }
 
-  public CohortIndicator getTotalVisits() {
-    CohortIndicator totalVisits =
-        ehrGeneralIndicator.getIndicator(
-            "Total visits indicator",
-            EhrReportUtils.map(
-                queries.getAllVisits(), "startDate=${startDate},endDate=${endDate}"));
-    return totalVisits;
+  public CohortIndicator getTotalVisits(int ans) {
+    return ehrGeneralIndicator.getIndicator(
+        "Total visits indicator",
+        EhrReportUtils.map(queries.getAllVisits(ans), "startDate=${startDate},endDate=${endDate}"));
   }
 }

@@ -18,10 +18,18 @@ public class SpecialClinicDataset extends BaseDataSet {
     dsd.setName("Work load report");
     dsd.addParameters(getParameters());
     dsd.addColumn(
-        "ALL",
-        "Total visits",
+        "ALLN",
+        "Total new patients",
         EhrReportUtils.map(
-            indicators.getTotalVisits(), "startDate=${startDate},endDate=${endDate}"),
+            indicators.getTotalVisits(outpatientMetadata.getNewPatientConcept().getConceptId()),
+            "startDate=${startDate},endDate=${endDate}"),
+        "");
+    dsd.addColumn(
+        "ALLR",
+        "Total revisit patients",
+        EhrReportUtils.map(
+            indicators.getTotalVisits(outpatientMetadata.getRevisitConcept().getConceptId()),
+            "startDate=${startDate},endDate=${endDate}"),
         "");
     dsd.addColumn(
         "EYE",

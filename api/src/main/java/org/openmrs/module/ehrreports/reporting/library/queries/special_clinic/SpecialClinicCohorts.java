@@ -10,11 +10,11 @@ public class SpecialClinicCohorts {
     return String.format(sql, conceptId, ans);
   }
 
-  public static String getAllVisits(int newPatient, int revisitPatients) {
+  public static String getAllVisits(int newPatient) {
     String sql =
         "SELECT p.patient_id FROM patient p INNER JOIN encounter e ON p.patient_id=e.patient_id INNER JOIN "
             + " obs o ON e.encounter_id=o.encounter_id WHERE p.voided=0 AND e.voided=0 AND o.voided=0 AND e.encounter_datetime "
-            + " BETWEEN :startDate AND :endDate AND o.value_coded IN(%d, %d)";
-    return String.format(sql, newPatient, revisitPatients);
+            + " BETWEEN :startDate AND :endDate AND o.value_coded IN(%d) ";
+    return String.format(sql, newPatient);
   }
 }
