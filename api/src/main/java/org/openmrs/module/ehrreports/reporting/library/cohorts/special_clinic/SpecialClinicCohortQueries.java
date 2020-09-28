@@ -28,4 +28,16 @@ public class SpecialClinicCohortQueries {
             outPatientMetadata.getSpecialClinicConcept().getConceptId(), ans));
     return sql;
   }
+
+  public CohortDefinition getAllVisits() {
+    SqlCohortDefinition sql = new SqlCohortDefinition();
+    sql.setName("Get all visits per facility");
+    sql.addParameter(new Parameter("startDate", "Start Date", Date.class));
+    sql.addParameter(new Parameter("endDate", "End Date", Date.class));
+    sql.setQuery(
+        SpecialClinicCohorts.getAllVisits(
+            outPatientMetadata.getNewPatientConcept().getConceptId(),
+            outPatientMetadata.getRevisitConcept().getConceptId()));
+    return sql;
+  }
 }

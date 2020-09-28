@@ -15,8 +15,14 @@ public class SpecialClinicDataset extends BaseDataSet {
 
   public DataSetDefinition getSpecialClinic() {
     CohortIndicatorDataSetDefinition dsd = new CohortIndicatorDataSetDefinition();
-    dsd.setName("Special clinic");
+    dsd.setName("Work load report");
     dsd.addParameters(getParameters());
+    dsd.addColumn(
+        "ALL",
+        "Total visits",
+        EhrReportUtils.map(
+            indicators.getTotalVisits(), "startDate=${startDate},endDate=${endDate}"),
+        "");
     dsd.addColumn(
         "EYE",
         "Patient who attended EYE clinic",

@@ -29,12 +29,12 @@ public class SetupSpecialClinicReport extends EhrDataExportManager {
 
   @Override
   public String getName() {
-    return "Special Clinic Report";
+    return "Work Load and Special Clinic Report";
   }
 
   @Override
   public String getDescription() {
-    return "Report disaggreagted per the special clinics";
+    return "Work load report disaggreagted per the special clinics";
   }
 
   @Override
@@ -46,7 +46,7 @@ public class SetupSpecialClinicReport extends EhrDataExportManager {
     reportDefinition.setParameters(specialClinicDataset.getParameters());
     // tie the dataset here, you can add more than one data set definition
     reportDefinition.addDataSetDefinition(
-        "SP", Mapped.mapStraightThrough(specialClinicDataset.getSpecialClinic()));
+        "WLR", Mapped.mapStraightThrough(specialClinicDataset.getSpecialClinic()));
     return reportDefinition;
   }
 
