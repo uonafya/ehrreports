@@ -21,15 +21,13 @@ public class SpecialClinicDataset extends BaseDataSet {
         "ALLN",
         "Total new patients",
         EhrReportUtils.map(
-            indicators.getTotalVisits(outpatientMetadata.getNewPatientConcept().getConceptId()),
-            "startDate=${startDate},endDate=${endDate}"),
+            indicators.getTotalNewVisits(), "startDate=${startDate},endDate=${endDate}"),
         "");
     dsd.addColumn(
         "ALLR",
         "Total revisit patients",
         EhrReportUtils.map(
-            indicators.getTotalVisits(outpatientMetadata.getRevisitConcept().getConceptId()),
-            "startDate=${startDate},endDate=${endDate}"),
+            indicators.getTotalRevisits(), "startDate=${startDate},endDate=${endDate}"),
         "");
     dsd.addColumn(
         "EYE",

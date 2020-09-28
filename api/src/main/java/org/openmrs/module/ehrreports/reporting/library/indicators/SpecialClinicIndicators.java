@@ -18,9 +18,17 @@ public class SpecialClinicIndicators {
             queries.getAllSpecialClinicPatients(ans), "startDate=${startDate},endDate=${endDate}"));
   }
 
-  public CohortIndicator getTotalVisits(int ans) {
+  public CohortIndicator getTotalRevisits() {
     return ehrGeneralIndicator.getIndicator(
-        "Total visits indicator",
-        EhrReportUtils.map(queries.getAllVisits(ans), "startDate=${startDate},endDate=${endDate}"));
+        "Total Revisits indicator",
+        EhrReportUtils.map(
+            queries.getAllVisitsRevisit(), "startDate=${startDate},endDate=${endDate}"));
+  }
+
+  public CohortIndicator getTotalNewVisits() {
+    return ehrGeneralIndicator.getIndicator(
+        "Total new visits indicator",
+        EhrReportUtils.map(
+            queries.getNewPatientsOnly(), "startDate=${startDate},endDate=${endDate}"));
   }
 }
