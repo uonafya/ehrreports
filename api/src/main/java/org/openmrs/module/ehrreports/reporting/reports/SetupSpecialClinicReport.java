@@ -61,7 +61,11 @@ public class SetupSpecialClinicReport extends EhrDataExportManager {
     try {
       reportDesign =
           createXlsReportDesign(
-              reportDefinition, "special_clinic.xls", "SPECIAL CLINIC", getExcelDesignUuid(), null);
+              reportDefinition,
+              "special_clinic.xls",
+              "WORK LOAD REPORT",
+              getExcelDesignUuid(),
+              null);
       Properties props = new Properties();
       props.put("sortWeight", "5000");
       reportDesign.setProperties(props);
