@@ -13,23 +13,22 @@ import org.springframework.stereotype.Component;
 @Component
 public class Moh706Dataset extends BaseDataSet {
 
-    @Autowired
-    @Qualifier("commonAgeDimensionCohort")
-    private AgeDimensionCohortInterface ageDimensionCohort;
+  @Autowired
+  @Qualifier("commonAgeDimensionCohort")
+  private AgeDimensionCohortInterface ageDimensionCohort;
 
-    @Autowired private EhrCommonDimension ehrCommonDimension;
+  @Autowired private EhrCommonDimension ehrCommonDimension;
 
-    @Autowired private EhrGeneralIndicator ehrGeneralIndicator;
+  @Autowired private EhrGeneralIndicator ehrGeneralIndicator;
 
-    public DataSetDefinition constructMoh706Dataset() {
-        CohortIndicatorDataSetDefinition dsd = new CohortIndicatorDataSetDefinition();
-        String mappings = "startDate=${startDate},endDate=${endDate}";
-        dsd.setName("MOH 706 Data Set");
-        dsd.addParameters(getParameters());
-        dsd.addDimension(
-                "age",
-                EhrReportUtils.map(ehrCommonDimension.age(ageDimensionCohort), "effectiveDate=${endDate}"));
-        return dsd;
-
-    }
+  public DataSetDefinition constructMoh706Dataset() {
+    CohortIndicatorDataSetDefinition dsd = new CohortIndicatorDataSetDefinition();
+    String mappings = "startDate=${startDate},endDate=${endDate}";
+    dsd.setName("MOH 706 Data Set");
+    dsd.addParameters(getParameters());
+    dsd.addDimension(
+        "age",
+        EhrReportUtils.map(ehrCommonDimension.age(ageDimensionCohort), "effectiveDate=${endDate}"));
+    return dsd;
+  }
 }
