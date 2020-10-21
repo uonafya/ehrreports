@@ -21,7 +21,7 @@ public class LabResultsQueries {
    */
   public static String getLabAdultsResultsQuery() {
     String sql =
-        "SELECT * FORM ("
+        "SELECT * FROM ("
             + "SELECT person_id, "
             + "       identifier,"
             + "       given_name, "
@@ -84,9 +84,9 @@ public class LabResultsQueries {
             + "              ON t2.concept_id = fn.result_value "
             + "                 AND t2.locale = 'en' "
             + "                 AND t2.locale_preferred "
-            + ") "
-            + " WHERE person_id IN ("
-            + "SELECT person_id WHERE TIMESTAMPDIFF(YEAR, birthdate, :endDate) > 14 ";
+            + ") adults "
+            + " WHERE adults.person_id IN ("
+            + "SELECT person_id FROM person WHERE TIMESTAMPDIFF(YEAR, birthdate, :endDate) > 14) ";
 
     return String.format(sql);
   }
@@ -98,7 +98,7 @@ public class LabResultsQueries {
    */
   public static String getLabChildrenResultsQuery() {
     String sql =
-        "SELECT * FORM ("
+        "SELECT * FROM ("
             + "SELECT person_id, "
             + "       identifier,"
             + "       given_name, "
@@ -161,9 +161,9 @@ public class LabResultsQueries {
             + "              ON t2.concept_id = fn.result_value "
             + "                 AND t2.locale = 'en' "
             + "                 AND t2.locale_preferred "
-            + ") "
-            + " WHERE person_id IN ("
-            + "SELECT person_id WHERE TIMESTAMPDIFF(YEAR, birthdate, :endDate) < 15 ";
+            + ") children "
+            + " WHERE children.person_id IN ("
+            + "SELECT person_id FROM person  WHERE TIMESTAMPDIFF(YEAR, birthdate, :endDate) < 15)";
 
     return String.format(sql);
   }
