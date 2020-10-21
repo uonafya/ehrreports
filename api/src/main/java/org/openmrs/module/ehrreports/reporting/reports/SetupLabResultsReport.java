@@ -46,9 +46,11 @@ public class SetupLabResultsReport extends EhrDataExportManager {
     reportDefinition.setParameters(labResultsDataset.getParameters());
     // tie the dataset here, you can add more than one data set definition
     reportDefinition.addDataSetDefinition(
-        "LABADULTS", Mapped.mapStraightThrough(labResultsDataset.constructLabResultsForAdultsDataset()));
+        "LABADULTS",
+        Mapped.mapStraightThrough(labResultsDataset.constructLabResultsForAdultsDataset()));
     reportDefinition.addDataSetDefinition(
-            "LABCHILDREN", Mapped.mapStraightThrough(labResultsDataset.constructLabResultsForChildrenDataset()));
+        "LABCHILDREN",
+        Mapped.mapStraightThrough(labResultsDataset.constructLabResultsForChildrenDataset()));
     return reportDefinition;
   }
 
@@ -65,7 +67,9 @@ public class SetupLabResultsReport extends EhrDataExportManager {
           createXlsReportDesign(
               reportDefinition, "labresults.xls", "LAB RESULTS REPORT", getExcelDesignUuid(), null);
       Properties props = new Properties();
-      props.put("repeatingSections", "sheet:1,row:4,dataset:LABADULTS | sheet:2,row:4,dataset:LABCHILDREN");
+      props.put(
+          "repeatingSections",
+          "sheet:1,row:4,dataset:LABADULTS | sheet:2,row:4,dataset:LABCHILDREN");
       props.put("sortWeight", "5000");
       reportDesign.setProperties(props);
     } catch (IOException e) {
