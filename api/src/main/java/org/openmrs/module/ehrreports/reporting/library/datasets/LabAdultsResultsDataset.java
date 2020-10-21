@@ -11,24 +11,29 @@
  */
 package org.openmrs.module.ehrreports.reporting.library.datasets;
 
-import org.openmrs.module.ehrreports.metadata.OutpatientMetadata;
 import org.openmrs.module.ehrreports.reporting.library.queries.lab.LabResultsQueries;
 import org.openmrs.module.reporting.dataset.definition.DataSetDefinition;
 import org.openmrs.module.reporting.dataset.definition.SqlDataSetDefinition;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-public class LabResultsDataset extends BaseDataSet {
+public class LabAdultsResultsDataset extends BaseDataSet {
 
-  @Autowired private OutpatientMetadata outpatientMetadata;
-
-  public DataSetDefinition constructLabResultsDataset() {
+  public DataSetDefinition constructLabResultsForAdultsDataset() {
 
     SqlDataSetDefinition dsd = new SqlDataSetDefinition();
-    dsd.setName("LAB");
+    dsd.setName("LABADULTS");
     dsd.addParameters(getParameters());
-    dsd.setSqlQuery(LabResultsQueries.getLabResultsQuery());
+    dsd.setSqlQuery(LabResultsQueries.getLabAdultsResultsQuery());
+    return dsd;
+  }
+
+  public DataSetDefinition constructLabResultsForChildrenDataset() {
+
+    SqlDataSetDefinition dsd = new SqlDataSetDefinition();
+    dsd.setName("LABCHILDREN");
+    dsd.addParameters(getParameters());
+    dsd.setSqlQuery(LabResultsQueries.getLabChildrenResultsQuery());
     return dsd;
   }
 }

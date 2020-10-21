@@ -4,7 +4,7 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Properties;
-import org.openmrs.module.ehrreports.reporting.library.datasets.LabResultsDataset;
+import org.openmrs.module.ehrreports.reporting.library.datasets.LabAdultsResultsDataset;
 import org.openmrs.module.ehrreports.reporting.reports.manager.EhrDataExportManager;
 import org.openmrs.module.reporting.evaluation.parameter.Mapped;
 import org.openmrs.module.reporting.report.ReportDesign;
@@ -15,7 +15,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class SetupLabResultsReport extends EhrDataExportManager {
 
-  @Autowired private LabResultsDataset labResultsDataset;
+  @Autowired private LabAdultsResultsDataset labResultsDataset;
 
   @Override
   public String getExcelDesignUuid() {
@@ -46,7 +46,9 @@ public class SetupLabResultsReport extends EhrDataExportManager {
     reportDefinition.setParameters(labResultsDataset.getParameters());
     // tie the dataset here, you can add more than one data set definition
     reportDefinition.addDataSetDefinition(
-        "LAB", Mapped.mapStraightThrough(labResultsDataset.constructLabResultsDataset()));
+        "LABADULTS", Mapped.mapStraightThrough(labResultsDataset.constructLabResultsForAdultsDataset()));
+    reportDefinition.addDataSetDefinition(
+            "LABCHILDREN", Mapped.mapStraightThrough(labResultsDataset.constructLabResultsForChildrenDataset()));
     return reportDefinition;
   }
 
@@ -63,7 +65,7 @@ public class SetupLabResultsReport extends EhrDataExportManager {
           createXlsReportDesign(
               reportDefinition, "labresults.xls", "LAB RESULTS REPORT", getExcelDesignUuid(), null);
       Properties props = new Properties();
-      props.put("repeatingSections", "sheet:1,row:4,dataset:LAB");
+      props.put("repeatingSections", "sheet:1,row:4,dataset:LABADULTS | sheet:2,row:4,dataset:LABCHILDREN");
       props.put("sortWeight", "5000");
       reportDesign.setProperties(props);
     } catch (IOException e) {
