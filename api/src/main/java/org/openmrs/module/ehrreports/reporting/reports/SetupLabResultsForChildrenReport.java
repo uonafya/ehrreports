@@ -13,7 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-public class SetupLabResultsReport extends EhrDataExportManager {
+public class SetupLabResultsForChildrenReport extends EhrDataExportManager {
 
   @Autowired private LabAdultsResultsDataset labResultsDataset;
 
@@ -29,12 +29,12 @@ public class SetupLabResultsReport extends EhrDataExportManager {
 
   @Override
   public String getName() {
-    return "Laboratory Results Report";
+    return "Laboratory Results Report for children";
   }
 
   @Override
   public String getDescription() {
-    return "Displaying of the laboratory results";
+    return "Displaying of the laboratory results for patient aged 14 years and below";
   }
 
   @Override
@@ -46,10 +46,7 @@ public class SetupLabResultsReport extends EhrDataExportManager {
     reportDefinition.setParameters(labResultsDataset.getParameters());
     // tie the dataset here, you can add more than one data set definition
     reportDefinition.addDataSetDefinition(
-        "LABADULTS",
-        Mapped.mapStraightThrough(labResultsDataset.constructLabResultsForAdultsDataset()));
-    reportDefinition.addDataSetDefinition(
-        "LABCHILDREN",
+        "CHILDREN",
         Mapped.mapStraightThrough(labResultsDataset.constructLabResultsForChildrenDataset()));
     return reportDefinition;
   }
@@ -65,11 +62,13 @@ public class SetupLabResultsReport extends EhrDataExportManager {
     try {
       reportDesign =
           createXlsReportDesign(
-              reportDefinition, "labresults.xls", "LAB RESULTS REPORT", getExcelDesignUuid(), null);
+              reportDefinition,
+              "labresults.xls",
+              "LAB RESULTS REPORT CHILDREN",
+              getExcelDesignUuid(),
+              null);
       Properties props = new Properties();
-      props.put(
-          "repeatingSections",
-          "sheet:1,row:4,dataset:LABADULTS | sheet:2,row:4,dataset:LABCHILDREN");
+      props.put("repeatingSections", "sheet:1,row:4,dataset:CHILDREN");
       props.put("sortWeight", "5000");
       reportDesign.setProperties(props);
     } catch (IOException e) {
