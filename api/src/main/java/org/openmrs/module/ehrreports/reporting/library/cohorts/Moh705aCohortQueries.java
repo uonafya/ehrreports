@@ -14,8 +14,8 @@ package org.openmrs.module.ehrreports.reporting.library.cohorts;
 import java.util.Date;
 import java.util.List;
 import org.openmrs.Concept;
-import org.openmrs.module.ehrreports.metadata.DiagnosisMetadata;
-import org.openmrs.module.ehrreports.metadata.OutpatientMetadata;
+import org.openmrs.module.ehrreports.metadata.EhrDiagnosisMetadata;
+import org.openmrs.module.ehrreports.metadata.EhrOutpatientMetadata;
 import org.openmrs.module.ehrreports.reporting.library.queries.moh705.Moh705Queries;
 import org.openmrs.module.ehrreports.reporting.utils.EhrReportConstants;
 import org.openmrs.module.ehrreports.reporting.utils.EhrReportUtils;
@@ -28,8 +28,8 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Moh705aCohortQueries {
-  @Autowired private OutpatientMetadata outpatientMetadata;
-  @Autowired private DiagnosisMetadata diagnosisMetadata;
+  @Autowired private EhrOutpatientMetadata outpatientMetadata;
+  @Autowired private EhrDiagnosisMetadata diagnosisMetadata;
   @Autowired private Moh717CohortQueries moh717CohortQueries;
   @Autowired private CommonLibrary commonLibrary;
   @Autowired private AgeCohortQueries ageCohortQueries;

@@ -13,11 +13,11 @@ package org.openmrs.module.ehrreports.reporting.library.cohorts;
 
 import java.util.Date;
 import org.openmrs.api.context.Context;
-import org.openmrs.module.ehrreports.metadata.OutpatientMetadata;
+import org.openmrs.module.ehrreports.metadata.EhrOutpatientMetadata;
 import org.openmrs.module.ehrreports.reporting.calculation.CombinedStateCalculation;
-import org.openmrs.module.ehrreports.reporting.cohort.definition.CalculationCohortDefinition;
 import org.openmrs.module.ehrreports.reporting.library.queries.moh717.Moh717Queries;
 import org.openmrs.module.ehrreports.reporting.utils.EhrReportConstants;
+import org.openmrs.module.kenyacore.report.cohort.definition.CalculationCohortDefinition;
 import org.openmrs.module.reporting.cohort.definition.CohortDefinition;
 import org.openmrs.module.reporting.cohort.definition.SqlCohortDefinition;
 import org.openmrs.module.reporting.evaluation.parameter.Parameter;
@@ -27,7 +27,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class Moh717CohortQueries {
 
-  @Autowired private OutpatientMetadata outpatientMetadata;
+  @Autowired private EhrOutpatientMetadata outpatientMetadata;
 
   public CohortDefinition getOutPatients() {
 

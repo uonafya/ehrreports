@@ -28,9 +28,9 @@ import org.openmrs.RelationshipType;
 import org.openmrs.api.context.Context;
 import org.openmrs.module.reporting.common.ObjectUtil;
 
-public class Metadata {
+public class EhreportsMetadata {
 
-  protected static final Log log = LogFactory.getLog(Metadata.class);
+  protected static final Log log = LogFactory.getLog(EhreportsMetadata.class);
 
   /** @return the PatientIdentifier that matches the passed uuid, name, or primary key id */
   public static PatientIdentifierType getPatientIdentifierType(String lookup) {
@@ -81,14 +81,14 @@ public class Metadata {
 
   /**
    * @return the List of Concepts that matches the passed comma-separated list of concept lookups
-   * @see Metadata#getConcept(String)
+   * @see EhreportsMetadata#getConcept(String)
    */
   public static List<Concept> getConceptList(String lookup) {
     List<Concept> l = new ArrayList<Concept>();
     if (ObjectUtil.notNull(lookup)) {
       String[] split = lookup.split(",");
       for (String s : split) {
-        l.add(Metadata.getConcept(s));
+        l.add(EhreportsMetadata.getConcept(s));
       }
     }
     return l;
@@ -96,7 +96,7 @@ public class Metadata {
 
   /**
    * @return the List of Concepts that matches the passed any separated list of concept lookups
-   * @see Metadata#getConcept(String)
+   * @see EhreportsMetadata#getConcept(String)
    */
   public static List<Concept> getConceptList(String lookup, String separator) {
     List<Concept> l = new ArrayList<Concept>();
@@ -104,10 +104,10 @@ public class Metadata {
       if (ObjectUtil.notNull(separator)) {
         String[] split = lookup.split(separator);
         for (String s : split) {
-          l.add(Metadata.getConcept(s));
+          l.add(EhreportsMetadata.getConcept(s));
         }
       } else {
-        l.add(Metadata.getConcept(lookup));
+        l.add(EhreportsMetadata.getConcept(lookup));
       }
     }
     return l;
@@ -133,14 +133,14 @@ public class Metadata {
 
   /**
    * @return the List of Forms that matches the passed comma-separated list of Form lookups
-   * @see Metadata#getForm(String)
+   * @see EhreportsMetadata#getForm(String)
    */
   public static List<Form> getFormList(String lookup) {
     List<Form> l = new ArrayList<Form>();
     if (ObjectUtil.notNull(lookup)) {
       String[] split = lookup.split(",");
       for (String s : split) {
-        l.add(Metadata.getForm(s));
+        l.add(EhreportsMetadata.getForm(s));
       }
     }
     return l;
@@ -148,7 +148,7 @@ public class Metadata {
 
   /**
    * @return the List of Forms that matches the passed any separated list of Form lookups
-   * @see Metadata#getForm(String)
+   * @see EhreportsMetadata#getForm(String)
    */
   public static List<Form> getFormList(String lookup, String separator) {
     List<Form> l = new ArrayList<Form>();
@@ -156,10 +156,10 @@ public class Metadata {
       if (ObjectUtil.notNull(separator)) {
         String[] split = lookup.split(separator);
         for (String s : split) {
-          l.add(Metadata.getForm(s));
+          l.add(EhreportsMetadata.getForm(s));
         }
       } else {
-        l.add(Metadata.getForm(lookup));
+        l.add(EhreportsMetadata.getForm(lookup));
       }
     }
     return l;
@@ -188,14 +188,14 @@ public class Metadata {
   /**
    * @return the List of EncounterTypes that matches the passed comma-separated list of Encounter
    *     lookups
-   * @see Metadata#getEncounterType(String)
+   * @see EhreportsMetadata#getEncounterType(String)
    */
   public static List<EncounterType> getEncounterTypeList(String lookup) {
     List<EncounterType> l = new ArrayList<EncounterType>();
     if (ObjectUtil.notNull(lookup)) {
       String[] split = lookup.split(",");
       for (String s : split) {
-        l.add(Metadata.getEncounterType(s));
+        l.add(EhreportsMetadata.getEncounterType(s));
       }
     }
     return l;
@@ -204,7 +204,7 @@ public class Metadata {
   /**
    * @return the List of EncounterTypes that matches the passed any separated list of Encounter
    *     lookups
-   * @see Metadata#getEncounterType(String)
+   * @see EhreportsMetadata#getEncounterType(String)
    */
   public static List<EncounterType> getEncounterTypeList(String lookup, String separator) {
     List<EncounterType> l = new ArrayList<EncounterType>();
@@ -212,10 +212,10 @@ public class Metadata {
       if (ObjectUtil.notNull(separator)) {
         String[] split = lookup.split(separator);
         for (String s : split) {
-          l.add(Metadata.getEncounterType(s));
+          l.add(EhreportsMetadata.getEncounterType(s));
         }
       } else {
-        l.add(Metadata.getEncounterType(lookup));
+        l.add(EhreportsMetadata.getEncounterType(lookup));
       }
     }
     return l;

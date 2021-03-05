@@ -13,7 +13,7 @@ package org.openmrs.module.ehrreports.reporting.library.datasets;
 
 import java.util.Arrays;
 import java.util.List;
-import org.openmrs.module.ehrreports.metadata.OutpatientMetadata;
+import org.openmrs.module.ehrreports.metadata.EhrOutpatientMetadata;
 import org.openmrs.module.ehrreports.reporting.cohort.definition.CustomConfigurationsDataDefinition;
 import org.openmrs.module.ehrreports.reporting.library.cohorts.CommonLibrary;
 import org.openmrs.module.ehrreports.reporting.library.cohorts.Moh717CohortQueries;
@@ -36,7 +36,7 @@ public class Moh717Dataset extends BaseDataSet {
 
   @Autowired private Moh717CohortQueries moh717CohortQueries;
 
-  @Autowired private OutpatientMetadata outpatientMetadata;
+  @Autowired private EhrOutpatientMetadata outpatientMetadata;
 
   @Autowired private CommonLibrary commonLibrary;
 

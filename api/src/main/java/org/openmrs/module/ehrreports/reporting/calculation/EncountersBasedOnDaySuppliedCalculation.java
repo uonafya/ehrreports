@@ -12,6 +12,8 @@ import org.openmrs.calculation.result.CalculationResultMap;
 import org.openmrs.calculation.result.ListResult;
 import org.openmrs.module.ehrreports.reporting.utils.EhrCalculationUtils;
 import org.openmrs.module.ehrreports.reporting.utils.EhrReportUtils;
+import org.openmrs.module.kenyacore.calculation.AbstractPatientCalculation;
+import org.openmrs.module.kenyacore.calculation.BooleanResult;
 import org.openmrs.module.reporting.common.TimeQualifier;
 import org.springframework.stereotype.Component;
 

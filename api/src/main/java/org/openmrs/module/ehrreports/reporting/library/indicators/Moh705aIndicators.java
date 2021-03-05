@@ -14,7 +14,7 @@
 package org.openmrs.module.ehrreports.reporting.library.indicators;
 
 import org.openmrs.Concept;
-import org.openmrs.module.ehrreports.metadata.OutpatientMetadata;
+import org.openmrs.module.ehrreports.metadata.EhrOutpatientMetadata;
 import org.openmrs.module.ehrreports.reporting.library.cohorts.CommonLibrary;
 import org.openmrs.module.ehrreports.reporting.library.cohorts.Moh705aCohortQueries;
 import org.openmrs.module.ehrreports.reporting.utils.EhrReportConstants;
@@ -31,7 +31,7 @@ public class Moh705aIndicators {
 
   @Autowired private CommonLibrary commonLibrary;
 
-  @Autowired private OutpatientMetadata outpatientMetadata;
+  @Autowired private EhrOutpatientMetadata outpatientMetadata;
 
   /**
    * Get patients who are children and have diagnosis other than the ones listed and classified

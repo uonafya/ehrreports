@@ -12,8 +12,10 @@ import org.openmrs.api.context.Context;
 import org.openmrs.calculation.patient.PatientCalculationContext;
 import org.openmrs.calculation.result.CalculationResultMap;
 import org.openmrs.calculation.result.ListResult;
-import org.openmrs.module.ehrreports.metadata.OutpatientMetadata;
+import org.openmrs.module.ehrreports.metadata.EhrOutpatientMetadata;
 import org.openmrs.module.ehrreports.reporting.utils.EhrCalculationUtils;
+import org.openmrs.module.kenyacore.calculation.AbstractPatientCalculation;
+import org.openmrs.module.kenyacore.calculation.BooleanResult;
 import org.openmrs.module.reporting.common.TimeQualifier;
 import org.springframework.stereotype.Component;
 
@@ -28,8 +30,8 @@ public class RevisitPatientOccurenceCalculation extends AbstractPatientCalculati
     EhrCalculationService ehrCalculationService =
         Context.getRegisteredComponents(EhrCalculationService.class).get(0);
     // External dependencies
-    OutpatientMetadata outpatientMetadata =
-        Context.getRegisteredComponents(OutpatientMetadata.class).get(0);
+    EhrOutpatientMetadata outpatientMetadata =
+        Context.getRegisteredComponents(EhrOutpatientMetadata.class).get(0);
     EncounterType regReturn = outpatientMetadata.getRegReturnEncounterType();
     EncounterType regInitial = outpatientMetadata.getRegInitialEncounterType();
     CalculationResultMap resultMap = new CalculationResultMap();

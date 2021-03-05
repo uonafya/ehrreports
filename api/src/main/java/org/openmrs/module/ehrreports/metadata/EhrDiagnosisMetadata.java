@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-public class DiagnosisMetadata extends Metadata {
-  @Autowired private OutpatientMetadata outpatientMetadata;
+public class EhrDiagnosisMetadata extends EhreportsMetadata {
+  @Autowired private EhrOutpatientMetadata outpatientMetadata;
 
   /**
    * Get all diarrohea concepts as a list

@@ -19,8 +19,8 @@ import org.openmrs.api.context.Context;
 import org.openmrs.module.ehrreports.reporting.utils.EhrReportConstants;
 import org.springframework.stereotype.Component;
 
-@Component("outpatientMetadata")
-public class OutpatientMetadata extends ProgramsMetadata {
+@Component("ehrOutpatientMetadata")
+public class EhrOutpatientMetadata extends EhrProgramsMetadata {
 
   // encounter types
   // encounter type 1

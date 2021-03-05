@@ -7,7 +7,6 @@ import java.util.Properties;
 import org.openmrs.module.ehrreports.reporting.library.cohorts.GenericCohortQueries;
 import org.openmrs.module.ehrreports.reporting.library.datasets.Moh717Dataset;
 import org.openmrs.module.ehrreports.reporting.reports.manager.EhrDataExportManager;
-import org.openmrs.module.ehrreports.reporting.utils.EhrReportUtils;
 import org.openmrs.module.reporting.ReportingException;
 import org.openmrs.module.reporting.evaluation.parameter.Mapped;
 import org.openmrs.module.reporting.report.ReportDesign;
@@ -53,10 +52,6 @@ public class SetupMoh717Report extends EhrDataExportManager {
     // tie the dataset here, you can add more than one data set definition
     rd.addDataSetDefinition("A", Mapped.mapStraightThrough(moh717Dataset.constructMoh717Dataset()));
     rd.addDataSetDefinition("C", Mapped.mapStraightThrough(moh717Dataset.constructCustomDataset()));
-    rd.setBaseCohortDefinition(
-        EhrReportUtils.map(
-            genericCohortQueries.getBaseCohort(),
-            "startDate=${startDate-1d},endDate=${endDate+1d}"));
     return rd;
   }
 

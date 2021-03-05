@@ -12,7 +12,7 @@
 package org.openmrs.module.ehrreports.reporting.library.cohorts;
 
 import java.util.Date;
-import org.openmrs.module.ehrreports.metadata.OutpatientMetadata;
+import org.openmrs.module.ehrreports.metadata.EhrOutpatientMetadata;
 import org.openmrs.module.reporting.cohort.definition.CohortDefinition;
 import org.openmrs.module.reporting.cohort.definition.SqlCohortDefinition;
 import org.openmrs.module.reporting.evaluation.parameter.Parameter;
@@ -22,7 +22,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class LabResultsCohortQueries {
 
-  @Autowired private OutpatientMetadata outpatientMetadata;
+  @Autowired private EhrOutpatientMetadata outpatientMetadata;
 
   /**
    * Get the results performed on Lab tests

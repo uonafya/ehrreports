@@ -7,7 +7,7 @@
  * <p>Copyright (C) OpenMRS Inc. OpenMRS is a registered trademark and the OpenMRS graphic logo is a
  * trademark of OpenMRS Inc.
  */
-package org.openmrs.module.test.extension.html;
+package org.openmrs.module.ehrreports.extension.html;
 
 import java.util.HashMap;
 import java.util.Map;

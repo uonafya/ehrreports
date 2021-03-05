@@ -7,7 +7,7 @@
  * <p>Copyright (C) OpenMRS Inc. OpenMRS is a registered trademark and the OpenMRS graphic logo is a
  * trademark of OpenMRS Inc.
  */
-package org.openmrs.module.test;
+package org.openmrs.module.ehrreports;
 
 import static org.hamcrest.Matchers.*;
 import static org.junit.Assert.*;
@@ -15,7 +15,7 @@ import static org.junit.Assert.*;
 import java.util.Map;
 import org.junit.Test;
 import org.openmrs.module.Extension;
-import org.openmrs.module.test.extension.html.AdminList;
+import org.openmrs.module.ehrreports.extension.html.AdminList;
 
 /** This test validates the AdminList extension class */
 public class AdminListExtensionTest {

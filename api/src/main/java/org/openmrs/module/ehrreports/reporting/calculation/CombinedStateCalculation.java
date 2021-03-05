@@ -1,5 +1,7 @@
 package org.openmrs.module.ehrreports.reporting.calculation;
 
+import static org.openmrs.module.kenyacore.calculation.CalculationUtils.patientsThatPass;
+
 import java.util.Collection;
 import java.util.Map;
 import java.util.Set;
@@ -7,6 +9,8 @@ import org.openmrs.api.context.Context;
 import org.openmrs.calculation.patient.PatientCalculationContext;
 import org.openmrs.calculation.result.CalculationResultMap;
 import org.openmrs.module.ehrreports.reporting.utils.EhrReportConstants;
+import org.openmrs.module.kenyacore.calculation.AbstractPatientCalculation;
+import org.openmrs.module.kenyacore.calculation.BooleanResult;
 import org.springframework.stereotype.Component;
 
 @Component

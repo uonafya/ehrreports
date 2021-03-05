@@ -1,7 +1,7 @@
 package org.openmrs.module.ehrreports.reporting.library.cohorts.special_clinic;
 
 import java.util.Date;
-import org.openmrs.module.ehrreports.metadata.OutpatientMetadata;
+import org.openmrs.module.ehrreports.metadata.EhrOutpatientMetadata;
 import org.openmrs.module.ehrreports.reporting.library.queries.special_clinic.SpecialClinicCohorts;
 import org.openmrs.module.ehrreports.reporting.utils.EhrReportUtils;
 import org.openmrs.module.reporting.cohort.definition.CohortDefinition;
@@ -13,7 +13,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class SpecialClinicCohortQueries {
-  @Autowired private OutpatientMetadata outPatientMetadata;
+  @Autowired private EhrOutpatientMetadata outPatientMetadata;
 
   /**
    * Find all patients

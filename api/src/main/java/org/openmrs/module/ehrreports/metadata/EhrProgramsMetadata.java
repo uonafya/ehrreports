@@ -5,7 +5,7 @@ import org.openmrs.ProgramWorkflow;
 import org.openmrs.ProgramWorkflowState;
 import org.openmrs.api.context.Context;
 
-public class ProgramsMetadata extends CommonMetadata {
+public class EhrProgramsMetadata extends EhreportsCommonMetadata {
 
   /** @return the Program that matches the passed uuid, concept name, name, or primary key id */
   public static Program getProgram(String lookup) {

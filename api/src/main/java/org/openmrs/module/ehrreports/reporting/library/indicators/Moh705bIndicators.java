@@ -14,7 +14,7 @@
 package org.openmrs.module.ehrreports.reporting.library.indicators;
 
 import org.openmrs.Concept;
-import org.openmrs.module.ehrreports.metadata.DiagnosisMetadata;
+import org.openmrs.module.ehrreports.metadata.EhrDiagnosisMetadata;
 import org.openmrs.module.ehrreports.reporting.library.cohorts.Moh705bCohortQueries;
 import org.openmrs.module.ehrreports.reporting.utils.EhrReportConstants;
 import org.openmrs.module.ehrreports.reporting.utils.EhrReportUtils;
@@ -29,7 +29,7 @@ public class Moh705bIndicators {
 
   @Autowired private EhrGeneralIndicator ehrGeneralIndicator;
 
-  @Autowired private DiagnosisMetadata diagnosisMetadata;
+  @Autowired private EhrDiagnosisMetadata diagnosisMetadata;
 
   /**
    * Get patients who are adults and have diagnosis other than the ones listed and classified

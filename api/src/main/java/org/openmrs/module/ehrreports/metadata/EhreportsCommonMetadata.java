@@ -15,5 +15,5 @@ package org.openmrs.module.ehrreports.metadata;
 
 import org.springframework.stereotype.Component;
 
-@Component("commonMetadata")
-public class CommonMetadata extends Metadata {}
+@Component("ehreportsCommonMetadata")
+public class EhreportsCommonMetadata extends EhreportsMetadata {}

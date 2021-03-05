@@ -1,6 +1,6 @@
 package org.openmrs.module.ehrreports.reporting.library.datasets;
 
-import org.openmrs.module.ehrreports.metadata.OutpatientMetadata;
+import org.openmrs.module.ehrreports.metadata.EhrOutpatientMetadata;
 import org.openmrs.module.ehrreports.reporting.library.indicators.SpecialClinicIndicators;
 import org.openmrs.module.ehrreports.reporting.utils.EhrReportUtils;
 import org.openmrs.module.reporting.dataset.definition.CohortIndicatorDataSetDefinition;
@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class SpecialClinicDataset extends BaseDataSet {
   @Autowired private SpecialClinicIndicators indicators;
-  @Autowired private OutpatientMetadata outpatientMetadata;
+  @Autowired private EhrOutpatientMetadata outpatientMetadata;
 
   public DataSetDefinition getSpecialClinic() {
     CohortIndicatorDataSetDefinition dsd = new CohortIndicatorDataSetDefinition();

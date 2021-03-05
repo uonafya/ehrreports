@@ -18,7 +18,7 @@ import org.openmrs.EncounterType;
 import org.openmrs.api.PatientSetService;
 import org.openmrs.api.context.Context;
 import org.openmrs.module.ehrreports.reporting.calculation.EncountersBasedOnDaySuppliedCalculation;
-import org.openmrs.module.ehrreports.reporting.cohort.definition.CalculationCohortDefinition;
+import org.openmrs.module.kenyacore.report.cohort.definition.CalculationCohortDefinition;
 import org.openmrs.module.reporting.cohort.definition.CodedObsCohortDefinition;
 import org.openmrs.module.reporting.cohort.definition.CohortDefinition;
 import org.openmrs.module.reporting.cohort.definition.EncounterCohortDefinition;

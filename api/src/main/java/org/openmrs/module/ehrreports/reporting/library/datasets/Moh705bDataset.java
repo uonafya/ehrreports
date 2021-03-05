@@ -2,7 +2,7 @@ package org.openmrs.module.ehrreports.reporting.library.datasets;
 
 import static org.openmrs.module.ehrreports.reporting.utils.EhrReportUtils.getAdultChildrenColumns;
 
-import org.openmrs.module.ehrreports.metadata.OutpatientMetadata;
+import org.openmrs.module.ehrreports.metadata.EhrOutpatientMetadata;
 import org.openmrs.module.ehrreports.reporting.cohort.definition.CustomConfigurationsDataDefinition;
 import org.openmrs.module.ehrreports.reporting.library.dimensions.EhrCommonDimension;
 import org.openmrs.module.ehrreports.reporting.library.indicators.Moh705bIndicators;
@@ -15,7 +15,7 @@ import org.springframework.stereotype.Component;
 
 @Component
 public class Moh705bDataset extends BaseDataSet {
-  @Autowired private OutpatientMetadata outpatientMetadata;
+  @Autowired private EhrOutpatientMetadata outpatientMetadata;
   @Autowired private EhrCommonDimension ehrCommonDimension;
   @Autowired private Moh705bIndicators moh705bIndicators;
 

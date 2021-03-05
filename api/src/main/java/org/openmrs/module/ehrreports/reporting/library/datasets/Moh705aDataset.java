@@ -13,7 +13,7 @@ package org.openmrs.module.ehrreports.reporting.library.datasets;
 
 import static org.openmrs.module.ehrreports.reporting.utils.EhrReportUtils.getAdultChildrenColumns;
 
-import org.openmrs.module.ehrreports.metadata.OutpatientMetadata;
+import org.openmrs.module.ehrreports.metadata.EhrOutpatientMetadata;
 import org.openmrs.module.ehrreports.reporting.cohort.definition.CustomConfigurationsDataDefinition;
 import org.openmrs.module.ehrreports.reporting.library.dimensions.EhrCommonDimension;
 import org.openmrs.module.ehrreports.reporting.library.indicators.Moh705aIndicators;
@@ -31,7 +31,7 @@ public class Moh705aDataset extends BaseDataSet {
 
   @Autowired private EhrCommonDimension ehrCommonDimension;
 
-  @Autowired private OutpatientMetadata outpatientMetadata;
+  @Autowired private EhrOutpatientMetadata outpatientMetadata;
 
   public DataSetDefinition constructMoh705aDataset() {
 

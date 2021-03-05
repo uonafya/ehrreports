@@ -15,5 +15,5 @@ package org.openmrs.module.ehrreports.metadata;
 
 import org.springframework.stereotype.Component;
 
-@Component("tbMetadata")
-public class TbMetadata extends ProgramsMetadata {}
+@Component("ehrTbMetadata")
+public class EhrTbMetadata extends EhrProgramsMetadata {}
