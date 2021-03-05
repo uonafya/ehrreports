@@ -20,7 +20,6 @@ import org.openmrs.api.context.Context;
 import org.openmrs.module.BaseModuleActivator;
 import org.openmrs.module.appframework.service.AppFrameworkService;
 import org.openmrs.module.ehrreports.metadata.ConfigurableMetadataLookupException;
-import org.openmrs.module.ehrreports.reporting.EhrReportInitializer;
 
 /**
  * This class contains the logic that is run every time this module is either started or shutdown
@@ -29,7 +28,7 @@ public class EhrReportsActivator extends BaseModuleActivator {
 
   private Log log = LogFactory.getLog(this.getClass());
 
-  private EhrReportInitializer reportsInitializer = new EhrReportInitializer();
+  // private EhrReportInitializer reportsInitializer = new EhrReportInitializer();
 
   @Override
   public void contextRefreshed() {
@@ -50,7 +49,7 @@ public class EhrReportsActivator extends BaseModuleActivator {
   public void willStop() {
     log.debug("Stopping EHR Reports Module");
     try {
-      reportsInitializer.purgeReports();
+      // reportsInitializer.purgeReports();
       log.debug("EHR Reports purged");
     } catch (Exception e) {
       log.error("An error occured trying to purge EHR reports", e);
@@ -63,7 +62,7 @@ public class EhrReportsActivator extends BaseModuleActivator {
     // disabling the reporting UI app to provide our own custom ones
     appFrameworkService.disableApp("reportingui.reports");
     try {
-      reportsInitializer.initializeReports();
+      // reportsInitializer.initializeReports();
       log.info("Started EHR Reports Module");
     } catch (ConfigurableMetadataLookupException e) {
       Context.getAlertService()

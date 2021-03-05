@@ -55,4 +55,22 @@
             </list>
         </property>
     </bean>
+    <bean id="kenyaemr.config.report" class="org.openmrs.module.kenyacore.report.ReportConfiguration">
+        <property name="commonReports">
+            <set>
+                <ref bean="ehrreports.common.715a" />
+
+            </set>
+        </property>
+    </bean>
+    <bean id="ehrreports.common.715a" class="org.openmrs.module.kenyacore.report.IndicatorReportDescriptor">
+        <property name="targetUuid" value="ebc8473c-7da8-11eb-8baa-7bb7c21476a2" />
+        <property name="name" value="MOH 705 A" />
+        <property name="description" value="MOH 705 A Report" />
+        <property name="apps">
+            <set>
+                <ref bean="kenyaemr.app.reports" />
+            </set></property>
+        <property name="template" value="ehrreports:MOH_705a.xls" />
+    </bean>
 </beans>

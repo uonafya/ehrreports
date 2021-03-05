@@ -15,7 +15,7 @@
 	<description>Reports for EHR project in Kenya</description>
 
 	<properties>
-		<openmrsPlatformVersion>1.9.9</openmrsPlatformVersion>
+		<openmrsPlatformVersion>1.12.0</openmrsPlatformVersion>
 		<appframeworkVersion>2.4</appframeworkVersion>
 		<appuiVersion>1.4</appuiVersion>
 		<uiframeworkModuleVersion>3.2</uiframeworkModuleVersion>
@@ -23,6 +23,8 @@
 		<serializationVersion>0.2.7</serializationVersion>
 		<calculationVersion>1.1</calculationVersion>
 		<htmlWidgetsVersion>1.6.5</htmlWidgetsVersion>
+		<kenyacoreVersion>2.4.1</kenyacoreVersion>
+		<kenyaemrVersion>17.0.3</kenyaemrVersion>
 	</properties>
 
 	<url>https://wiki.openmrs.org/x/FQ4z</url>
@@ -84,6 +86,18 @@
 				<groupId>org.openmrs.module</groupId>
 				<artifactId>appui-omod</artifactId>
 				<version>${appuiVersion}</version>
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.openmrs.module</groupId>
+				<artifactId>kenyacore-api</artifactId>
+				<version>${kenyacoreVersion}</version>
+				<scope>provided</scope>
+			</dependency>
+			<dependency>
+				<groupId>org.openmrs.module</groupId>
+				<artifactId>kenyaemr-api</artifactId>
+				<version>${kenyaemrVersion}</version>
 				<scope>provided</scope>
 			</dependency>
 			<!--End of module dependacy -->
